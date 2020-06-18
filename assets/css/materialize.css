@@ -4406,6 +4406,7 @@
     color: #040d14;
     display: block;
     padding: 0 25px;
+    margin: 10px auto;
     cursor: pointer;
     
   }
@@ -4481,7 +4482,7 @@
       min-height: 64px;
     }
     nav, nav .nav-wrapper i, nav a.sidenav-trigger, nav a.sidenav-trigger i {
-      height: 64px;
+      height: 75px;
       line-height: 64px;
     }
     .navbar-fixed {
