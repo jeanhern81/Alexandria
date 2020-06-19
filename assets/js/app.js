@@ -5,24 +5,31 @@ $(document).ready(function () {
 	$("#addProperty").on("click", function (event) {
 		event.preventDefault();
 
-		var streetAddress = $("#streetAddress").val();
-		var city = $("#city").val();
-		var state = $("#state").val();
-		// pushes address into the arr array
-		arr.push(streetAddress + city + state);
+		var addressVal = $("#streetAddress").val();
+		var cityVal = $("#city").val();
+		var stateVal = $("#state").val();
+		var mortgageVal = $("#mortgage").val();
+		var rentVal = $("#rent").val();
+		// pushes address and info as an object into the arr array
+		arr.push({
+			address: addressVal,
+			city: cityVal,
+			state: stateVal,
+			mortgage: mortgageVal,
+			rent: rentVal,
+		});
 		// converts the arr array into json and stores it in local storage for use in the properties page
 		localStorage.setItem("addresses", JSON.stringify(arr));
 	});
 	// test's parsing array from json
 	var addressArr = JSON.parse(localStorage.getItem("addresses"));
+
 	console.log(addressArr);
 	// function that takes in an address and returns the latitude and longitude from the google geocode api
-	function getLatLong(a, b, c) {
+	function getLatLong(a) {
 		var queryURL =
 			"https://maps.googleapis.com/maps/api/geocode/json?address=" +
 			a +
-			b +
-			c +
 			"&key=AIzaSyDHRCqL8yZbKNEZl7PFCmbA_XlaIBluHZ8";
 		$.ajax({
 			url: queryURL,
