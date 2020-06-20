@@ -3759,10 +3759,15 @@
       right: auto;
     }
     .row .col.m7 {
-      width: 58.3333333333%;
+      /* width: 58.3333333333%; */
+      width: 90%;
+      text-align: center;
+      align-content: center;
+
+/* 
       margin-left: auto;
       left: auto;
-      right: auto;
+      right: auto; */
     }
     .row .col.m8 {
       width: 66.6666666667%;

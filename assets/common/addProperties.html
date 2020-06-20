@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<<<<<<< HEAD
 	<head>
 		<style>
 			#map_canvas {
@@ -39,44 +40,96 @@
 			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHRCqL8yZbKNEZl7PFCmbA_XlaIBluHZ8&callback=initMap&libraries=&v=weekly"
 			defer
 		></script> -->
+=======
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Materialize CSS CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <!-- Materialize Icon CDN -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <title>Alexandria</title>
+  </head>
+>>>>>>> 432e6dcfb38feb558a480ff674e7d7448822fd17
 
-		<title>Alexandria</title>
-	</head>
-	<body>
-		<!-- Beginning of NavBar -->
-		<div class="navbar-fixed">
-			<nav class="teal lighten-2">
-				<div class="nav-wrapper">
-					<a href="../../index.html" class="brand-logo">Alexandria</a>
-					<a
-						href="../../index.html"
-						data-target="mobile-demo"
-						class="sidenav-trigger"
-						><i class="material-icons">menu</i></a
-					>
-					<ul class="right hide-on-med-and-down">
-						<li><a href="#">Properties</a></li>
-						<li><a href="#">Maps</a></li>
-						<li><a href="#">Dashboard</a></li>
-						<!-- Save for Later. DO NOT DELETE <li><a href="mobile.html">Mobile</a></li>-->
-					</ul>
-				</div>
-			</nav>
+  <body>
+    <header>
+      <!-- Beginning of NavBar -->
+      <div class="navbar-fixed">
+        <nav class="teal lighten-2">
+          <div class="nav-wrapper">
+            <a href="../../index.html" class="brand-logo">Alexandria</a>
+            <a
+              href="../../index.html"
+              data-target="mobile-nav"
+              class="sidenav-trigger"
+              ><i class="material-icons">menu</i></a
+            >
+            <ul class="right hide-on-med-and-down">
+              <li><a href="properties.html">Properties</a></li>
+              <li><a href="#">Maps</a></li>
+              <li><a href="#">Dashboard</a></li>
+              <!-- Save for Later. DO NOT DELETE <li><a href="mobile.html">Mobile</a></li>-->
+            </ul>
+            <ul class="sidenav" id="mobile-nav">
+              <li><a href="properties.html">Properties</a></li>
+              <li><a href="#">Maps</a></li>
+              <li><a href="#">Dashboard</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <!-- End of NavBar -->
+      <!-- Page Title -->
+      <div class="row">
+        <div class="col s12 main center">
+          <h1>Add Properties</h1>
+        </div>
+      </div>
+    </header>
 
-			<ul class="sidenav" id="mobile-demo">
-				<li><a href="#">Properties</a></li>
-				<li><a href="#">Maps</a></li>
-				<li><a href="#">Dashboard</a></li>
-				<!-- Save for Later. DO NOT DELETE <li><a href="mobile.html">Mobile</a></li>-->
-			</ul>
-		</div>
-		<!-- End of NavBar -->
+    <br />
+    <div class="container">
+      <form id="Property">
+        <label for="street address">Street Address</label>
+        <input type="text" id="streetAddress" />
+        <br />
+        <label for="city"> City </label>
+        <input type="text" id="city" />
+        <br />
+        <label for="state">State</label>
+        <input type="text" id="state" />
+        <br />
+        <label for="state">mortgage</label>
+        <input type="text" id="mortgage" />
+        <br />
+        <label for="rent">rent</label>
+        <input type="text" id="rent" />
+        <br />
+        <div class="row">
+          <button
+            class="col offset-s4 btn waves-effect waves-light"
+            type="submit"
+            id="addProperty"
+          >
+            Add Property
+          </button>
+        </div>
+      </form>
+    </div>
 
-		<!-- Beginning of Heading -->
-		<h1>Add Properties</h1>
+    <!-- Beginning of Property listings. This Section will need to be dynamic with JS. -->
+    <!-- Proptery #1 -->
 
-		<br />
+    <!-- This section would populate address once user inputs information and it is stored in localStorage -->
 
+<<<<<<< HEAD
 		<form id="Property">
 			<label for="street address">Street Address</label>
 			<input type="text" id="streetAddress" />
@@ -103,21 +156,51 @@
 		</form>
 
 		<!-- End of Heading -->
+=======
+    <!-- End of Property listings -->
+>>>>>>> 432e6dcfb38feb558a480ff674e7d7448822fd17
 
-		<!-- Beginning of Property listings. This Section will need to be dynamic with JS. -->
-		<!-- Proptery #1 -->
+    <!-- Beginning of Footer -->
+    <footer class="page-footer teal lighten-2">
+      <div class="container">
+        <div class="row">
+          <div class="col l4 offset-l2 s12">
+            <h5 class="white-text">Links</h5>
+            <ul>
+              <li>
+                <a class="grey-text text-lighten-3" href="properties.html"
+                  >Properties</a
+                >
+              </li>
+              <li><a class="grey-text text-lighten-3" href="#!">Maps</a></li>
+              <li>
+                <a class="grey-text text-lighten-3" href="#!">Description</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container main center">
+          © 2020 Alexandria PM
+        </div>
+      </div>
+    </footer>
+    <!-- End of Footer -->
 
-		<!-- This section would populate address once user inputs information and it is stored in localStorage -->
-
-		<!-- End of Property listings -->
-
-		<!-- Beginning of Footer -->
-		<footer class="page-footer teal lighten-2">
-			<!-- Need to center it and add some padding through html or css -->
-			© 2020 Copyright Alexandria
-		</footer>
-		<!-- End of Footer -->
-		<!-- Compiled and minified JavaScript -->
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-	</body>
+    <!-- JQuery CDN -->
+    <script
+      src="https://code.jquery.com/jquery-2.2.4.min.js"
+      integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+      crossorigin="anonymous"
+    ></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- JS Functions for Responsive Menu and Dropdown Menu -->
+    <script>
+      $(document).ready(function () {
+        $(".sidenav").sidenav();
+      });
+    </script>
+  </body>
 </html>

@@ -64,7 +64,43 @@ div.relative {
     margin-right: 50px;
     float: right;
     font-size: 18px;
+  }
 
+.card-team{
+    margin: 40px;
+}
+
+.card-img{
+    border: solid 1px black;
+    border-radius: 1em;
+    padding: 5px;
+}
+
+#Gerson{
+    float: left !important;
+
+}
+
+#Jeanette{
+    float: left;
+
+}
+
+#Josh{
+    float: left;
+
+}
+
+#Lee{
+    float: left;
+
+}
+
+#card-section{
+    /* padding: 25px 200px; */
+    margin: 25px 200px;
+    
+}
 
 /* 
 #bar-buttons{
