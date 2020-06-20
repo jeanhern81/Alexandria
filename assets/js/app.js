@@ -1,7 +1,7 @@
 $(document).ready(function () {
 	// this array holds all the addresses that get submitted in the add property  form
-	var arr = [];
 	var latLong;
+	var arr = [];
 
 	// this event takes the inputs from the add property form fields creates variables from them and passes them into the getLatLong function to return latitude and longitude fro google maps api
 	$("#addProperty").on("click", function (event) {
@@ -10,16 +10,28 @@ $(document).ready(function () {
 		var addressVal = $("#streetAddress").val();
 		var cityVal = $("#city").val();
 		var stateVal = $("#state").val();
-		var mortgageVal = $("#mortgage").val();
+		var expensesVal = $("#expenses").val();
 		var rentVal = $("#rent").val();
 		// pushes address and info as an object into the arr array
-		arr.push({
-			address: addressVal,
-			city: cityVal,
-			state: stateVal,
-			mortgage: mortgageVal,
-			rent: rentVal,
-		});
+
+		if (localStorage.getItem("addresses") != undefined) {
+			arr = JSON.parse(localStorage.getItem("addresses"));
+			arr.push({
+				address: addressVal,
+				city: cityVal,
+				state: stateVal,
+				expenses: expensesVal,
+				rent: rentVal,
+			});
+		} else {
+			arr.push({
+				address: addressVal,
+				city: cityVal,
+				state: stateVal,
+				expenses: expensesVal,
+				rent: rentVal,
+			});
+		}
 		// converts the arr array into json and stores it in local storage for use in the properties page
 		localStorage.setItem("addresses", JSON.stringify(arr));
 	});
