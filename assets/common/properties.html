@@ -26,6 +26,8 @@
 			integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
 			crossorigin="anonymous"
 		></script>
+		<!-- custom js -->
+		<!-- <script src="../js/app.js"></script> -->
 		<!-- Font Nunito from google -->
 		<link
 			href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap"
@@ -198,18 +200,111 @@
 				</div>
       </div>
      
-    </div>
-    <div id = "addPropertyButton"> <div class="row">
+	</div>
+	<!-- add property modal -->
+	<div id="addProperties" class="modal modal-fixed-footer">
+		<div class="modal-content">
+			<div class="row">
+				<div class="col s12 main center">
+				  <h1>Add Properties</h1>
+				</div>
+			  </div>
+			</header>
+		
+			<br />
+			<div class="container">
+			  <form id="Property">
+				<label for="street address">Street Address</label>
+				<input type="text" id="streetAddress" />
+				<br />
+				<label for="city"> City </label>
+				<input type="text" id="city" />
+				<br />
+				<label for="state">State</label>
+				<input type="text" id="state" />
+				<br />
+				<label for="expenses">Monthly Expenses</label>
+				<input type="text" id="expenses" />
+				<br />
+				<label for="rent">Monthly Rent</label>
+				<input type="text" id="rent" />
+				<br />
+				<div class="row">
+					<a href="#!"><button
+					class="col offset-s4 btn waves-effect waves-light modal-close"
+					type="submit"
+					id="addProperty"
+				  >
+					Add Property
+				  </button></a>
+				</div>
+			  </form>
+			</div>
+		</div>
+		
+	</div>
+</div>
+	<div class="row">
+	
       <div class="col s12 center-align">
-        <a class="waves-effect waves-light btn-large" href="addProperties.html"
+        <a class="waves-effect waves-light btn-large modal-trigger" href="#addProperties"
           ><i class="medium material-icons">add</i></a
         >
 
-    </div></div>
+	</div></div>
+	<script>
+		
+		document.addEventListener('DOMContentLoaded', function() {
+		var elems = document.querySelectorAll('.modal');
+		var instances = M.Modal.init(elems);
+		});
+	</script>
     
 		<!-- End of Property listings -->
 		<script>
 			// function to get properties from local storage object
+			$(document).ready(function(){
+				
+			getFromLocal();
+			// function to add properties to local storage
+			
+	var arr = [];
+
+// this event takes the inputs from the add property form fields creates variables from them and passes them into the getLatLong function to return latitude and longitude fro google maps api
+$("#addProperty").on("click", function (event) {
+	event.preventDefault();
+
+	var addressVal = $("#streetAddress").val().trim();
+	var cityVal = $("#city").val().trim();
+	var stateVal = $("#state").val().trim();
+	var expensesVal = $("#expenses").val().trim();
+	var rentVal = $("#rent").val().trim();
+	// pushes address and info as an object into the arr array
+
+	if (localStorage.getItem("addresses") != undefined) {
+		arr = JSON.parse(localStorage.getItem("addresses"));
+		arr.push({
+			address: addressVal,
+			city: cityVal,
+			state: stateVal,
+			expenses: expensesVal,
+			rent: rentVal,
+		});
+	} else {
+		arr.push({
+			address: addressVal,
+			city: cityVal,
+			state: stateVal,
+			expenses: expensesVal,
+			rent: rentVal,
+		});
+	}
+	// converts the arr array into json and stores it in local storage for use in the properties page
+	localStorage.setItem("addresses", JSON.stringify(arr));
+	location.reload(true);
+	getFromLocal();
+});
+			// 
 			function getFromLocal() {
 				// checks if addresses object in local storage exists
 				if (localStorage.getItem("addresses") != undefined) {
@@ -266,7 +361,8 @@
 					}
 				}
 			}
-			getFromLocal();
+			
+		})
 		</script>
 		<!-- Beginning of Footer -->
 		<footer class="page-footer teal lighten-2">

@@ -1,40 +1,42 @@
 $(document).ready(function () {
 	// this array holds all the addresses that get submitted in the add property  form
-	var latLong;
-	var arr = [];
 
-	// this event takes the inputs from the add property form fields creates variables from them and passes them into the getLatLong function to return latitude and longitude fro google maps api
-	$("#addProperty").on("click", function (event) {
-		event.preventDefault();
+	// var arr = [];
 
-		var addressVal = $("#streetAddress").val();
-		var cityVal = $("#city").val();
-		var stateVal = $("#state").val();
-		var expensesVal = $("#expenses").val();
-		var rentVal = $("#rent").val();
-		// pushes address and info as an object into the arr array
+	// // this event takes the inputs from the add property form fields creates variables from them and passes them into the getLatLong function to return latitude and longitude fro google maps api
+	// $("#addProperty").on("click", function (event) {
+	// 	event.preventDefault();
 
-		if (localStorage.getItem("addresses") != undefined) {
-			arr = JSON.parse(localStorage.getItem("addresses"));
-			arr.push({
-				address: addressVal,
-				city: cityVal,
-				state: stateVal,
-				expenses: expensesVal,
-				rent: rentVal,
-			});
-		} else {
-			arr.push({
-				address: addressVal,
-				city: cityVal,
-				state: stateVal,
-				expenses: expensesVal,
-				rent: rentVal,
-			});
-		}
-		// converts the arr array into json and stores it in local storage for use in the properties page
-		localStorage.setItem("addresses", JSON.stringify(arr));
-	});
+	// 	var addressVal = $("#streetAddress").val().trim();
+	// 	var cityVal = $("#city").val().trim();
+	// 	var stateVal = $("#state").val().trim();
+	// 	var expensesVal = $("#expenses").val().trim();
+	// 	var rentVal = $("#rent").val().trim();
+	// 	// pushes address and info as an object into the arr array
+
+	// 	if (localStorage.getItem("addresses") != undefined) {
+	// 		arr = JSON.parse(localStorage.getItem("addresses"));
+	// 		arr.push({
+	// 			address: addressVal,
+	// 			city: cityVal,
+	// 			state: stateVal,
+	// 			expenses: expensesVal,
+	// 			rent: rentVal,
+	// 		});
+	// 	} else {
+	// 		arr.push({
+	// 			address: addressVal,
+	// 			city: cityVal,
+	// 			state: stateVal,
+	// 			expenses: expensesVal,
+	// 			rent: rentVal,
+	// 		});
+	// 	}
+	// 	// converts the arr array into json and stores it in local storage for use in the properties page
+	// 	localStorage.setItem("addresses", JSON.stringify(arr));
+	// 	location.reload(true);
+	// 	getFromLocal();
+	// });
 	// test's parsing array from json
 	var addressArr = JSON.parse(localStorage.getItem("addresses"));
 
@@ -58,6 +60,7 @@ function getLatLong(a) {
 		method: "GET",
 	}).then(function (response) {
 		console.log(JSON.stringify(response.results[0].geometry.location));
+		return;
 		// console.log(response.results[0].geometry);
 		// var latLon = response.results[0].geometry.location;
 		// returnLocation(latLon);
