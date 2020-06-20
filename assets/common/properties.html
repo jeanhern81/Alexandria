@@ -3,68 +3,119 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel='icon' type='image/png' href='../images/Alexandria-symbol.png'/>
+    <link rel="icon" type="image/png" href="../images/Alexandria-symbol.png" />
     <!-- Compiled and minified CSS -->
-    <link rel="stylesheet"href="../css/materialize.css"/>
-    <link rel="stylesheet"href="../css/mainsStyles.css"/>
-    <link rel="stylesheet"href="../css/properties.css"/>
+    <link rel="stylesheet" href="../css/materialize.css" />
+    <link rel="stylesheet" href="../css/mainsStyles.css" />
+    <link rel="stylesheet" href="../css/properties.css" />
     <script src="../js/materialize.js"></script>
-    
+
     <!--Google Fonts-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
     <!--Font Awesome-->
-    <script src="https://kit.fontawesome.com/8b8f26d0e1.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/8b8f26d0e1.js"
+      crossorigin="anonymous"
+    ></script>
     <!-- Font Nunito from google -->
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
 
     <title>Alexandria | Properties</title>
   </head>
   <body>
     <!-- Beginning of NavBar -->
-    
+
     <div class="navbar-fixed fontSize">
       <nav class="teal lighten-2">
         <div class="nav-wrapper">
           <!-- <a href="../../index.html" class="brand-logo"><img id="alexandria-logo" src="../images/Alexandria-logo-BW.png" width="200px" length="100px" ></a> -->
-          <!-- <a href="../../index.html" data-target="mobile-demo" class="sidenav-trigger" ><i class="material-icons">menu</i></a > --> 
-            <ul class="left hide-on-med-and-down">
-            <li><a href="../../index.html"><img id="alexandria-logo" src="../images/Alexandria-logo-BW.png" width="250px" length="125px" ></a></li>
-            <li><a href="#">Properties</a></li>
+          <!-- <a href="../../index.html" data-target="mobile-demo" class="sidenav-trigger" ><i class="material-icons">menu</i></a > -->
+          <ul class="left hide-on-med-and-down">
+            <li>
+              <a href="../../index.html"
+                ><img
+                  id="alexandria-logo"
+                  src="../images/Alexandria-logo-BW.png"
+                  width="250px"
+                  length="125px"
+              /></a>
+            </li>
+            <li>
+              <a class="dropdown-trigger" href="#" data-target="dropdown1"
+                >Properties<i class="material-icons right"
+                  >arrow_drop_down</i
+                ></a
+              >
+            </li>
             <li><a href="#">Maps</a></li>
             <li><a href="#">Dashboard</a></li>
             <!-- Save for Later. DO NOT DELETE <li><a href="mobile.html">Mobile</a></li>-->
           </ul>
         </div>
+        <!-- Dropdown Structure -->
+        <ul id="dropdown1" class="dropdown-content">
+          <li><a href="#!">one</a></li>
+          <li><a href="#!">two</a></li>
+          <li class="divider"></li>
+          <li><a href="#!">three</a></li>
+        </ul>
       </nav>
       <ul class="sidenav" id="mobile-demo">
-        <li><a href="#">Properties</a></li>
+        <li class="active"><a href="#">Properties</a></li>
         <li><a href="#">Maps</a></li>
         <li><a href="#">Dashboard</a></li>
         <!-- Save for Later. DO NOT DELETE <li><a href="mobile.html">Mobile</a></li>-->
-        
       </ul>
-      <div id ="nav-image"><img src="../images/backgrounds/houses.jpg" width="100%" ></div>
+      <div id="nav-image">
+        <img src="../images/backgrounds/houses.jpg" width="100%" />
+      </div>
     </div>
     <!-- End of NavBar -->
-    
 
-<div class="property-body">
-    <!-- Beginning of Heading -->
-    <h5 id="property-header" >PROPERTIES</h5>
-    <!-- End of Heading -->
+    <div class="property-body">
+      <!-- Beginning of Heading -->
+      <h5 id="property-header">PROPERTIES</h5>
+      <!-- End of Heading -->
 
-    <!-- Beginning of Property listings. This Section will need to be dynamic with JS. -->
-    <!-- Propertery #1 -->
-    <div class="row">
-      <!-- This section would populate address once user inputs information and it is stored in localStorage -->
-      <div class="col s12"><H6>1790 WEST ARROW ROUTE, UPLAND, CA</H6></div>
-      <div class="col s3">
-        <span class="teal-text text-lighten-2">Rent</span>
+      <!-- Beginning of Property listings. This Section will need to be dynamic with JS. -->
+      <!-- Propertery #1 -->
+      <div class="row">
+        <!-- This section would populate address once user inputs information and it is stored in localStorage -->
+        <div class="col s12"><h6>1790 WEST ARROW ROUTE, UPLAND, CA</h6></div>
+        <div class="col s3">
+          <span class="teal-text text-lighten-2">Rent</span>
+        </div>
+        <div class="col s3">
+          <span class="teal-text text-lighten-2">Expenses</span>
+        </div>
+        <section class="property-buttons">
+          <div class="col s3">
+            <a class="waves-effect waves-light btn-large"
+              ><i class="material-icons center">build</i></a
+            >
+          </div>
+          <div class="col s3">
+            <a class="waves-effect waves-light btn-large"
+              ><i class="medium material-icons">monetization_on</i></a
+            >
+          </div>
+        </section>
       </div>
-      <div class="col s3">
-        <span class="teal-text text-lighten-2">Expenses</span>
-      </div>
-      <section class="property-buttons">
+      <div class="row">
+        <!-- This section would populate address once user inputs information and it is stored in localStorage -->
+        <div class="col s12"><h6>3305 E 26TH ST, VERNON, CA</h6></div>
+        <div class="col s3">
+          <span class="teal-text text-lighten-2">Rent</span>
+        </div>
+        <div class="col s3">
+          <span class="teal-text text-lighten-2">Expenses</span>
+        </div>
         <div class="col s3">
           <a class="waves-effect waves-light btn-large"
             ><i class="material-icons center">build</i></a
@@ -75,95 +126,73 @@
             ><i class="medium material-icons">monetization_on</i></a
           >
         </div>
-    </section>
-    </div>
-    <div class="row">
-      <!-- This section would populate address once user inputs information and it is stored in localStorage -->
-      <div class="col s12"><h6>3305 E 26TH ST, VERNON, CA</h6></div>
-      <div class="col s3">
-        <span class="teal-text text-lighten-2">Rent</span>
       </div>
-      <div class="col s3">
-        <span class="teal-text text-lighten-2">Expenses</span>
+      <div class="row">
+        <!-- This section would populate address once user inputs information and it is stored in localStorage -->
+        <div class="col s12"><h6>2555 N VINEYARD ST, CENTENNIAL, CO</h6></div>
+        <div class="col s3">
+          <span class="teal-text text-lighten-2">Rent</span>
+        </div>
+        <div class="col s3">
+          <span class="teal-text text-lighten-2">Expenses</span>
+        </div>
+        <div class="col s3">
+          <a class="waves-effect waves-light btn-large"
+            ><i class="material-icons center">build</i></a
+          >
+        </div>
+        <div class="col s3">
+          <a class="waves-effect waves-light btn-large"
+            ><i class="medium material-icons">monetization_on</i></a
+          >
+        </div>
       </div>
-      <div class="col s3">
-        <a class="waves-effect waves-light btn-large"
-          ><i class="material-icons center">build</i></a
-        >
+      <div class="row">
+        <!-- This section would populate address once user inputs information and it is stored in localStorage -->
+        <div class="col s12"><h6>1354 N 1ST AVE, UPLAND, CA</h6></div>
+        <div class="col s3">
+          <!-- Will this be set by owner? Will it need to be stored? -->
+          <span class="teal-text text-lighten-2">Rent</span>
+        </div>
+        <div class="col s3">
+          <!-- How will this be added/calculated? -->
+          <span class="teal-text text-lighten-2">Expenses</span>
+        </div>
+        <div class="col s3">
+          <!-- What do we want to link this button to? -->
+          <a class="waves-effect waves-light btn-large"
+            ><i class="material-icons center">build</i></a
+          >
+        </div>
+        <div class="col s3">
+          <!-- What do we want to link this button to? -->
+          <a class="waves-effect waves-light btn-large"
+            ><i class="medium material-icons">monetization_on</i></a
+          >
+        </div>
       </div>
-      <div class="col s3">
-        <a class="waves-effect waves-light btn-large"
-          ><i class="medium material-icons">monetization_on</i></a
-        >
-      </div>
-    </div>
-    <div class="row">
-      <!-- This section would populate address once user inputs information and it is stored in localStorage -->
-      <div class="col s12"><h6>2555 N VINEYARD ST, CENTENNIAL, CO</h6></div>
-      <div class="col s3">
-        <span class="teal-text text-lighten-2">Rent</span>
-      </div>
-      <div class="col s3">
-        <span class="teal-text text-lighten-2">Expenses</span>
-      </div>
-      <div class="col s3">
-        <a class="waves-effect waves-light btn-large"
-          ><i class="material-icons center">build</i></a
-        >
-      </div>
-      <div class="col s3">
-        <a class="waves-effect waves-light btn-large"
-          ><i class="medium material-icons">monetization_on</i></a
-        >
-      </div>
-    </div>
-    <div class="row">
-      <!-- This section would populate address once user inputs information and it is stored in localStorage -->
-      <div class="col s12"><h6>1354 N 1ST AVE, UPLAND, CA</h6></div>
-      <div class="col s3">
-        <!-- Will this be set by owner? Will it need to be stored? -->
-        <span class="teal-text text-lighten-2">Rent</span>
-      </div>
-      <div class="col s3">
-        <!-- How will this be added/calculated? -->
-        <span class="teal-text text-lighten-2">Expenses</span>
-      </div>
-      <div class="col s3">
-        <!-- What do we want to link this button to? -->
-        <a class="waves-effect waves-light btn-large"
-          ><i class="material-icons center">build</i></a
-        >
-      </div>
-      <div class="col s3">
-        <!-- What do we want to link this button to? -->
-        <a class="waves-effect waves-light btn-large"
-          ><i class="medium material-icons">monetization_on</i></a
-        >
-      </div>
-    </div>
-    <div class="row">
-      <!-- This section would populate address once user inputs information and it is stored in localStorage -->
-      <div class="col s12"><h6>3607 MUIR AVE, RIVERSIDE, CA</h6></div>
-      <div class="col s3">
-        <span class="teal-text text-lighten-2">Rent</span>
-      </div>
-      <div class="col s3">
-        <span class="teal-text text-lighten-2">Expenses</span>
-      </div>
-      <div class="col s3">
-        <a class="waves-effect waves-light btn-large"
-          ><i class="material-icons center">build</i></a
-        >
-      </div>
-      <div class="col s3">
-        <a class="waves-effect waves-light btn-large"
-          ><i class="medium material-icons">monetization_on</i></a
-        >
+      <div class="row">
+        <!-- This section would populate address once user inputs information and it is stored in localStorage -->
+        <div class="col s12"><h6>3607 MUIR AVE, RIVERSIDE, CA</h6></div>
+        <div class="col s3">
+          <span class="teal-text text-lighten-2">Rent</span>
+        </div>
+        <div class="col s3">
+          <span class="teal-text text-lighten-2">Expenses</span>
+        </div>
+        <div class="col s3">
+          <a class="waves-effect waves-light btn-large"
+            ><i class="material-icons center">build</i></a
+          >
+        </div>
+        <div class="col s3">
+          <a class="waves-effect waves-light btn-large"
+            ><i class="medium material-icons">monetization_on</i></a
+          >
+        </div>
       </div>
     </div>
-</div>
     <!-- End of Property listings -->
-    
 
     <!-- Beginning of Footer -->
     <footer class="page-footer teal lighten-2">
