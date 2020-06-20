@@ -38,59 +38,48 @@ $(document).ready(function () {
 	// test's parsing array from json
 	var addressArr = JSON.parse(localStorage.getItem("addresses"));
 
-	var newAddress =
-		addressArr[0].address + addressArr[0].city + addressArr[0].state;
+	// var newAddress =
+	// 	addressArr[0].address + addressArr[0].city + addressArr[0].state;
 	// function that takes in an address and returns the latitude and longitude from the google geocode api
+	var newAddress = "37711 peacock cir rancho mirage ca";
 
-	var getLatLong = function (a, callback) {
-		var queryURL =
-			"https://maps.googleapis.com/maps/api/geocode/json?address=" +
-			a +
-			"&key=AIzaSyDHRCqL8yZbKNEZl7PFCmbA_XlaIBluHZ8";
-		$.ajax({
-			url: queryURL,
-			method: "GET",
-		}).then(function (response) {
-			var latlon = response.results[0].geometry.location;
-			callback(latlon);
-			// Create and save a reference to new empty table row
-			// Create and save references to 3 td elements containing the Title, Year, and Actors from the AJAX response object
-			// Append the td elements to the new table row
-			// Append the table row to the tbody element
-		});
-	};
-	var coordinates;
-
-	getLatLong(newAddress, function (latlon) {
-		coordinates = latlon;
-	});
-	console.log(coordinates);
-	// var latLon = function () {
-	// 	$.ajax({
-	// 		url:
-	// 			"https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyDHRCqL8yZbKNEZl7PFCmbA_XlaIBluHZ8",
-
-	// 		data: {
-	// 			address: newAddress,
-	// 		},
-
-	// 		dataType: "json",
-
-	// 		success: function (r) {
-	// 			if ("success") {
-	// 				console.log(JSON.stringify(r.results[0].geometry.location));
-	// 				$("#latLon").text(JSON.stringify(r.results[0].geometry.location));
-	// 			}
-	// 		},
-	// 		error: function (e) {
-	// 			if ("error") {
-	// 				return e;
-	// 			}
-	// 		},
-	// 	});
-	// };
-	// console.log(latLon);
+	// getZillow();
+	// var location = getLatLong(newAddress);
+	// console.log(location.lat);
+	console.log(getLatLong(newAddress));
 });
+function getLatLong(a) {
+	var queryURL =
+		"https://maps.googleapis.com/maps/api/geocode/json?address=" +
+		a +
+		"&key=AIzaSyDHRCqL8yZbKNEZl7PFCmbA_XlaIBluHZ8";
+	$.ajax({
+		url: queryURL,
+		method: "GET",
+	}).then(function (response) {
+		console.log(JSON.stringify(response.results[0].geometry.location));
+		// console.log(response.results[0].geometry);
+		// var latLon = response.results[0].geometry.location;
+		// returnLocation(latLon);
+		// callback(latlon);
+	});
+}
+function returnLocation(latLon) {
+	return latLon;
+}
+// function getZillow() {
+// 	var queryURL =
+// 		"http://www.zillow.com/webservice/GetDeepSearchResults.htm?zws-id=X1-ZWz1dxir1f12bv_6bk45&address=879+W+23rd+Street&citystatezip=Los+Angeles%2C+CA&rentzestimate=true";
+// 	$.ajax({
+// 		url: queryURL,
+// 		method: "GET",
+// 	}).then(function (response) {
+// 		// console.log(response.results[0].geometry);
+// 		return response;
+// 		// callback(latlon);
+// 	});
+// }
+
 // 	var geocoder;
 // 	var map;
 // 	var address = "San Diego, CA";
