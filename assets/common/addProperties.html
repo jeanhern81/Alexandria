@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Materialize CSS CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <script
+      src="https://code.jquery.com/jquery-2.2.4.min.js"
+      integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+      crossorigin="anonymous"
+    ></script>
+    <script src="../js/app.js"></script>
+    <!-- Materialize Icon CDN -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <title>Alexandria</title>
+  </head>
+
+  <body>
+    <header>
+      <!-- Beginning of NavBar -->
+      <nav class="navbar-fix nav-wrapper teal lighten-2">
+        <a href="../../index.html" class="brand-logo">Alexandria</a>
+        <a href="#" data-target="mobile-links" class="sidenav-trigger"
+          ><i class="material-icons">menu</i></a
+        >
+        <ul class="right hide-on-med-and-down">
+          <li><a href="properties.html">Properties</a></li>
+          <li><a href="#">Maps</a></li>
+          <li><a href="#">Dashboard</a></li>
+        </ul>
+      </nav>
+      <ul class="sidenav" id="mobile-links">
+        <li><a href="properties.html">Properties</a></li>
+        <li><a href="#">Maps</a></li>
+        <li><a href="#">Dashboard</a></li>
+      </ul>
+      <!-- End of NavBar -->
+      <!-- Page Title -->
+      <div class="row">
+        <div class="col s12 main center">
+          <h1>Add Properties</h1>
+        </div>
+      </div>
+    </header>
+
+    <br />
+    <div class="container">
+      <form id="Property">
+        <label for="street address">Street Address</label>
+        <input type="text" id="streetAddress" />
+        <br />
+        <label for="city"> City </label>
+        <input type="text" id="city" />
+        <br />
+        <label for="state">State</label>
+        <input type="text" id="state" />
+        <br />
+        <label for="expenses">Monthly Expenses</label>
+        <input type="text" id="expenses" />
+        <br />
+        <label for="rent">Monthly Rent</label>
+        <input type="text" id="rent" />
+        <br />
+        <div class="row">
+          <button
+            class="col offset-s4 btn waves-effect waves-light"
+            type="submit"
+            id="addProperty"
+          >
+            Add Property
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Beginning of Property listings. This Section will need to be dynamic with JS. -->
+    <!-- Proptery #1 -->
+
+    <!-- This section would populate address once user inputs information and it is stored in localStorage -->
+
+    <!-- End of Property listings -->
+
+    <!-- Beginning of Footer -->
+    <footer class="page-footer teal lighten-2">
+      <div class="container">
+        <div class="row">
+          <div class="col l4 offset-l2 s12">
+            <h5 class="white-text">Links</h5>
+            <ul>
+              <li>
+                <a class="grey-text text-lighten-3" href="properties.html"
+                  >Properties</a
+                >
+              </li>
+              <li><a class="grey-text text-lighten-3" href="#!">Maps</a></li>
+              <li>
+                <a class="grey-text text-lighten-3" href="#!">Description</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container main center">
+          © 2020 Alexandria PM
+        </div>
+      </div>
+    </footer>
+    <!-- End of Footer -->
+
+    <!-- JQuery CDN -->
+    <script
+      src="https://code.jquery.com/jquery-2.2.4.min.js"
+      integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+      crossorigin="anonymous"
+    ></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- JS Functions for Responsive Menu and Dropdown Menu -->
+    <script>
+      $(document).ready(function () {
+        $(".sidenav").sidenav();
+      });
+    </script>
+  </body>
+</html>
