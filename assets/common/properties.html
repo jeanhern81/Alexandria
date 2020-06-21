@@ -78,120 +78,33 @@
 		</ul>
 		<div id="nav-image">
 			<img src="../images/backgrounds/houses.jpg" width="100%" />
+
 		</div>
 	</div>
 	<!-- End of NavBar -->
 
-	<div class="property-body">
 		<!-- Beginning of Heading -->
-		<h5 id="property-header">PROPERTIES</h5>
-		<!-- End of Heading -->
-
-		<!-- Beginning of Property listings. This Section will need to be dynamic with JS. -->
-		<!-- Propertery #1 -->
-		<div class="row">
-			<!-- This section would populate address once user inputs information and it is stored in localStorage -->
-			<div class="col s12">
-				<h6>1790 WEST ARROW ROUTE, UPLAND, CA</h6>
-			</div>
-			<div class="col s3">
-				<span class="teal-text text-lighten-2">Rent</span>
-			</div>
-			<div class="col s3">
-				<span class="teal-text text-lighten-2">Expenses</span>
-			</div>
-			<section class="property-buttons">
-				<div class="col s3">
-					<a class="waves-effect waves-light btn-large"><i class="material-icons center">build</i></a>
-				</div>
-				<div class="col s3">
-					<a class="waves-effect waves-light btn-large"><i
-							class="medium material-icons">monetization_on</i></a>
-				</div>
-			</section>
-		</div>
-		<div class="row">
-			<!-- This section would populate address once user inputs information and it is stored in localStorage -->
-			<div class="col s12">
-				<h6>3305 E 26TH ST, VERNON, CA</h6>
-			</div>
-			<div class="col s3">
-				<span class="teal-text text-lighten-2">Rent</span>
-			</div>
-			<div class="col s3">
-				<span class="teal-text text-lighten-2">Expenses</span>
-			</div>
-			<div class="col s3">
-				<a class="waves-effect waves-light btn-large"><i class="material-icons center">build</i></a>
-			</div>
-			<div class="col s3">
-				<a class="waves-effect waves-light btn-large"><i class="medium material-icons">monetization_on</i></a>
-			</div>
-		</div>
-		<div class="row">
-			<!-- This section would populate address once user inputs information and it is stored in localStorage -->
-			<div class="col s12">
-				<h6>2555 N VINEYARD ST, CENTENNIAL, CO</h6>
-			</div>
-			<div class="col s3">
-				<span class="teal-text text-lighten-2">Rent</span>
-			</div>
-			<div class="col s3">
-				<span class="teal-text text-lighten-2">Expenses</span>
-			</div>
-			<div class="col s3">
-				<a class="waves-effect waves-light btn-large"><i class="material-icons center">build</i></a>
-			</div>
-			<div class="col s3">
-				<a class="waves-effect waves-light btn-large"><i class="medium material-icons">monetization_on</i></a>
-			</div>
-		</div>
-		<div class="row">
-			<!-- This section would populate address once user inputs information and it is stored in localStorage -->
-			<div class="col s12">
-				<h6>1354 N 1ST AVE, UPLAND, CA</h6>
-			</div>
-			<div class="col s3">
-				<!-- Will this be set by owner? Will it need to be stored? -->
-				<span class="teal-text text-lighten-2">Rent</span>
-			</div>
-			<div class="col s3">
-				<!-- How will this be added/calculated? -->
-				<span class="teal-text text-lighten-2">Expenses</span>
-			</div>
-			<div class="col s3">
-				<!-- What do we want to link this button to? -->
-				<a class="waves-effect waves-light btn-large"><i class="material-icons center">build</i></a>
-			</div>
-			<div class="col s3">
-				<!-- What do we want to link this button to? -->
-				<a class="waves-effect waves-light btn-large"><i class="medium material-icons">monetization_on</i></a>
-			</div>
-		</div>
-		<div class="row">
-			<!-- This section would populate address once user inputs information and it is stored in localStorage -->
-			<div class="col s12">
-				<h6>3607 MUIR AVE, RIVERSIDE, CA</h6>
-			</div>
-			<div class="col s3">
-				<span class="teal-text text-lighten-2">Rent</span>
-			</div>
-			<div class="col s3">
-				<span class="teal-text text-lighten-2">Expenses</span>
-			</div>
-			<div class="col s3">
-				<a class="waves-effect waves-light btn-large"><i class="material-icons center">build</i></a>
-			</div>
-			<div class="col s3">
-				<a class="waves-effect waves-light btn-large"><i class="medium material-icons">monetization_on</i></a>
+		<div class="property-body">
+			<h5 id="property-header">PROPERTIES</h5>
+			<!-- Beginning of Property listings. This Section will need to be dynamic with JS. -->
+			<!-- Propertery #1 - Just a place holder-->
+			<div class="row">
+				<!-- This section would populate address once user inputs information and it is stored in localStorage -->
+				<div class="col s12"><h6>1790 WEST ARROW ROUTE, UPLAND, CA</h6></div>
+				<div class="col s3"> <span class="teal-text text-lighten-2">Rent</span> <h6></h6></div>
+				<div class="col s3"> <span class="teal-text text-lighten-2">Expenses</span> </div>
+				<section class="property-buttons">
+					<div class="col s3"> <a class="waves-effect waves-light btn-large" ><i class="material-icons center">build</i></a > </div>
+					<div class="col s3"> <a class="waves-effect waves-light btn-large" ><i class="medium material-icons">monetization_on</i></a > </div>
+				</section>
 			</div>
 		</div>
 
-	</div>
 	<!-- add property modal -->
 	<div id="addProperties" class="modal modal-fixed-footer">
 		<div class="modal-content">
 			<div class="row">
+
 				<div class="col s12 main center">
 					<h1>Add Properties</h1>
 				</div>
@@ -242,6 +155,7 @@
 
 			</div>
 		</div>
+
 
 	</div>
 	</div>
@@ -319,6 +233,7 @@
 			function getFromLocal() {
 				// checks if addresses object in local storage exists
 				if (localStorage.getItem("addresses") != undefined) {
+
 					// if address object does exist this pulls the object and saves it as a variable
 					var addressArr = JSON.parse(localStorage.getItem("addresses"));
 					// for loop runs through addressArr and dynamically builds out properties
@@ -426,16 +341,18 @@
 
 
 		})
-	</script>
 
-	<!-- Beginning of Footer -->
-	<footer class="page-footer teal lighten-2">
-		<!-- Need to center it and add some padding through html or css -->
-		© 2020 Alexandria. All rights reserved.
-	</footer>
-	<!-- End of Footer -->
-	<!-- Compiled and minified JavaScript -->
+		</script>
+    <script src="../js/property.js"></script>
 
-</body>
-
+		<!--Footer -->
+		<footer class="page-footer teal lighten-2">
+			<!-- Need to center it and add some padding through html or css -->
+			© 2020 Alexandria. All rights reserved.
+		</footer>
+	
+		<!-- Compiled and minified JavaScript -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+	</body>
 </html>
+

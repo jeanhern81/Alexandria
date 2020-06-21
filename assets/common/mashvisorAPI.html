@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+    <link ref="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
+
+    <title>MASHVISOR API</title>
+  </head>
+
+  <body>
+
+ <h1>MASH API</h1>
+ <div id="update-field" ></div>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <script src="../js/xml2json.js" ></script>
+    <!-- <script src="../js/script.js"></script> -->
+
+    <script>
+
+ var zipCode = "91786";
+ var address = "747 N Redding Way";
+ var addressFormat = address.replace(/ /gi,'%20');
+ console.log(addressFormat);
+ var city = "Upland";
+ var state = "CA";
+
+ var address1;
+
+// MASHVISOR API CALL
+
+var temp = null;
+console.log(temp);
+
+var settings = {
+	"async": false,
+	"crossDomain": true,
+	"url": "https://mashvisor-api.p.rapidapi.com/property?zip_code="+ zipCode + "&address="+ addressFormat + "&city=" + city + "&state=" + state ,
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-host": "mashvisor-api.p.rapidapi.com",
+		"x-rapidapi-key": "733fad01b3msh9d3366df3709f73p1125dcjsn3fcf4af23a02"
+	}
+}
+
+$.ajax(settings).done(function (response) {
+    console.log(response);
+    temp = response;
+});
+
+console.log(temp);
+ $('#update-field').append('<h5> Address:' + temp.content.address + '</h5>');
+
+
+
+	// console.log(response.content.baths);
+    // $('#update-field').append('<h5> Test </h5>');
+
+    // $('#update-field').append('<h5> Address:' + response.content.address + '</h5>');
+    // $('#update-field').append('<h5> City:' + response.content.city + '</h5>');
+    // $('#update-field').append('<h5> List Price:' + response.content.listPrice + '</h5>');
+    // $('#update-field').append('<h5> Sqft' + response.content.sqft + '</h5>');
+    // $('#update-field').append('<h5> Year Built:' + response.content.yearBuilt + '</h5>');
+
+    // $('#update-field').append('<h5> Home Type:' + response.content.homeType+ '</h5>');
+
+    // $('#update-field').append('<h5> Number of Baths:' + response.content.baths + '</h5>');
+    // $('#update-field').append('<h5> Number of Beds:' + response.content.beds + '</h5>');
+    // $('#update-field').append('<h5> Parking Sports' + response.content.parkingSpots+ '</h5>');
+
+
+    // $('#update-field').append('<h5> Latitude:' + response.content.latitude + '</h5>');
+    // $('#update-field').append('<h5> Longitude:' + response.content.longitude + '</h5>');
+
+    </script>
+
+  </body>
+</html>
