@@ -54,6 +54,12 @@ var settings = {
 $.ajax(settings).done(function (response) {
     console.log(response);
     temp = response;
+});
+
+console.log(temp);
+ $('#update-field').append('<h5> Address:' + temp.content.address + '</h5>');
+
+
 
 	// console.log(response.content.baths);
     // $('#update-field').append('<h5> Test </h5>');
@@ -73,13 +79,6 @@ $.ajax(settings).done(function (response) {
 
     // $('#update-field').append('<h5> Latitude:' + response.content.latitude + '</h5>');
     // $('#update-field').append('<h5> Longitude:' + response.content.longitude + '</h5>');
-
-    
-});
-
-console.log(temp);
- $('#update-field').append('<h5> Address:' + temp.content.address + '</h5>');
-
 
     </script>
 
