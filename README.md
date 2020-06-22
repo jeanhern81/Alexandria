@@ -1,44 +1,40 @@
-# Alexandria 1
+---
+Title: Alexandria - Propery Mangement App
 
-Project 2
-test push 2
-Group Members:
-Lee Tsao
-Gerson Marroquin
-Josh Levish
-Jeanette Hernandez (Group Contact)
+Developers: Isaac Tsao, Gerson Marroquin, Josh Levish, Jeanette Hernandez
 
-Group Name: Alexandria
+Date: June 22, 2020
 
-Alexandria - Project 01:
-Alexandria is an appliation that will simply the the lives of property owners who choose to manage their own properties rather than using a property management agency. 
+Website: https://jeanhern81.github.io/Alexandria/
 
+---
+Screenshot
 
-User Story:
-As a property owner, 
-I WANT to open the application and view a list of my properties
-SO THAT I can see at first glance the rent for each property, monthly expenses, and possible repairs.
+---
+Description:
 
+---
 
-Accepted Criteria:
-GIVEN an application that will help manage my rental properties.
-WHEN I open the application,
-THEN a login page appears.
-WHEN I log into my account,
-THEN a list of any rental properties will appear.
-WHEN I click on the property address,
-THEN home facts sheet with generate from Zillow API,
-WHEN I click on an a given icon 
-THEN rental, monthly expesnses, and any pending repairs will appear.
+Refernces:
 
-API's to be used:
-Zillow - to gather real estate
-Open Weather - set to the specific location address in anticipation that property owner has properties through out the state
+---
 
+MIT License:
 
-Task:
-creation of:
-	html,
-	*login page (jeanette), page with addresses with additional info (Isaac, Gerson), API implemintation (Josh)
-	css,
-	javascript fuctions (to be assigned to team members)
+Copyright (c) [2020] [Alexandria]
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+---
+Techonologies Used:
+
+HTML, CSS, Materialize, JavaScript, jQuery, 
+
+---
+Test:
+
+Validation through W3C Code Validators to check for syntax errors. 
