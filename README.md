@@ -1,11 +1,13 @@
 ---
 Title: Alexandria - Propery Management App
 
-Developers: Isaac Tsao, Gerson Marroquin, Josh Levish, Jeanette Hernandez
-
 Date: June 22, 2020
 
 Website: https://jeanhern81.github.io/Alexandria/
+
+---
+
+Developers: Isaac Tsao, Gerson Marroquin, Josh Levish, & Jeanette Hernandez
 
 ---
 Screenshot
