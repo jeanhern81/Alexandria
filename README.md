@@ -7,7 +7,9 @@ Website: https://jeanhern81.github.io/Alexandria/
 
 ---
 
-Developers: Isaac Tsao, Gerson Marroquin, Josh Levish, & Jeanette Hernandez
+Developers: 
+
+Isaac Tsao, Gerson Marroquin, Josh Levish, & Jeanette Hernandez
 
 ---
 Screenshot
