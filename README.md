@@ -24,9 +24,9 @@ Table of Contents:
 
 [API's](#API's)
 
-[References]()
+[References](#References)
 
-[Licensing]()
+[Licensing](#API)
 
 [Technologies Used](#Techologies)
 
@@ -43,10 +43,11 @@ By loging on to your account, you'll get an overview of your properties, rental 
 ---
 <a name="API">API's Used:</a>
 
-#Google Geocode, Maps API, Mashvisor
+Google Geocode, Maps API, Mashvisor
 
 ---
 <a name="References">References:</a>
+
 
 
 ---
