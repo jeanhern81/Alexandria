@@ -23,31 +23,29 @@ Table of Contents:
 
 [Licensing]()
 
-[Technologies Used]()
+[Technologies Used](#Techologies)
 
 [Testing](#Testing)
 
 
 ---
-#Description:
+<a name="Description">Description:</a>
 
 Alexandria is user-friendly website that easily gives rental property a way to manage their properties without the hasstle of having to deal with a property management agency. 
 
 By loging on to your account, you'll get an overview of your properties, rental fees, and expenses. It also features map and repair icons where you can keep notes of any upcoming repairs. Adding an address is easy, simply click on the plus icon and enter your address.
 
 ---
-
-#API's Used:
+<a name="API">API's Used:</a>
 
 #Google Geocode, Maps API, Mashvisor
 
 ---
+<a name="References">References:</a>
 
-#References:
 
 ---
-
-#MIT License:
+<a name="Licensing">MIT Licensing:</a>
 
 Copyright (c) [2020] [Alexandria]
 
@@ -58,11 +56,11 @@ The above copyright notice and this permission notice shall be included in all c
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ---
-#Techonologies Used:
+<a name="Techonologies">Technologies Used:</a>
 
 HTML, CSS, Materialize, JavaScript, jQuery, 
 
 ---
-<a name="Testing">Testing</a>
+<a name="Testing">Testing:</a>
 
 Validation through W3C Code Validators to check for syntax errors. 
