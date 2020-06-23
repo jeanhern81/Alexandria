@@ -31,7 +31,7 @@
 	<script async defer
 		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHRCqL8yZbKNEZl7PFCmbA_XlaIBluHZ8&callback=initMap"></script>
 	<!-- custom js -->
-	<!-- <script src="../js/app.js"></script> -->
+	<script src="../js/app.js"></script>
 	<!-- Font Nunito from google -->
 	<link
 		href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap"
@@ -121,13 +121,16 @@
 			<div class="container">
 				<form id="Property">
 					<label for="street address">Street Address</label>
-					<input type="text" id="streetAddress" />
+					<input type="text" id="streetAddress" required />
 					<br />
 					<label for="city"> City </label>
-					<input type="text" id="city" />
+					<input type="text" id="city" required />
 					<br />
-					<label for="state">State</label>
-					<input type="text" id="state" />
+					<label for="state">State abbreviation</label>
+					<input type="text" id="state" maxlength="2" size="2" required />
+					<br />
+					<label for="zipcode">zip code</label>
+					<input type="text" id="zipCode" maxlength="5" size="5" required />
 					<br />
 					<label for="expenses">Monthly Expenses</label>
 					<input type="text" id="expenses" />
@@ -210,6 +213,7 @@
 				var addressVal = $("#streetAddress").val().trim().toUpperCase();
 				var cityVal = $("#city").val().trim().toUpperCase();
 				var stateVal = $("#state").val().trim().toUpperCase();
+				var zipVal = $("#zipCode").val().trim().toUpperCase();
 				var expensesVal = $("#expenses").val().trim().toUpperCase();
 				var rentVal = $("#rent").val().trim().toUpperCase();
 				// pushes address and info as an object into the arr array
@@ -220,6 +224,7 @@
 						address: addressVal,
 						city: cityVal,
 						state: stateVal,
+						zip: zipVal,
 						expenses: expensesVal,
 						rent: rentVal,
 					});
@@ -228,6 +233,7 @@
 						address: addressVal,
 						city: cityVal,
 						state: stateVal,
+						zip: zipVal,
 						expenses: expensesVal,
 						rent: rentVal,
 					});
@@ -258,24 +264,25 @@
 							" " +
 							addressArr[i].city.toUpperCase() +
 							" " +
-							addressArr[i].state.toUpperCase()
+							addressArr[i].state.toUpperCase() + " "
+							+ addressArr[i].zip.toUpperCase()
 						);
 						addressSpan.append(address)
 						addressSpan.append(cityState)
 						// builds out rent display
-						var rentDiv = $("<div class='col s2'>");
+						var rentDiv = $("<div class='col s1'>");
 						var rentStyle = $("<span class='teal-text text-lighten-2'>");
 
 						rentDiv.append(rentStyle);
 						rentStyle.text("Monthly Rent: " + addressArr[i].rent);
 						// builds out expense display
-						var expenseDiv = $("<div class='col s2'>");
+						var expenseDiv = $("<div class='col s1'>");
 						var expenseStyle = $("<span class='teal-text text-lighten-2'>");
 
 						expenseDiv.append(expenseStyle);
 						expenseStyle.text("Monthly Expenses: " + addressArr[i].expenses);
 						// builds out wrench icon
-						var workIconDiv = $("<div class='col s2'>");
+						var workIconDiv = $("<div class='col s1'>");
 						var workLink = $("<a class='waves-effect waves-light btn-large'>");
 						var workIcon = $("<i class='material-icons center'>");
 
@@ -283,7 +290,7 @@
 						workLink.append(workIcon);
 						workIcon.text("build");
 						// builds out money icon
-						var moneyIconDiv = $("<div class='col s2'>");
+						var moneyIconDiv = $("<div class='col s1'>");
 						var moneyLink = $("<a class='waves-effect waves-light btn-large'>");
 						var moneyIcon = $("<i class='material-icons center'>");
 
@@ -292,7 +299,7 @@
 						moneyIcon.text("monetization_on");
 
 						// builds out map icon
-						var mapIconDiv = $("<div class='col s2'>");
+						var mapIconDiv = $("<div class='col s1'>");
 						var mapLink = $("<a class='waves-effect waves-light btn-large modal-trigger' href='#propertyMap'>");
 						var mapIcon = $("<i class='material-icons center'>");
 
@@ -405,16 +412,10 @@
 
 
 	<!--Footer -->
-	<footer class="page-footer teal lighten-2">
-		<!-- Need to center it and add some padding through html or css -->
-		© 2020 Alexandria. All rights reserved.
-	</footer>
 
 	<!-- Compiled and minified JavaScript -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 	<!-- <script src="../js/property.js"></script> -->
 </body>
-
-</html>
 
 </html>
