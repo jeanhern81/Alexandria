@@ -83,22 +83,28 @@
 	</div>
 	<!-- End of NavBar -->
 
-		<!-- Beginning of Heading -->
-		<div class="property-body">
-			<h5 id="property-header">PROPERTIES</h5>
-			<!-- Beginning of Property listings. This Section will need to be dynamic with JS. -->
-			<!-- Propertery #1 - Just a place holder-->
-			<div class="row">
-				<!-- This section would populate address once user inputs information and it is stored in localStorage -->
-				<div class="col s12"><h6>1790 WEST ARROW ROUTE, UPLAND, CA</h6></div>
-				<div class="col s3"> <span class="teal-text text-lighten-2">Rent</span> <h6></h6></div>
-				<div class="col s3"> <span class="teal-text text-lighten-2">Expenses</span> </div>
-				<section class="property-buttons">
-					<div class="col s3"> <a class="waves-effect waves-light btn-large" ><i class="material-icons center">build</i></a > </div>
-					<div class="col s3"> <a class="waves-effect waves-light btn-large" ><i class="medium material-icons">monetization_on</i></a > </div>
-				</section>
+	<!-- Beginning of Heading -->
+	<div class="property-body">
+		<h5 id="property-header">PROPERTIES</h5>
+		<!-- Beginning of Property listings. This Section will need to be dynamic with JS. -->
+		<!-- Propertery #1 - Just a place holder-->
+		<div class="row">
+			<!-- This section would populate address once user inputs information and it is stored in localStorage -->
+			<div class="col s12">
+				<h6>1790 WEST ARROW ROUTE, UPLAND, CA</h6>
 			</div>
+			<div class="col s3"> <span class="teal-text text-lighten-2">Rent</span>
+				<h6></h6>
+			</div>
+			<div class="col s3"> <span class="teal-text text-lighten-2">Expenses</span> </div>
+			<section class="property-buttons">
+				<div class="col s3"> <a class="waves-effect waves-light btn-large"><i
+							class="material-icons center">build</i></a> </div>
+				<div class="col s3"> <a class="waves-effect waves-light btn-large"><i
+							class="medium material-icons">monetization_on</i></a> </div>
+			</section>
 		</div>
+	</div>
 
 	<!-- add property modal -->
 	<div id="addProperties" class="modal modal-fixed-footer">
@@ -140,6 +146,7 @@
 		</div>
 
 	</div>
+	<!-- property map modal -->
 	<div id="propertyMap" class="modal modal-fixed-footer">
 		<div class="modal-content">
 			<div class="row">
@@ -159,6 +166,7 @@
 
 	</div>
 	</div>
+	<!-- add property button -->
 	<div class="row">
 
 		<div class="col s12 center-align">
@@ -167,6 +175,7 @@
 
 		</div>
 	</div>
+	<!-- script for add property modal -->
 	<script>
 
 		document.addEventListener('DOMContentLoaded', function () {
@@ -174,6 +183,7 @@
 			var instances = M.Modal.init(elems);
 		});
 	</script>
+	<!-- script for property map modal -->
 	<script>
 
 		document.addEventListener('DOMContentLoaded', function () {
@@ -181,8 +191,7 @@
 			var instance = M.Modal.init(elem);
 		});
 	</script>
-
-	<!-- End of Property listings -->
+	<!-- script for dynamic content loading of property listings -->
 	<script>
 		// function to get properties from local storage object
 		$(document).ready(function () {
@@ -198,11 +207,11 @@
 			$("#addProperty").on("click", function (event) {
 				event.preventDefault();
 
-				var addressVal = $("#streetAddress").val().trim();
-				var cityVal = $("#city").val().trim();
-				var stateVal = $("#state").val().trim();
-				var expensesVal = $("#expenses").val().trim();
-				var rentVal = $("#rent").val().trim();
+				var addressVal = $("#streetAddress").val().trim().toUpperCase();
+				var cityVal = $("#city").val().trim().toUpperCase();
+				var stateVal = $("#state").val().trim().toUpperCase();
+				var expensesVal = $("#expenses").val().trim().toUpperCase();
+				var rentVal = $("#rent").val().trim().toUpperCase();
 				// pushes address and info as an object into the arr array
 
 				if (localStorage.getItem("addresses") != undefined) {
@@ -230,32 +239,37 @@
 
 			});
 			// 
+			// function to get property objects from localStorage
 			function getFromLocal() {
 				// checks if addresses object in local storage exists
 				if (localStorage.getItem("addresses") != undefined) {
 
-					// if address object does exist this pulls the object and saves it as a variable
+					// if address object does exist this pulls the object and saves it as an array
 					var addressArr = JSON.parse(localStorage.getItem("addresses"));
 					// for loop runs through addressArr and dynamically builds out properties
 					for (i = 0; i < addressArr.length; i++) {
 						// builds out property div
 						var propertyDiv = $("<div class='row'> ");
 						var propertyDivStyle = $("<div class='col s12'>");
-						var address = $("<h6 class='propAdd'>").text(
-							addressArr[i].address.toUpperCase() +
+						var addressSpan = $("<span class='propAdd'>")
+						var address = $("<h6 class='propAdd' id='address'>").text(
+							addressArr[i].address.toUpperCase())
+						var cityState = $("<h6 class='propAdd' id='city/state'>").text(
 							" " +
 							addressArr[i].city.toUpperCase() +
 							" " +
 							addressArr[i].state.toUpperCase()
 						);
+						addressSpan.append(address)
+						addressSpan.append(cityState)
 						// builds out rent display
-						var rentDiv = $("<div class='col s3'>");
+						var rentDiv = $("<div class='col s2'>");
 						var rentStyle = $("<span class='teal-text text-lighten-2'>");
 
 						rentDiv.append(rentStyle);
 						rentStyle.text("Monthly Rent: " + addressArr[i].rent);
 						// builds out expense display
-						var expenseDiv = $("<div class='col s3'>");
+						var expenseDiv = $("<div class='col s2'>");
 						var expenseStyle = $("<span class='teal-text text-lighten-2'>");
 
 						expenseDiv.append(expenseStyle);
@@ -285,28 +299,65 @@
 						mapIconDiv.append(mapLink).on("click", function () {
 							getLatLong($(this).siblings()[0].textContent)
 
-							// var mapTextH6 = $("<h6>")
-							// $("#mapTitle").append(mapTextH6)
-							// mapTextH6.text($(this).siblings()[0].textContent)
+							var mapTextH6 = $("<h6>")
+							$("#mapTitle").html(mapTextH6)
+							mapTextH6.text($(this).siblings()[0].textContent)
 
 
 						})
-						mapLink.append(mapIcon)
+						mapLink.html(mapIcon)
 						mapIcon.text("map")
+						// builds out delete icon
+
+						var deleteIconDiv = $("<div class='col s1' id='delete'>");
+						var deleteLink = $("<a class='waves-effect waves-light btn-large ' href=''>");
+
+						var deleteIcon = $("<i class='material-icons center' >");
+						deleteIcon.text("close")
+						deleteLink.append(deleteIcon)
+						deleteIconDiv.append(deleteLink)
+
+
+
+
+
+
 
 
 
 						// appends property to body
-						propertyDivStyle.append(address);
+						propertyDivStyle.append(addressSpan);
 						propertyDiv.append(propertyDivStyle);
 						propertyDiv.append(rentDiv);
 						propertyDiv.append(expenseDiv);
 						propertyDiv.append(workIconDiv);
 						propertyDiv.append(moneyIconDiv);
 						propertyDiv.append(mapIconDiv)
+						propertyDiv.append(deleteIconDiv)
 						$(".property-body").append(propertyDiv);
 					}
+					// on click function to delete properties
+					$(document).on("click", "#delete", function () {
+						console.log($(this).siblings().find("#address")[0].textContent)
+						var results = [];
+						// location of the address div
+						var toSearch = $(this).siblings().find("#address")[0].textContent;
+						// for loop that runs through the address array and checks for matching address to remove
+						for (var i = 0; i < addressArr.length; i++) {
+							// if statement that checks if the address matched the address value of any of the array objects
+							if (addressArr[i].address.toUpperCase().indexOf(toSearch) != -1) {
+								// if it is found this removes that object from the array
+								addressArr.splice(i, 1)
+								// once removed from the array this pushes the remaining array back into local storage
+								localStorage.setItem("addresses", JSON.stringify(addressArr))
+
+							}
+						}
+
+
+					})
 				}
+
 			}
 			function getLatLong(a) {
 				var queryURL =
@@ -342,19 +393,27 @@
 
 		})
 
-		</script>
-    <script src="../js/property.js"></script>
+	</script>
+	<!-- <script src="../js/property.js"></script> -->
+
+	<!--Footer -->
+	<footer class="page-footer teal lighten-2">
+		<!-- Need to center it and add some padding through html or css -->
+		© 2020 Alexandria. All rights reserved.
+	</footer>
 
 
-		<!--Footer -->
-		<footer class="page-footer teal lighten-2">
-			<!-- Need to center it and add some padding through html or css -->
-			© 2020 Alexandria. All rights reserved.
-		</footer>
-	
-		<!-- Compiled and minified JavaScript -->
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-		<script src="../js/property.js"></script>
-	</body>
+	<!--Footer -->
+	<footer class="page-footer teal lighten-2">
+		<!-- Need to center it and add some padding through html or css -->
+		© 2020 Alexandria. All rights reserved.
+	</footer>
+
+	<!-- Compiled and minified JavaScript -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+	<!-- <script src="../js/property.js"></script> -->
+</body>
+
 </html>
 
+</html>
