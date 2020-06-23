@@ -207,11 +207,11 @@
 			$("#addProperty").on("click", function (event) {
 				event.preventDefault();
 
-				var addressVal = $("#streetAddress").val().trim();
-				var cityVal = $("#city").val().trim();
-				var stateVal = $("#state").val().trim();
-				var expensesVal = $("#expenses").val().trim();
-				var rentVal = $("#rent").val().trim();
+				var addressVal = $("#streetAddress").val().trim().toUpperCase();
+				var cityVal = $("#city").val().trim().toUpperCase();
+				var stateVal = $("#state").val().trim().toUpperCase();
+				var expensesVal = $("#expenses").val().trim().toUpperCase();
+				var rentVal = $("#rent").val().trim().toUpperCase();
 				// pushes address and info as an object into the arr array
 
 				if (localStorage.getItem("addresses") != undefined) {
@@ -251,13 +251,17 @@
 						// builds out property div
 						var propertyDiv = $("<div class='row'> ");
 						var propertyDivStyle = $("<div class='col s12'>");
-						var address = $("<h6 class='propAdd'>").text(
-							addressArr[i].address.toUpperCase() +
+						var addressSpan = $("<span class='propAdd'>")
+						var address = $("<h6 class='propAdd' id='address'>").text(
+							addressArr[i].address.toUpperCase())
+						var cityState = $("<h6 class='propAdd' id='city/state'>").text(
 							" " +
 							addressArr[i].city.toUpperCase() +
 							" " +
 							addressArr[i].state.toUpperCase()
 						);
+						addressSpan.append(address)
+						addressSpan.append(cityState)
 						// builds out rent display
 						var rentDiv = $("<div class='col s2'>");
 						var rentStyle = $("<span class='teal-text text-lighten-2'>");
@@ -305,10 +309,10 @@
 						mapIcon.text("map")
 						// builds out delete icon
 
-						var deleteIconDiv = $("<div class='col s1'>");
+						var deleteIconDiv = $("<div class='col s1' id='delete'>");
 						var deleteLink = $("<a class='waves-effect waves-light btn-large ' href=''>");
 
-						var deleteIcon = $("<i class='material-icons center'>");
+						var deleteIcon = $("<i class='material-icons center' >");
 						deleteIcon.text("close")
 						deleteLink.append(deleteIcon)
 						deleteIconDiv.append(deleteLink)
@@ -319,8 +323,10 @@
 
 
 
+
+
 						// appends property to body
-						propertyDivStyle.append(address);
+						propertyDivStyle.append(addressSpan);
 						propertyDiv.append(propertyDivStyle);
 						propertyDiv.append(rentDiv);
 						propertyDiv.append(expenseDiv);
@@ -330,7 +336,28 @@
 						propertyDiv.append(deleteIconDiv)
 						$(".property-body").append(propertyDiv);
 					}
+					// on click function to delete properties
+					$(document).on("click", "#delete", function () {
+						console.log($(this).siblings().find("#address")[0].textContent)
+						var results = [];
+						// location of the address div
+						var toSearch = $(this).siblings().find("#address")[0].textContent;
+						// for loop that runs through the address array and checks for matching address to remove
+						for (var i = 0; i < addressArr.length; i++) {
+							// if statement that checks if the address matched the address value of any of the array objects
+							if (addressArr[i].address.toUpperCase().indexOf(toSearch) != -1) {
+								// if it is found this removes that object from the array
+								addressArr.splice(i, 1)
+								// once removed from the array this pushes the remaining array back into local storage
+								localStorage.setItem("addresses", JSON.stringify(addressArr))
+
+							}
+						}
+
+
+					})
 				}
+
 			}
 			function getLatLong(a) {
 				var queryURL =
@@ -367,7 +394,7 @@
 		})
 
 	</script>
-	<script src="../js/property.js"></script>
+	<!-- <script src="../js/property.js"></script> -->
 
 	<!--Footer -->
 	<footer class="page-footer teal lighten-2">
@@ -375,23 +402,18 @@
 		© 2020 Alexandria. All rights reserved.
 	</footer>
 
-<<<<<<< HEAD
+
+	<!--Footer -->
+	<footer class="page-footer teal lighten-2">
+		<!-- Need to center it and add some padding through html or css -->
+		© 2020 Alexandria. All rights reserved.
+	</footer>
+
 	<!-- Compiled and minified JavaScript -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+	<!-- <script src="../js/property.js"></script> -->
 </body>
-=======
 
-		<!--Footer -->
-		<footer class="page-footer teal lighten-2">
-			<!-- Need to center it and add some padding through html or css -->
-			© 2020 Alexandria. All rights reserved.
-		</footer>
-	
-		<!-- Compiled and minified JavaScript -->
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-		<script src="../js/property.js"></script>
-	</body>
 </html>
->>>>>>> c5a98c0c6dccad5eb55545760cb561637c3125bd
 
 </html>
