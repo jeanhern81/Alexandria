@@ -42,39 +42,38 @@
 
 <body>
 	<!-- Beginning of NavBar -->
-<!-- Beginning of New NavBar Code -->
+	<!-- Beginning of New NavBar Code -->
 
-<div class="container-fluid">
-	<nav class="navbar-fixed nav-wrapper teal lighten-2">
-		<a href="#" class="main center brand-logo"><img id="alexandria-logo" src="../images/Alexandria-logo-BW.png" width="250px" length="125px" ></a>
-		<a href="#" data-target="mobile-links" class="sidenav-trigger"
-		  ><i class="material-icons">menu</i></a
-		>
-		<ul class="right hide-on-med-and-down">
-		  <li class="active"><a class="btn" href="#">Properties</a></li>
-		  <li><a class="btn" href="#">Maps</a></li>
-		  <li><a class="btn" href="#">Dashboard</a></li>
-		  <li><a class="btn modal-trigger" href="#modal2">Contact Us</a></li>
+	<div class="container-fluid">
+		<nav class="navbar-fixed nav-wrapper teal lighten-2">
+			<a href="#" class="main center brand-logo"><img id="alexandria-logo" src="../images/Alexandria-logo-BW.png"
+					width="250px" length="125px"></a>
+			<a href="#" data-target="mobile-links" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+			<ul class="right hide-on-med-and-down">
+				<li class="active"><a class="btn" href="#">Properties</a></li>
+				<li><a class="btn" href="#">Maps</a></li>
+				<li><a class="btn" href="#">Dashboard</a></li>
+				<li><a class="btn modal-trigger" href="#modal2">Contact Us</a></li>
+			</ul>
+		</nav>
+		<ul class="sidenav" id="mobile-links">
+			<li class="active"><a class="btn" href="#">Properties</a></li>
+			<li><a class="btn" href="#">Maps</a></li>
+			<li><a class="btn" href="#">Dashboard</a></li>
+			<li><a class="btn modal-trigger" href="#modal2">Contact Us</a></li>
 		</ul>
-	  </nav>
-	  <ul class="sidenav" id="mobile-links">
-		<li class="active"><a class="btn" href="#">Properties</a></li>
-		  <li><a class="btn" href="#">Maps</a></li>
-		  <li><a class="btn" href="#">Dashboard</a></li>
-		  <li><a class="btn modal-trigger" href="#modal2">Contact Us</a></li>
-	  </ul>
-</div>
+	</div>
 
-<!-- End of New NavBar Code -------->
+	<!-- End of New NavBar Code -------->
 
 
 
 	<!-- <div class="navbar-fixed fontSize">
 		<nav class="teal lighten-2">
 			<div class="nav-wrapper"> -->
-				<!-- <a href="../../index.html" class="brand-logo"><img id="alexandria-logo" src="../images/Alexandria-logo-BW.png" width="200px" length="100px" ></a> -->
-				<!-- <a href="../../index.html" data-target="mobile-demo" class="sidenav-trigger" ><i class="material-icons">menu</i></a > -->
-				<!-- <ul class="left hide-on-med-and-down">
+	<!-- <a href="../../index.html" class="brand-logo"><img id="alexandria-logo" src="../images/Alexandria-logo-BW.png" width="200px" length="100px" ></a> -->
+	<!-- <a href="../../index.html" data-target="mobile-demo" class="sidenav-trigger" ><i class="material-icons">menu</i></a > -->
+	<!-- <ul class="left hide-on-med-and-down">
 					<li>
 						<a href="../../index.html"><img id="alexandria-logo" src="../images/Alexandria-logo-BW.png"
 								width="250px" length="125px" /></a>
@@ -85,11 +84,11 @@
 					</li>
 					<li><a href="#">Maps</a></li>
 					<li><a href="#">Dashboard</a></li> -->
-					<!-- Save for Later. DO NOT DELETE <li><a href="mobile.html">Mobile</a></li>-->
-				<!-- </ul>
+	<!-- Save for Later. DO NOT DELETE <li><a href="mobile.html">Mobile</a></li>-->
+	<!-- </ul>
 			</div> -->
-			<!-- Dropdown Structure -->
-			<!-- <ul id="dropdown1" class="dropdown-content">
+	<!-- Dropdown Structure -->
+	<!-- <ul id="dropdown1" class="dropdown-content">
 				<li><a href="#!">one</a></li>
 				<li><a href="#!">two</a></li>
 				<li class="divider"></li>
@@ -100,8 +99,8 @@
 			<li class="active"><a href="#">Properties</a></li>
 			<li><a href="#">Maps</a></li>
 			<li><a href="#">Dashboard</a></li> -->
-			<!-- Save for Later. DO NOT DELETE <li><a href="mobile.html">Mobile</a></li>-->
-		<!-- </ul>
+	<!-- Save for Later. DO NOT DELETE <li><a href="mobile.html">Mobile</a></li>-->
+	<!-- </ul>
 		<div id="nav-image">
 			<img src="../images/backgrounds/houses.jpg" width="100%" />
 
@@ -138,7 +137,7 @@
 			<h4>Contact Us</h4>
 			<p>We'd love to hear from you, please drop us a message if you have any questions.</p>
 			<div class="container">
-					<form id="Property">
+				<form id="Property">
 					<label for="first-name last-name">Full Name</label>
 					<input type="text" id="fullname" />
 					<br />
@@ -150,7 +149,7 @@
 			</div>
 		</div>
 		<div class="modal-footer">
-		<a href="#!" class="modal-close waves-effect waves-green btn-flat">Send</a>
+			<a href="#!" class="modal-close waves-effect waves-green btn-flat">Send</a>
 		</div>
 	</div>
 
@@ -318,19 +317,19 @@
 						addressSpan.append(address)
 						addressSpan.append(cityState)
 						// builds out rent display
-						var rentDiv = $("<div class='col s1'>");
+						var rentDiv = $("<div class='col s2'>");
 						var rentStyle = $("<span class='teal-text text-lighten-2'>");
 
 						rentDiv.append(rentStyle);
 						rentStyle.text("Monthly Rent: " + addressArr[i].rent);
 						// builds out expense display
-						var expenseDiv = $("<div class='col s1'>");
+						var expenseDiv = $("<div class='col s2'>");
 						var expenseStyle = $("<span class='teal-text text-lighten-2'>");
 
 						expenseDiv.append(expenseStyle);
 						expenseStyle.text("Monthly Expenses: " + addressArr[i].expenses);
 						// builds out wrench icon
-						var workIconDiv = $("<div class='col s1'>");
+						var workIconDiv = $("<div class='col s2'>");
 						var workLink = $("<a class='waves-effect waves-light btn-large'>");
 						var workIcon = $("<i class='material-icons center'>");
 
@@ -338,7 +337,7 @@
 						workLink.append(workIcon);
 						workIcon.text("build");
 						// builds out money icon
-						var moneyIconDiv = $("<div class='col s1'>");
+						var moneyIconDiv = $("<div class='col s2'>");
 						var moneyLink = $("<a class='waves-effect waves-light btn-large'>");
 						var moneyIcon = $("<i class='material-icons center'>");
 
@@ -347,7 +346,7 @@
 						moneyIcon.text("monetization_on");
 
 						// builds out map icon
-						var mapIconDiv = $("<div class='col s1'>");
+						var mapIconDiv = $("<div class='col s2'>");
 						var mapLink = $("<a class='waves-effect waves-light btn-large modal-trigger' href='#propertyMap'>");
 						var mapIcon = $("<i class='material-icons center'>");
 
@@ -364,7 +363,7 @@
 						mapIcon.text("map")
 						// builds out delete icon
 
-						var deleteIconDiv = $("<div class='col s1' id='delete'>");
+						var deleteIconDiv = $("<div class='col s2' id='delete'>");
 						var deleteLink = $("<a class='waves-effect waves-light btn-large ' href=''>");
 
 						var deleteIcon = $("<i class='material-icons center' >");
@@ -452,13 +451,14 @@
 	</script>
 	<!-- <script src="../js/property.js"></script> -->
 
-	
+
 
 
 	<!--Footer -->
 
 	<!-- JQuery -->
-	<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js"
+		integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 	<!-- <script src="https://code.jquery.com/jquery-3.5.1.js"
 		integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script> -->
 
@@ -466,10 +466,10 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 	<!-- <script src="../js/property.js"></script> -->
 	<script>
-		$(document).ready(function(){
-            $('.sidenav').sidenav();
-            $('.modal').modal();
-        });
+		$(document).ready(function () {
+			$('.sidenav').sidenav();
+			$('.modal').modal();
+		});
 	</script>
 </body>
 
