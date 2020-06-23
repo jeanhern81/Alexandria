@@ -40,13 +40,25 @@ Alexandria is user-friendly website that easily gives rental property a way to m
 
 By loging on to your account, you'll get an overview of your properties, rental fees, and expenses. It also features map and repair icons where you can keep notes of any upcoming repairs. Adding an address is easy, simply click on the plus icon and enter your address.
 
+
 ---
 <a name="API">API's Used:</a>
 
 #Google Geocode, Maps API, Mashvisor
 
+Alexandria is user-friendly website that easily gives rental property a way to manage their properties without the hasstle of having to deal with a property management agency. 
+
+By loging on to your account, you'll get an overview of your properties, rental fees, and expenses. It also features map and repair icons where you can keep notes of any upcoming repairs. Adding an address is easy, simply click on the plus icon and enter your address.
+
+---
+
+API's Used:
+
+Google Geocode, Maps API, Mashvisor
+
 ---
 <a name="References">References:</a>
+
 
 
 ---
