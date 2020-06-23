@@ -2142,12 +2142,12 @@
 
 /*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
 /* Document
-     ========================================================================== */
+   ========================================================================== */
 /**
-   * 1. Correct the line height in all browsers.
-   * 2. Prevent adjustments of font size after orientation changes in
-   *    IE on Windows Phone and in iOS.
-   */
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in
+ *    IE on Windows Phone and in iOS.
+ */
 html {
   line-height: 1.15;
   /* 1 */
@@ -2158,17 +2158,17 @@ html {
 }
 
 /* Sections
-     ========================================================================== */
+   ========================================================================== */
 /**
-   * Remove the margin in all browsers (opinionated).
-   */
+ * Remove the margin in all browsers (opinionated).
+ */
 body {
   margin: 0;
 }
 
 /**
-   * Add the correct display in IE 9-.
-   */
+ * Add the correct display in IE 9-.
+ */
 article,
 aside,
 footer,
@@ -2179,20 +2179,20 @@ section {
 }
 
 /**
-   * Correct the font size and margin on `h1` elements within `section` and
-   * `article` contexts in Chrome, Firefox, and Safari.
-   */
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
 h1 {
   font-size: 2em;
   margin: 0.67em 0;
 }
 
 /* Grouping content
-     ========================================================================== */
+   ========================================================================== */
 /**
-   * Add the correct display in IE 9-.
-   * 1. Add the correct display in IE.
-   */
+ * Add the correct display in IE 9-.
+ * 1. Add the correct display in IE.
+ */
 figcaption,
 figure,
 main {
@@ -2201,16 +2201,16 @@ main {
 }
 
 /**
-   * Add the correct margin in IE 8.
-   */
+ * Add the correct margin in IE 8.
+ */
 figure {
   margin: 1em 40px;
 }
 
 /**
-   * 1. Add the correct box sizing in Firefox.
-   * 2. Show the overflow in Edge and IE.
-   */
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
 hr {
   -webkit-box-sizing: content-box;
   box-sizing: content-box;
@@ -2222,9 +2222,9 @@ hr {
 }
 
 /**
-   * 1. Correct the inheritance and scaling of font size in all browsers.
-   * 2. Correct the odd `em` font sizing in all browsers.
-   */
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
 pre {
   font-family: "Capsule Sans Display", system-ui, -apple-system,
     BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
@@ -2234,11 +2234,11 @@ pre {
 }
 
 /* Text-level semantics
-     ========================================================================== */
+   ========================================================================== */
 /**
-   * 1. Remove the gray background on active links in IE 10.
-   * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
-   */
+ * 1. Remove the gray background on active links in IE 10.
+ * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
+ */
 a {
   background-color: transparent;
   /* 1 */
@@ -2247,9 +2247,9 @@ a {
 }
 
 /**
-   * 1. Remove the bottom border in Chrome 57- and Firefox 39-.
-   * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
-   */
+ * 1. Remove the bottom border in Chrome 57- and Firefox 39-.
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
 abbr[title] {
   border-bottom: none;
   /* 1 */
@@ -2262,25 +2262,25 @@ abbr[title] {
 }
 
 /**
-   * Prevent the duplicate application of `bolder` by the next rule in Safari 6.
-   */
+ * Prevent the duplicate application of `bolder` by the next rule in Safari 6.
+ */
 b,
 strong {
   font-weight: inherit;
 }
 
 /**
-   * Add the correct font weight in Chrome, Edge, and Safari.
-   */
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
 b,
 strong {
   font-weight: bolder;
 }
 
 /**
-   * 1. Correct the inheritance and scaling of font size in all browsers.
-   * 2. Correct the odd `em` font sizing in all browsers.
-   */
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
 code,
 kbd,
 samp {
@@ -2292,31 +2292,31 @@ samp {
 }
 
 /**
-   * Add the correct font style in Android 4.3-.
-   */
+ * Add the correct font style in Android 4.3-.
+ */
 dfn {
   font-style: italic;
 }
 
 /**
-   * Add the correct background and color in IE 9-.
-   */
+ * Add the correct background and color in IE 9-.
+ */
 mark {
   background-color: #ff0;
   color: #000;
 }
 
 /**
-   * Add the correct font size in all browsers.
-   */
+ * Add the correct font size in all browsers.
+ */
 small {
   font-size: 80%;
 }
 
 /**
-   * Prevent `sub` and `sup` elements from affecting the line height in
-   * all browsers.
-   */
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
 sub,
 sup {
   font-size: 75%;
@@ -2334,43 +2334,43 @@ sup {
 }
 
 /* Embedded content
-     ========================================================================== */
+   ========================================================================== */
 /**
-   * Add the correct display in IE 9-.
-   */
+ * Add the correct display in IE 9-.
+ */
 audio,
 video {
   display: inline-block;
 }
 
 /**
-   * Add the correct display in iOS 4-7.
-   */
+ * Add the correct display in iOS 4-7.
+ */
 audio:not([controls]) {
   display: none;
   height: 0;
 }
 
 /**
-   * Remove the border on images inside links in IE 10-.
-   */
+ * Remove the border on images inside links in IE 10-.
+ */
 img {
   border-style: none;
 }
 
 /**
-   * Hide the overflow in IE.
-   */
+ * Hide the overflow in IE.
+ */
 svg:not(:root) {
   overflow: hidden;
 }
 
 /* Forms
-     ========================================================================== */
+   ========================================================================== */
 /**
-   * 1. Change the font styles in all browsers (opinionated).
-   * 2. Remove the margin in Firefox and Safari.
-   */
+ * 1. Change the font styles in all browsers (opinionated).
+ * 2. Remove the margin in Firefox and Safari.
+ */
 button,
 input,
 optgroup,
@@ -2388,9 +2388,9 @@ textarea {
 }
 
 /**
-   * Show the overflow in IE.
-   * 1. Show the overflow in Edge.
-   */
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
 button,
 input {
   /* 1 */
@@ -2398,9 +2398,9 @@ input {
 }
 
 /**
-   * Remove the inheritance of text transform in Edge, Firefox, and IE.
-   * 1. Remove the inheritance of text transform in Firefox.
-   */
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
 button,
 select {
   /* 1 */
@@ -2408,10 +2408,10 @@ select {
 }
 
 /**
-   * 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`
-   *    controls in Android 4.
-   * 2. Correct the inability to style clickable types in iOS and Safari.
-   */
+ * 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`
+ *    controls in Android 4.
+ * 2. Correct the inability to style clickable types in iOS and Safari.
+ */
 button,
 html [type="button"],
 [type="reset"],
@@ -2421,8 +2421,8 @@ html [type="button"],
 }
 
 /**
-   * Remove the inner border and padding in Firefox.
-   */
+ * Remove the inner border and padding in Firefox.
+ */
 button::-moz-focus-inner,
 [type="button"]::-moz-focus-inner,
 [type="reset"]::-moz-focus-inner,
@@ -2432,8 +2432,8 @@ button::-moz-focus-inner,
 }
 
 /**
-   * Restore the focus styles unset by the previous rule.
-   */
+ * Restore the focus styles unset by the previous rule.
+ */
 button:-moz-focusring,
 [type="button"]:-moz-focusring,
 [type="reset"]:-moz-focusring,
@@ -2442,18 +2442,18 @@ button:-moz-focusring,
 }
 
 /**
-   * Correct the padding in Firefox.
-   */
+ * Correct the padding in Firefox.
+ */
 fieldset {
   padding: 0.35em 0.75em 0.625em;
 }
 
 /**
-   * 1. Correct the text wrapping in Edge and IE.
-   * 2. Correct the color inheritance from `fieldset` elements in IE.
-   * 3. Remove the padding so developers are not caught out when they zero out
-   *    `fieldset` elements in all browsers.
-   */
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
 legend {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -2471,9 +2471,9 @@ legend {
 }
 
 /**
-   * 1. Add the correct display in IE 9-.
-   * 2. Add the correct vertical alignment in Chrome, Firefox, and Opera.
-   */
+ * 1. Add the correct display in IE 9-.
+ * 2. Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
 progress {
   display: inline-block;
   /* 1 */
@@ -2482,16 +2482,16 @@ progress {
 }
 
 /**
-   * Remove the default vertical scrollbar in IE.
-   */
+ * Remove the default vertical scrollbar in IE.
+ */
 textarea {
   overflow: auto;
 }
 
 /**
-   * 1. Add the correct box sizing in IE 10-.
-   * 2. Remove the padding in IE 10-.
-   */
+ * 1. Add the correct box sizing in IE 10-.
+ * 2. Remove the padding in IE 10-.
+ */
 [type="checkbox"],
 [type="radio"] {
   -webkit-box-sizing: border-box;
@@ -2502,17 +2502,17 @@ textarea {
 }
 
 /**
-   * Correct the cursor style of increment and decrement buttons in Chrome.
-   */
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
 [type="number"]::-webkit-inner-spin-button,
 [type="number"]::-webkit-outer-spin-button {
   height: auto;
 }
 
 /**
-   * 1. Correct the odd appearance in Chrome and Safari.
-   * 2. Correct the outline style in Safari.
-   */
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
 [type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
@@ -2521,17 +2521,17 @@ textarea {
 }
 
 /**
-   * Remove the inner padding and cancel buttons in Chrome and Safari on macOS.
-   */
+ * Remove the inner padding and cancel buttons in Chrome and Safari on macOS.
+ */
 [type="search"]::-webkit-search-cancel-button,
 [type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
 /**
-   * 1. Correct the inability to style clickable types in iOS and Safari.
-   * 2. Change font properties to `inherit` in Safari.
-   */
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
 ::-webkit-file-upload-button {
   -webkit-appearance: button;
   /* 1 */
@@ -2540,44 +2540,44 @@ textarea {
 }
 
 /* Interactive
-     ========================================================================== */
+   ========================================================================== */
 /*
-   * Add the correct display in IE 9-.
-   * 1. Add the correct display in Edge, IE, and Firefox.
-   */
+ * Add the correct display in IE 9-.
+ * 1. Add the correct display in Edge, IE, and Firefox.
+ */
 details,
 menu {
   display: block;
 }
 
 /*
-   * Add the correct display in all browsers.
-   */
+ * Add the correct display in all browsers.
+ */
 summary {
   display: list-item;
 }
 
 /* Scripting
-     ========================================================================== */
+   ========================================================================== */
 /**
-   * Add the correct display in IE 9-.
-   */
+ * Add the correct display in IE 9-.
+ */
 canvas {
   display: inline-block;
 }
 
 /**
-   * Add the correct display in IE.
-   */
+ * Add the correct display in IE.
+ */
 template {
   display: none;
 }
 
 /* Hidden
-     ========================================================================== */
+   ========================================================================== */
 /**
-   * Add the correct display in IE 10-.
-   */
+ * Add the correct display in IE 10-.
+ */
 [hidden] {
   display: none;
 }
@@ -2889,8 +2889,8 @@ video.responsive-video {
 }
 
 /*********************
-    Transition Classes
-  **********************/
+  Transition Classes
+**********************/
 ul.staggered-list li {
   opacity: 0;
 }
@@ -2902,8 +2902,8 @@ ul.staggered-list li {
 }
 
 /*********************
-    Media Query Classes
-  **********************/
+  Media Query Classes
+**********************/
 @media only screen and (max-width: 600px) {
   .hide-on-small-only,
   .hide-on-small-and-down {
@@ -2913,7 +2913,7 @@ ul.staggered-list li {
 
 @media only screen and (max-width: 992px) {
   .hide-on-med-and-down {
-    /* display: none !important; */
+    display: none !important;
   }
 }
 
@@ -2925,7 +2925,7 @@ ul.staggered-list li {
 
 @media only screen and (min-width: 600px) and (max-width: 992px) {
   .hide-on-med-only {
-    /* display: none !important; */
+    display: none !important;
   }
 }
 
@@ -3357,8 +3357,8 @@ th {
 }
 
 /*******************
-    Utility Classes
-  *******************/
+  Utility Classes
+*******************/
 .hide {
   display: none !important;
 }
@@ -3816,9 +3816,9 @@ table span.badge {
     align-content: center;
 
     /* 
-      margin-left: auto;
-      left: auto;
-      right: auto; */
+    margin-left: auto;
+    left: auto;
+    right: auto; */
   }
   .row .col.m8 {
     width: 66.6666666667%;
@@ -5761,13 +5761,13 @@ body.keyboard-focused .dropdown-content li:focus {
 }
 
 /*!
-   * Waves v0.6.0
-   * http://fian.my.id/Waves
-   *
-   * Copyright 2014 Alfiana E. Sibuea and other contributors
-   * Released under the MIT license
-   * https://github.com/fians/Waves/blob/master/LICENSE
-   */
+ * Waves v0.6.0
+ * http://fian.my.id/Waves
+ *
+ * Copyright 2014 Alfiana E. Sibuea and other contributors
+ * Released under the MIT license
+ * https://github.com/fians/Waves/blob/master/LICENSE
+ */
 .waves-effect {
   position: relative;
   cursor: pointer;
@@ -6250,7 +6250,7 @@ label {
 }
 
 /* Text Inputs + Textarea
-     ========================================================================== */
+   ========================================================================== */
 /* Style Placeholders */
 ::-webkit-input-placeholder {
   color: #d1d1d1;
@@ -6906,7 +6906,7 @@ textarea.materialize-textarea {
 }
 
 /* Radio Buttons
-     ========================================================================== */
+   ========================================================================== */
 [type="radio"]:not(:checked),
 [type="radio"]:checked {
   position: absolute;
@@ -7029,7 +7029,7 @@ textarea.materialize-textarea {
 }
 
 /* Checkboxes
-     ========================================================================== */
+   ========================================================================== */
 /* Remove default checkbox */
 [type="checkbox"]:not(:checked),
 [type="checkbox"]:checked {
@@ -7232,7 +7232,7 @@ textarea.materialize-textarea {
 }
 
 /* Switch
-     ========================================================================== */
+   ========================================================================== */
 .switch,
 .switch * {
   -webkit-tap-highlight-color: transparent;
@@ -7338,7 +7338,7 @@ input[type="checkbox"]:not(:disabled).tabbed:focus ~ .lever::before {
 }
 
 /* Select Field
-     ========================================================================== */
+   ========================================================================== */
 select {
   display: none;
 }
@@ -7489,7 +7489,7 @@ body.keyboard-focused .select-dropdown.dropdown-content li:focus {
 }
 
 /* File Input
-     ========================================================================== */
+   ========================================================================== */
 .file-field {
   position: relative;
 }
@@ -7535,7 +7535,7 @@ body.keyboard-focused .select-dropdown.dropdown-content li:focus {
 }
 
 /* Range
-     ========================================================================== */
+   ========================================================================== */
 .range-field {
   position: relative;
 }
@@ -7700,8 +7700,8 @@ input[type="range"]::-ms-thumb {
 }
 
 /***************
-      Nav List
-  ***************/
+    Nav List
+***************/
 .table-of-contents.fixed {
   position: fixed;
 }
@@ -7972,30 +7972,30 @@ input[type="range"]::-ms-thumb {
 }
 
 /*
-      @license
-      Copyright (c) 2014 The Polymer Project Authors. All rights reserved.
-      This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
-      The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
-      The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
-      Code distributed by Google as part of the polymer project is also
-      subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
-   */
+    @license
+    Copyright (c) 2014 The Polymer Project Authors. All rights reserved.
+    This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+    The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+    The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+    Code distributed by Google as part of the polymer project is also
+    subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+ */
 /**************************/
 /* STYLES FOR THE SPINNER */
 /**************************/
 /*
-   * Constants:
-   *      STROKEWIDTH = 3px
-   *      ARCSIZE     = 270 degrees (amount of circle the arc takes up)
-   *      ARCTIME     = 1333ms (time it takes to expand and contract arc)
-   *      ARCSTARTROT = 216 degrees (how much the start location of the arc
-   *                                should rotate each time, 216 gives us a
-   *                                5 pointed star shape (it's 360/5 * 3).
-   *                                For a 7 pointed star, we might do
-   *                                360/7 * 3 = 154.286)
-   *      CONTAINERWIDTH = 28px
-   *      SHRINK_TIME = 400ms
-   */
+ * Constants:
+ *      STROKEWIDTH = 3px
+ *      ARCSIZE     = 270 degrees (amount of circle the arc takes up)
+ *      ARCTIME     = 1333ms (time it takes to expand and contract arc)
+ *      ARCSTARTROT = 216 degrees (how much the start location of the arc
+ *                                should rotate each time, 216 gives us a
+ *                                5 pointed star shape (it's 360/5 * 3).
+ *                                For a 7 pointed star, we might do
+ *                                360/7 * 3 = 154.286)
+ *      CONTAINERWIDTH = 28px
+ *      SHRINK_TIME = 400ms
+ */
 .preloader-wrapper {
   display: inline-block;
   position: relative;
@@ -8061,18 +8061,18 @@ input[type="range"]::-ms-thumb {
 }
 
 /**
-   * IMPORTANT NOTE ABOUT CSS ANIMATION PROPERTIES (keanulee):
-   *
-   * iOS Safari (tested on iOS 8.1) does not handle animation-delay very well - it doesn't
-   * guarantee that the animation will start _exactly_ after that value. So we avoid using
-   * animation-delay and instead set custom keyframes for each color (as redundant as it
-   * seems).
-   *
-   * We write out each animation in full (instead of separating animation-name,
-   * animation-duration, etc.) because under the polyfill, Safari does not recognize those
-   * specific properties properly, treats them as -webkit-animation, and overrides the
-   * other animation rules. See https://github.com/Polymer/platform/issues/53.
-   */
+ * IMPORTANT NOTE ABOUT CSS ANIMATION PROPERTIES (keanulee):
+ *
+ * iOS Safari (tested on iOS 8.1) does not handle animation-delay very well - it doesn't
+ * guarantee that the animation will start _exactly_ after that value. So we avoid using
+ * animation-delay and instead set custom keyframes for each color (as redundant as it
+ * seems).
+ *
+ * We write out each animation in full (instead of separating animation-name,
+ * animation-duration, etc.) because under the polyfill, Safari does not recognize those
+ * specific properties properly, treats them as -webkit-animation, and overrides the
+ * other animation rules. See https://github.com/Polymer/platform/issues/53.
+ */
 .active .spinner-layer.spinner-blue {
   /* durations: 4 * ARCTIME */
   -webkit-animation: fill-unfill-rotate 5332ms cubic-bezier(0.4, 0, 0.2, 1)
@@ -8355,9 +8355,9 @@ input[type="range"]::-ms-thumb {
 }
 
 /**
-   * Patch the gap that appear between the two adjacent div.circle-clipper while the
-   * spinner is rotating (appears on Chrome 38, Safari 7.1, and IE 11).
-   */
+ * Patch the gap that appear between the two adjacent div.circle-clipper while the
+ * spinner is rotating (appears on Chrome 38, Safari 7.1, and IE 11).
+ */
 .gap-patch {
   position: absolute;
   top: 0;
