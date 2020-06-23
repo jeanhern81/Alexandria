@@ -203,7 +203,7 @@
 
 			var arr = [];
 
-			// this event takes the inputs from the add property form fields creates variables from them and passes them into the getLatLong function to return latitude and longitude fro google maps api
+			// this event takes the inputs from the add property form fields, creates variables from them and passes them into the getLatLong function to return latitude and longitude fro google maps api
 			$("#addProperty").on("click", function (event) {
 				event.preventDefault();
 
@@ -359,6 +359,7 @@
 				}
 
 			}
+			// this function takes in an address and hits the google geocode api, the api then returns a response in the form of a json object
 			function getLatLong(a) {
 				var queryURL =
 					"https://maps.googleapis.com/maps/api/geocode/json?address=" +
@@ -368,25 +369,25 @@
 					url: queryURL,
 					method: "GET",
 				}).then(function (response) {
+					// this takes in the response from the geocode api traverses the object to get the latitude and longitude object
 					var address = response.results[0].geometry.location;
-					console.log(address);
+					// the function then calls the init map function and passes in the latitude and longitude object
 					initMap(address);
 
-					// console.log(response.results[0].geometry);
-					// var latLon = response.results[0].geometry.location;
-					// returnLocation(latLon);
-					// callback(latlon);
+
 				});
 			}
+			// this function uses google's map api to build a map and place a  marker. it takes in an object containing the latitude and  longitude coordinates 
+			// builds a map and places a marker at those coordinates
 			function initMap(mark) {
-				// The location of Uluru
+				// The location of property
 				var address = mark;
-				// The map, centered at Uluru
+				// The map, centered at property address chosen
 				var map = new google.maps.Map(document.getElementById("map"), {
 					zoom: 13,
 					center: address,
 				});
-				// The marker, positioned at Uluru
+				// The marker, positioned at the property address chosen
 				var marker = new google.maps.Marker({ position: address, map: map });
 			}
 
