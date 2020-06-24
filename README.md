@@ -36,19 +36,23 @@ Table of Contents:
 ---
 <a name="Description">Description:</a>
 
-Alexandria is user-friendly website that easily gives rental property a way to manage their properties without the hasstle of having to deal with a property management agency. 
+Alexandria is user-friendly website that easily gives rental property owners a way to manage their properties without the hasstle of having to deal with a property management agency. 
 
-By loging on to your account, you'll get an overview of your properties, rental fees, and expenses. It also features map and repair icons where you can keep notes of any upcoming repairs. Adding an address is easy, simply click on the plus icon and enter your address.
+By loging on to your account, you'll get an overview of your properties, rental fees, and expenses. It also features a map icon that when you click, a modal featuring your location. Adding an address is easy, simply click on the plus icon and enter your address. Deleting is just as easy. Click on the minus on the property line and the property will be deleted. 
 
 ---
 <a name="API">API's Used:</a>
 
-Google Geocode, Maps API, Mashvisor
+Google Geocode, Google Maps, Mashvisor
 
 ---
 <a name="References">References:</a>
 
+<a href="https://rapidapi.com/">Rapid API</a>
 
+<a href="https://cloud.google.com/apis/design/documentation">Google Documentation API</a>
+
+<a href="https://medium.com/@vaibhav1180/how-to-use-materialize-css-modal-in-react-53f9c85ba40d">Materialize Modal Troubleshooting</a>
 
 ---
 <a name="Licensing">MIT Licensing:</a>
@@ -64,7 +68,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 ---
 <a name="Techonologies">Technologies Used:</a>
 
-HTML, CSS, Materialize, JavaScript, jQuery, 
+HTML, CSS, Materialize, JavaScript, JSON, jQuery
 
 ---
 <a name="Testing">Testing:</a>
