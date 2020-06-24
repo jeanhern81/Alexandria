@@ -6,6 +6,10 @@ div.relative {
   overflow: hidden;
 }
 
+#apartment {
+  width: 100%;
+}
+
 div.absolute-1 {
   position: absolute;
   top: 35%;
