@@ -1,122 +1,208 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel='icon' type='image/png' href='assets/images/Alexandria-symbol.png'/>
+    <link
+      rel="icon"
+      type="image/png"
+      href="assets/images/Alexandria-symbol.png"
+    />
     <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="assets/css/materialize.css">
-    <link rel="stylesheet" href="assets/css/mainsStyles.css">
-    <link rel="stylesheet" href="assets/css/index.css"/>
+    <link rel="stylesheet" href="assets/css/materialize.css" />
+    <link rel="stylesheet" href="assets/css/mainsStyles.css" />
+    <link rel="stylesheet" href="assets/css/index.css" />
     <script src="assets/js/materialize.js"></script>
-    
+
     <!--Google Fonts-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
     <!--Font Awesome-->
-    <script src="https://kit.fontawesome.com/8b8f26d0e1.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/8b8f26d0e1.js"
+      crossorigin="anonymous"
+    ></script>
     <!--  Font Nunito from google -->
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
 
     <title>Alexandria | Home</title>
-</head>
-<body>
+  </head>
+  <body>
     <!-- Beginning of NavBar -->
+
+    <!-- Possible New Navbar Code -->
     <div class="container-fluid">
-        <nav class="navbar-fixed nav-wrapper teal lighten-2">
-            <a href="#" class="main center brand-logo"><img src="assets/images/Alexandria-logo-BW.png" id="alexandria-logo"  alt="Alexandria Company Logo" width="250"  ></a>
-            <a href="#" data-target="mobile-links" class="sidenav-trigger"
-              ><i class="material-icons">menu</i></a
-            >
-            <ul class="right hide-on-med-and-down">
-              <li><a class="btn" href="login.home.html">Login</a></li>
-              <li><a class="btn" href="#">Sign Up</a></li>
-              <li><a class="btn modal-trigger" href="#modal2">Contact Us</a></li>
-            </ul>
-          </nav>
-          <ul class="sidenav" id="mobile-links">
-            <li><a href="login.home.html">Login</a></li>
-            <li><a href="#">Sign Up</a></li>
-            <li><a class="modal-trigger" href="#modal2">Contact Us</a></li>
-          </ul>
+      <nav class="navbar-fixed nav-wrapper teal lighten-2">
+        <a href="#" class="main center brand-logo"
+          ><img
+            src="assets/images/Alexandria-logo-BW.png"
+            id="alexandria-logo"
+            alt="Alexandria Company Logo"
+            width="250"
+        /></a>
+        <a href="#" data-target="mobile-links" class="sidenav-trigger"
+          ><i class="material-icons">menu</i></a
+        >
+        <ul class="right hide-on-med-and-down">
+          <li><a class="btn" href="login.home.html">Login</a></li>
+          <li><a class="btn" href="#">Sign Up</a></li>
+          <li><a class="btn modal-trigger" href="#modal2">Contact Us</a></li>
+        </ul>
+      </nav>
+      <ul class="sidenav" id="mobile-links">
+        <li><a href="login.home.html">Login</a></li>
+        <li><a href="#">Sign Up</a></li>
+        <li><a class="modal-trigger" href="#modal2">Contact Us</a></li>
+      </ul>
     </div>
+
+    <!-- Beginning of Current NavBar Code ========================================================================-->
+
+    <!-- <div class="container-fluid">
+        <div class="navbar-fixed fontSize">
+        <nav class="teal lighten-2">
+        <div class="nav-wrapper "> -->
+    <!-- <a href="../../index.html" class="brand-logo"><img id="alexandria-logo" src="../images/Alexandria-logo-BW.png" width="200px" length="100px" ></a> -->
+    <!-- <a href="../../index.html" data-target="mobile-demo" class="sidenav-trigger" ><i class="material-icons">menu</i></a > -->
+    <!-- <ul class="left hide-on-med-and-down">
+            <li><a href="#"><img id="alexandria-logo" src="assets/images/Alexandria-logo-BW.png" width="250px" length="125px" ></a></li>
+            <li><a href="assets/common/properties.html">Properties</a></li>
+            <li><a href="#">Maps</a></li>
+            <li><a href="#">Dashboard</a></li>
+            <li> -->
+    <!-- Modal Trigger -->
+    <!-- <a class=" modal-trigger" href="#modal2">Contact Us</a>
+            </li>
+            </ul>
+
+            <div id="bar-buttons col s12 m6">
+            <span ><a class ="sign-up-btn" href="#"><h6>Sign Up</h6></a></span>
+            <span ><a class ="log-in-btn" href="login.home.html">Log In</a></span>
+            </div> -->
+    <!-- Save for Later. DO NOT DELETE <li><a href="mobile.html">Mobile</a></li>-->
+
+    <!-- </div>
+        </nav>
+        <ul class="sidenav" id="mobile-demo">
+        <li><a href="#">Properties</a></li>
+        <li><a href="#">Maps</a></li>
+        <li><a href="#">Dashboard</a></li>
+        <li><a href="#">Contact Us</a>
+ 
+        </li> -->
+    <!-- Save for Later. DO NOT DELETE <li><a href="mobile.html">Mobile</a></li>-->
+
+    <!-- </ul>
+        </div>
+    </div>  -->
+
+    <!-- End of current NavBer Code==========================================================================================================-->
 
     <!-- End of NavBar -->
 
-    <!-- Beginning of Jumbotron -->
-    <div class="relative"><img src="assets/images/backgrounds/apartments.jpg" width="100%">
-        <div class="absolute-1"><h2 class="main center">The Smartest Way to Manage Rental Properties</h2><h5 class="main center">Take your investment to the next level. Use digital information to enhance your real estate decision making and start visualizing your profits.</h5></div>
-        <div class="absolute-2"><img id ="iphone-x" src="assets/images/backgrounds/iPhone2X.png" ></div>
+    <!-- Jumbotron -->
+    <div class="relative">
+      <img
+        src="assets/images/backgrounds/apartments.jpg"
+        id="apartment"
+        alt="A view of an apartment complex and iphone over it showing a the overview of a rental propety"
+      />
 
+      <div class="absolute-1">
+        <h2 class="main center">
+          The Smartest Way to Manage Rental Properties
+        </h2>
+        <h5 class="main center">
+          Take your investment to the next level. Use digital information to
+          enhance your real estate decision making and start visualizing your
+          profits.
+        </h5>
+      </div>
 
-        <!-- Jumbotron -->
-        <div class="relative"><img src="assets/images/backgrounds/apartments.jpg" id="apartment" alt="A view of an apartment complex and iphone over it showing a the overview of a rental propety" >
-
-            <div class="absolute-1"><h2 class="main center">The Smartest Way to Manage Rental Properties</h2><h5 class="main center">Take your investment to the next level. Use digital information to enhance your real estate decision making and start visualizing your profits.</h5></div>
-
-            <div class="absolute-2"><img id ="iphone-x" src="assets/images/backgrounds/iPhone2X.png" alt="iphone x showing an image of property information with pie chart" ></div>
-        </div> 
-
-<!-- Modal Structure -->
-<div id="modal2" class="modal modal-fixed-footer">
-    <div class="modal-content">
-        <h4>Contact Us</h4>
-        <p>We'd love to hear from you, please drop us a message if you have any questions.</p>
-        <div class="container">
-                <form id="contactus">
-                <label for="fullname">Full Name</label>
-                <input type="text" id="fullname" />
-                <br />
-                <label for="customeremail"> Email </label>
-                <input type="text" id="customeremail" />
-                <br />
-                <label for="message">Message</label>
-                <input type="text" id="message" /></form>
-        </div>
-
+      <div class="absolute-2">
+        <img
+          id="iphone-x"
+          src="assets/images/backgrounds/iPhone2X.png"
+          alt="iphone x showing an image of property information with pie chart"
+        />
+      </div>
     </div>
-    <!-- End of Jumbotron -->
 
-    <!-- Beginning of "Contact Us" Modal Structure -->
+    <!-- Modal Structure -->
     <div id="modal2" class="modal modal-fixed-footer">
-        <div class="modal-content">
-            <h4>Contact Us</h4>
-            <p>We'd love to hear from you, please drop us a message if you have any questions.</p>
-            <div class="container">
-                <form id="Property">
-                    <label for="first-name last-name">Full Name</label>
-                    <input type="text" id="fullname" />
-                    <br />
-                    <label for="Email"> Email </label>
-                    <input type="text" id="customeremail" />
-                    <br />
-                    <label for="message">Message</label>
-                    <input type="text" id="email" />
+      <div class="modal-content">
+        <h4>Contact Us</h4>
+        <p>
+          We'd love to hear from you, please drop us a message if you have any
+          questions.
+        </p>
+        <div class="container">
+          <form id="contactus">
+            <label for="fullname">Full Name</label>
+            <input type="text" id="fullname" />
+            <br />
+            <label for="customeremail"> Email </label>
+            <input type="text" id="customeremail" />
+            <br />
+            <label for="message">Message</label>
+            <input type="text" id="message" />
+          </form>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat"
+          >Send</a
+        >
+      </div>
+    </div>
+
+    <!--<section>
+    <div class="row">
+        <div class="col s12 m7">
+            <div class="card">
+            <div class="card-image">
+                <img src="images/sample-1.jpg">
+                <span class="card-title">Card Title</span>
+            </div>
+            <div class="card-content">
+                <p>I am a very simple card. I am good at containing small bits of information.
+                I am convenient because I require little markup to use effectively.</p>
+            </div>
+            <div class="card-action">
+                <a href="#">This is a link</a>
+            </div>
             </div>
         </div>
-        <div class="modal-footer">
-            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Send</a>
         </div>
-    </div>
-    <!-- End of "Contact Us" Modal Structure -->
 
-    <!-- Beginning of Footer -->   
+
+    </section>      
+-->
+
+    <!-- Beginning of Footer -->
     <footer class="page-footer teal lighten-2">
-        © 2020 Alexandria. All rights reserved.
+      <!-- Need to center it and add some padding through html or css -->
+      © 2020 Alexandria. All rights reserved.
     </footer>
     <!-- End of Footer -->
-    
-    <!-- Scripts -->
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-    <!-- Minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <!-- Sidenav and Modal functions -->
-    <script>
-        $(document).ready(function(){
-            $('.sidenav').sidenav();
-            $('.modal').modal();
-        });
-    </script>
 
+    <script
+      src="https://code.jquery.com/jquery-2.2.4.min.js"
+      integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+      crossorigin="anonymous"
+    ></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $(".sidenav").sidenav();
+        $(".modal").modal();
+      });
+    </script>
   </body>
 </html>
