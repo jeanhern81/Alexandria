@@ -111,128 +111,127 @@
 	<!-- Beginning of Heading -->
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col pull-s3 s5 m5 l5">
+			<div class="col pull-s3 s5 m12 l12">
 				<div class="property-body">
 					<h5 id="property-header">PROPERTIES</h5>
 					<!-- Beginning of Property listings. This Section will need to be dynamic with JS. -->
 					<!-- Propertery #1 - Just a place holder-->
 				</div>
 			</div>
-		</div>
 
 
 
 
 
-		<!-- This section would populate address once user inputs information and it is stored in localStorage -->
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col">
-					<h6>1790 WEST ARROW ROUTE, UPLAND, CA</h6>
-				</div>
-				<div class="col s3"> <span class="teal-text text-lighten-2">Rent</span>
-					<h6></h6>
-				</div>
-
-				<div class="col s3"> <span class="teal-text text-lighten-2">Expenses</span> </div>
-				<div class="container-fluid">
-					<div class="col pull-s4 s12 m12 l12"></div>
-					<section class="property-buttons">
-						<div class="col s3"> <a class="waves-effect waves-light btn-large"><i
-									class="material-icons center">build</i></a> </div>
-						<div class="col s3"> <a class="waves-effect waves-light btn-large"><i
-									class="medium material-icons">monetization_on</i></a> </div>
-					</section>
-				</div>
-
-			</div>
-		</div>
-	</div>
-
-	<!-- add contact us modal -->
-	<div id="modal2" class="modal modal-fixed-footer">
-		<div class="modal-content">
-			<h4>Contact Us</h4>
-			<p>We'd love to hear from you, please drop us a message if you have any questions.</p>
-			<div class="container">
-				<form id="Property">
-					<label for="first-name last-name">Full Name</label>
-					<input type="text" id="fullname" />
-					<br />
-					<label for="Email"> Email </label>
-					<input type="text" id="customeremail" />
-					<br />
-					<label for="message">Message</label>
-					<input type="text" id="email" />
-			</div>
-		</div>
-		<div class="modal-footer">
-			<a href="#!" class="modal-close waves-effect waves-green btn-flat">Send</a>
-		</div>
-	</div>
-
-	<!-- add property modal -->
-	<div id="addProperties" class="modal modal-fixed-footer">
-		<div class="modal-content">
-			<div class="row">
-
-				<div class="col s12 main center">
-					<h1>Add Properties</h1>
-				</div>
-			</div>
-			</header>
-
-			<br />
-			<div class="container">
-				<form id="Property">
-					<label for="street address">Street Address</label>
-					<input type="text" id="streetAddress" required />
-					<br />
-					<label for="city"> City </label>
-					<input type="text" id="city" required />
-					<br />
-					<label for="state">State abbreviation</label>
-					<input type="text" id="state" maxlength="2" size="2" required />
-					<br />
-					<label for="zipcode">zip code</label>
-					<input type="text" id="zipCode" maxlength="5" size="5" required />
-					<br />
-					<label for="expenses">Monthly Expenses</label>
-					<input type="text" id="expenses" />
-					<br />
-					<label for="rent">Monthly Rent</label>
-					<input type="text" id="rent" />
-					<br />
-					<div class="row">
-						<a href="#!"><button class="col offset-s4 btn waves-effect waves-light modal-close"
-								type="submit" id="addProperty">
-								Add Property
-							</button></a>
+			<!-- This section would populate address once user inputs information and it is stored in localStorage -->
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col">
+						<h6>1790 WEST ARROW ROUTE, UPLAND, CA</h6>
 					</div>
-				</form>
-			</div>
-		</div>
+					<div class="col s3"> <span class="teal-text text-lighten-2">Rent</span>
+						<h6></h6>
+					</div>
 
-	</div>
-	<!-- property map modal -->
-	<div id="propertyMap" class="modal modal-fixed-footer">
-		<div class="modal-content">
-			<div class="row">
-				<div class="col s12 main center" id="mapTitle">
+					<div class="col s3"> <span class="teal-text text-lighten-2">Expenses</span> </div>
+					<div class="container-fluid">
+						<div class="col pull-s4 s12 m12 l12"></div>
+						<section class="property-buttons">
+							<div class="col s3"> <a class="waves-effect waves-light btn-large"><i
+										class="material-icons center">build</i></a> </div>
+							<div class="col s3"> <a class="waves-effect waves-light btn-large"><i
+										class="medium material-icons">monetization_on</i></a> </div>
+						</section>
+					</div>
 
 				</div>
 			</div>
-			</header>
+		</div>
 
-			<br />
-			<div class="container">
-				<div id="map"></div>
-
+		<!-- add contact us modal -->
+		<div id="modal2" class="modal modal-fixed-footer">
+			<div class="modal-content">
+				<h4>Contact Us</h4>
+				<p>We'd love to hear from you, please drop us a message if you have any questions.</p>
+				<div class="container">
+					<form id="Property">
+						<label for="first-name last-name">Full Name</label>
+						<input type="text" id="fullname" />
+						<br />
+						<label for="Email"> Email </label>
+						<input type="text" id="customeremail" />
+						<br />
+						<label for="message">Message</label>
+						<input type="text" id="email" />
+				</div>
+			</div>
+			<div class="modal-footer">
+				<a href="#!" class="modal-close waves-effect waves-green btn-flat">Send</a>
 			</div>
 		</div>
 
+		<!-- add property modal -->
+		<div id="addProperties" class="modal modal-fixed-footer">
+			<div class="modal-content">
+				<div class="row">
 
-	</div>
+					<div class="col s12 main center">
+						<h1>Add Properties</h1>
+					</div>
+				</div>
+				</header>
+
+				<br />
+				<div class="container">
+					<form id="Property">
+						<label for="street address">Street Address</label>
+						<input type="text" id="streetAddress" required />
+						<br />
+						<label for="city"> City </label>
+						<input type="text" id="city" required />
+						<br />
+						<label for="state">State abbreviation</label>
+						<input type="text" id="state" maxlength="2" size="2" required />
+						<br />
+						<label for="zipcode">zip code</label>
+						<input type="text" id="zipCode" maxlength="5" size="5" required />
+						<br />
+						<label for="expenses">Monthly Expenses</label>
+						<input type="text" id="expenses" />
+						<br />
+						<label for="rent">Monthly Rent</label>
+						<input type="text" id="rent" />
+						<br />
+						<div class="row">
+							<a href="#!"><button class="col offset-s4 btn waves-effect waves-light modal-close"
+									type="submit" id="addProperty">
+									Add Property
+								</button></a>
+						</div>
+					</form>
+				</div>
+			</div>
+
+		</div>
+		<!-- property map modal -->
+		<div id="propertyMap" class="modal modal-fixed-footer">
+			<div class="modal-content">
+				<div class="row">
+					<div class="col s12 main center" id="mapTitle">
+
+					</div>
+				</div>
+				</header>
+
+				<br />
+				<div class="container">
+					<div id="map"></div>
+
+				</div>
+			</div>
+
+
+		</div>
 	</div>
 	<!-- add property button -->
 	<div class="row">
