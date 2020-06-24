@@ -187,7 +187,7 @@
 			<div class="container">
 				<form id="Property">
 					<label for="streetAddress">Street Address</label>
-					<input type="text" id="streetaddress" />
+					<input type="text" id="streetAddress" />
 					<br />
 					<label for="city"> City </label>
 					<input type="text" id="city" required />
@@ -398,11 +398,12 @@
 						var mapIcon = $("<i class='material-icons center'>");
 
 						mapIconDiv.append(mapLink).on("click", function () {
-							getLatLong($(this).siblings()[0].textContent)
+							console.log($(this).parent().parent().siblings()[0].textContent)
+							getLatLong($(this).parent().parent().siblings()[0].textContent)
 
 							var mapTextH6 = $("<h6>")
 							$("#mapTitle").html(mapTextH6)
-							mapTextH6.text($(this).siblings()[0].textContent)
+							mapTextH6.text($(this).parent().parent().siblings()[0].textContent)
 
 
 						})
@@ -445,10 +446,10 @@
 					}
 					// on click function to delete properties
 					$(document).on("click", "#delete", function () {
-						console.log($(this).siblings().find("#address")[0].textContent)
+
 						var results = [];
 						// location of the address div
-						var toSearch = $(this).siblings().find("#address")[0].textContent;
+						var toSearch = $(this).parent().parent().siblings().find("#address")[0].textContent;
 						// for loop that runs through the address array and checks for matching address to remove
 						for (var i = 0; i < addressArr.length; i++) {
 							// if statement that checks if the address matched the address value of any of the array objects
