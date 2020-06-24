@@ -112,44 +112,44 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col pull-s3 s5 m5 l5">
-					<div class="property-body">
-		<h5 id="property-header">PROPERTIES</h5>
-		<!-- Beginning of Property listings. This Section will need to be dynamic with JS. -->
-		<!-- Propertery #1 - Just a place holder-->
+				<div class="property-body">
+					<h5 id="property-header">PROPERTIES</h5>
+					<!-- Beginning of Property listings. This Section will need to be dynamic with JS. -->
+					<!-- Propertery #1 - Just a place holder-->
+				</div>
 			</div>
 		</div>
-			</div>
-		
-	
-			
-		
 
-			<!-- This section would populate address once user inputs information and it is stored in localStorage -->
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col">
-				<h6>1790 WEST ARROW ROUTE, UPLAND, CA</h6>
-			</div>
-			<div class="col s3"> <span class="teal-text text-lighten-2">Rent</span>
-				<h6></h6>
-			</div>
-			
-			<div class="col s3"> <span class="teal-text text-lighten-2">Expenses</span> </div>
-			<div class="container-fluid">
-				<div class="col pull-s4 s12 m12 l12"></div>
-							<section class="property-buttons">
-				<div class="col s3"> <a class="waves-effect waves-light btn-large"><i
-							class="material-icons center">build</i></a> </div>
-				<div class="col s3"> <a class="waves-effect waves-light btn-large"><i
-							class="medium material-icons">monetization_on</i></a> </div>
-			</section>
-			</div>
 
-		</div>
+
+
+
+		<!-- This section would populate address once user inputs information and it is stored in localStorage -->
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col">
+					<h6>1790 WEST ARROW ROUTE, UPLAND, CA</h6>
+				</div>
+				<div class="col s3"> <span class="teal-text text-lighten-2">Rent</span>
+					<h6></h6>
+				</div>
+
+				<div class="col s3"> <span class="teal-text text-lighten-2">Expenses</span> </div>
+				<div class="container-fluid">
+					<div class="col pull-s4 s12 m12 l12"></div>
+					<section class="property-buttons">
+						<div class="col s3"> <a class="waves-effect waves-light btn-large"><i
+									class="material-icons center">build</i></a> </div>
+						<div class="col s3"> <a class="waves-effect waves-light btn-large"><i
+									class="medium material-icons">monetization_on</i></a> </div>
+					</section>
+				</div>
+
+			</div>
 		</div>
 	</div>
 
-		<!-- add contact us modal -->
+	<!-- add contact us modal -->
 	<div id="modal2" class="modal modal-fixed-footer">
 		<div class="modal-content">
 			<h4>Contact Us</h4>
@@ -246,7 +246,7 @@
 	</div>
 
 
-			</div>
+	</div>
 
 
 
@@ -330,7 +330,7 @@
 					for (i = 0; i < addressArr.length; i++) {
 						// builds out property div
 						var propertyDiv = $("<div class='row'> ");
-						var propertyDivStyle = $("<div class='col s12'>");
+						var propertyDivStyle = $("<div class='col'>");
 						var addressSpan = $("<span class='propAdd'>")
 						var address = $("<h6 class='propAdd' id='address'>").text(
 							addressArr[i].address.toUpperCase())
@@ -356,7 +356,7 @@
 						expenseDiv.append(expenseStyle);
 						expenseStyle.text("Monthly Expenses: " + addressArr[i].expenses);
 						// builds out wrench icon
-						var workIconDiv = $("<div class='col s2'>");
+						var workIconDiv = $("<div class='col s3'>");
 						var workLink = $("<a class='waves-effect waves-light btn-large'>");
 						var workIcon = $("<i class='material-icons center'>");
 
@@ -364,7 +364,7 @@
 						workLink.append(workIcon);
 						workIcon.text("build");
 						// builds out money icon
-						var moneyIconDiv = $("<div class='col s2'>");
+						var moneyIconDiv = $("<div class='col s3'>");
 						var moneyLink = $("<a class='waves-effect waves-light btn-large'>");
 						var moneyIcon = $("<i class='material-icons center'>");
 
@@ -373,7 +373,7 @@
 						moneyIcon.text("monetization_on");
 
 						// builds out map icon
-						var mapIconDiv = $("<div class='col s2'>");
+						var mapIconDiv = $("<div class='col s3'>");
 						var mapLink = $("<a class='waves-effect waves-light btn-large modal-trigger' href='#propertyMap'>");
 						var mapIcon = $("<i class='material-icons center'>");
 
@@ -390,7 +390,7 @@
 						mapIcon.text("map")
 						// builds out delete icon
 
-						var deleteIconDiv = $("<div class='col s2' id='delete'>");
+						var deleteIconDiv = $("<div class='col s3' id='delete'>");
 						var deleteLink = $("<a class='waves-effect waves-light btn-large ' href=''>");
 
 						var deleteIcon = $("<i class='material-icons center' >");
