@@ -31,7 +31,7 @@
 	<script async defer
 		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHRCqL8yZbKNEZl7PFCmbA_XlaIBluHZ8&callback=initMap"></script>
 	<!-- custom js -->
-	<!-- <script src="../js/app.js"></script> -->
+	<script src="../js/app.js"></script>
 	<!-- Font Nunito from google -->
 	<link
 		href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap"
@@ -42,41 +42,39 @@
 
 <body>
 	<!-- Beginning of NavBar -->
-<!-- Beginning of New NavBar Code -->
+	<!-- Beginning of New NavBar Code -->
 
-<div class="container-fluid">
-	<nav class="navbar-fixed nav-wrapper teal lighten-2">
+	<div class="container-fluid">
+		<nav class="navbar-fixed nav-wrapper teal lighten-2">
 
-		<a href="#" class="main center brand-logo"><img id="alexandria-logo" src="../images/Alexandria-logo-BW.png" alt="Alexandria Logo" width="250"  ></a>
-		<a href="#" data-target="mobile-links" class="sidenav-trigger"
-
-		  ><i class="material-icons">menu</i></a
-		>
-		<ul class="right hide-on-med-and-down">
-		  <li class="active"><a class="btn" href="#">Properties</a></li>
-		  <li><a class="btn" href="#">Maps</a></li>
-		  <li><a class="btn" href="#">Dashboard</a></li>
-		  <li><a class="btn modal-trigger" href="#modal2">Contact Us</a></li>
+			<a href="#" class="main center brand-logo"><img id="alexandria-logo" src="../images/Alexandria-logo-BW.png"
+					alt="Alexandria Logo" width="250"></a>
+			<a href="#" data-target="mobile-links" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+			<ul class="right hide-on-med-and-down">
+				<li class="active"><a class="btn" href="#">Properties</a></li>
+				<li><a class="btn" href="#">Maps</a></li>
+				<li><a class="btn" href="#">Dashboard</a></li>
+				<li><a class="btn modal-trigger" href="#modal2">Contact Us</a></li>
+			</ul>
+		</nav>
+		<ul class="sidenav" id="mobile-menu">
+			<li class="active"><a href="#">Properties</a></li>
+			<li><a href="#">Maps</a></li>
+			<li><a href="#">Dashboard</a></li>
+			<li><a class="modal-trigger" href="#modal2">Contact Us</a></li>
 		</ul>
-	  </nav>
-	  <ul class="sidenav" id="mobile-menu">
-		<li class="active"><a href="#">Properties</a></li>
-		  <li><a href="#">Maps</a></li>
-		  <li><a href="#">Dashboard</a></li>
-		  <li><a class="modal-trigger" href="#modal2">Contact Us</a></li>
-	  </ul>
-</div>
+	</div>
 
-<!-- End of New NavBar Code =====-->
+	<!-- End of New NavBar Code =====-->
 
 
 
 	<!-- <div class="navbar-fixed fontSize">
 		<nav class="teal lighten-2">
 			<div class="nav-wrapper"> -->
-				<!-- <a href="../../index.html" class="brand-logo"><img id="alexandria-logo" src="../images/Alexandria-logo-BW.png" width="200px" length="100px" ></a> -->
-				<!-- <a href="../../index.html" data-target="mobile-demo" class="sidenav-trigger" ><i class="material-icons">menu</i></a > -->
-				<!-- <ul class="left hide-on-med-and-down">
+	<!-- <a href="../../index.html" class="brand-logo"><img id="alexandria-logo" src="../images/Alexandria-logo-BW.png" width="200px" length="100px" ></a> -->
+	<!-- <a href="../../index.html" data-target="mobile-demo" class="sidenav-trigger" ><i class="material-icons">menu</i></a > -->
+	<!-- <ul class="left hide-on-med-and-down">
 					<li>
 						<a href="../../index.html"><img id="alexandria-logo" src="../images/Alexandria-logo-BW.png"
 								width="250px" length="125px" /></a>
@@ -87,11 +85,11 @@
 					</li>
 					<li><a href="#">Maps</a></li>
 					<li><a href="#">Dashboard</a></li> -->
-					<!-- Save for Later. DO NOT DELETE <li><a href="mobile.html">Mobile</a></li>-->
-				<!-- </ul>
+	<!-- Save for Later. DO NOT DELETE <li><a href="mobile.html">Mobile</a></li>-->
+	<!-- </ul>
 			</div> -->
-			<!-- Dropdown Structure -->
-			<!-- <ul id="dropdown1" class="dropdown-content">
+	<!-- Dropdown Structure -->
+	<!-- <ul id="dropdown1" class="dropdown-content">
 				<li><a href="#!">one</a></li>
 				<li><a href="#!">two</a></li>
 				<li class="divider"></li>
@@ -102,8 +100,8 @@
 			<li class="active"><a href="#">Properties</a></li>
 			<li><a href="#">Maps</a></li>
 			<li><a href="#">Dashboard</a></li> -->
-			<!-- Save for Later. DO NOT DELETE <li><a href="mobile.html">Mobile</a></li>-->
-		<!-- </ul>
+	<!-- Save for Later. DO NOT DELETE <li><a href="mobile.html">Mobile</a></li>-->
+	<!-- </ul>
 		<div id="nav-image">
 			<img src="../images/backgrounds/houses.jpg" width="100%" />
 
@@ -113,22 +111,21 @@
 
 	<!-- Beginning of Heading -->
 	<div class="container-fluid">
-		
-		<div class="row">
-			<div class="col pull-s3 s5 m12 l12">
-					<div class="property-body">
-		<h5 id="property-header">PROPERTIES</h5>
-		<!-- Beginning of Property listings. This Section will need to be dynamic with JS. -->
-		<!-- Propertery #1 - Just a place holder-->
-			</div>
-		</div>
-			</div>
-		
-	
-			
-		
 
-			<!-- This section would populate address once user inputs information and it is stored in localStorage -->
+		<div class="row">
+
+
+			<h5 id="property-header">PROPERTIES</h5>
+			<!-- Beginning of Property listings. This Section will need to be dynamic with JS. -->
+			<!-- Propertery #1 - Just a place holder-->
+		</div>
+	</div>
+	<div class="property-body"></div>
+
+
+
+
+	<!-- This section would populate address once user inputs information and it is stored in localStorage -->
 	<!-- <div class="container-fluid">
 		<div class="row">
 			<div class="col">
@@ -137,7 +134,7 @@
 			<div class="col s3"> <span class="teal-text text-lighten-2">Rent</span>
 				
 			</div>
-			
+
 			<div class="col s3"> <span class="teal-text text-lighten-2">Expenses</span> </div>
 			<div class="container-fluid">
 				<div class="col pull-s4 s12 m12 l12"></div>
@@ -153,13 +150,13 @@
 		</div>
 	</div> -->
 
-		<!-- add contact us modal -->
+	<!-- add contact us modal -->
 	<div id="modal2" class="modal modal-fixed-footer">
 		<div class="modal-content">
 			<h4>Contact Us</h4>
 			<p>We'd love to hear from you, please drop us a message if you have any questions.</p>
 			<div class="container">
-					<form id="contactus">
+				<form id="contactus">
 					<label for="fullname">Full Name</label>
 					<input type="text" id="fullname" />
 					<br />
@@ -171,7 +168,7 @@
 			</div>
 		</div>
 		<div class="modal-footer">
-		<a href="#!" class="modal-close waves-effect waves-green btn-flat">Send</a>
+			<a href="#!" class="modal-close waves-effect waves-green btn-flat">Send</a>
 		</div>
 	</div>
 
@@ -189,14 +186,17 @@
 			<br />
 			<div class="container">
 				<form id="Property">
-					<label for="streetaddress">Street Address</label>
-					<input type="text" id="streetaddress" />
+					<label for="streetAddress">Street Address</label>
+					<input type="text" id="streetAddress" />
 					<br />
 					<label for="city"> City </label>
-					<input type="text" id="city" />
+					<input type="text" id="city" required />
 					<br />
-					<label for="state">State</label>
-					<input type="text" id="state" />
+					<label for="state">State abbreviation</label>
+					<input type="text" id="state" maxlength="2" size="2" required />
+					<br />
+					<label for="zipcode">zip code</label>
+					<input type="text" id="zipCode" maxlength="5" size="5" required />
 					<br />
 					<label for="expenses">Monthly Expenses</label>
 					<input type="text" id="expenses" />
@@ -205,7 +205,8 @@
 					<input type="text" id="rent" />
 					<br />
 					<div class="row">
-						<a href="#!"><button class="col offset-s4 btn waves-effect waves-light modal-close" type="submit" id="addProperty"> Add Property</button></a>
+						<a href="#!"><button class="col offset-s4 btn waves-effect waves-light modal-close"
+								type="submit" id="addProperty"> Add Property</button></a>
 					</div>
 				</form>
 			</div>
@@ -243,7 +244,7 @@
 	</div>
 
 
-
+	</div>
 
 
 
@@ -272,19 +273,21 @@
 		$(document).ready(function () {
 
 			getFromLocal();
+			getMash()
 
 
 			// function to add properties to local storage
 
 			var arr = [];
 
-			// this event takes the inputs from the add property form fields creates variables from them and passes them into the getLatLong function to return latitude and longitude fro google maps api
+			// this event takes the inputs from the add property form fields, creates variables from them and passes them into the getLatLong function to return latitude and longitude fro google maps api
 			$("#addProperty").on("click", function (event) {
 				event.preventDefault();
 
 				var addressVal = $("#streetAddress").val().trim().toUpperCase();
 				var cityVal = $("#city").val().trim().toUpperCase();
 				var stateVal = $("#state").val().trim().toUpperCase();
+				var zipVal = $("#zipCode").val().trim().toUpperCase();
 				var expensesVal = $("#expenses").val().trim().toUpperCase();
 				var rentVal = $("#rent").val().trim().toUpperCase();
 				// pushes address and info as an object into the arr array
@@ -295,37 +298,49 @@
 						address: addressVal,
 						city: cityVal,
 						state: stateVal,
+						zip: zipVal,
 						expenses: expensesVal,
 						rent: rentVal,
 					});
+
+
+
+
 				} else {
 					arr.push({
 						address: addressVal,
 						city: cityVal,
 						state: stateVal,
+						zip: zipVal,
 						expenses: expensesVal,
 						rent: rentVal,
 					});
+
 				}
 				// converts the arr array into json and stores it in local storage for use in the properties page
 				localStorage.setItem("addresses", JSON.stringify(arr));
 				location.reload(true);
 				getFromLocal();
+				getMash()
 
 			});
 			// 
 			// function to get property objects from localStorage
 			function getFromLocal() {
+
 				// checks if addresses object in local storage exists
 				if (localStorage.getItem("addresses") != undefined) {
 
 					// if address object does exist this pulls the object and saves it as an array
 					var addressArr = JSON.parse(localStorage.getItem("addresses"));
+
+
 					// for loop runs through addressArr and dynamically builds out properties
 					for (i = 0; i < addressArr.length; i++) {
 						// builds out property div
+						var propertyDivContainer = $("<div class='container-fluid'>")
 						var propertyDiv = $("<div class='row'> ");
-						var propertyDivStyle = $("<div class='col s12'>");
+						var propertyDivStyle = $("<div class='col'>");
 						var addressSpan = $("<span class='propAdd'>")
 						var address = $("<h6 class='propAdd' id='address'>").text(
 							addressArr[i].address.toUpperCase())
@@ -333,24 +348,35 @@
 							" " +
 							addressArr[i].city.toUpperCase() +
 							" " +
-							addressArr[i].state.toUpperCase()
+							addressArr[i].state.toUpperCase() + " "
+							+ addressArr[i].zip.toUpperCase()
 						);
 						addressSpan.append(address)
 						addressSpan.append(cityState)
 						// builds out rent display
-						var rentDiv = $("<div class='col s2'>");
+						var rentDiv = $("<div class='col s3'>");
 						var rentStyle = $("<span class='teal-text text-lighten-2'>");
 
 						rentDiv.append(rentStyle);
 						rentStyle.text("Monthly Rent: " + addressArr[i].rent);
 						// builds out expense display
-						var expenseDiv = $("<div class='col s2'>");
+						var expenseDiv = $("<div class='col s3'>");
 						var expenseStyle = $("<span class='teal-text text-lighten-2'>");
 
 						expenseDiv.append(expenseStyle);
 						expenseStyle.text("Monthly Expenses: " + addressArr[i].expenses);
+
+						// builds out sqft display
+						var sqftDiv = $("<div class='col s3'>");
+						var sqftStyle = $("<span class='teal-text text-lighten-2'>")
+
+						sqftDiv.append(sqftStyle).text("sqft: " + addressArr[i].sqFt)
+						//  adds formatting for buttons
+						var buttonDiv = $('<div class="container-fluid">')
+						var buttonStyle = $('<div class="col pull-s4 s12 m12 l12"></div>')
+
 						// builds out wrench icon
-						var workIconDiv = $("<div class='col s2'>");
+						var workIconDiv = $("<div class='col s3'>");
 						var workLink = $("<a class='waves-effect waves-light btn-large'>");
 						var workIcon = $("<i class='material-icons center'>");
 
@@ -358,7 +384,7 @@
 						workLink.append(workIcon);
 						workIcon.text("build");
 						// builds out money icon
-						var moneyIconDiv = $("<div class='col s2'>");
+						var moneyIconDiv = $("<div class='col s3'>");
 						var moneyLink = $("<a class='waves-effect waves-light btn-large'>");
 						var moneyIcon = $("<i class='material-icons center'>");
 
@@ -367,16 +393,17 @@
 						moneyIcon.text("monetization_on");
 
 						// builds out map icon
-						var mapIconDiv = $("<div class='col s2'>");
+						var mapIconDiv = $("<div class='col s3'>");
 						var mapLink = $("<a class='waves-effect waves-light btn-large modal-trigger' href='#propertyMap'>");
 						var mapIcon = $("<i class='material-icons center'>");
 
 						mapIconDiv.append(mapLink).on("click", function () {
-							getLatLong($(this).siblings()[0].textContent)
+							console.log($(this).parent().parent().siblings()[0].textContent)
+							getLatLong($(this).parent().parent().siblings()[0].textContent)
 
 							var mapTextH6 = $("<h6>")
 							$("#mapTitle").html(mapTextH6)
-							mapTextH6.text($(this).siblings()[0].textContent)
+							mapTextH6.text($(this).parent().parent().siblings()[0].textContent)
 
 
 						})
@@ -384,7 +411,7 @@
 						mapIcon.text("map")
 						// builds out delete icon
 
-						var deleteIconDiv = $("<div class='col s1' id='delete'>");
+						var deleteIconDiv = $("<div class='col s3' id='delete'>");
 						var deleteLink = $("<a class='waves-effect waves-light btn-large ' href=''>");
 
 						var deleteIcon = $("<i class='material-icons center' >");
@@ -393,8 +420,15 @@
 						deleteIconDiv.append(deleteLink)
 
 
+						buttonSec = $('<section class="property-buttons">')
+						// appends buttons to formatted div
+						buttonSec.append(moneyIconDiv);
+						buttonSec.append(workIconDiv);
+						buttonSec.append(mapIconDiv)
+						buttonSec.append(deleteIconDiv)
 
-
+						buttonDiv.append(buttonStyle)
+						buttonDiv.append(buttonSec)
 
 
 
@@ -405,18 +439,17 @@
 						propertyDiv.append(propertyDivStyle);
 						propertyDiv.append(rentDiv);
 						propertyDiv.append(expenseDiv);
-						propertyDiv.append(workIconDiv);
-						propertyDiv.append(moneyIconDiv);
-						propertyDiv.append(mapIconDiv)
-						propertyDiv.append(deleteIconDiv)
-						$(".property-body").append(propertyDiv);
+						propertyDiv.append(sqftDiv)
+						propertyDiv.append(buttonDiv)
+						propertyDivContainer.append(propertyDiv)
+						$(".property-body").append(propertyDivContainer);
 					}
 					// on click function to delete properties
 					$(document).on("click", "#delete", function () {
-						console.log($(this).siblings().find("#address")[0].textContent)
+
 						var results = [];
 						// location of the address div
-						var toSearch = $(this).siblings().find("#address")[0].textContent;
+						var toSearch = $(this).parent().parent().siblings().find("#address")[0].textContent;
 						// for loop that runs through the address array and checks for matching address to remove
 						for (var i = 0; i < addressArr.length; i++) {
 							// if statement that checks if the address matched the address value of any of the array objects
@@ -434,6 +467,7 @@
 				}
 
 			}
+			// this function takes in an address and hits the google geocode api, the api then returns a response in the form of a json object
 			function getLatLong(a) {
 				var queryURL =
 					"https://maps.googleapis.com/maps/api/geocode/json?address=" +
@@ -443,27 +477,73 @@
 					url: queryURL,
 					method: "GET",
 				}).then(function (response) {
+					// this takes in the response from the geocode api traverses the object to get the latitude and longitude object
 					var address = response.results[0].geometry.location;
-					console.log(address);
+					// the function then calls the init map function and passes in the latitude and longitude object
 					initMap(address);
 
-					// console.log(response.results[0].geometry);
-					// var latLon = response.results[0].geometry.location;
-					// returnLocation(latLon);
-					// callback(latlon);
+
 				});
 			}
+			// this function uses google's map api to build a map and place a  marker. it takes in an object containing the latitude and  longitude coordinates 
+			// builds a map and places a marker at those coordinates
 			function initMap(mark) {
-				// The location of Uluru
+				// The location of property
 				var address = mark;
-				// The map, centered at Uluru
+				// The map, centered at property address chosen
 				var map = new google.maps.Map(document.getElementById("map"), {
 					zoom: 13,
 					center: address,
 				});
-				// The marker, positioned at Uluru
+				// The marker, positioned at the property address chosen
 				var marker = new google.maps.Marker({ position: address, map: map });
 			}
+			function getMash() {
+				if (localStorage.getItem("addresses") != undefined) {
+
+					var array = JSON.parse(localStorage.getItem("addresses"))
+					// console.log(array)
+					for (i = 0; i < array.length; i++) {
+						if (array[i].sqFt === undefined) {
+
+							var address = array[i].address.replace(/ /gi, '%20')
+
+							var city = array[i].city.replace(/ /gi, '%20');
+							var state = array[i].state
+							var zipCode = array[i].zip
+							console.log(address)
+							console.log(city)
+							console.log(state)
+							console.log(zipCode)
+							var temp = null;
+							console.log(temp);
+
+							var settings = {
+								"async": false,
+								"crossDomain": true,
+								"url": "https://mashvisor-api.p.rapidapi.com/property?zip_code=" + zipCode + "&address=" + address + "&city=" + city + "&state=" + state,
+								"method": "GET",
+								"headers": {
+									"x-rapidapi-host": "mashvisor-api.p.rapidapi.com",
+									"x-rapidapi-key": "733fad01b3msh9d3366df3709f73p1125dcjsn3fcf4af23a02"
+								}
+							}
+
+							$.ajax(settings).done(function (response) {
+								temp = response;
+
+								array[i].sqFt = response.content.sqft
+								console.log(array[i])
+							});
+							localStorage.setItem("addresses", JSON.stringify(array))
+						}
+
+
+					}
+
+				}
+			}
+
 
 
 		})
@@ -471,7 +551,7 @@
 	</script>
 	<!-- <script src="../js/property.js"></script> -->
 
-	
+
 
 
 	<!--Footer -->
@@ -480,8 +560,10 @@
 		© 2020 Alexandria. All rights reserved.
 	</footer>
 
+
 	<!-- JQuery -->
-	<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js"
+		integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 	<!-- <script src="https://code.jquery.com/jquery-3.5.1.js"
 		integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script> -->
 
@@ -489,12 +571,11 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 	<!-- <script src="../js/property.js"></script> -->
 	<script>
-		$(document).ready(function(){
-            $('.sidenav').sidenav();
-            $('.modal').modal();
-        });
+		$(document).ready(function () {
+			$('.sidenav').sidenav();
+			$('.modal').modal();
+		});
 	</script>
 </body>
 
 </html>
-
