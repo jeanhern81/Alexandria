@@ -111,127 +111,128 @@
 	<!-- Beginning of Heading -->
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col pull-s3 s5 m12 l12">
-				<div class="property-body">
-					<h5 id="property-header">PROPERTIES</h5>
-					<!-- Beginning of Property listings. This Section will need to be dynamic with JS. -->
-					<!-- Propertery #1 - Just a place holder-->
-				</div>
+
+
+			<h5 id="property-header">PROPERTIES</h5>
+			<!-- Beginning of Property listings. This Section will need to be dynamic with JS. -->
+			<!-- Propertery #1 - Just a place holder-->
+		</div>
+	</div>
+	<div class="property-body"></div>
+
+
+
+
+
+	<!-- This section would populate address once user inputs information and it is stored in localStorage -->
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col">
+				<h6>1790 WEST ARROW ROUTE, UPLAND, CA</h6>
+			</div>
+			<div class="col s3"> <span class="teal-text text-lighten-2">Rent</span>
+				<h6></h6>
 			</div>
 
-
-
-
-
-			<!-- This section would populate address once user inputs information and it is stored in localStorage -->
+			<div class="col s3"> <span class="teal-text text-lighten-2">Expenses</span> </div>
 			<div class="container-fluid">
-				<div class="row">
-					<div class="col">
-						<h6>1790 WEST ARROW ROUTE, UPLAND, CA</h6>
-					</div>
-					<div class="col s3"> <span class="teal-text text-lighten-2">Rent</span>
-						<h6></h6>
-					</div>
-
-					<div class="col s3"> <span class="teal-text text-lighten-2">Expenses</span> </div>
-					<div class="container-fluid">
-						<div class="col pull-s4 s12 m12 l12"></div>
-						<section class="property-buttons">
-							<div class="col s3"> <a class="waves-effect waves-light btn-large"><i
-										class="material-icons center">build</i></a> </div>
-							<div class="col s3"> <a class="waves-effect waves-light btn-large"><i
-										class="medium material-icons">monetization_on</i></a> </div>
-						</section>
-					</div>
-
-				</div>
-			</div>
-		</div>
-
-		<!-- add contact us modal -->
-		<div id="modal2" class="modal modal-fixed-footer">
-			<div class="modal-content">
-				<h4>Contact Us</h4>
-				<p>We'd love to hear from you, please drop us a message if you have any questions.</p>
-				<div class="container">
-					<form id="Property">
-						<label for="first-name last-name">Full Name</label>
-						<input type="text" id="fullname" />
-						<br />
-						<label for="Email"> Email </label>
-						<input type="text" id="customeremail" />
-						<br />
-						<label for="message">Message</label>
-						<input type="text" id="email" />
-				</div>
-			</div>
-			<div class="modal-footer">
-				<a href="#!" class="modal-close waves-effect waves-green btn-flat">Send</a>
-			</div>
-		</div>
-
-		<!-- add property modal -->
-		<div id="addProperties" class="modal modal-fixed-footer">
-			<div class="modal-content">
-				<div class="row">
-
-					<div class="col s12 main center">
-						<h1>Add Properties</h1>
-					</div>
-				</div>
-				</header>
-
-				<br />
-				<div class="container">
-					<form id="Property">
-						<label for="street address">Street Address</label>
-						<input type="text" id="streetAddress" required />
-						<br />
-						<label for="city"> City </label>
-						<input type="text" id="city" required />
-						<br />
-						<label for="state">State abbreviation</label>
-						<input type="text" id="state" maxlength="2" size="2" required />
-						<br />
-						<label for="zipcode">zip code</label>
-						<input type="text" id="zipCode" maxlength="5" size="5" required />
-						<br />
-						<label for="expenses">Monthly Expenses</label>
-						<input type="text" id="expenses" />
-						<br />
-						<label for="rent">Monthly Rent</label>
-						<input type="text" id="rent" />
-						<br />
-						<div class="row">
-							<a href="#!"><button class="col offset-s4 btn waves-effect waves-light modal-close"
-									type="submit" id="addProperty">
-									Add Property
-								</button></a>
-						</div>
-					</form>
-				</div>
+				<div class="col pull-s4 s12 m12 l12"></div>
+				<section class="property-buttons">
+					<div class="col s3"> <a class="waves-effect waves-light btn-large"><i
+								class="material-icons center">build</i></a> </div>
+					<div class="col s3"> <a class="waves-effect waves-light btn-large"><i
+								class="medium material-icons">monetization_on</i></a> </div>
+				</section>
 			</div>
 
 		</div>
-		<!-- property map modal -->
-		<div id="propertyMap" class="modal modal-fixed-footer">
-			<div class="modal-content">
-				<div class="row">
-					<div class="col s12 main center" id="mapTitle">
+	</div>
+	</div>
 
-					</div>
+	<!-- add contact us modal -->
+	<div id="modal2" class="modal modal-fixed-footer">
+		<div class="modal-content">
+			<h4>Contact Us</h4>
+			<p>We'd love to hear from you, please drop us a message if you have any questions.</p>
+			<div class="container">
+				<form id="Property">
+					<label for="first-name last-name">Full Name</label>
+					<input type="text" id="fullname" />
+					<br />
+					<label for="Email"> Email </label>
+					<input type="text" id="customeremail" />
+					<br />
+					<label for="message">Message</label>
+					<input type="text" id="email" />
+			</div>
+		</div>
+		<div class="modal-footer">
+			<a href="#!" class="modal-close waves-effect waves-green btn-flat">Send</a>
+		</div>
+	</div>
+
+	<!-- add property modal -->
+	<div id="addProperties" class="modal modal-fixed-footer">
+		<div class="modal-content">
+			<div class="row">
+
+				<div class="col s12 main center">
+					<h1>Add Properties</h1>
 				</div>
-				</header>
+			</div>
+			</header>
 
-				<br />
-				<div class="container">
-					<div id="map"></div>
+			<br />
+			<div class="container">
+				<form id="Property">
+					<label for="street address">Street Address</label>
+					<input type="text" id="streetAddress" required />
+					<br />
+					<label for="city"> City </label>
+					<input type="text" id="city" required />
+					<br />
+					<label for="state">State abbreviation</label>
+					<input type="text" id="state" maxlength="2" size="2" required />
+					<br />
+					<label for="zipcode">zip code</label>
+					<input type="text" id="zipCode" maxlength="5" size="5" required />
+					<br />
+					<label for="expenses">Monthly Expenses</label>
+					<input type="text" id="expenses" />
+					<br />
+					<label for="rent">Monthly Rent</label>
+					<input type="text" id="rent" />
+					<br />
+					<div class="row">
+						<a href="#!"><button class="col offset-s4 btn waves-effect waves-light modal-close"
+								type="submit" id="addProperty">
+								Add Property
+							</button></a>
+					</div>
+				</form>
+			</div>
+		</div>
+
+	</div>
+	<!-- property map modal -->
+	<div id="propertyMap" class="modal modal-fixed-footer">
+		<div class="modal-content">
+			<div class="row">
+				<div class="col s12 main center" id="mapTitle">
 
 				</div>
 			</div>
+			</header>
 
+			<br />
+			<div class="container">
+				<div id="map"></div>
 
+			</div>
 		</div>
+
+
+	</div>
 	</div>
 	<!-- add property button -->
 	<div class="row">
@@ -273,6 +274,7 @@
 		$(document).ready(function () {
 
 			getFromLocal();
+			getMash()
 
 
 			// function to add properties to local storage
@@ -301,6 +303,10 @@
 						expenses: expensesVal,
 						rent: rentVal,
 					});
+
+
+
+
 				} else {
 					arr.push({
 						address: addressVal,
@@ -310,24 +316,30 @@
 						expenses: expensesVal,
 						rent: rentVal,
 					});
+
 				}
 				// converts the arr array into json and stores it in local storage for use in the properties page
 				localStorage.setItem("addresses", JSON.stringify(arr));
 				location.reload(true);
 				getFromLocal();
+				getMash()
 
 			});
 			// 
 			// function to get property objects from localStorage
 			function getFromLocal() {
+
 				// checks if addresses object in local storage exists
 				if (localStorage.getItem("addresses") != undefined) {
 
 					// if address object does exist this pulls the object and saves it as an array
 					var addressArr = JSON.parse(localStorage.getItem("addresses"));
+
+
 					// for loop runs through addressArr and dynamically builds out properties
 					for (i = 0; i < addressArr.length; i++) {
 						// builds out property div
+						var propertyDivContainer = $("<div class='container-fluid'>")
 						var propertyDiv = $("<div class='row'> ");
 						var propertyDivStyle = $("<div class='col'>");
 						var addressSpan = $("<span class='propAdd'>")
@@ -343,17 +355,27 @@
 						addressSpan.append(address)
 						addressSpan.append(cityState)
 						// builds out rent display
-						var rentDiv = $("<div class='col s2'>");
+						var rentDiv = $("<div class='col s3'>");
 						var rentStyle = $("<span class='teal-text text-lighten-2'>");
 
 						rentDiv.append(rentStyle);
 						rentStyle.text("Monthly Rent: " + addressArr[i].rent);
 						// builds out expense display
-						var expenseDiv = $("<div class='col s2'>");
+						var expenseDiv = $("<div class='col s3'>");
 						var expenseStyle = $("<span class='teal-text text-lighten-2'>");
 
 						expenseDiv.append(expenseStyle);
 						expenseStyle.text("Monthly Expenses: " + addressArr[i].expenses);
+
+						// builds out sqft display
+						var sqftDiv = $("<div class='col s3'>");
+						var sqftStyle = $("<span class='teal-text text-lighten-2'>")
+
+						sqftDiv.append(sqftStyle).text("sqft: " + addressArr[i].sqFt)
+						//  adds formatting for buttons
+						var buttonDiv = $('<div class="container-fluid">')
+						var buttonStyle = $('<div class="col pull-s4 s12 m12 l12"></div>')
+
 						// builds out wrench icon
 						var workIconDiv = $("<div class='col s3'>");
 						var workLink = $("<a class='waves-effect waves-light btn-large'>");
@@ -398,8 +420,15 @@
 						deleteIconDiv.append(deleteLink)
 
 
+						buttonSec = $('<section class="property-buttons">')
+						// appends buttons to formatted div
+						buttonSec.append(moneyIconDiv);
+						buttonSec.append(workIconDiv);
+						buttonSec.append(mapIconDiv)
+						buttonSec.append(deleteIconDiv)
 
-
+						buttonDiv.append(buttonStyle)
+						buttonDiv.append(buttonSec)
 
 
 
@@ -410,11 +439,10 @@
 						propertyDiv.append(propertyDivStyle);
 						propertyDiv.append(rentDiv);
 						propertyDiv.append(expenseDiv);
-						propertyDiv.append(workIconDiv);
-						propertyDiv.append(moneyIconDiv);
-						propertyDiv.append(mapIconDiv)
-						propertyDiv.append(deleteIconDiv)
-						$(".property-body").append(propertyDiv);
+						propertyDiv.append(sqftDiv)
+						propertyDiv.append(buttonDiv)
+						propertyDivContainer.append(propertyDiv)
+						$(".property-body").append(propertyDivContainer);
 					}
 					// on click function to delete properties
 					$(document).on("click", "#delete", function () {
@@ -470,6 +498,52 @@
 				// The marker, positioned at the property address chosen
 				var marker = new google.maps.Marker({ position: address, map: map });
 			}
+			function getMash() {
+				if (localStorage.getItem("addresses") != undefined) {
+
+					var array = JSON.parse(localStorage.getItem("addresses"))
+					// console.log(array)
+					for (i = 0; i < array.length; i++) {
+						if (array[i].sqFt === undefined) {
+
+							var address = array[i].address.replace(/ /gi, '%20')
+
+							var city = array[i].city.replace(/ /gi, '%20');
+							var state = array[i].state
+							var zipCode = array[i].zip
+							console.log(address)
+							console.log(city)
+							console.log(state)
+							console.log(zipCode)
+							var temp = null;
+							console.log(temp);
+
+							var settings = {
+								"async": false,
+								"crossDomain": true,
+								"url": "https://mashvisor-api.p.rapidapi.com/property?zip_code=" + zipCode + "&address=" + address + "&city=" + city + "&state=" + state,
+								"method": "GET",
+								"headers": {
+									"x-rapidapi-host": "mashvisor-api.p.rapidapi.com",
+									"x-rapidapi-key": "733fad01b3msh9d3366df3709f73p1125dcjsn3fcf4af23a02"
+								}
+							}
+
+							$.ajax(settings).done(function (response) {
+								temp = response;
+
+								array[i].sqFt = response.content.sqft
+								console.log(array[i])
+							});
+							localStorage.setItem("addresses", JSON.stringify(array))
+						}
+
+
+					}
+
+				}
+			}
+
 
 
 		})
