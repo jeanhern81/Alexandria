@@ -46,8 +46,9 @@
 
 	<div class="container-fluid">
 		<nav class="navbar-fixed nav-wrapper teal lighten-2">
+
 			<a href="#" class="main center brand-logo"><img id="alexandria-logo" src="../images/Alexandria-logo-BW.png"
-					width="250px" length="125px"></a>
+					alt="Alexandria Logo" width="250"></a>
 			<a href="#" data-target="mobile-links" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 			<ul class="right hide-on-med-and-down">
 				<li class="active"><a class="btn" href="#">Properties</a></li>
@@ -56,15 +57,15 @@
 				<li><a class="btn modal-trigger" href="#modal2">Contact Us</a></li>
 			</ul>
 		</nav>
-		<ul class="sidenav" id="mobile-links">
-			<li class="active"><a class="btn" href="#">Properties</a></li>
-			<li><a class="btn" href="#">Maps</a></li>
-			<li><a class="btn" href="#">Dashboard</a></li>
-			<li><a class="btn modal-trigger" href="#modal2">Contact Us</a></li>
+		<ul class="sidenav" id="mobile-menu">
+			<li class="active"><a href="#">Properties</a></li>
+			<li><a href="#">Maps</a></li>
+			<li><a href="#">Dashboard</a></li>
+			<li><a class="modal-trigger" href="#modal2">Contact Us</a></li>
 		</ul>
 	</div>
 
-	<!-- End of New NavBar Code -------->
+	<!-- End of New NavBar Code =====-->
 
 
 
@@ -110,6 +111,7 @@
 
 	<!-- Beginning of Heading -->
 	<div class="container-fluid">
+
 		<div class="row">
 
 
@@ -123,31 +125,30 @@
 
 
 
-
 	<!-- This section would populate address once user inputs information and it is stored in localStorage -->
-	<div class="container-fluid">
+	<!-- <div class="container-fluid">
 		<div class="row">
 			<div class="col">
 				<h6>1790 WEST ARROW ROUTE, UPLAND, CA</h6>
 			</div>
 			<div class="col s3"> <span class="teal-text text-lighten-2">Rent</span>
-				<h6></h6>
+				
 			</div>
 
 			<div class="col s3"> <span class="teal-text text-lighten-2">Expenses</span> </div>
 			<div class="container-fluid">
 				<div class="col pull-s4 s12 m12 l12"></div>
-				<section class="property-buttons">
-					<div class="col s3"> <a class="waves-effect waves-light btn-large"><i
-								class="material-icons center">build</i></a> </div>
-					<div class="col s3"> <a class="waves-effect waves-light btn-large"><i
-								class="medium material-icons">monetization_on</i></a> </div>
-				</section>
+			<section class="property-buttons">
+				<div class="col s3"> <a class="waves-effect waves-light btn-large"><i
+							class="material-icons center">build</i></a> </div>
+				<div class="col s3"> <a class="waves-effect waves-light btn-large"><i
+							class="medium material-icons">monetization_on</i></a> </div>
+			</section>
 			</div>
 
 		</div>
-	</div>
-	</div>
+		</div>
+	</div> -->
 
 	<!-- add contact us modal -->
 	<div id="modal2" class="modal modal-fixed-footer">
@@ -155,15 +156,15 @@
 			<h4>Contact Us</h4>
 			<p>We'd love to hear from you, please drop us a message if you have any questions.</p>
 			<div class="container">
-				<form id="Property">
-					<label for="first-name last-name">Full Name</label>
+				<form id="contactus">
+					<label for="fullname">Full Name</label>
 					<input type="text" id="fullname" />
 					<br />
-					<label for="Email"> Email </label>
+					<label for="customeremail"> Email </label>
 					<input type="text" id="customeremail" />
 					<br />
 					<label for="message">Message</label>
-					<input type="text" id="email" />
+					<input type="text" id="message" /></form>
 			</div>
 		</div>
 		<div class="modal-footer">
@@ -180,13 +181,13 @@
 					<h1>Add Properties</h1>
 				</div>
 			</div>
-			</header>
+
 
 			<br />
 			<div class="container">
 				<form id="Property">
-					<label for="street address">Street Address</label>
-					<input type="text" id="streetAddress" required />
+					<label for="streetAddress">Street Address</label>
+					<input type="text" id="streetaddress" />
 					<br />
 					<label for="city"> City </label>
 					<input type="text" id="city" required />
@@ -205,9 +206,7 @@
 					<br />
 					<div class="row">
 						<a href="#!"><button class="col offset-s4 btn waves-effect waves-light modal-close"
-								type="submit" id="addProperty">
-								Add Property
-							</button></a>
+								type="submit" id="addProperty"> Add Property</button></a>
 					</div>
 				</form>
 			</div>
@@ -222,7 +221,7 @@
 
 				</div>
 			</div>
-			</header>
+
 
 			<br />
 			<div class="container">
@@ -233,7 +232,7 @@
 
 
 	</div>
-	</div>
+
 	<!-- add property button -->
 	<div class="row">
 
@@ -243,10 +242,10 @@
 
 		</div>
 	</div>
-	</div>
 
 
 	</div>
+
 
 
 
@@ -555,6 +554,11 @@
 
 
 	<!--Footer -->
+	<footer class="main page-footer teal lighten-2">
+		<!-- Need to center it and add some padding through html or css -->
+		© 2020 Alexandria. All rights reserved.
+	</footer>
+
 
 	<!-- JQuery -->
 	<script src="https://code.jquery.com/jquery-2.2.4.min.js"
