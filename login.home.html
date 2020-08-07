@@ -18,15 +18,14 @@
       src="https://kit.fontawesome.com/8b8f26d0e1.js"
       crossorigin="anonymous"
     ></script>
-    <!--My custom style sheet-->
-    <link rel="”stylesheet”" href="assets/css/login-style.css" />
+  
     <!-- jquery cdn -->
-    <script
-      src="https://code.jquery.com/jquery-3.5.1.js"
-      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="assets/css/materialize.css" />
+
+  <!--My custom style sheet-->
+    <link rel="stylesheet" href="assets/css/login-style.css" />
+
 
     <title>Alexandria | Login</title>
   </head>
@@ -34,18 +33,17 @@
     <!-- Card Content -->
     <div class="container">
       <div class="row col s12 m4 l8 brand-logo center">
-        <div class="logoSingUp">
-                  <a href="index.html"
-          ><img src="assets/images/logo-lg.png" alt="Alexandria logo"
-        /></a>
+        <div class="logoSingUp"><a href="index.html"><img src="assets/images/logo-lg.png" alt="Alexandria logo"/></a>
         </div>
-
+<br>
         <div class="card xlarge">
           <div class="row">
+            <br>
             <p>
               <h5>Create an account</h5>
             </p>
           </div>
+
           <div class="row">
             <div class="input-field col offset-s4 s4">
               <input id="email" type="email" class="validate" />
@@ -72,7 +70,7 @@
           </div><p>
           <label>
             <input type="checkbox" />
-            <span>I accept the Terms of Use & Policy Privacy.</span>
+            <span>I accept the <a class="modal-trigger" href="#modal1">Terms & Conditions</a> & Policy Privacy.</span>
           </label>
           </p>
 
@@ -86,10 +84,7 @@
           <br /><br /><br/>
           <!-- Modal Trigger -->
           <div class="row">
-            <a
-              class="waves-effect waves-light teal btn modal-trigger"
-              href="#modal1"
-              >Terms & Conditions</a>
+            <a class="waves-effect waves-light teal btn modal-trigger" href="#modal1">Terms & Conditions</a>
               <br/><br/><br/>
 
             <!-- Modal Structure -->
@@ -155,11 +150,11 @@
 
 
 
-    <footer class="page-footer teal lighten-2 main center">
-      <div class="container">
+    <footer class="footer page-footer teal lighten-2 main center">
+    
       <!-- Need to center it and add some padding through html or css -->
       © 2020 Alexandria. All rights reserved.
-      </div>
+     
     </footer>
     <!-- End of Footer -->
 
