@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="icon" type="image/png" href="../images/Alexandria-symbol.png" />
+	<!-- Compiled and minified CSS -->
+	<link rel="stylesheet" href="../css/materialize.css" />
+	<link rel="stylesheet" href="../css/mainsStyles.css" />
+	<link rel="stylesheet" href="../css/properties.css" />
+	<script src="../js/materialize.js"></script>
+
+	<!--Google Fonts-->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+	<!--Font Awesome-->
+	<script src="https://kit.fontawesome.com/8b8f26d0e1.js" crossorigin="anonymous"></script>
+	<!-- Jquery -->
+	<script src="https://code.jquery.com/jquery-3.5.1.js"
+		integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+	<style>
+		/* Set the size of the div element that contains the map */
+		#map {
+			height: 400px;
+			/* The height is 400 pixels */
+			width: 100%;
+			/* The width is the width of the web page */
+		}
+	</style>
+
+	<script async defer
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHRCqL8yZbKNEZl7PFCmbA_XlaIBluHZ8&callback=initMap"></script>
+	<!-- custom js -->
+	<script src="../js/app.js"></script>
+	<!-- Font Nunito from google -->
+	<link
+		href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap"
+		rel="stylesheet" />
+
+	<title>Alexandria | Properties</title>
+</head>
+
+<body>
+	<!-- Beginning of NavBar -->
+	<!-- Beginning of New NavBar Code -->
+
+	<div class="container-fluid">
+		<nav class="navbar-fixed nav-wrapper teal lighten-2">
+
+			<a href="../../index.html" class=" brand-logo"><img id="alexandria-logo"
+					src="../images/Alexandria-logo-BW.png" alt="Alexandria Logo" width="250"></a>
+			<a href="#" data-target="mobile-links" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+			<ul class="right hide-on-med-and-down">
+				<li class="active"><a class="btn" href="properties.html">Properties</a></li>
+				<li><a class="btn" href="#">Maps</a></li>
+				<li><a class="btn" href="dashboard.html">Dashboard</a></li>
+				<li><a class="btn modal-trigger" href="#modal2">Contact Us</a></li>
+			</ul>
+		</nav>
+		<ul class="sidenav" id="mobile-links">
+			<li class="active"><a href="#">Properties</a></li>
+			<li><a href="#">Maps</a></li>
+			<li><a href="dashboard.html">Dashboard</a></li>
+			<li><a class="modal-trigger" href="#modal2">Contact Us</a></li>
+		</ul>
+	</div>
