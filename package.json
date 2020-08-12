@@ -1,0 +1,19 @@
+{
+  "name": "alexandria",
+  "version": "1.0.0",
+  "description": "--- Title: Alexandria - Propery Management App",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeanhern81/Alexandria.git"
+  },
+  "author": "\"Jeanette Hernandez, Isaac Tsao, Joshua Levish, Gerson Marroquin\"",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jeanhern81/Alexandria/issues"
+  },
+  "homepage": "https://github.com/jeanhern81/Alexandria#readme"
+}
