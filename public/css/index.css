@@ -35,14 +35,19 @@ div.absolute-1 {
   color: white;
 }
 div.absolute-2 {
-  position: absolute;
+  position: relative;
+  
   top: 1%;
   left: 60%;
+ 
   /* border: 3px solid #73AD21; */
   height: auto;
   width: auto;
   text-align: left;
 }
+
+
+
 #iphone-x {
   width: 70%;
 }
@@ -311,3 +316,7 @@ div.absolute-2 {
     margin-left: -512px;   /* 50% */
   }
 }
+
+
+
+
