@@ -1,8 +1,8 @@
 {
   "development": {
     "username": "root",
-    "password": "",
-    "database": "passport_demo",
+    "password": "Samdevmad1981feb!",
+    "database": "alexandrian_db",
     "host": "localhost",
     "dialect": "mysql"
   },
