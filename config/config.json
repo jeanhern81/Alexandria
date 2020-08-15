@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": "Samdevmad1981feb!",
-    "database": "alexandrian_db",
+    "database": "alexandria_db",
     "host": "localhost",
     "dialect": "mysql"
   },

@@ -2,6 +2,7 @@
 // ==============================================
 var express = require("express");
 var path = require("path");
+var db = require("./models");
 
 // Sets up the Express App
 // ==============================================
@@ -23,6 +24,8 @@ app.get("/", function (req, res) {
 
 // Starts the server to begin listening
 // ===============================================
-app.listen(PORT, function () {
-  console.log("App listening on PORT " + PORT);
+db.sequelize.sync({ force: true }).then(function () {
+  app.listen(PORT, function () {
+    console.log("App listening on PORT " + PORT);
+  });
 });
