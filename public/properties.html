@@ -167,7 +167,7 @@
 
 		<div class="col s12 center-align">
 			<a class="waves-effect waves-light btn-large modal-trigger" href="#addProperties"><i
-					class="medium material-icons">add</i></a>
+					class="medium material-icons">add_location</i></a>
 
 		</div>
 	</div>
@@ -187,6 +187,8 @@
   });
 
 	</script>
+
+
 	<!-- script for property map modal -->
 	<script>
 
@@ -195,6 +197,8 @@
 			var instance = M.Modal.init(elem);
 		});
 	</script>
+
+
 	<!-- script for dynamic content loading of property listings -->
 	<script>
 		// function to get properties from local storage object
@@ -202,7 +206,6 @@
 
 			getFromLocal();
 			getMash()
-
 
 			// function to add properties to local storage
 
@@ -299,6 +302,7 @@
 						var sqftStyle = $("<span class='teal-text text-lighten-2'>")
 
 						sqftDiv.append(sqftStyle).text("sqft: " + addressArr[i].sqFt)
+						
 						//  adds formatting for buttons
 						var buttonDiv = $('<div class="container-fluid">')
 						var buttonStyle = $('<div class="col pull-s4 s12 m12 l12"></div>')
@@ -311,6 +315,7 @@
 						workIconDiv.append(workLink);
 						workLink.append(workIcon);
 						workIcon.text("build");
+
 						// builds out money icon
 						var moneyIconDiv = $("<div class='col s3'>");
 						var moneyLink = $("<a class='waves-effect waves-light btn-large'>");
@@ -337,13 +342,14 @@
 						})
 						mapLink.html(mapIcon)
 						mapIcon.text("map")
-						// builds out delete icon
 
+
+						// builds out delete icon
 						var deleteIconDiv = $("<div class='col s3' id='delete'>");
 						var deleteLink = $("<a class='waves-effect waves-light btn-large ' href=''>");
 
-						var deleteIcon = $("<i class='far fa-trash-alt center' >");
-						deleteIcon.text("")
+						var deleteIcon = $("<i class='material-icons center' >");
+						deleteIcon.text("delete")
 						deleteLink.append(deleteIcon)
 						deleteIconDiv.append(deleteLink)
 
@@ -372,10 +378,15 @@
 						propertyDivContainer.append(propertyDiv)
 						$(".property-body").append(propertyDivContainer);
 					}
+
+
+
+
 					// on click function to delete properties
 					$(document).on("click", "#delete", function () {
-
-						var results = [];
+						var txt;
+						if (confirm("Press OK to delete or press CANCEL to go back.")) {						
+							var results = [];
 						// location of the address div
 						var toSearch = $(this).parent().parent().siblings().find("#address")[0].textContent;
 						// for loop that runs through the address array and checks for matching address to remove
@@ -389,6 +400,14 @@
 
 							}
 						}
+							txt = "You pressed OK to DELETE";
+						} else {
+							txt = "You pressed CANCEL to go BACK";
+						}
+						document.getElementById("demo").innherHTML = txt;
+
+
+
 
 
 					})
