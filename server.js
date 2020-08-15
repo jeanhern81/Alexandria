@@ -15,14 +15,8 @@ app.use(express.static("public"));
 
 // Routes
 // ===============================================
-
-// Basic route that sends the user first to the Landing Page
 app.get("/", function (req, res) {
-  res.sendFile(path.join(__dirname, "index.html"));
-});
-
-app.get("/add", function (req, res) {
-  res.sendFile(path.join(__dirname, "public/addProperties.html"));
+  res.sendFile(path.join(__dirname, "public/index.html"));
 });
 
 app.get("/properties", function (req, res) {
@@ -33,5 +27,5 @@ app.get("/properties", function (req, res) {
 // Starts the server to begin listening
 // ===============================================
 app.listen(PORT, function () {
-  console.log("App listening on PORT " + PORT);
+  console.log("App listening on PORT: " + PORT);
 });
