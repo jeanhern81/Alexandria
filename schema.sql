@@ -1,6 +1,6 @@
 -- drops alexandria database if it exists
 
-DROP DATABASE IF EXISTS blogger;
+DROP DATABASE IF EXISTS alexandria_db;
 
 
 -- creates the alexandria database

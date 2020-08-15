@@ -2,12 +2,14 @@
 // ==============================================
 var express = require("express");
 var path = require("path");
-var db = require("./models");
+
+
 
 // Sets up the Express App
 // ==============================================
 var app = express();
 var PORT = process.env.PORT || 8080;
+var db = require("./models");
 
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
