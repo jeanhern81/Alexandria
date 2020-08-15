@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="/images/Alexandria-symbol.png"
+    />
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="/css/materialize.css" />
+    <link rel="stylesheet" href="/css/mainsStyles.css" />
+    <script src="/js/materialize.js"></script>
+    <link rel="stylesheet" href="/css/index.css" />    
+
+    <!--Google Fonts-->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <!--Font Awesome-->
+    <script
+      src="https://kit.fontawesome.com/8b8f26d0e1.js"
+      crossorigin="anonymous"
+    ></script>
+    <!--  Font Nunito from google -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Alexandria | Home</title>
+  </head>
+  <body>
+    <!-- Beginning of NavBar -->
+
+    <!-- Possible New Navbar Code -->
+    <div class="container-fluid">
+      <nav class="navbar-fixed nav-wrapper teal lighten-2">
+        <a href="#" class="main center brand-logo"
+          ><img
+            src="/images/Alexandria-logo-BW.png"
+            id="alexandria-logo"
+            alt="Alexandria Company Logo"
+            width="250"
+        /></a>
+        <a href="#" data-target="mobile-links" class="sidenav-trigger"
+          ><i class="material-icons">menu</i></a
+        >
+        <ul class="right hide-on-med-and-down">
+          <li><a class="btn modal-trigger" href="#modal3">Login</a></li>
+
+          <li><a class="btn" href="signUp.home.html">Sign Up</a></li>
+          <li><a class="btn modal-trigger" href="#modal2">Contact Us</a></li>
+        </ul>
+      </nav>
+      <ul class="sidenav" id="mobile-links">
+        <li><a class="modal-trigger" href="#modal3">Login</a></li>
+        <li><a href="public/signUp.home.html">Sign Up</a></li>
+        <li><a class="modal-trigger" href="#modal2">Contact Us</a></li>
+      </ul>
+    </div>
+    <!-- Jumbotron -->
+    <div class="relative">
+        <img src="/images/backgrounds/apartments.jpg" id="apartment" alt="A view of an apartment complex and iphone over it showing a the overview of a rental propety"
+        />
+
+    <div class="absolute-1">
+        <h2 class="main center">
+            The Smartest Way to Manage Rental Properties
+        </h2>
+        <h5 class="main center">
+            Take your investment to the next level. Use digital information to
+            enhance your real estate decision making and start visualizing your
+            profits.
+        </h5>
+    </div>
+
+    <div class="absolute-2">
+        <img id="iphone-x" src="/images/backgrounds/iPhone2X.png" alt="iphone x showing an image of property information with pie chart"/>
+    </div>
+    </div>
+
+    <!-- Login Modal Structure -->
+
+<div id="modal3" class="modal modal-fixed-footer">
+  <div class="center-align">
+      <img src="/images/Alexandria-logo-s.png" id ="alexlogo" alt="Alexandria logo"/>
+  </div>  
+  
+  <div class="modal-content"><h4>Login</h4>
+      <p class="center-align">Welcome Back!</p>
+      <div class="container">
+          <form id="login">
+              <label for="username">username</label>
+              <input type="text" id="username" />
+              <br/>
+              <label for="password"> password </label>
+              <input type="text" id="password" />
+              <p>
+                  <label>
+                    <input type="checkbox" />
+                    <span>Remember Me</span>
+                  </label>
+                </p>
+          </form>
+          <br>
+          <form>
+            <p>
+              New Customer? <a href="public/signUp.home.html" >Create account</a> 
+            </p>
+            <p>
+              Forgot your password?
+            </p>
+          </form>
+      </div>
+  </div>
+  <div class="modal-footer">
+      <a href="public/properties.html"><button class="teal btn waves-effect waves-light" type="submit" name="action">Log In <i class="fas fa-sign-in-alt fa-sm"></i></button></a>
+      <button class="teal btn waves-effect waves-light " type="submit" name="action"> Sign Up <i class="fas fa-user-plus fa-sm"></i></button>
+  </div>
+</div>
+
+</div>
+<!-- End Login Modal Structure -->
+
+<!--Sign Up Modal-->
+
+    <!-- Contact Us Modal Structure -->
+    <div id="modal2" class="modal modal-fixed-footer">
+    <div class="modal-content">
+        <h4>Contact Us</h4>
+        <p>We'd love to hear from you, please drop us a message if you have any questions.</p>
+        <div class="container">
+            <form id="contactus">
+                <label for="fullname">Full Name</label>
+                <input type="text" id="fullname" />
+                <br />
+                <label for="customeremail"> Email </label>
+                <input type="text" id="customeremail" />
+                <br />
+                <label for="message">Message</label>
+                <input type="text" id="message" />
+                </form>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Send</a>
+    </div>
+    </div>
+<!-- End of Contact Us Modal Structure -->
+
+<!-- Beginning of Footer -->
+
+    <footer class="footer page-footer teal lighten-2">
+    <!-- Need to center it and add some padding through html or css -->
+    © 2020 Alexandria. All rights reserved.
+    </footer>
+<!-- End of Footer -->
+
+
+
+
+
+
+    <script
+        src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+        crossorigin="anonymous"
+    ></script>
+    <!-- Compiled and minified JavaScript -->
+    <!--Contact Us Modal-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        $(document).ready(function () {
+        $(".sidenav").sidenav();
+        $(".modal").modal();
+    });
+
+        $(document).ready(function () {
+        $(".sidenav").sidenav();
+        $(".modal3").modal();
+    });
+
+    </script>
+<!--Login Modal-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script>
+
+</script>
+  </body>
+</html>
