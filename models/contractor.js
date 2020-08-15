@@ -1,6 +1,6 @@
 module.exports = function (sequelize, DataTypes) {
     // creates owner table
-    var Contractor = sequelize.define("Owner", {
+    var Contractor = sequelize.define("Contractor", {
         // adds owner name
         name: {
             type: DataTypes.STRING,

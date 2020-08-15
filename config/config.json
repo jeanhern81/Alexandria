@@ -4,6 +4,7 @@
     "password": "Samdevmad1981feb!",
     "database": "alexandria_db",
     "host": "localhost",
+    "port": 3306,
     "dialect": "mysql"
   },
   "test": {
