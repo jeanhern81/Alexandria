@@ -25,6 +25,11 @@ app.get("/add", function (req, res) {
   res.sendFile(path.join(__dirname, "public/addProperties.html"));
 });
 
+app.get("/properties", function (req, res) {
+  res.sendFile(path.join(__dirname, "public/properties.html"));
+});
+
+
 // Starts the server to begin listening
 // ===============================================
 app.listen(PORT, function () {
