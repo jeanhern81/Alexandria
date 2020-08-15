@@ -35,6 +35,12 @@
                     rent: rentVal,
                 });
 
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> lbranch
             } else {
                 arr.push({
                     address: addressVal,
