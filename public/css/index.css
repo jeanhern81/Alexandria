@@ -38,7 +38,7 @@ div.absolute-1 {
 
 
 div.absolute-2 {
-  
+  max-width: 100%;
   position: absolute;
   top: 10%;
   left: 60%;
