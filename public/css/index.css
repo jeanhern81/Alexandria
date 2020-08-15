@@ -1,4 +1,6 @@
+
 body {
+  background: url("../images/backgrounds/houses.jpg");
   display: flex;
   min-height: 100vh;
   flex-direction: column;
@@ -27,15 +29,16 @@ div.absolute-1 {
   color: white;
   }
 
-/*
+
 .absolute-1 {
   align-content: center;
   margin: auto;
   width: 60%;
-} */
+} 
 
 
 div.absolute-2 {
+  
   position: absolute;
   top: 10%;
   left: 60%;
@@ -46,7 +49,8 @@ div.absolute-2 {
 }
 
 #iphone-x {
-  width: 80%;
+  width: 70%;
+  position: relative;
 }
 .log-in-btn {
   font-weight: 800;
@@ -91,6 +95,7 @@ div.absolute-2 {
   }
 
   div.absolute-2 {
+    
     top: 10%;
     left: 60%;
     /* border: 3px solid #73AD21; */
@@ -236,20 +241,20 @@ div.absolute-2 {
   #iphone-x {
     width: 60%;
   }
-  /*
+  
   .log-in-btn {
     margin: 10px 20px;
     float: right;
     font-size: 18px;
   }
-  /*
+  
   .sign-up-btn {
     padding: 4px 20px;
     margin: 20px 20px;
     margin-right: 50px;
     float: right;
     font-size: 18px;
-  }*/
+  }
 }
 
 @media only screen and (max-width: 320px) {
@@ -257,7 +262,7 @@ div.absolute-2 {
     height: auto;
   }
 
-  /*div.absolute-1 {
+  div.absolute-1 {
     top: 30%;
     left: 5%;
     width: 175px;
@@ -266,14 +271,14 @@ div.absolute-2 {
   }
 
 
-  /*
+  
   .absolute-1 h2 {
     font-size: 12px;
   }
   .absolute-1 h5 {
     font-size: 8px;
   }
-  /*
+  
   div.absolute-2 {
     top: 15%;
     left: 100px;
@@ -281,12 +286,12 @@ div.absolute-2 {
     /* border: 3px solid green; */
     /*height: auto;
     width: 200px; */
-  /*} */
+  } 
 
 
-  /*#iphone-x {
+  #iphone-x {
     width: 45%;
-  }*/
+  }
 
   
   .log-in-btn {
