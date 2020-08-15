@@ -1,28 +1,22 @@
+
+body {
+  background: url("../images/backgrounds/houses.jpg");
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+
 div.relative {
   position: relative;
   width: 100%;
   height: 700px;
   /* border: 3px solid #73AD21; */
   overflow: hidden;
-}
-
-#apartment {
-  min-height: 100%;
-  min-width: 1024px;
-	
-  /* Set up proportionate scaling */
-  width: 100%;
-  height: auto;
-	
-  /* Set up positioning */
-  position: fixed;
-  top: 0;
-  left: 0;
-  
-}
+} 
 
 div.absolute-1 {
-  position: fixed;
+  position: absolute;
   top: 35%;
   left: 10%;
   width: 650px;
@@ -33,36 +27,30 @@ div.absolute-1 {
   background-color: rgba(92, 149, 158, 0.5);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
   color: white;
-  float: center;
-
-}
-
-
+  }
 
 
 .absolute-1 {
   align-content: center;
   margin: auto;
   width: 60%;
+} 
 
-}
 
 div.absolute-2 {
-  position: fixed;
+  
+  position: absolute;
   top: 10%;
   left: 60%;
-
   /* border: 3px solid #73AD21; */
   height: auto;
   width: auto;
-  text-align: left;
-
-  float: right;
-  
-  
+  text-align: left;  
 }
+
 #iphone-x {
-  width: 80%;
+  width: 70%;
+  position: relative;
 }
 .log-in-btn {
   font-weight: 800;
@@ -107,6 +95,7 @@ div.absolute-2 {
   }
 
   div.absolute-2 {
+    
     top: 10%;
     left: 60%;
     /* border: 3px solid #73AD21; */
@@ -250,13 +239,15 @@ div.absolute-2 {
   }
 
   #iphone-x {
-    width: 40%;
+    width: 60%;
   }
+  
   .log-in-btn {
     margin: 10px 20px;
     float: right;
     font-size: 18px;
   }
+  
   .sign-up-btn {
     padding: 4px 20px;
     margin: 20px 20px;
@@ -264,12 +255,13 @@ div.absolute-2 {
     float: right;
     font-size: 18px;
   }
-}*/
+}
 
 @media only screen and (max-width: 320px) {
   div.relative {
     height: auto;
   }
+
   div.absolute-1 {
     top: 30%;
     left: 5%;
@@ -277,25 +269,31 @@ div.absolute-2 {
     height: auto;
     /* border: 3px solid green; */
   }
+
+
+  
   .absolute-1 h2 {
     font-size: 12px;
   }
   .absolute-1 h5 {
     font-size: 8px;
   }
+  
   div.absolute-2 {
     top: 15%;
     left: 100px;
     text-align: right;
     /* border: 3px solid green; */
-    height: auto;
-    width: 200px;
-  }
+    /*height: auto;
+    width: 200px; */
+  } 
 
 
   #iphone-x {
     width: 45%;
   }
+
+  
   .log-in-btn {
     margin: 10px 20px;
     float: right;
@@ -325,33 +323,32 @@ div.absolute-2 {
   text-align: center;
 }
 
-@media screen and (max-width: 1024px) { /* Specific to this particular image */
-  img.bg {
-    left: 50%;
-    margin-left: -512px;   /* 50% */
-  }
-}
 
+/*
 
-
-
-.container {
-  width: "328px";
-  height: "328px";
-  display: inline-block;
-}
-
+/* Three image containers (use 25% for four, and 50% for two, etc) */
 .column {
-  width: 100%;;
-  height: 100%;
-  position: relative;
-
+  float: left;
+  width: 33.33%;
+  padding: 5px;
 }
 
+/* Clear floats after image containers */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
 
-
-
-
-
-
-
+/* sets the background image to be spaced out perfectly*/
+#apartment {
+  min-height: 100%;
+  min-width: 1024px;
+	  /* Set up proportionate scaling */
+  width: 100%;
+  height: auto;
+	  /* Set up positioning */
+  position: fixed;
+  top: 0;
+  left: 0;
+  }
