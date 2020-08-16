@@ -9,7 +9,7 @@ $(document).ready(() => {
         var purchaseVal = $("#Purchase").val().trim().toUpperCase();
         var expensesVal = $("#expenses").val().trim().toUpperCase();
         var rentVal = $("#rent").val().trim().toUpperCase()
-
+        // creates an object out of the form data from the add property modal
         var newProperty = {
             address: addressVal,
             city: cityVal,
@@ -19,14 +19,12 @@ $(document).ready(() => {
             mortgage: expensesVal,
             rent: rentVal
         }
-
+        // makes an ajax call to the /api/newProperty route and sends the object to the server
         $.post("/api/newProperty", newProperty).then((data) => {
             console.log(data)
             console.log("adding property")
         })
     });
 
-    addProperty => {
 
-    }
 })
