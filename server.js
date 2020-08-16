@@ -18,20 +18,20 @@ app.use(express.static("public"));
 
 // Routes
 // ===============================================
-
-// Basic route that sends the user first to the Landing Page
 app.get("/", function (req, res) {
-  res.sendFile(path.join(__dirname, "index.html"));
+  res.sendFile(path.join(__dirname, "public/index.html"));
 });
 
-app.get("/add", function (req, res) {
-  res.sendFile(path.join(__dirname, "public/addProperties.html"));
+app.get("/properties", function (req, res) {
+  res.sendFile(path.join(__dirname, "public/properties.html"));
 });
+
 
 // Starts the server to begin listening
 // ===============================================
+
 db.sequelize.sync({ force: true }).then(function () {
   app.listen(PORT, function () {
     console.log("App listening on PORT " + PORT);
   });
-});
+

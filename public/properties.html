@@ -4,51 +4,30 @@
 <head>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<link rel="icon" type="image/png" href="public/images/Alexandria-symbol.png" />
+	<link rel="icon" type="image/png" href="../public/images/Alexandria-symbol-BW.png" />
 	<!-- Compiled and minified CSS -->
 	<link rel="stylesheet" href="css/materialize.css" />
 	<link rel="stylesheet" href="css/mainsStyles.css" />
 	<link rel="stylesheet" href="css/properties.css" />
-	<script src="js/materialize.js"></script>
-
 	<!--Google Fonts-->
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-	<!--Font Awesome-->
-	<script src="https://kit.fontawesome.com/8b8f26d0e1.js" crossorigin="anonymous"></script>
+		<!-- Font Nunito from google -->
+		<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
+		<!--Font Awesome-->
+		<script src="https://kit.fontawesome.com/8b8f26d0e1.js" crossorigin="anonymous"></script>
+
 	<!-- Jquery -->
 	<script src="https://code.jquery.com/jquery-3.5.1.js"
 		integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-	<style>
-		/* Set the size of the div element that contains the map */
-		#map {
-			height: 400px;
-			/* The height is 400 pixels */
-			width: 100%;
-			/* The width is the width of the web page */
-		}
-	</style>
-
-	<script async defer
-		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHRCqL8yZbKNEZl7PFCmbA_XlaIBluHZ8&callback=initMap"></script>
-	<!-- custom js -->
-	<script src="../js/app.js"></script>
-	<!-- Font Nunito from google -->
-	<link
-		href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap"
-		rel="stylesheet" />
 
 	<title>Alexandria | Properties</title>
 </head>
 
 <body>
-	<!-- Beginning of NavBar -->
-	<!-- Beginning of New NavBar Code -->
-
+<!-- Beginning of NavBar -->
 	<div class="container-fluid">
 		<nav class="navbar-fixed nav-wrapper teal lighten-2">
-
-			<a href="../index.html" class=" brand-logo"><img id="alexandria-logo"
-					src="images/Alexandria-logo-BW.png" alt="Alexandria Logo" width="250"></a>
+			<a href="index.html" class=" brand-logo"><img id="alexandria-logo" src="images/Alexandria-logo-BW.png" alt="Alexandria Logo" width="250"></a>
 			<a href="#" data-target="mobile-links" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 			<ul class="right hide-on-med-and-down">
 				<li class="active"><a class="btn" href="properties.html">Properties</a></li>
@@ -65,21 +44,19 @@
 		</ul>
 	</div>
 
-	<!-- Beginning of Heading -->
+<!-- Beginning of Heading -->
 	<div class="container-fluid">
-
 		<div class="row">
-
-
 			<h5 id="property-header">PROPERTIES</h5>
 			<!-- Beginning of Property listings. This Section will need to be dynamic with JS. -->
 			<!-- Propertery #1 - Just a place holder-->
 		</div>
 	</div>
-	<div class="property-body"></div>
 
+	<div class="property-body">
+	</div>
 
-	<!-- add contact us modal -->
+<!-- add contact us modal -->
 	<div id="modal2" class="modal modal-fixed-footer">
 		<div class="modal-content">
 			<h4>Contact Us</h4>
@@ -101,17 +78,14 @@
 		</div>
 	</div>
 
-	<!-- add property modal -->
+<!-- add property modal -->
 	<div id="addProperties" class="modal modal-fixed-footer">
 		<div class="modal-content">
 			<div class="row">
-
 				<div class="col s12 main center">
 					<h1>Add Properties</h1>
 				</div>
 			</div>
-
-
 			<br />
 			<div class="container">
 				<form id="Property">
@@ -140,61 +114,92 @@
 				</form>
 			</div>
 		</div>
-
 	</div>
-	<!-- property map modal -->
+
+<!-- property map modal -->
 	<div id="propertyMap" class="modal modal-fixed-footer">
 		<div class="modal-content">
 			<div class="row">
 				<div class="col s12 main center" id="mapTitle">
-
 				</div>
 			</div>
-
-
 			<br />
 			<div class="container">
 				<div id="map"></div>
-
 			</div>
 		</div>
-
-
 	</div>
 
-	<!-- add property button -->
+<!-- add property button on + modal -->
 	<div class="row">
-
 		<div class="col s12 center-align">
 			<a class="waves-effect waves-light btn-large modal-trigger" href="#addProperties"><i
-					class="medium material-icons">add</i></a>
+<<<<<<< HEAD
+					class="medium material-icons">add_location</i></a>
 
+=======
+					class="medium material-icons">add</i></a>
+>>>>>>> lbranch
 		</div>
 	</div>
 
 
-	</div>
+<!--Footer -->
+	<footer class="footer main page-footer teal lighten-2">
+		<ul class="nav justify-content-center">
+
+			<li class="nav-item p-2">
+			  <a href="https://www.instagram.com/alexandria.smart/" target="_blank" class="fa fa-instagram"></a>
+			</li>
+		  </ul>
+		<!-- Need to center it and add some padding through html or css -->
+		© 2020 Alexandria. All rights reserved.
+
+	</footer>
+	
 
 
+<!-- ====================================SCRIPTS ======================================= -->
+<!-- =================================================================================== -->
 
 
+<!-- Materialize JS library. Note: this services the add property modal -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+	<script src="js/materialize.js"></script>
 
-
-	<!-- script for add property modal -->
-	<script>
-  $(document).ready(function(){
-    $('.modal').modal();
-  });
-
+<<<<<<< HEAD
 	</script>
-	<!-- script for property map modal -->
-	<script>
 
+
+	<!-- script for property map modal -->
+=======
+<!-- Script for links to social media -->
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+
+<!-- script for add property modal -->
+>>>>>>> lbranch
+	<script>
+		//prompts modal on add property
+		$(document).ready(function(){
+			$('.modal').modal();
+		});
+		//prompts modal on Nav Bar - Contact Us - Button
+		$(document).ready(function () {
+			$('.sidenav').sidenav();
+			$('.modal').modal();
+		});
+	</script>
+
+<!-- script for property map modal -->
+	<script>
 		document.addEventListener('DOMContentLoaded', function () {
 			var elem = document.getElementById('#propertyMap');
 			var instance = M.Modal.init(elem);
 		});
 	</script>
+<<<<<<< HEAD
+
+
 	<!-- script for dynamic content loading of property listings -->
 	<script>
 		// function to get properties from local storage object
@@ -202,7 +207,6 @@
 
 			getFromLocal();
 			getMash()
-
 
 			// function to add properties to local storage
 
@@ -299,6 +303,7 @@
 						var sqftStyle = $("<span class='teal-text text-lighten-2'>")
 
 						sqftDiv.append(sqftStyle).text("sqft: " + addressArr[i].sqFt)
+						
 						//  adds formatting for buttons
 						var buttonDiv = $('<div class="container-fluid">')
 						var buttonStyle = $('<div class="col pull-s4 s12 m12 l12"></div>')
@@ -311,6 +316,7 @@
 						workIconDiv.append(workLink);
 						workLink.append(workIcon);
 						workIcon.text("build");
+
 						// builds out money icon
 						var moneyIconDiv = $("<div class='col s3'>");
 						var moneyLink = $("<a class='waves-effect waves-light btn-large'>");
@@ -337,13 +343,14 @@
 						})
 						mapLink.html(mapIcon)
 						mapIcon.text("map")
-						// builds out delete icon
 
+
+						// builds out delete icon
 						var deleteIconDiv = $("<div class='col s3' id='delete'>");
 						var deleteLink = $("<a class='waves-effect waves-light btn-large ' href=''>");
 
 						var deleteIcon = $("<i class='material-icons center' >");
-						deleteIcon.text("close")
+						deleteIcon.text("delete")
 						deleteLink.append(deleteIcon)
 						deleteIconDiv.append(deleteLink)
 
@@ -372,10 +379,15 @@
 						propertyDivContainer.append(propertyDiv)
 						$(".property-body").append(propertyDivContainer);
 					}
+
+
+
+
 					// on click function to delete properties
 					$(document).on("click", "#delete", function () {
-
-						var results = [];
+						var txt;
+						if (confirm("Press OK to delete or press CANCEL to go back.")) {						
+							var results = [];
 						// location of the address div
 						var toSearch = $(this).parent().parent().siblings().find("#address")[0].textContent;
 						// for loop that runs through the address array and checks for matching address to remove
@@ -389,6 +401,14 @@
 
 							}
 						}
+							txt = "You pressed OK to DELETE";
+						} else {
+							txt = "You pressed CANCEL to go BACK";
+						}
+						document.getElementById("demo").innherHTML = txt;
+
+
+
 
 
 					})
@@ -475,35 +495,22 @@
 
 
 		})
+=======
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHRCqL8yZbKNEZl7PFCmbA_XlaIBluHZ8&callback=initMap"></script>
 
-	</script>
+<!-- custom js -->
+	<script src="../js/app.js"></script>
+>>>>>>> lbranch
+
+<!-- script for dynamic content loading of property listings (content moved to property-LocalStorage.js)-->
+	<script src="js/property-LocalStorage.js"></script>
+	
 	<!-- <script src="../js/property.js"></script> -->
 
+<!-- ZILLOW API CALL -->
+	<script src="js/properties-zillowAPI.js" ></script>
 
 
-
-	<!--Footer -->
-	<footer class="footer main page-footer teal lighten-2">
-		<!-- Need to center it and add some padding through html or css -->
-		© 2020 Alexandria. All rights reserved.
-	</footer>
-
-
-	<!-- JQuery -->
-	<script src="https://code.jquery.com/jquery-2.2.4.min.js"
-		integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-	<!-- <script src="https://code.jquery.com/jquery-3.5.1.js"
-		integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script> -->
-
-	<!-- Compiled and minified JavaScript -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-	<!-- <script src="../js/property.js"></script> -->
-	<script>
-		$(document).ready(function () {
-			$('.sidenav').sidenav();
-			$('.modal').modal();
-		});
-	</script>
 </body>
 
 </html>
