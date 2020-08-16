@@ -25,6 +25,25 @@ app.get("/", function (req, res) {
 app.get("/properties", function (req, res) {
   res.sendFile(path.join(__dirname, "public/properties.html"));
 });
+app.post("/api/newProperty", function (req, res) {
+  var property = req.body;
+
+  db.Property.create({
+    address: property.address,
+    city: property.city,
+    state: property.state,
+    zip: property.zip,
+    mortgage: property.mortgage,
+    purchasePrice: property.purchasePrice,
+    rent: property.rent
+
+
+
+
+  })
+  res.status(204).end();
+
+})
 
 
 // Starts the server to begin listening
