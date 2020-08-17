@@ -1,9 +1,10 @@
 {
   "development": {
     "username": "root",
-    "password": "",
-    "database": "passport_demo",
+    "password": "Mercury35!",
+    "database": "alexandria_db",
     "host": "localhost",
+    "port": 3306,
     "dialect": "mysql"
   },
   "test": {

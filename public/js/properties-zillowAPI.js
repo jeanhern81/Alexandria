@@ -1,7 +1,6 @@
-const axios = require("axios");
+// const axios = require("axios"); //this is not required. CDN being used at properties.html
 
-// eventually inputs will be coming from the form fields
-function getZestimate (){ 
+    console.log("Zestimate document works");
     axios({
         "method":"GET",
         "url":"https://zillow-com.p.rapidapi.com/search/address",
@@ -23,7 +22,9 @@ function getZestimate (){
 
         })
         .catch((error)=>{
-        console.log(error)
+        console.log(error, error.response)
         })
-}
-    module.exports =getZestimate;
+
+
+
+
