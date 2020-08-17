@@ -35,7 +35,7 @@ module.exports = function (sequelize, DataTypes) {
         },
         //  creates field for monthly mortgage 
         mortgage: {
-            type: DataTypes.DECIMAL,
+            type: DataTypes.FLOAT,
             allowNull: false,
             validate: {
                 len: [1]
@@ -43,7 +43,7 @@ module.exports = function (sequelize, DataTypes) {
         },
         // creates field to store original purchase price of the property
         purchasePrice: {
-            type: DataTypes.DECIMAL,
+            type: DataTypes.FLOAT,
             allowNull: false,
             validate: {
                 len: [1]
@@ -51,7 +51,7 @@ module.exports = function (sequelize, DataTypes) {
         },
         // creates a field for the monthly rent charged
         rent: {
-            type: DataTypes.DECIMAL,
+            type: DataTypes.FLOAT,
             allowNull: false,
             validate: {
                 len: [1]
@@ -61,12 +61,12 @@ module.exports = function (sequelize, DataTypes) {
 
 
     })
-    Property.associate = function (models) {
-        Property.belongsTo(models.Owner, {
-            foreignKey: {
-                allowNull: false
-            }
-        })
-    }
+    // Property.associate = function (models) {
+    //     Property.belongsTo(models.Owner, {
+    //         foreignKey: {
+    //             allowNull: false
+    //         }
+    //     })
+    // }
     return Property
 }
