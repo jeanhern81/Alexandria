@@ -13,7 +13,7 @@ function getLatLong(a) {
     url: queryURL,
     method: "GET",
   }).then(function (response) {
-    console.log(JSON.stringify(response.results[0].geometry.location));
+    // console.log(JSON.stringify(response.results[0].geometry.location));
     return;
   });
 }
