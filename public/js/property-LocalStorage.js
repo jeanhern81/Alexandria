@@ -176,8 +176,15 @@
                     propertyDivContainer.append(propertyDiv)
                     $(".property-body").append(propertyDivContainer);
                 }
+
+
+
                 // on click function to delete properties
                 $(document).on("click", "#delete", function () {
+                    //comment box to warn that location address will be deleted
+                    var txt;
+                    if (confirm("Press OK to delete or press CANCEL to go back.")) {
+
 
                     var results = [];
                     // location of the address div
@@ -193,7 +200,11 @@
 
                         }
                     }
-
+                    txt = "You pressed OK to DELETE";
+                } else {
+                    txt = "You pressed CANCEL to go BACK";
+                }
+                document.getElementById("demo").innherHTML = txt;
 
                 })
             }
