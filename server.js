@@ -55,6 +55,7 @@ app.post("/api/newProperty", function (req, res) {
 
 })
 app.delete("/api/:id", function (req, res) {
+  // this route deletes the property based on the property Id
   db.Property.destroy({
     where: {
       id: req.params.id
