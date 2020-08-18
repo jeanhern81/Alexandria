@@ -168,6 +168,7 @@ $(document).ready(function () {
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
                     // appends property to body
                     propertyDivStyle.append(addressSpan);
                     propertyDiv.append(propertyDivStyle);
@@ -200,6 +201,8 @@ $(document).ready(function () {
                             // once removed from the array this pushes the remaining array back into local storage
                             localStorage.setItem("addresses", JSON.stringify(addressArr))
 =======
+=======
+>>>>>>> bc7f781a293659b54c60063dea9cec4256058591
                 // appends property to body
                 propertyDivStyle.append(addressSpan);
                 propertyDiv.append(propertyDivStyle);
@@ -224,6 +227,7 @@ $(document).ready(function () {
                         addressArr.splice(i, 1)
                         // once removed from the array this pushes the remaining array back into local storage
                         localStorage.setItem("addresses", JSON.stringify(addressArr))
+<<<<<<< HEAD
 >>>>>>> 4ee2143ce765695a80c2fb62e3fc511863125f5e
 
                     }
@@ -234,12 +238,17 @@ $(document).ready(function () {
                 }
                 document.getElementById("demo").innherHTML = txt;
 =======
+=======
+
+                    }
+>>>>>>> bc7f781a293659b54c60063dea9cec4256058591
                 }
 
 >>>>>>> 4ee2143ce765695a80c2fb62e3fc511863125f5e
 
             })
         }
+<<<<<<< HEAD
 
     }
     // this function takes in an address and hits the google geocode api, the api then returns a response in the form of a json object
@@ -258,6 +267,26 @@ $(document).ready(function () {
             initMap(address);
 
 
+=======
+
+    }
+    // this function takes in an address and hits the google geocode api, the api then returns a response in the form of a json object
+    function getLatLong(a) {
+        var queryURL =
+            "https://maps.googleapis.com/maps/api/geocode/json?address=" +
+            a +
+            "&key=AIzaSyDHRCqL8yZbKNEZl7PFCmbA_XlaIBluHZ8";
+        $.ajax({
+            url: queryURL,
+            method: "GET",
+        }).then(function (response) {
+            // this takes in the response from the geocode api traverses the object to get the latitude and longitude object
+            var address = response.results[0].geometry.location;
+            // the function then calls the init map function and passes in the latitude and longitude object
+            initMap(address);
+
+
+>>>>>>> bc7f781a293659b54c60063dea9cec4256058591
         });
     }
     // this function uses google's map api to build a map and place a  marker. it takes in an object containing the latitude and  longitude coordinates 
