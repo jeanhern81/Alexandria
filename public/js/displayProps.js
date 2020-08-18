@@ -128,3 +128,35 @@ function getFromDb() {
 
 
 }
+
+function getLatLong(a) {
+    var queryURL =
+        "https://maps.googleapis.com/maps/api/geocode/json?address=" +
+        a +
+        "&key=AIzaSyDHRCqL8yZbKNEZl7PFCmbA_XlaIBluHZ8";
+    $.ajax({
+        url: queryURL,
+        method: "GET",
+    }).then(function (response) {
+        // this takes in the response from the geocode api traverses the object to get the latitude and longitude object
+        var address = response.results[0].geometry.location;
+        // the function then calls the init map function and passes in the latitude and longitude object
+        initMap(address);
+
+
+    });
+}
+
+// Uses google's map api to build a map and place a  marker. It takes in an object containing  
+// the latitude and  longitude coordinates builds a map and places a marker at those coordinates
+function initMap(mark) {
+    // The location of property
+    var address = mark;
+    // The map, centered at property address chosen
+    var map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 13,
+        center: address,
+    });
+    // The marker, positioned at the property address chosen
+    var marker = new google.maps.Marker({ position: address, map: map });
+}
