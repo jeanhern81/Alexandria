@@ -169,6 +169,7 @@ $(document).ready(function () {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     // appends property to body
                     propertyDivStyle.append(addressSpan);
                     propertyDiv.append(propertyDivStyle);
@@ -203,6 +204,8 @@ $(document).ready(function () {
 =======
 =======
 >>>>>>> bc7f781a293659b54c60063dea9cec4256058591
+=======
+>>>>>>> bc7f781a293659b54c60063dea9cec4256058591
                 // appends property to body
                 propertyDivStyle.append(addressSpan);
                 propertyDiv.append(propertyDivStyle);
@@ -228,6 +231,7 @@ $(document).ready(function () {
                         // once removed from the array this pushes the remaining array back into local storage
                         localStorage.setItem("addresses", JSON.stringify(addressArr))
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 4ee2143ce765695a80c2fb62e3fc511863125f5e
 
                     }
@@ -239,11 +243,17 @@ $(document).ready(function () {
                 document.getElementById("demo").innherHTML = txt;
 =======
 =======
+=======
+
+                    }
+                }
+>>>>>>> bc7f781a293659b54c60063dea9cec4256058591
 
                     }
 >>>>>>> bc7f781a293659b54c60063dea9cec4256058591
                 }
 
+<<<<<<< HEAD
 >>>>>>> 4ee2143ce765695a80c2fb62e3fc511863125f5e
 
             })
@@ -269,6 +279,11 @@ $(document).ready(function () {
 
 =======
 
+=======
+            })
+        }
+
+>>>>>>> bc7f781a293659b54c60063dea9cec4256058591
     }
     // this function takes in an address and hits the google geocode api, the api then returns a response in the form of a json object
     function getLatLong(a) {
@@ -286,6 +301,9 @@ $(document).ready(function () {
             initMap(address);
 
 
+<<<<<<< HEAD
+>>>>>>> bc7f781a293659b54c60063dea9cec4256058591
+=======
 >>>>>>> bc7f781a293659b54c60063dea9cec4256058591
         });
     }
