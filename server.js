@@ -25,6 +25,15 @@ app.get("/", function (req, res) {
 app.get("/properties", function (req, res) {
   res.sendFile(path.join(__dirname, "public/properties.html"));
 });
+
+app.get("/api/", function (req, res) {
+  db.Property.findAll({}).then(function (data) {
+    console.log(data);
+    res.json(data);
+  })
+});
+
+
 app.post("/api/newProperty", function (req, res) {
   // this route takes in the post request coming from the add Property Modal
   var property = req.body;
