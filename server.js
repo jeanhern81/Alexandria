@@ -54,7 +54,15 @@ app.post("/api/newProperty", function (req, res) {
   res.status(204).end();
 
 })
-
+app.delete("/api/:id", function (req, res) {
+  db.Property.destroy({
+    where: {
+      id: req.params.id
+    }
+  }).then(() => {
+    console.log("successfully deleted")
+  })
+})
 
 // Starts the server to begin listening
 // ===============================================

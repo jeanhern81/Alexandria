@@ -10,6 +10,7 @@ function getFromDb() {
             var zipData = data[i].zip;
             var rentData = data[i].rent;
             var mortgageData = data[i].mortgage;
+            var id = data[i].id
 
             // taken from lacal storage code
             var propertyDivContainer = $("<div class='container-fluid'>")
@@ -85,7 +86,7 @@ function getFromDb() {
             mapIcon.text("map")
             // builds out delete icon
 
-            var deleteIconDiv = $("<div class='col s3' id='delete'>");
+            var deleteIconDiv = $("<div class='col s3' id='delete' data-id=" + id + "> ");
             var deleteLink = $("<a class='waves-effect waves-light btn-large ' href=''>");
 
             var deleteIcon = $("<i class='material-icons center' >");
@@ -128,6 +129,24 @@ function getFromDb() {
 
 
 }
+
+$(document).on("click", "#delete", function () {
+
+    var results = [];
+    // location of the address div
+    var id = this.dataset.id;
+    // .parent().parent().siblings().find("#address")[0]
+
+    $.ajax({
+        method: "DELETE",
+        url: "/api/" + id
+    }).then(() => {
+        location.reload()
+    })
+
+})
+
+
 
 function getLatLong(a) {
     var queryURL =
