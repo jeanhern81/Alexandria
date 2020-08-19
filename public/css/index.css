@@ -15,23 +15,24 @@ div.relative {
 
 /* This is the text box 'The Smartest Way...'*/
 div.absolute-1  {
-  position: absolute; 
+  position: ; 
   margin-top: 15%;
   top: 35%;
   left: 10%; 
   width: 650px;
   height: 350px;
-  border-radius: 1em;
-  text-align: left;
+  
+  
 
   }
 
   .card-content {
     
-    top: 15%;
     background-color: rgba(92, 149, 158, 0.5);
     color: rgb(253, 252, 252);
     bottom: 20px; 
+    border-radius: 1em;
+    text-align: left;
 
   }
 
@@ -199,7 +200,7 @@ div.absolute-2 {
   } 
 
   #iphone-x {
-    width: auto%;
+    width: auto;
   }
   .log-in-btn {
     margin: 10px 20px;
