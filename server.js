@@ -26,6 +26,15 @@ app.get("/", function (req, res) {
 app.get("/properties", function (req, res) {
   res.sendFile(path.join(__dirname, "public/properties.html"));
 });
+
+app.get("/api/", function (req, res) {
+  db.Property.findAll({}).then(function (data) {
+    console.log(data);
+    res.json(data);
+  })
+});
+
+
 app.post("/api/newProperty", function (req, res) {
   // this route takes in the post request coming from the add Property Modal
   var property = req.body;
@@ -46,7 +55,16 @@ app.post("/api/newProperty", function (req, res) {
   res.status(204).end();
 
 })
-
+app.delete("/api/:id", function (req, res) {
+  // this route deletes the property based on the property Id
+  db.Property.destroy({
+    where: {
+      id: req.params.id
+    }
+  }).then(() => {
+    console.log("successfully deleted")
+  })
+})
 
 // Starts the server to begin listening
 // ===============================================

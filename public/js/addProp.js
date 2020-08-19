@@ -23,6 +23,7 @@ $(document).ready(() => {
         $.post("/api/newProperty", newProperty).then((data) => {
             console.log(data)
             console.log("adding property")
+            location.reload();
         })
     });
 
