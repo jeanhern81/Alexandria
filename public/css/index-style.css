@@ -1,0 +1,72 @@
+html {
+  background: url(../images/backgrounds/houses.jpg) no-repeat center center
+    fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+/* background: url("../images/backgrounds/houses.jpg"); */
+display: flex;
+min-height: 100vh;
+flex-direction: column;
+}
+
+
+/*Sign In Modal Logo*/
+#alexlogo {
+  padding-top: 15px;
+}
+
+
+/* footer */
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  text-align: center;
+}
+
+#smartest {
+  background-color: rgba(92, 149, 158, 0.5);
+  color: rgb(253, 252, 252);
+  margin-top: 30%;
+  bottom: 20px;
+  border-radius: 1em;
+  text-align: left;
+}
+
+#iphone-x {
+  float: right;
+  width: 50%;
+}
+
+/**** MEDIA QUERIES****/
+
+@media only screen and (max-width: 1224px) {
+  #smartest {
+    margin-top: 0%;
+  }
+
+  #iphone-x {
+    width: auto;
+  }
+
+}
+
+
+@media only screen and (max-width: 320px) {
+
+  #smartest {
+    margin-top: 0%;
+  } 
+}
