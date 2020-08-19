@@ -1,0 +1,15 @@
+.property-table{
+    margin: 50px auto;
+    /* width: fit-content; */
+    /* padding: 25px 25px; */
+
+}
+
+caption {
+    display: table-caption;
+    text-align: center;
+    font-weight: 700;
+  }
+
+
+
