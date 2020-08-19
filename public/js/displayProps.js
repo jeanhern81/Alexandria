@@ -17,7 +17,7 @@ function getFromDb() {
             var propertyDiv = $("<div class='row'> ");
             var propertyDivStyle = $("<div class='col'>");
             var addressSpan = $("<span class='propAdd'>")
-            var address = $("<h6 class='propAdd' id='address'>").text(
+            var address = $("<h6 class='propAdd' id='address' data-id=" + id + ">").text(
                 addressData.toUpperCase())
             var cityState = $("<h6 class='propAdd' id='city/state'>").text(
                 " " +
@@ -73,7 +73,7 @@ function getFromDb() {
             var mapIcon = $("<i class='material-icons center'>");
 
             mapIconDiv.append(mapLink).on("click", function () {
-                console.log($(this).parent().parent().siblings()[0].textContent)
+                // console.log($(this).parent().parent().siblings()[0].textContent)
                 getLatLong($(this).parent().parent().siblings()[0].textContent)
 
                 var mapTextH6 = $("<h6>")
@@ -94,12 +94,22 @@ function getFromDb() {
             deleteLink.append(deleteIcon)
             deleteIconDiv.append(deleteLink)
 
+            var editIconDiv = $("<div class='col s3' id='edit' data-id=" + id + "> ");
+            var editLink = $("<a class='waves-effect waves-light btn-large modal-trigger' href='#editProperties'>");
+
+            var editIcon = $("<i class='material-icons center' >");
+            editIcon.text("close")
+            editLink.append(editIcon)
+            editIconDiv.append(editLink)
+
+
 
             buttonSec = $('<section class="property-buttons">')
             // appends buttons to formatted div
             buttonSec.append(moneyIconDiv);
-            buttonSec.append(workIconDiv);
+
             buttonSec.append(mapIconDiv)
+            buttonSec.append(editIconDiv);
             buttonSec.append(deleteIconDiv)
 
             buttonDiv.append(buttonStyle)
@@ -114,6 +124,7 @@ function getFromDb() {
             propertyDiv.append(propertyDivStyle);
             propertyDiv.append(rentDiv);
             propertyDiv.append(mortgageDiv);
+
             // propertyDiv.append(sqftDiv)
             propertyDiv.append(buttonDiv)
             propertyDivContainer.append(propertyDiv)
@@ -145,6 +156,44 @@ $(document).on("click", "#delete", function () {
     })
 
 })
+
+$(document).on("click", "#edit", function (event) {
+    event.preventDefault();
+    var id = this.dataset.id
+    // document.querySelector("#address")
+
+    console.log(id)
+    var editTextH6 = $("<h6>")
+    $("#editTitle").html(editTextH6)
+    editTextH6.text($(this).parent().parent().siblings()[0].textContent)
+
+
+    $(document).on("click", "#editProperty", function (event) {
+        // makes an ajax call to the /api/newProperty route and sends the object to the server
+        var addressVal = $("#estreetAddress").val().trim()
+        var cityVal = $("#ecity").val().trim()
+        var stateVal = $("#estate").val().trim()
+        var zipVal = $("#ezipCode").val().trim()
+        var purchaseVal = $("#ePurchase").val().trim()
+        var expensesVal = $("#eexpenses").val().trim()
+        var rentVal = $("#erent").val().trim()
+        // creates an object out of the form data from the add property modal
+        var newProperty = {
+            address: addressVal,
+            city: cityVal,
+            state: stateVal,
+            zip: zipVal,
+            purchasePrice: purchaseVal,
+            mortgage: expensesVal,
+            rent: rentVal,
+            id: id
+        }
+        update(newProperty)
+    })
+
+
+})
+
 
 
 
@@ -178,4 +227,15 @@ function initMap(mark) {
     });
     // The marker, positioned at the property address chosen
     var marker = new google.maps.Marker({ position: address, map: map });
+}
+function update(prop) {
+    $.ajax({
+        method: "PUT",
+        url: "/api/properties",
+        data: prop
+    }).then((prop) => {
+        location.reload();
+        console.log(prop)
+    })
+
 }

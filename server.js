@@ -64,6 +64,20 @@ app.delete("/api/:id", function (req, res) {
     console.log("successfully deleted")
   })
 })
+app.put("/api/properties", function (req, res) {
+  var property = req.body
+  console.log(property)
+  db.Property.update(
+    property,
+    {
+      where: {
+        id: property.id
+      }
+    }).then(function (property) {
+      res.json(property);
+    });
+});
+
 
 // Starts the server to begin listening
 // ===============================================

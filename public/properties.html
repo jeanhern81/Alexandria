@@ -121,6 +121,48 @@
 			</div>
 		</div>
 	</div>
+	<div id="editProperties" class="modal modal-fixed-footer">
+		<div class="modal-content">
+			<div class="row">
+				<div class="col s12 main center">
+					<h1>Edit Property</h1>
+					<div class="col s12 main center" id="editTitle"></div>
+
+				</div>
+			</div>
+			<br />
+			<div class="container">
+				<form id="Property">
+					<label for="streetAddress">Street Address</label>
+					<input type="text" id="estreetAddress" />
+					<br />
+					<label for="city"> City </label>
+					<input type="text" id="ecity" required />
+					<br />
+					<label for="state">State abbreviation</label>
+					<input type="text" id="estate" maxlength="2" size="2" required />
+					<br />
+					<label for="zipcode">zip code</label>
+					<input type="text" id="ezipCode" maxlength="5" size="5" required />
+					<br />
+					<label for="expenses">Monthly Expenses</label>
+					<input type="text" id="eexpenses" />
+					<br />
+					<label for="Purchase">Purchase Price</label>
+					<input type="text" id="ePurchase" />
+					<br />
+					<label for="rent">Monthly Rent</label>
+					<input type="text" id="erent" />
+					<br />
+					<div class="row">
+						<a href="#!"><button class="col offset-s4 btn waves-effect waves-light modal-close"
+								type="submit" id="editProperty"> edit Property</button></a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
 
 	<!-- property map modal -->
 	<div id="propertyMap" class="modal modal-fixed-footer">
