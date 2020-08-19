@@ -21,7 +21,7 @@ $(document).ready(() => {
         }
         // makes an ajax call to the /api/newProperty route and sends the object to the server
         $.post("/api/newProperty", newProperty).then((data) => {
-            console.log(data)
+
             console.log("adding property")
 <<<<<<< HEAD
 <<<<<<< HEAD
