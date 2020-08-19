@@ -167,6 +167,45 @@ $(document).ready(function () {
 
 
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+                    // appends property to body
+                    propertyDivStyle.append(addressSpan);
+                    propertyDiv.append(propertyDivStyle);
+                    propertyDiv.append(rentDiv);
+                    propertyDiv.append(expenseDiv);
+                    propertyDiv.append(sqftDiv)
+                    propertyDiv.append(buttonDiv)
+                    propertyDivContainer.append(propertyDiv)
+                    $(".property-body").append(propertyDivContainer);
+                }
+
+
+
+                // on click function to delete properties
+                $(document).on("click", "#delete", function () {
+                    //comment box to warn that location address will be deleted
+                    var txt;
+                    if (confirm("Press OK to delete or press CANCEL to go back.")) {
+
+
+                    var results = [];
+                    // location of the address div
+                    var toSearch = $(this).parent().parent().siblings().find("#address")[0].textContent;
+                    // for loop that runs through the address array and checks for matching address to remove
+                    for (var i = 0; i < addressArr.length; i++) {
+                        // if statement that checks if the address matched the address value of any of the array objects
+                        if (addressArr[i].address.toUpperCase().indexOf(toSearch) != -1) {
+                            // if it is found this removes that object from the array
+                            addressArr.splice(i, 1)
+                            // once removed from the array this pushes the remaining array back into local storage
+                            localStorage.setItem("addresses", JSON.stringify(addressArr))
+=======
+=======
+>>>>>>> bc7f781a293659b54c60063dea9cec4256058591
+=======
+>>>>>>> bc7f781a293659b54c60063dea9cec4256058591
                 // appends property to body
                 propertyDivStyle.append(addressSpan);
                 propertyDiv.append(propertyDivStyle);
@@ -191,13 +230,35 @@ $(document).ready(function () {
                         addressArr.splice(i, 1)
                         // once removed from the array this pushes the remaining array back into local storage
                         localStorage.setItem("addresses", JSON.stringify(addressArr))
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 4ee2143ce765695a80c2fb62e3fc511863125f5e
+
+                    }
+<<<<<<< HEAD
+                    txt = "You pressed OK to DELETE";
+                } else {
+                    txt = "You pressed CANCEL to go BACK";
+                }
+                document.getElementById("demo").innherHTML = txt;
+=======
+=======
+=======
 
                     }
                 }
+>>>>>>> bc7f781a293659b54c60063dea9cec4256058591
 
+                    }
+>>>>>>> bc7f781a293659b54c60063dea9cec4256058591
+                }
+
+<<<<<<< HEAD
+>>>>>>> 4ee2143ce765695a80c2fb62e3fc511863125f5e
 
             })
         }
+<<<<<<< HEAD
 
     }
     // this function takes in an address and hits the google geocode api, the api then returns a response in the form of a json object
@@ -216,6 +277,34 @@ $(document).ready(function () {
             initMap(address);
 
 
+=======
+
+=======
+            })
+        }
+
+>>>>>>> bc7f781a293659b54c60063dea9cec4256058591
+    }
+    // this function takes in an address and hits the google geocode api, the api then returns a response in the form of a json object
+    function getLatLong(a) {
+        var queryURL =
+            "https://maps.googleapis.com/maps/api/geocode/json?address=" +
+            a +
+            "&key=AIzaSyDHRCqL8yZbKNEZl7PFCmbA_XlaIBluHZ8";
+        $.ajax({
+            url: queryURL,
+            method: "GET",
+        }).then(function (response) {
+            // this takes in the response from the geocode api traverses the object to get the latitude and longitude object
+            var address = response.results[0].geometry.location;
+            // the function then calls the init map function and passes in the latitude and longitude object
+            initMap(address);
+
+
+<<<<<<< HEAD
+>>>>>>> bc7f781a293659b54c60063dea9cec4256058591
+=======
+>>>>>>> bc7f781a293659b54c60063dea9cec4256058591
         });
     }
     // this function uses google's map api to build a map and place a  marker. it takes in an object containing the latitude and  longitude coordinates 

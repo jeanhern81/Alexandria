@@ -11,17 +11,14 @@ fontSize{
     font-size: 800px;
 }
 
-/* .property-body{
-
-
+.property-body{
     margin: 50px 150px;
-   
 
-} */
+} 
 
 .row{
     padding-bottom: 20px;
-    border-bottom: rgba(211, 211, 211, 0.596) solid 1px;
+    /*border-bottom: rgba(211, 211, 211, 0.596) solid 1px;*/
 
 }
 

@@ -23,7 +23,14 @@ $(document).ready(() => {
         $.post("/api/newProperty", newProperty).then((data) => {
 
             console.log("adding property")
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
             location.reload();
+>>>>>>> bc7f781a293659b54c60063dea9cec4256058591
+=======
+            location.reload();
+>>>>>>> bc7f781a293659b54c60063dea9cec4256058591
         })
     });
 

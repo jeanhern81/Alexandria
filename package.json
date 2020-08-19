@@ -1,8 +1,17 @@
 {
   "name": "alexandria",
   "version": "1.0.0",
-  "description": "Title: Alexandria - Propery Management App",
+  "description": "--- Title: Alexandria - Propery Management App",
   "main": "server.js",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "express": "^4.17.1",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.1.0",
+    "path": "^0.12.7",
+    "sequelize": "^6.3.4"
+  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
@@ -11,21 +20,10 @@
     "type": "git",
     "url": "git+https://github.com/jeanhern81/Alexandria.git"
   },
-  "author": "\"Jeanette Hernandez, Isaac Tsao, Joshua Levish, Gerson Marroquin\"",
+  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/jeanhern81/Alexandria/issues"
   },
-  "homepage": "https://github.com/jeanhern81/Alexandria#readme",
-  "dependencies": {
-    "axios": "^0.19.2",
-    "express": "^4.17.1",
-    "jsonwebtoken": "^8.5.1",
-    "mysql": "^2.18.1",
-    "mysql2": "^2.1.0",
-    "passport": "^0.4.1",
-    "path": "^0.12.7",
-    "sequelize": "^6.3.4"
-  },
-  "devDependencies": {}
+  "homepage": "https://github.com/jeanhern81/Alexandria#readme"
 }

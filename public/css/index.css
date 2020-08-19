@@ -6,64 +6,55 @@ body {
   flex-direction: column;
 }
 
-/*
 div.relative {
-  position: absolute;
+  position:fixed;
   width: 100%;
   height: 700px;
-  overflow: hidden;
+  
 } 
-*/
 
 /* This is the text box 'The Smartest Way...'*/
-div.absolute-1 {
-  position: absolute;
+div.absolute-1  {
+  position: ; 
+  margin-top: 15%;
   top: 35%;
-  left: 10%;
+  left: 10%; 
   width: 650px;
   height: 350px;
-  border-radius: 1em;
-  text-align: left;
-  background-color: rgba(92, 149, 158, 0.5);
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
-  color: rgb(253, 252, 252);
+  
+  
+
   }
 
-/*
-.absolute-1 {
-  align-content: center;
-  margin: auto;
-  width: 60%;
-} 
-*/
+  .card-content {
+    
+    background-color: rgba(92, 149, 158, 0.5);
+    color: rgb(253, 252, 252);
+    bottom: 20px; 
+    border-radius: 1em;
+    text-align: left;
+
+  }
 
 
 /* This handles the cellphone image position*/
-div.absolute-2 {
-  position: absolute;
-  top: 10%;
-  left: 60%;
-  height: auto;
-  width: auto;
-  text-align: left;  
-}
 
-#iphone-x {
-  width: 70%;
+div.absolute-2 {
   position: relative;
   float: right;
+  top: 10%;
+  height: auto ;
+  width: auto;
+  right: 10%; 
 }
 
-/*
-.clearfix {
-  overflow: auto;
-}
+/* size of telephone image*/
 
-*/
-
-
-
-
+#iphone-x {
+  width: auto;
+  position: relative;
+  float: right;
+} 
 
 .log-in-btn {
   font-weight: 800;
@@ -81,9 +72,54 @@ div.absolute-2 {
   padding: 4px 20px;
   margin: 20px 20px;
   margin-right: 50px;
-  float: right;
+  float: right;  
   font-size: 18px;
 }
+
+
+/*****/
+/*Sign In Modal Logo*/
+#alexlogo {
+  padding-top: 15px;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  text-align: center;
+}
+
+/* Three image containers (use 25% for four, and 50% for two, etc) */
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+/* Clear floats after image containers */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+
+/* sets the background image to be spaced out perfectly*/
+#apartment {
+  min-height: 100%;
+  min-width: 1024px;
+	  /* Set up proportionate scaling */
+  width: 100%;
+  height: auto;
+	  /* Set up positioning */
+  position: fixed;
+  top: 0;
+  left: 0;
+  }
+
 
 
 
@@ -107,7 +143,7 @@ div.absolute-2 {
     font-size: 24px;
   }
 
-  /*
+  
   div.absolute-2 {
     
     top: 10%;
@@ -115,10 +151,10 @@ div.absolute-2 {
     height: auto;
     width: auto;
   }
-*/
+
 
   #iphone-x {
-    width: 65%;
+    width: 100%;
   }
   .log-in-btn {
     margin: 10px 20px;
@@ -164,7 +200,7 @@ div.absolute-2 {
   } 
 
   #iphone-x {
-    width: 50%;
+    width: auto;
   }
   .log-in-btn {
     margin: 10px 20px;
@@ -198,22 +234,9 @@ div.absolute-2 {
     font-size: 18px;
   }
 
-  /*
-  div.absolute-2 {
-    top: 10%;
-    left: 20%;
-    text-align: right;
-    /* border: 3px solid purple; */
-
-    /*
-    height: auto;
-    width: auto;
-    overflow: hidden;
-  }
-*/
 
   #iphone-x {
-    width: 35%;
+    width: 100%;
   }
   .log-in-btn {
     margin: 10px 20px;
@@ -249,20 +272,7 @@ div.absolute-2 {
   .absolute-1 h5 {
     font-size: 12px;
   }
-  
-  
-  /*
-  div.absolute-2 {
-    top: 10%;
-    left: 20%;
-    text-align: right;
-    height: auto;
-    width: auto;
-    overflow: ;
-}
-*/
-
-
+    
   #iphone-x {
     height: 70%;
   }
@@ -315,7 +325,7 @@ div.absolute-2 {
 */
 
   #iphone-x {
-    width: 45%;
+    width: 100%;
   }
 
   
@@ -332,52 +342,3 @@ div.absolute-2 {
     font-size: 18px;
   }
 }
-
-
-/*Sign In Modal Logo*/
-#alexlogo {
-  padding-top: 15px;
-}
-
-.footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  color: white;
-  text-align: center;
-}
-
-
-/*
-
-/* Three image containers (use 25% for four, and 50% for two, etc) */
-.column {
-  float: left;
-  width: 33.33%;
-  padding: 5px;
-}
-
-/* Clear floats after image containers */
-.row::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
-/* sets the background image to be spaced out perfectly*/
-#apartment {
-  min-height: 100%;
-  min-width: 1024px;
-	  /* Set up proportionate scaling */
-  width: 100%;
-  height: auto;
-	  /* Set up positioning */
-  position: fixed;
-  top: 0;
-  left: 0;
-  }
-
-
-
-

@@ -2,6 +2,7 @@
 // ==============================================
 var express = require("express");
 var path = require("path");
+// var db = require("./models");
 
 
 
@@ -25,6 +26,55 @@ app.get("/", function (req, res) {
 app.get("/properties", function (req, res) {
   res.sendFile(path.join(__dirname, "public/properties.html"));
 });
+app.post("/api/newProperty", function (req, res) {
+  // this route takes in the post request coming from the add Property Modal
+  var property = req.body;
+  // sends the incoming data into the property model
+  db.Property.create({
+    address: property.address,
+    city: property.city,
+    state: property.state,
+    zip: property.zip,
+    mortgage: property.mortgage,
+    purchasePrice: property.purchasePrice,
+    rent: property.rent
+
+
+
+
+  })
+  res.status(204).end();
+
+})
+
+app.get("/api/", function (req, res) {
+  db.Property.findAll({}).then(function (data) {
+    console.log(data);
+    res.json(data);
+  })
+});
+
+
+app.post("/api/newProperty", function (req, res) {
+  // this route takes in the post request coming from the add Property Modal
+  var property = req.body;
+  // sends the incoming data into the property model
+  db.Property.create({
+    address: property.address,
+    city: property.city,
+    state: property.state,
+    zip: property.zip,
+    mortgage: property.mortgage,
+    purchasePrice: property.purchasePrice,
+    rent: property.rent
+
+
+
+
+  })
+  res.status(204).end();
+
+})
 
 app.get("/api/", function (req, res) {
   db.Property.findAll({}).then(function (data) {
