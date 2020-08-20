@@ -55,16 +55,18 @@ function getFromDb() {
             var workLink = $("<a class='waves-effect waves-light btn-large'>");
             var workIcon = $("<i class='material-icons center'>");
 
-            workIconDiv.append(workLink);
-            workLink.append(workIcon);
+            //workIconDiv.append(workLink);
+            //workLink.append(workIcon);
             workIcon.text("build");
+
+
             // builds out money icon
             var moneyIconDiv = $("<div class='col s3'>");
             var moneyLink = $("<a class='waves-effect waves-light btn-large'>");
             var moneyIcon = $("<i class='material-icons center'>");
 
-            moneyIconDiv.append(moneyLink);
-            moneyLink.append(moneyIcon);
+            //moneyIconDiv.append(moneyLink);
+            //moneyLink.append(moneyIcon);
             moneyIcon.text("monetization_on");
 
             // builds out map icon
@@ -84,16 +86,18 @@ function getFromDb() {
             })
             mapLink.html(mapIcon)
             mapIcon.text("map")
+
             // builds out delete icon
 
             var deleteIconDiv = $("<div class='col s3' id='delete' data-id=" + id + "> ");
             var deleteLink = $("<a class='waves-effect waves-light btn-large ' href=''>");
 
             var deleteIcon = $("<i class='material-icons center' >");
-            deleteIcon.text("close")
+            deleteIcon.text("delete")
             deleteLink.append(deleteIcon)
             deleteIconDiv.append(deleteLink)
 
+            
             var editIconDiv = $("<div class='col s3' id='edit' data-id=" + id + "> ");
             var editLink = $("<a class='waves-effect waves-light btn-large modal-trigger' href='#editProperties'>");
 

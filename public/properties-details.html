@@ -59,18 +59,18 @@
           <li class="active">
             <a class="btn" href="properties.html">Properties</a>
           </li>
-          <li><a class="btn" href="#">Maps</a></li>
-          <li><a class="btn" href="dashboard.html">Dashboard</a></li>
+
           <li><a class="btn modal-trigger" href="#modal2">Contact Us</a></li>
         </ul>
       </nav>
       <ul class="sidenav" id="mobile-links">
         <li class="active"><a href="#">Properties</a></li>
-        <li><a href="#">Maps</a></li>
-        <li><a href="dashboard.html">Dashboard</a></li>
+
         <li><a class="modal-trigger" href="#modal2">Contact Us</a></li>
       </ul>
     </div>
+
+
 
     <!-- Beginning of Heading -->
     <div class="container-fluid">
@@ -81,12 +81,17 @@
       </div>
     </div>
 
-	<!-- API DATA TABLES -->
-    <div class="property-body">
 
+
+    
+  <!-- API DATA TABLES -->
+  <div class="row">  
+    <div class="col s12">
+    <div class="property-body">
       <div class="table-grid">
         <table class=" property-table">
           <thead>
+            
             <caption>
               HOME DETAILS
             </caption>
@@ -117,11 +122,11 @@
               <td>Year Built</td>
               <td class="right-col" id="yearBuilt">No Data</td>
 			</tr>
-		  </tbody>
-		  
+		</tbody>
+
         </table>
-	  </div>
-	  
+      </div>
+
       <div class="table-grid">
         <table class=" property-table">
           <thead>
@@ -170,20 +175,55 @@
             </tr>
           </tbody>
         </table>
-	  </div>
-	  
-    </div>
+	</div>
+</div>
+</div>
+
+</div>
+
+  </br></br></br>
+
+
+
+<!-- Contact Us Modal Structure -->
+<div id="modal2" class="modal modal-fixed-footer">
+  <div class="modal-content">
+      <h4>Contact Us</h4>
+      <p>We'd love to hear from you, please drop us a message if you have any questions.</p>
+      <div class="container">
+          <form id="contactus">
+              <label for="fullname">Full Name</label>
+              <input type="text" id="fullname" />
+              <br />
+              <label for="customeremail"> Email </label>
+              <input type="text" id="customeremail" />
+              <br />
+              <label for="message">Message</label>
+              <input type="text" id="message" />
+              </form>
+      </div>
+  </div>
+  <div class="modal-footer">
+    
+    
+  
+        <a
+          href="https://www.instagram.com/alexandria.smart/"
+          target="_blank"
+          class="fa fa-instagram fa-lg"
+        ></a>
+      
+    
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Send</a>
+  </div>
+  </div>
+<!-- End of Contact Us Modal Structure -->
+
+
 
     <!--Footer -->
     <footer class="footer main page-footer teal lighten-2">
-      <ul class="nav justify-content-center">
-        <li class="nav-item p-2">
-          <a
-            href="https://www.instagram.com/alexandria.smart/"
-            target="_blank"
-            class="fa fa-instagram"
-          ></a>
-        </li>
+
       </ul>
       <!-- Need to center it and add some padding through html or css -->
       © 2020 Alexandria. All rights reserved.
@@ -213,6 +253,12 @@
         $(".sidenav").sidenav();
         $(".modal").modal();
       });
+
+      		//prompts modal on Nav Bar - Contact Us - Button
+		$(document).ready(function () {
+			$('.sidenav').sidenav();
+			$('.modal').modal();
+		});
     </script>
 
     <!-- script for property map modal -->

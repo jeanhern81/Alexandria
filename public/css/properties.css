@@ -1,3 +1,6 @@
+
+
+
 #property-header {
     margin-left: 2%;
 }
@@ -11,7 +14,7 @@
     color: white;
     text-align: center;
 }
-  
+
 /* Set the size of the div element that contains the map */
 #map {
     height: 400px;

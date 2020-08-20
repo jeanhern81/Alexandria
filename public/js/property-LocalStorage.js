@@ -60,16 +60,19 @@ function getFromLocal() {
             var workLink = $("<a class='waves-effect waves-light btn-large'>");
             var workIcon = $("<i class='material-icons center'>");
 
-            workIconDiv.append(workLink);
-            workLink.append(workIcon);
+            //workIconDiv.append(workLink);
+            //workLink.append(workIcon);
             workIcon.text("build");
+
+
         // builds out money icon
             var moneyIconDiv = $("<div class='col s3'>");
             var moneyLink = $("<a class='waves-effect waves-light btn-large'>");
             var moneyIcon = $("<i class='material-icons center'>");
 
-            moneyIconDiv.append(moneyLink);
-            moneyLink.append(moneyIcon);
+
+            //moneyIconDiv.append(moneyLink);
+            //moneyLink.append(moneyIcon);
             moneyIcon.text("monetization_on");
 
         // builds out map icon
@@ -95,7 +98,7 @@ function getFromLocal() {
             var deleteLink = $("<a class='waves-effect waves-light btn-large ' href=''>");
 
             var deleteIcon = $("<i class='material-icons center' >");
-            deleteIcon.text("close")
+            deleteIcon.text("delete")
             deleteLink.append(deleteIcon)
             deleteIconDiv.append(deleteLink)
 
