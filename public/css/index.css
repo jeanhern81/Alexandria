@@ -1,0 +1,329 @@
+html {
+  background: url(../images/backgrounds/houses.jpg) no-repeat center center
+    fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+body {
+  /* background: url("../images/backgrounds/houses.jpg"); */
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+div.relative {
+  position: fixed;
+  width: 100%;
+
+  height: 100%;
+}
+
+/* This is the text box 'The Smartest Way...'*/
+div.absolute-1 {
+  position: ;
+  margin-top: 15%;
+  top: 35%;
+  left: 10%;
+  width: 650px;
+  height: 350px;
+}
+
+.card-content {
+  background-color: rgba(92, 149, 158, 0.5);
+  color: rgb(253, 252, 252);
+  bottom: 20px;
+  border-radius: 1em;
+  text-align: left;
+}
+
+/* This handles the cellphone image position*/
+
+div.absolute-2 {
+  position: relative;
+  float: right;
+  top: 10%;
+  height: auto;
+  width: auto;
+  right: 10%;
+}
+
+/* size of telephone image*/
+
+#iphone-x {
+  width: auto;
+  position: relative;
+  float: right;
+}
+
+.log-in-btn {
+  font-weight: 800;
+  margin: 10px 20px;
+  float: right;
+  font-size: 18px;
+}
+
+.sign-up-btn {
+  border: 1px solid black;
+  border-radius: 1em;
+  background-color: rgba(134, 177, 66, 0.247);
+  box-shadow: 0 4px 8px 0 rgba(170, 164, 164, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.3);
+  padding: 4px 20px;
+  margin: 20px 20px;
+  margin-right: 50px;
+  float: right;
+  font-size: 18px;
+}
+
+/*****/
+/*Sign In Modal Logo*/
+#alexlogo {
+  padding-top: 15px;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  text-align: center;
+}
+
+/* Three image containers (use 25% for four, and 50% for two, etc) */
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+/* Clear floats after image containers */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* sets the background image to be spaced out perfectly*/
+#apartment {
+  min-height: 100%;
+  min-width: 1024px;
+  /* Set up proportionate scaling */
+  width: 100%;
+  height: auto;
+  /* Set up positioning */
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+/* MEDIA QUERIES */
+
+@media only screen and (max-width: 1224px) {
+  div.relative {
+    height: 625px;
+  }
+  div.absolute-1 {
+    top: 25%;
+    left: 10%;
+    width: 500px;
+    height: 350px;
+  }
+  .absolute-1 h2 {
+    font-size: 40px;
+  }
+  .absolute-1 h5 {
+    font-size: 24px;
+  }
+
+  div.absolute-2 {
+    top: 10%;
+    left: 60%;
+    height: auto;
+    width: auto;
+  }
+
+  #iphone-x {
+    width: 100%;
+  }
+  .log-in-btn {
+    margin: 10px 20px;
+    float: right;
+    font-size: 18px;
+  }
+  .sign-up-btn {
+    padding: 4px 20px;
+    margin: 20px 20px;
+    margin-right: 50px;
+    float: right;
+    font-size: 18px;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  div.relative {
+    height: 600px;
+  }
+  div.absolute-1 {
+    top: 25%;
+    left: 10%;
+    width: 450px;
+    height: 350px;
+    /* border: 3px solid red; */
+  }
+  .absolute-1 h2 {
+    font-size: 30px;
+  }
+  .absolute-1 h5 {
+    font-size: 20px;
+  }
+
+  div.absolute-2 {
+    top: 10%;
+    left: 30%;
+    text-align: right;
+
+    height: auto;
+    width: auto;
+    overflow: hidden;
+  }
+
+  #iphone-x {
+    width: auto;
+  }
+  .log-in-btn {
+    margin: 10px 20px;
+    float: right;
+    font-size: 18px;
+  }
+  .sign-up-btn {
+    padding: 4px 20px;
+    margin: 20px 20px;
+    margin-right: 50px;
+    float: right;
+    font-size: 18px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  div.relative {
+    height: auto;
+  }
+  div.absolute-1 {
+    top: 25%;
+    left: 10%;
+    width: 350px;
+    height: 250px;
+    /* border: 3px solid purple; */
+  }
+  .absolute-1 h2 {
+    font-size: 25px;
+  }
+  .absolute-1 h5 {
+    font-size: 18px;
+  }
+
+  #iphone-x {
+    width: 100%;
+  }
+  .log-in-btn {
+    margin: 10px 20px;
+    float: right;
+    font-size: 18px;
+  }
+  .sign-up-btn {
+    padding: 4px 20px;
+    margin: 20px 20px;
+    margin-right: 50px;
+    float: right;
+    font-size: 18px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  div.relative {
+    height: auto;
+  }
+  div.absolute-1 {
+    top: 25%;
+    left: 5%;
+    width: 250px;
+    height: 175px;
+    /* border: 3px solid palegreen; */
+  }
+
+  .absolute-1 h2 {
+    font-size: 18px;
+  }
+  .absolute-1 h5 {
+    font-size: 12px;
+  }
+
+  #iphone-x {
+    height: 70%;
+  }
+
+  .log-in-btn {
+    margin: 10px 20px;
+    float: right;
+    font-size: 18px;
+  }
+
+  .sign-up-btn {
+    padding: 4px 20px;
+    margin: 20px 20px;
+    margin-right: 50px;
+    float: right;
+    font-size: 18px;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  div.relative {
+    height: auto;
+  }
+
+  div.absolute-1 {
+    top: 30%;
+    left: 5%;
+    width: 175px;
+    height: auto;
+  }
+
+  .absolute-1 h2 {
+    font-size: 12px;
+  }
+  .absolute-1 h5 {
+    font-size: 8px;
+  }
+
+  /*
+  div.absolute-2 {
+    top: 15%;
+    left: 100px;
+    text-align: right;
+    height: auto;
+    width: 200px; 
+  } 
+*/
+
+  #iphone-x {
+    width: 100%;
+  }
+
+  .log-in-btn {
+    margin: 10px 20px;
+    float: right;
+    font-size: 18px;
+  }
+  .sign-up-btn {
+    padding: 4px 20px;
+    margin: 20px 20px;
+    margin-right: 50px;
+    float: right;
+    font-size: 18px;
+  }
+}
