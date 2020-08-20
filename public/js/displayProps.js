@@ -41,6 +41,12 @@ function getFromDb() {
             mortgageDiv.append(mortgageStyle);
             mortgageStyle.text("Mortgage: " + mortgageData);
 
+            var ZestimateDiv = $("<div class='col s3'>");
+            var ZestimateStyle = $("<span class='teal-text text-lighten-2'>");
+            // !!==  HERE  ===!!!!
+            ZestimateDiv.append(ZestimateStyle).html(`<a value="${addressData.toUpperCase() + '% ' + cityData.toUpperCase() + '% ' +
+                stateData.toUpperCase() + ' ' + zipData}"  data-id= ${id} class="property-details" href="properties-details.html">Property Details...</a>`);
+
             // builds out Z Estimate display
             // var sqftDiv = $("<div class='col s3'>");
             // var sqftStyle = $("<span class='teal-text text-lighten-2'>")
@@ -97,7 +103,7 @@ function getFromDb() {
             deleteLink.append(deleteIcon)
             deleteIconDiv.append(deleteLink)
 
-            
+
             var editIconDiv = $("<div class='col s3' id='edit' data-id=" + id + "> ");
             var editLink = $("<a class='waves-effect waves-light btn-large modal-trigger' href='#editProperties'>");
 
@@ -128,6 +134,7 @@ function getFromDb() {
             propertyDiv.append(propertyDivStyle);
             propertyDiv.append(rentDiv);
             propertyDiv.append(mortgageDiv);
+            propertyDiv.append(ZestimateDiv)
 
             // propertyDiv.append(sqftDiv)
             propertyDiv.append(buttonDiv)
@@ -150,22 +157,23 @@ $(document).on("click", "#delete", function () {
     var txt;
     if (confirm("Press OK to DELETE or press CANCEL to go back!")) {
         txt = "You pressed OK to DELETE"
-        
-    var results = [];
-    // location of the address div
-    var id = this.dataset.id;
-    // .parent().parent().siblings().find("#address")[0]
-} else { 
-    txt = "You pressed CANCEL to go back";
 
-    $.ajax({
-        method: "DELETE",
-        url: "/api/" + id
-    }).then(() => {
-        location.reload()
-    }) 
-    document.getElementById("demo").innerHTML = txt;
-}
+        var results = [];
+        // location of the address div
+        var id = this.dataset.id;
+        // .parent().parent().siblings().find("#address")[0]
+
+
+        $.ajax({
+            method: "DELETE",
+            url: "/api/" + id
+        }).then(() => {
+            location.reload()
+        })
+        document.getElementById("demo").innerHTML = txt;
+    } else {
+        txt = "You pressed CANCEL to go back";
+    }
 
 })
 
