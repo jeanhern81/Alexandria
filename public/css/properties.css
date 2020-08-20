@@ -4,6 +4,9 @@
     margin-left: 2%;
 }
 
+.col {
+   
+}
 
 
 
@@ -23,8 +26,22 @@
     margin-left: -10rem;
     padding-left: 5%;
     min-height: 1px;
+    
 }
 
+/*padding between rows address and buttons */
+.row{
+    padding-bottom: 45px;
+    border-bottom: rgba(211, 211, 211, 0.596) solid 1px;
+
+}
+
+/* bottom padding for add address button with now line break */
+.row2 {
+    padding: 45px;
+}
+
+/* this handles the size of the font that renders the address */
 h6 {
     font-size: 1.25rem;
     line-height: 110%;
@@ -32,6 +49,7 @@ h6 {
 }
 
 
+/* footer details */
 .footer {
     position: absolute;
     left: 0;
@@ -40,6 +58,7 @@ h6 {
     color: white;
     text-align: center;
 }
+
 
 .property-details {
     position: relative;
