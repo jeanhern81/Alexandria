@@ -4,6 +4,9 @@
     margin-left: 2%;
 }
 
+.col {
+   
+}
 
 
 
@@ -38,6 +41,7 @@
     padding: 45px;
 }
 
+/* this handles the size of the font that renders the address */
 h6 {
     font-size: 1.25rem;
     line-height: 110%;
@@ -45,14 +49,16 @@ h6 {
 }
 
 
+/* footer details */
 .footer {
-    position: ;
+    position: absolute;
     left: 0;
     bottom: 0;
     width: 100%;
     color: white;
     text-align: center;
 }
+
 
 .property-details {
     position: relative;
