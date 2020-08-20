@@ -142,20 +142,31 @@ function getFromDb() {
 }
 
 $(document).on("click", "#delete", function () {
-
+    // this for the warning popup to confirm deletion
+    var txt;
+    if (confirm("Press OK to DELETE or press CANCEL to go back!")) {
+        txt = "You pressed OK to DELETE"
+        
     var results = [];
     // location of the address div
     var id = this.dataset.id;
     // .parent().parent().siblings().find("#address")[0]
+} else { 
+    txt = "You pressed CANCEL to go back";
 
     $.ajax({
         method: "DELETE",
         url: "/api/" + id
     }).then(() => {
         location.reload()
-    })
+    }) 
+    document.getElementById("demo").innerHTML = txt;
+}
 
 })
+
+
+
 
 $(document).on("click", "#edit", function (event) {
     event.preventDefault();

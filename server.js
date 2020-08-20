@@ -76,6 +76,10 @@ app.post("/api/newProperty", function (req, res) {
 
 })
 
+app.get("/properties-details", function (req, res) {
+  res.sendFile(path.join(__dirname, "public/properties-details.html"));
+});
+
 app.get("/api/", function (req, res) {
   db.Property.findAll({}).then(function (data) {
     console.log(data);

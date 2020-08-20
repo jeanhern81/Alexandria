@@ -1,0 +1,91 @@
+html {
+  background: url(../images/backgrounds/houses.jpg) no-repeat center center
+    fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+/* background: url("../images/backgrounds/houses.jpg"); */
+display: flex;
+min-height: 100vh;
+flex-direction: column;
+}
+
+.navbar-fixed{
+  position: fixed;
+}
+
+
+/*Sign In Modal Logo*/
+#alexlogo {
+  padding-top: 15px;
+}
+
+/* footer */
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  text-align: center;
+}
+
+#smartest {
+  background-color: rgba(133, 178, 185, 0.5);
+  color: rgb(253, 252, 252);
+  margin-top: 30%;
+  bottom: 20px;
+  border-radius: 1em;
+  text-align: left;
+}
+
+#iphone-x {
+  float: right;
+  width: 50%;
+  margin-top: 10%;
+}
+
+/**** MEDIA QUERIES****/
+
+@media only screen and (max-width: 1224px) {
+  #smartest {
+    margin-top: 5%;
+  }
+
+  #iphone-x {
+    width: auto;
+  }
+
+}
+
+@media only screen and (max-width: 768px) {
+
+  #smartest {
+    margin-top: 15%;
+  } 
+
+  #iphone-x {
+    width: auto;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+
+  #smartest {
+    margin-top: 15%;
+  }
+
+  #iphone-x {
+    width: auto;
+  }
+  
+}
