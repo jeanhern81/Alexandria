@@ -258,14 +258,26 @@
 
 	<!-- ==== ZILLOW API CALL  ==== -->
 
+<<<<<<< HEAD
 	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 	<!-- <script src="./js/properties-zillowAPI.js" defer></script> -->
 
 >>>>>>> bc7f781a293659b54c60063dea9cec4256058591
+=======
+>>>>>>> lbranch
 	<!-- script for dynamic content loading of property listings (content moved to property-LocalStorage.js)-->
 	<script src="js/property-LocalStorage.js"></script>
 
+	<script>
+		//Saves property information to display onto API data tables
+		$(".property-body").on("click", ".property-details", function () {
+		var location = $(this).attr("value");
+		console.log(location);
+		localStorage.setItem("location", location);
+		// $("#property-header").text("It works!!");
+		});
 
+	</script>
 
 </body>
 

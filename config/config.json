@@ -1,7 +1,11 @@
 {
   "development": {
     "username": "root",
+<<<<<<< HEAD
     "password": "Mercury35!",
+=======
+    "password": "Arrozconleche1+",
+>>>>>>> lbranch
     "database": "alexandria_db",
     "host": "localhost",
     "port": 3306,
