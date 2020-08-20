@@ -23,6 +23,19 @@
     margin-left: -10rem;
     padding-left: 5%;
     min-height: 1px;
+    
+}
+
+/*padding between rows address and buttons */
+.row{
+    padding-bottom: 45px;
+    border-bottom: rgba(211, 211, 211, 0.596) solid 1px;
+
+}
+
+/* bottom padding for add address button with now line break */
+.row2 {
+    padding: 45px;
 }
 
 h6 {
@@ -33,7 +46,7 @@ h6 {
 
 
 .footer {
-    position: absolute;
+    position: ;
     left: 0;
     bottom: 0;
     width: 100%;

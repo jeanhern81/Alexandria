@@ -108,7 +108,7 @@ function getFromDb() {
             var editLink = $("<a class='waves-effect waves-light btn-large modal-trigger' href='#editProperties'>");
 
             var editIcon = $("<i class='material-icons center' >");
-            editIcon.text("close")
+            editIcon.text("edit")
             editLink.append(editIcon)
             editIconDiv.append(editLink)
 
