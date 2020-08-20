@@ -1,13 +1,39 @@
 
 
-
 #property-header {
     margin-left: 2%;
 }
 
 
+
+
+.row .col.s3 {
+    width: 25%;
+    margin-left: auto;
+    left: auto;
+    right: auto;
+}
+
+
+/* handles the position of where the property populates*/
+.row .col {
+    float: left;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-left: -10rem;
+    padding-left: 5%;
+    min-height: 1px;
+}
+
+h6 {
+    font-size: 1.25rem;
+    line-height: 110%;
+    margin: 0.7666666667rem 0 0.46rem 0;
+}
+
+
 .footer {
-    position: fixed;
+    position: absolute;
     left: 0;
     bottom: 0;
     width: 100%;
@@ -15,6 +41,9 @@
     text-align: center;
 }
 
+.property-details {
+    position: relative;
+}
 /* Set the size of the div element that contains the map */
 #map {
     height: 400px;
