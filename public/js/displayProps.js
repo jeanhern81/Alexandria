@@ -84,6 +84,7 @@ function getFromDb() {
             })
             mapLink.html(mapIcon)
             mapIcon.text("map")
+
             // builds out delete icon
 
             var deleteIconDiv = $("<div class='col s3' id='delete' data-id=" + id + "> ");
