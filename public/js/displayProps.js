@@ -158,7 +158,7 @@ $(document).on("click", "#delete", function () {
     if (confirm("Press OK to DELETE or press CANCEL to go back!")) {
         txt = "You pressed OK to DELETE"
 
-        var results = [];
+
         // location of the address div
         var id = this.dataset.id;
         // .parent().parent().siblings().find("#address")[0]
@@ -184,8 +184,19 @@ $(document).on("click", "#edit", function (event) {
     event.preventDefault();
     var id = this.dataset.id
     // document.querySelector("#address")
+    $.get("/api/" + id, function (data) {
+        console.log(data.address)
+        $("#estreetAddress").val(data.address);
+        $("#ecity").val(data.city);
+        $("#estate").val(data.state);
+        $("#ezipCode").val(data.zip);
+        $("#emortgage").val(data.mortgage);
+        $("#ePurchase").val(data.purchasePrice);
+        $("#erent").val(data.rent);
 
-    console.log(id)
+    });
+
+
     var editTextH6 = $("<h6>")
     $("#editTitle").html(editTextH6)
     editTextH6.text($(this).parent().parent().siblings()[0].textContent)
@@ -198,7 +209,7 @@ $(document).on("click", "#edit", function (event) {
         var stateVal = $("#estate").val().trim()
         var zipVal = $("#ezipCode").val().trim()
         var purchaseVal = $("#ePurchase").val().trim()
-        var expensesVal = $("#eexpenses").val().trim()
+        var mortgageVal = $("#emortgage").val().trim()
         var rentVal = $("#erent").val().trim()
         // creates an object out of the form data from the add property modal
         var newProperty = {
@@ -207,7 +218,7 @@ $(document).on("click", "#edit", function (event) {
             state: stateVal,
             zip: zipVal,
             purchasePrice: purchaseVal,
-            mortgage: expensesVal,
+            mortgage: mortgageVal,
             rent: rentVal,
             id: id
         }
