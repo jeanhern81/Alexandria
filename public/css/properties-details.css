@@ -2,7 +2,6 @@
     margin: 50px auto;
     /* width: fit-content; */
     /* padding: 25px 25px; */
-
 }
 
 caption {
@@ -10,6 +9,23 @@ caption {
     text-align: center;
     font-weight: 700;
   }
+
+  .table-grid{
+      margin: auto 150px;
+  }
+
+  #property-header ,h6{
+    padding: 0px 150px;
+    /* padding: 100px auto; */
+}
+h6{
+    padding: auto 150px;
+    /* padding: 100px auto; */
+}
+
+.right-col{
+    text-align: right;
+}
 
 
 

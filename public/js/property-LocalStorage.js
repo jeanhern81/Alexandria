@@ -48,7 +48,7 @@ function getFromLocal() {
             var ZestimateDiv = $("<div class='col s3'>");
             var ZestimateStyle = $("<span class='teal-text text-lighten-2'>");
 // !!==  HERE  ===!!!!
-            ZestimateDiv.append(ZestimateStyle).html(`<a value="${addressArr[i].address.toUpperCase() +' '+ addressArr[i].city.toUpperCase() +' ' +
+            ZestimateDiv.append(ZestimateStyle).html(`<a value="${addressArr[i].address.toUpperCase() +'% '+ addressArr[i].city.toUpperCase() +'% ' +
             addressArr[i].state.toUpperCase() + ' ' + addressArr[i].zip.toUpperCase()}" class="property-details" href="properties-details.html">Property Details...</a>`);
 
 // !!==  HERE  ===!!!!        
