@@ -21,9 +21,6 @@ flex-direction: column;
 
 .navbar-fixed{
   position: fixed;
-
-
-  
 }
 
 
@@ -31,7 +28,6 @@ flex-direction: column;
 #alexlogo {
   padding-top: 15px;
 }
-
 
 /* footer */
 .footer {
@@ -81,7 +77,6 @@ flex-direction: column;
     width: auto;
   }
 }
-
 
 @media only screen and (max-width: 320px) {
 
