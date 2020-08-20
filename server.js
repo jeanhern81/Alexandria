@@ -9,7 +9,7 @@ var path = require("path");
 // Sets up the Express App
 // ==============================================
 var app = express();
-var PORT = process.env.PORT || 8080;
+var PORT = process.env.PORT || 8000;
 var db = require("./models");
 
 // Sets up the Express app to handle data parsing
@@ -75,6 +75,10 @@ app.post("/api/newProperty", function (req, res) {
   res.status(204).end();
 
 })
+
+app.get("/properties-details", function (req, res) {
+  res.sendFile(path.join(__dirname, "public/properties-details.html"));
+});
 
 app.get("/api/", function (req, res) {
   db.Property.findAll({}).then(function (data) {
