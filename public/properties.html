@@ -19,7 +19,8 @@
 	<script src="https://kit.fontawesome.com/8b8f26d0e1.js" crossorigin="anonymous"></script>
 
 	<!-- Jquery -->
-	<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.5.1.js"
+		integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
 
 	<title>Alexandria | Properties</title>
 </head>
@@ -75,11 +76,7 @@
 		</div>
 		<div class="modal-footer">
 
-			<a
-            href="https://www.instagram.com/alexandria.smart/"
-            target="_blank"
-            class="fa fa-instagram fa-lg"
-          ></a>
+			<a href="https://www.instagram.com/alexandria.smart/" target="_blank" class="fa fa-instagram fa-lg"></a>
 			<a href="#!" class="modal-close waves-effect waves-green btn-flat">Send</a>
 		</div>
 	</div>
@@ -118,7 +115,8 @@
 					<input type="text" id="rent" />
 					<br />
 					<div class="row">
-						<a href="#!"><button class="col offset-s4 btn waves-effect waves-light modal-close"	type="submit" id="addProperty">Add Property</button></a>
+						<a href="#!"><button class="col offset-s4 btn waves-effect waves-light modal-close"
+								type="submit" id="addProperty">Add Property</button></a>
 					</div>
 				</form>
 			</div>
@@ -166,7 +164,7 @@
 		</div>
 	</div>
 
-	
+
 
 	<!-- property map modal -->
 	<div id="propertyMap" class="modal modal-fixed-footer">
@@ -196,7 +194,7 @@
 
 		<!-- Need to center it and add some padding through html or css -->
 		© 2020 Alexandria. All rights reserved.
-<br/><br/>
+		<br /><br />
 	</footer>
 
 	<!-- ====================================SCRIPTS ======================================= -->
@@ -255,16 +253,16 @@
 
 	<!-- script for dynamic content loading of property listings (content moved to property-LocalStorage.js)-->
 
-<!-- 	<script src="js/displayProps.js"></script> -->
-	<script src="js/property-LocalStorage.js"></script>
+	<!-- 	<script src="js/displayProps.js"></script> -->
+	<!-- <script src="js/property-LocalStorage.js"></script> -->
 
 	<script>
 		//Saves property information to display onto API data tables
 		$(".property-body").on("click", ".property-details", function () {
-		var location = $(this).attr("value");
-		console.log(location);
-		localStorage.setItem("location", location);
-		// $("#property-header").text("It works!!");
+			var location = $(this).attr("value");
+			console.log(location);
+			localStorage.setItem("location", location);
+			// $("#property-header").text("It works!!");
 		});
 
 	</script>
@@ -272,4 +270,3 @@
 </body>
 
 </html>
-
