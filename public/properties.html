@@ -92,29 +92,32 @@
 			<br />
 			<div class="container">
 				<form id="Property">
-					<label for="streetAddress">Street Address</label>
+					<label class="required" for="streetAddress">Street Address</label>
 					<input type="text" id="streetAddress" />
 					<br />
-					<label for="city"> City </label>
+					<label class="required" for="city"> City </label>
 					<input type="text" id="city" required />
 					<br />
-					<label for="state">State abbreviation</label>
+					<label class="required" for="state">State abbreviation</label>
 					<input type="text" id="state" maxlength="2" size="2" required />
 					<br />
-					<label for="zipcode">zip code</label>
+					<label class="required" for="zipcode">zip code</label>
 					<input type="text" id="zipCode" maxlength="5" size="5" required />
 					<br />
 
-					<label for="expenses">Monthly Expenses</label>
+					<label class="required" for="expenses">Monthly Expenses</label>
 					<input type="text" id="expenses" />
 					<br />
-					<label for="Purchase">Purchase Price</label>
+					<label class="required" for="Purchase">Purchase Price</label>
 					<input type="text" id="Purchase" />
 					<br />
-					<label for="rent">Monthly Rent</label>
+					<label class="required" for="rent">Monthly Rent</label>
 					<input type="text" id="rent" />
 					<br />
+					<span class="required">all fields denoted with </span><span>are required</span>
+					</br>
 					<div class="row">
+						</br>
 						<a href="#!"><button class="col offset-s4 btn waves-effect waves-light modal-close"
 								type="submit" id="addProperty">Add Property</button></a>
 					</div>
@@ -134,28 +137,31 @@
 			<br />
 			<div class="container">
 				<form id="Property">
-					<label for="streetAddress">Street Address</label>
-					<input type="text" id="estreetAddress" />
+					<label class="required" for="streetAddress">Street Address</label>
+					<input type="text" id="estreetAddress" required>
 					<br />
-					<label for="city"> City </label>
-					<input type="text" id="ecity" required />
+					<label class="required" for="city"> City </label>
+					<input type="text" id="ecity" required>
 					<br />
-					<label for="state">State abbreviation</label>
-					<input type="text" id="estate" maxlength="2" size="2" required />
+					<label class="required" for="state">State abbreviation</label>
+					<input type="text" id="estate" maxlength="2" size="2" required>
 					<br />
-					<label for="zipcode">zip code</label>
-					<input type="text" id="ezipCode" maxlength="5" size="5" required />
+					<label class="required" for="zipcode">zip code</label>
+					<input type="text" id="ezipCode" maxlength="5" size="5" required>
 					<br />
-					<label for="mortgage">Monthly Mortgage</label>
+					<label class="required" for="mortgage">Monthly Mortgage</label>
 					<input type="text" id="emortgage" />
 					<br />
-					<label for="Purchase">Purchase Price</label>
+					<label class="required" for="Purchase">Purchase Price</label>
 					<input type="text" id="ePurchase" />
 					<br />
-					<label for="rent">Monthly Rent</label>
+					<label class="required" for="rent">Monthly Rent</label>
 					<input type="text" id="erent" />
 					<br />
+					<span class="required">all fields denoted with </span><span>are required</span>
+					</br>
 					<div class="row">
+						</br>
 						<a href="#!"><button class="col offset-s4 btn waves-effect waves-light modal-close"
 								type="submit" id="editProperty"> edit Property</button></a>
 					</div>

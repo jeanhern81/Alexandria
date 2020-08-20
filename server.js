@@ -116,10 +116,13 @@ app.post("/api/newProperty", function (req, res) {
 
 
 
-  })
-  res.status(204).end();
+  }).catch(function (err) {
+    // Whenever a validation or flag fails, an error is thrown
+    // We can "catch" the error to prevent it from being "thrown", which could crash our node app
+    res.json(err);
 
-})
+  })
+});
 app.delete("/api/:id", function (req, res) {
   // this route deletes the property based on the property Id
   db.Property.destroy({
