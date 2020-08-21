@@ -1,6 +1,319 @@
 <!DOCTYPE html>
 <html lang="en">
 
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="../public/images/Alexandria-symbol-BW.png"
+    />
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="css/materialize.css" />
+    <link rel="stylesheet" href="css/mainsStyles.css" />
+    <link rel="stylesheet" href="css/properties.css" />
+    <!--Google Fonts-->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <!-- Font Nunito from google -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <!--Font Awesome-->
+    <script
+      src="https://kit.fontawesome.com/8b8f26d0e1.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Jquery -->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"
+    ></script>
+
+    <title>Alexandria | Properties</title>
+  </head>
+
+  <body>
+    <!-- Beginning of NavBar -->
+    <div class="container-fluid">
+      <nav class="navbar-fixed nav-wrapper teal lighten-2">
+        <a href="index.html" class="brand-logo"
+          ><img
+            id="alexandria-logo"
+            src="images/Alexandria-logo-BW.png"
+            alt="Alexandria Logo"
+            width="250"
+        /></a>
+
+        <a href="#" data-target="mobile-links" class="sidenav-trigger"
+          ><i class="material-icons">menu</i></a
+        >
+        <ul class="right hide-on-med-and-down">
+          <li class="active">
+            <a class="btn" href="properties.html">Properties</a>
+          </li>
+          <li><a class="btn" href="#">Maps</a></li>
+          <li><a class="btn" href="dashboard.html">Dashboard</a></li>
+          <li><a class="btn modal-trigger" href="#modal2">Contact Us</a></li>
+        </ul>
+      </nav>
+      <ul class="sidenav" id="mobile-links">
+        <li class="active"><a href="#">Properties</a></li>
+        <li><a href="#">Maps</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a class="modal-trigger" href="#modal2">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <!-- Beginning of Heading -->
+    <div class="container-fluid">
+      <div class="row">
+        <h5 id="property-header">PROPERTIES</h5>
+        <!-- Beginning of Property listings. This Section will need to be dynamic with JS. -->
+        <!-- Propertery #1 - Just a place holder-->
+      </div>
+    </div>
+
+    <div class="property-body"></div>
+
+    <!-- add contact us modal -->
+    <div id="modal2" class="modal modal-fixed-footer">
+      <div class="modal-content">
+        <h4>Contact Us</h4>
+        <p>
+          We'd love to hear from you, please drop us a message if you have any
+          questions.
+        </p>
+        <div class="container">
+          <form id="contactus">
+            <label for="fullname">Full Name</label>
+            <input type="text" id="fullname" />
+            <br />
+            <label for="customeremail"> Email </label>
+            <input type="text" id="customeremail" />
+            <br />
+            <label for="message">Message</label>
+            <input type="text" id="message" />
+          </form>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a
+          href="https://www.instagram.com/alexandria.smart/"
+          target="_blank"
+          class="fa fa-instagram fa-lg"
+        ></a>
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat"
+          >Send</a
+        >
+      </div>
+    </div>
+
+    <!-- add property modal -->
+    <div id="addProperties" class="modal modal-fixed-footer">
+      <div class="modal-content">
+        <div class="row">
+          <div class="col s12 main center">
+            <h1>Add Properties</h1>
+          </div>
+        </div>
+        <br />
+        <div class="container">
+          <form id="Property">
+            <label for="streetAddress">Street Address</label>
+            <input type="text" id="streetAddress" />
+            <br />
+            <label for="city"> City </label>
+            <input type="text" id="city" required />
+            <br />
+            <label for="state">State abbreviation</label>
+            <input type="text" id="state" maxlength="2" size="2" required />
+            <br />
+            <label for="zipcode">zip code</label>
+            <input type="text" id="zipCode" maxlength="5" size="5" required />
+            <br />
+
+            <label for="expenses">Monthly Expenses</label>
+            <input type="text" id="expenses" />
+            <br />
+            <label for="Purchase">Purchase Price</label>
+            <input type="text" id="Purchase" />
+            <br />
+            <label for="rent">Monthly Rent</label>
+            <input type="text" id="rent" />
+            <br />
+            <div class="row">
+              <a href="#!"
+                ><button
+                  class="col offset-s4 btn waves-effect waves-light modal-close"
+                  type="submit"
+                  id="addProperty"
+                >
+                  Add Property
+                </button></a
+              >
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div id="editProperties" class="modal modal-fixed-footer">
+      <div class="modal-content">
+        <div class="row">
+          <div class="col s12 main center">
+            <h1>Edit Property</h1>
+            <div class="col s12 main center" id="editTitle"></div>
+          </div>
+        </div>
+        <br />
+        <div class="container">
+          <form id="Property">
+            <label for="streetAddress">Street Address</label>
+            <input type="text" id="estreetAddress" />
+            <br />
+            <label for="city"> City </label>
+            <input type="text" id="ecity" required />
+            <br />
+            <label for="state">State abbreviation</label>
+            <input type="text" id="estate" maxlength="2" size="2" required />
+            <br />
+            <label for="zipcode">zip code</label>
+            <input type="text" id="ezipCode" maxlength="5" size="5" required />
+            <br />
+            <label for="expenses">Monthly Expenses</label>
+            <input type="text" id="eexpenses" />
+            <br />
+            <label for="Purchase">Purchase Price</label>
+            <input type="text" id="ePurchase" />
+            <br />
+            <label for="rent">Monthly Rent</label>
+            <input type="text" id="erent" />
+            <br />
+            <div class="row">
+              <a href="#!"
+                ><button
+                  class="col offset-s4 btn waves-effect waves-light modal-close"
+                  type="submit"
+                  id="editProperty"
+                >
+                  edit Property
+                </button></a
+              >
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- property map modal -->
+    <div id="propertyMap" class="modal modal-fixed-footer">
+      <div class="modal-content">
+        <div class="row">
+          <div class="col s12 main center" id="mapTitle"></div>
+        </div>
+        <br />
+        <div class="container">
+          <div id="map"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- add property button on + modal -->
+    <div class="row">
+      <div class="col s12 center-align">
+        <a
+          class="waves-effect waves-light btn-large modal-trigger"
+          href="#addProperties"
+          ><i class="material-icons right">add_locations</i></a
+        >
+      </div>
+    </div>
+
+    <!--Footer -->
+    <footer class="footer main page-footer teal lighten-2">
+      <!-- Need to center it and add some padding through html or css -->
+      © 2020 Alexandria. All rights reserved.
+    </footer>
+
+    <!-- ====================================SCRIPTS ======================================= -->
+    <!-- =================================================================================== -->
+
+    <!-- Materialize JS library. Note: this services the add property modal -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="js/materialize.js"></script>
+
+    <!-- Script for links to social media -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- script for add property modal -->
+    <script>
+      //prompts modal on add property
+      $(document).ready(function () {
+        $(".modal").modal();
+      });
+      //prompts modal on Nav Bar - Contact Us - Button
+      $(document).ready(function () {
+        $(".sidenav").sidenav();
+        $(".modal").modal();
+      });
+    </script>
+
+    <!-- script for property map modal -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var elem = document.getElementById("#propertyMap");
+        var instance = M.Modal.init(elem);
+      });
+    </script>
+    <script
+      async
+      defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHRCqL8yZbKNEZl7PFCmbA_XlaIBluHZ8&callback=initMap"
+    ></script>
+
+    <!-- Google maps script -->
+    <script src="../js/app.js"></script>
+    <script src="../js/addProp.js"></script>
+    <script src="../js/displayProps.js"></script>
+
+    <!-- ==== ZILLOW API CALL  ==== -->
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <!-- <script src="./js/properties-zillowAPI.js" defer></script> -->
+
+    <!-- ==== ZILLOW API CALL  ==== -->
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <!-- <script src="./js/properties-zillowAPI.js" defer></script> -->
+
+    <!-- script for dynamic content loading of property listings (content moved to property-LocalStorage.js)-->
+
+    <!-- 	<script src="js/displayProps.js"></script> -->
+    <script src="js/property-LocalStorage.js"></script>
+
+    <script>
+      //Saves property information to display onto API data tables
+      $(".property-body").on("click", ".property-details", function () {
+        var location = $(this).attr("value");
+        console.log(location);
+        localStorage.setItem("location", location);
+        // $("#property-header").text("It works!!");
+      });
+    </script>
+  </body>
+</html>
+=======
+
 <head>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -286,4 +599,5 @@
 		});
 
 	</script>
+
 

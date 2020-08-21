@@ -41,57 +41,45 @@
   </head>
 
   <body>
-    <!-- Beginning of NavBar -->
-    <div class="container-fluid">
-      <nav class="navbar-fixed nav-wrapper teal lighten-2">
-        <a href="index.html" class="brand-logo"
-          ><img
-            id="alexandria-logo"
-            src="images/Alexandria-logo-BW.png"
-            alt="Alexandria Logo"
-            width="250"
-        /></a>
+    <main>
+      <!-- Beginning of NavBar -->
+      <div class="container-fluid">
+        <nav class="navbar-fixed nav-wrapper teal lighten-2">
+          <a href="index.html" class="brand-logo"
+            ><img
+              id="alexandria-logo"
+              src="images/Alexandria-logo-BW.png"
+              alt="Alexandria Logo"
+              width="250"
+          /></a>
 
-        <a href="#" data-target="mobile-links" class="sidenav-trigger"
-          ><i class="material-icons">menu</i></a
-        >
-        <ul class="right hide-on-med-and-down">
-          <li class="active">
-            <a class="btn" href="properties.html">Properties</a>
-          </li>
+          <a href="#" data-target="mobile-links" class="sidenav-trigger"
+            ><i class="material-icons">menu</i></a
+          >
+          <ul class="right hide-on-med-and-down">
+            <li class="active">
+              <a class="btn" href="properties.html">Properties</a>
+            </li>
 
-          <li><a class="btn modal-trigger" href="#modal2">Contact Us</a></li>
+            <li><a class="btn modal-trigger" href="#modal2">Contact Us</a></li>
+          </ul>
+        </nav>
+        <ul class="sidenav" id="mobile-links">
+          <li class="active"><a href="properties.html">Properties</a></li>
+
+          <li><a class="modal-trigger" href="#modal2">Contact Us</a></li>
         </ul>
-      </nav>
-      <ul class="sidenav" id="mobile-links">
-        <li class="active"><a href="#">Properties</a></li>
-
-        <li><a class="modal-trigger" href="#modal2">Contact Us</a></li>
-      </ul>
-    </div>
-
-
-
-    <!-- Beginning of Heading -->
-    <div class="container-fluid">
-      <div class="row">
-        <h5 id="property-header">PROPERTY INFORMATION</h5>
-        <!-- Beginning of Property listings. This Section will need to be dynamic with JS. -->
-        <!-- Propertery #1 - Just a place holder-->
       </div>
-    </div>
 
+      <!-- Beginning of Heading -->
+      <div class="container row">
+        <h5>PROPERTY INFORMATION</h5>
+      </div>
 
-
-    
-  <!-- API DATA TABLES -->
-  <div class="row">  
-    <div class="col s12">
-    <div class="property-body">
-      <div class="table-grid">
-        <table class=" property-table">
+      <!-- API DATA TABLES -->
+      <div class="container">
+        <table class="striped responsive-table">
           <thead>
-            
             <caption>
               HOME DETAILS
             </caption>
@@ -99,36 +87,36 @@
 
           <tbody>
             <tr>
-              <td >Residential Code</td>
-              <td class="right-col" id="code">No Data</td>
+              <td>Residential Code</td>
+              <td class="right" id="code">No Data</td>
             </tr>
             <tr>
               <td>Bedrooms</td>
-              <td class="right-col" id="bedrooms">No Data</td>
+              <td class="right" id="bedrooms">No Data</td>
             </tr>
             <tr>
               <td>Bathrooms</td>
-              <td class="right-col" id="bathrooms">No Data</td>
+              <td class="right" id="bathrooms">No Data</td>
             </tr>
             <tr>
               <td>Building Size (Sqft)</td>
-              <td class="right-col" id="buildingSize">No Data</td>
+              <td class="right" id="buildingSize">No Data</td>
             </tr>
             <tr>
-              <td>Lot Size (Sqft)</td>
-              <td class="right-col" id="lotSize">No Data</td>
+              <td>Lot Size (sqft)</td>
+              <td class="right" id="lotSize">No Data</td>
             </tr>
             <tr>
               <td>Year Built</td>
-              <td class="right-col" id="yearBuilt">No Data</td>
-			</tr>
-		</tbody>
-
+              <td class="right" id="yearBuilt">No Data</td>
+            </tr>
+          </tbody>
         </table>
+        <hr />
       </div>
 
-      <div class="table-grid">
-        <table class=" property-table">
+      <div class="container">
+        <table class="striped responsive-table">
           <thead>
             <caption>
               MARKET VALUATION
@@ -138,22 +126,22 @@
           <tbody>
             <tr>
               <td>Zestimate (USD)</td>
-              <td class="right-col" id="zestimate">No Data</td>
+              <td class="right" id="zestimate">No Data</td>
             </tr>
             <tr>
               <td>High Value Limit (USD)</td>
-              <td class="right-col" id="highValue">No Data</td>
+              <td class="right" id="highValue">No Data</td>
             </tr>
             <tr>
               <td>Low Value Limit (USD)</td>
-              <td class="right-col" id="lowValue">No Data</td>
+              <td class="right" id="lowValue">No Data</td>
             </tr>
           </tbody>
         </table>
-	  </div>
-	  
-      <div class="table-grid">
-        <table class="property-table">
+        <hr />
+      </div>
+      <div class="container">
+        <table class="striped responsive-table">
           <thead>
             <caption>
               RENT ESTIMATE
@@ -163,35 +151,31 @@
           <tbody>
             <tr>
               <td>Rent Zestimate (USD)</td>
-              <td class="right-col" id="rentZestimate">No Data</td>
+              <td class="right" id="rentZestimate">No Data</td>
             </tr>
             <tr>
               <td>High Value Limit (USD)</td>
-              <td class="right-col" id="highRentZestimate" >No Data</td>
+              <td class="right" id="highRentZestimate">No Data</td>
             </tr>
             <tr>
               <td>Low Value Limit (USD)</td>
-              <td class="right-col" id="lowRentZestimate" >No Data</td>
+              <td class="right" id="lowRentZestimate">No Data</td>
             </tr>
           </tbody>
         </table>
-	</div>
-</div>
-</div>
+        <hr />
+      </div>
 
-</div>
-
-  </br></br></br>
-
-
-
-<!-- Contact Us Modal Structure -->
-<div id="modal2" class="modal modal-fixed-footer">
-  <div class="modal-content">
-      <h4>Contact Us</h4>
-      <p>We'd love to hear from you, please drop us a message if you have any questions.</p>
-      <div class="container">
-          <form id="contactus">
+      <!-- Contact Us Modal Structure -->
+      <div id="modal2" class="modal modal-fixed-footer">
+        <div class="modal-content">
+          <h4>Contact Us</h4>
+          <p>
+            We'd love to hear from you, please drop us a message if you have any
+            questions.
+          </p>
+          <div class="container">
+            <form id="contactus">
               <label for="fullname">Full Name</label>
               <input type="text" id="fullname" />
               <br />
@@ -200,35 +184,31 @@
               <br />
               <label for="message">Message</label>
               <input type="text" id="message" />
-              </form>
+            </form>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <a
+            href="https://www.instagram.com/alexandria.smart/"
+            target="_blank"
+            class="fa fa-instagram fa-lg"
+          ></a>
+
+          <a href="#!" class="modal-close waves-effect waves-green btn-flat"
+            >Send</a
+          >
+        </div>
       </div>
-  </div>
-  <div class="modal-footer">
-    
-    
-  
-        <a
-          href="https://www.instagram.com/alexandria.smart/"
-          target="_blank"
-          class="fa fa-instagram fa-lg"
-        ></a>
-      
-    
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Send</a>
-  </div>
-  </div>
-<!-- End of Contact Us Modal Structure -->
-
-
+    </main>
+    <!-- End of Contact Us Modal Structure -->
 
     <!--Footer -->
-    <footer class="footer main page-footer teal lighten-2">
-
-      </ul>
-      <!-- Need to center it and add some padding through html or css -->
-      © 2020 Alexandria. All rights reserved.
-      <br/><br/>
+    <footer class="fixed-footer main page-footer teal lighten-2">
+      <div class="main center">
+        © 2020 Alexandria. All rights reserved.
+      </div>
     </footer>
+
     <!-- ====================================SCRIPTS ======================================= -->
     <!-- =================================================================================== -->
 
@@ -255,11 +235,11 @@
         $(".modal").modal();
       });
 
-      		//prompts modal on Nav Bar - Contact Us - Button
-		$(document).ready(function () {
-			$('.sidenav').sidenav();
-			$('.modal').modal();
-		});
+      //prompts modal on Nav Bar - Contact Us - Button
+      $(document).ready(function () {
+        $(".sidenav").sidenav();
+        $(".modal").modal();
+      });
     </script>
 
     <!-- script for property map modal -->
