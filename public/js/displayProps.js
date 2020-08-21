@@ -54,7 +54,7 @@ function getFromDb() {
             // sqftDiv.append(sqftStyle).text("sqft: " + addressArr[i].sqFt)
             //  adds formatting for buttons
             var buttonDiv = $('<div class="container-fluid">')
-            var buttonStyle = $('<div class="col push-s3 s3 s6 m12 l12"></div>')
+            var buttonStyle = $('<div class="col pull-s4 s12 m12 l12"></div>')
 
             // builds out wrench icon
             var workIconDiv = $("<div class='col s3' >");
