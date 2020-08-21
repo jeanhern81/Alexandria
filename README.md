@@ -1,8 +1,9 @@
 
 # Alexandria - Propery Management App
 
----
-Table of Contents:
+
+
+## Table of Contents:
 
 [Description](#Descripion)
 
@@ -23,20 +24,32 @@ Table of Contents:
 
 Alexandria is user-friendly website that easily gives rental property owners a way to manage their properties without the hasstle of having to deal with a property management agency. 
 
-By loging on to your account, you'll get an overview of your properties, rental fees, and expenses. It also features a map icon that when you click, a modal featuring your location. Adding an address is easy, simply click on the plus icon and enter your address. Deleting is just as easy. Click on the minus on the property line and the property will be deleted. 
+By loging on to your account, you'll get an overview of your properties, rental fees, and expenses. It also features a map icon that when you click, a modal featuring your location. Adding an address is easy, simply click on the plus icon and enter your address. You can now also edit the address to reflect any market changes. 
+Deleting is just as easy. Click on the minus on the property line and the property will be deleted. 
 
+The property Details link will now pull data from Zip Realty and give you the latest market value information on your property.
+
+The site is mobile responsive; the design is clean taking into account the users experience. 
 
 --- 
 
 ## Demo 
 
 ![Screenshot](./public/images/demoImages/LandingPage.JPG)
+![Properties](./public/images/demoImages/Properties.JPG)
+![PropertyDetails](./public/images/demoImages/ProDetails.JPG)
+
+
+
+Application Deployed by using <a href="https://mysterious-river-09583.herokuapp.com/"> Heroku </a>.
 
 
 ---
-## Technologies Used:
+## Technologies & Dependencies Used:
 
-HTML, CSS, Materialize, JavaScript, JSON, jQuery, API, 
+HTML, CSS, Materialize, JavaScript, JSON, jQuery, API, MySQL, Heroku, Node.js
+
+Axios, Dotevv, Express, JSON-Stingigy-Safe, MYSQL, MYSQL2, Path, Sequelize
 
 ---
 
@@ -59,5 +72,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 ## Developers: 
 
-Isaac Tsao, Gerson Marroquin, Josh Levish, & Jeanette Hernandez
+* <a href="https://github.com/leetsao1"> Isaac Tsao </a>
+* <a href="https://github.com/goisonberry"> Gerson Marroquin </a>
+* <a href="https://github.com/jdlevish"> Josh Levish </a>
+* <a href="https://github.com/jeanhern81">Jeanette Hernandez </a>
 
