@@ -1,5 +1,5 @@
 
-# Alexandria - Propery Management App
+# Alexandria - Property Management App
 
 
 
