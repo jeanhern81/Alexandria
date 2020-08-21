@@ -37,25 +37,20 @@ module.exports = function (sequelize, DataTypes) {
         mortgage: {
             type: DataTypes.FLOAT,
             allowNull: true,
-            validate: {
-                len: [1]
-            }
+
+
         },
         // creates field to store original purchase price of the property
         purchasePrice: {
             type: DataTypes.FLOAT,
             allowNull: true,
-            validate: {
-                len: [1]
-            }
+
         },
         // creates a field for the monthly rent charged
         rent: {
             type: DataTypes.FLOAT,
             allowNull: true,
-            validate: {
-                len: [1]
-            }
+
         },
 
 

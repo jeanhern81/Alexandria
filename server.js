@@ -2,9 +2,12 @@
 // ==============================================
 var express = require("express");
 var path = require("path");
+var axios = require('axios')
+var stringify = require('json-stringify-safe');
+require('dotenv').config();
 // var db = require("./models");
 
-
+console.log(process.env);
 
 // Sets up the Express App
 // ==============================================
@@ -116,10 +119,13 @@ app.post("/api/newProperty", function (req, res) {
 
 
 
-  })
-  res.status(204).end();
+  }).catch(function (err) {
+    // Whenever a validation or flag fails, an error is thrown
+    // We can "catch" the error to prevent it from being "thrown", which could crash our node app
+    res.json(err);
 
-})
+  })
+});
 app.delete("/api/:id", function (req, res) {
   // this route deletes the property based on the property Id
   db.Property.destroy({
@@ -143,6 +149,37 @@ app.put("/api/properties", function (req, res) {
       res.json(property);
     });
 });
+// zillow route
+app.get("/zillowCall/", async (req, res) => {
+  console.log(req.query)
+  var locationArray = req.query.locationArray
+
+
+  // // console.log(locationArray)
+
+  axios({
+    "method": "GET",
+    "url": "https://zillow-com.p.rapidapi.com/search/address",
+    "headers": {
+      "content-type": "application/octet-stream",
+      "x-rapidapi-host": "zillow-com.p.rapidapi.com",
+      "x-rapidapi-key": process.env.ZILL_KEY,
+      "useQueryString": true
+    }, "params": {
+      "address": locationArray[0],
+      "citystatezip": locationArray[1] + " " + locationArray[2],
+      // "address":"2114 Bigelow Ave",
+      // "citystatezip":"Seattle WA 98109"
+    }
+  })
+    .then((data) => {
+      console.log(data)
+      res.send(stringify(data))
+    })
+
+})
+
+
 
 
 // Starts the server to begin listening
