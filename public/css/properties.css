@@ -1,17 +1,29 @@
-
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+  main {
+    flex: 1 0 auto;
+}
 
 #property-header {
     margin-left: 2%;
 }
 
+.col {
+
+}
 
 
 
 .row .col.s3 {
     width: 25%;
     margin-left: auto;
-    left: auto;
-    right: auto;
+    left: 0px;
+    right: 0px;
+    padding: 0px;
+    
 }
 
 
@@ -23,8 +35,22 @@
     margin-left: -10rem;
     padding-left: 5%;
     min-height: 1px;
+    
 }
 
+/*padding between rows address and buttons */
+.row{
+    padding-bottom: 45px;
+    border-bottom: rgba(211, 211, 211, 0.596) solid 1px;
+
+}
+
+/* bottom padding for add address button with now line break */
+.row- {
+    padding: 45px;
+}
+
+/* this handles the size of the font that renders the address */
 h6 {
     font-size: 1.25rem;
     line-height: 110%;
@@ -32,7 +58,9 @@ h6 {
 }
 
 
+/* footer details */
 .footer {
+    display: flex;
     position: absolute;
     left: 0;
     bottom: 0;
@@ -40,6 +68,7 @@ h6 {
     color: white;
     text-align: center;
 }
+
 
 .property-details {
     position: relative;
@@ -51,7 +80,43 @@ h6 {
     width: 100%;
     /* The width is the width of the web page */
 }
-.required:after {
-    content:" *";
-    color: red;
-  }
+
+
+
+
+
+
+
+/**** MEDIA QUERIES****/
+
+@media only screen and (max-width: 1224px) {
+
+
+
+    }
+
+
+    @media only screen and (max-width: 768px) {
+
+ .cor.s3 {
+    width: 25%;
+    
+    left: 0px;
+    right: 0px;
+    padding: 0px;
+    clear: left;
+}
+
+    }
+
+    @media only screen and (max-width: 320px) {
+  {
+        
+    width: 25%;
+    left: 0px;
+    right: 0px;
+    padding: 0px;
+    clear: left;
+        }
+
+    }
