@@ -41,6 +41,12 @@ function getFromDb() {
             mortgageDiv.append(mortgageStyle);
             mortgageStyle.text("Mortgage: " + mortgageData);
 
+            var ZestimateDiv = $("<div class='col s3'>");
+            var ZestimateStyle = $("<span class='teal-text text-lighten-2'>");
+            // !!==  HERE  ===!!!!
+            ZestimateDiv.append(ZestimateStyle).html(`<a value="${addressData.toUpperCase() + '% ' + cityData.toUpperCase() + '% ' +
+                stateData.toUpperCase() + ' ' + zipData}"  data-id= ${id} class="property-details" href="properties-details.html">Property Details...</a>`);
+
             // builds out Z Estimate display
             // var sqftDiv = $("<div class='col s3'>");
             // var sqftStyle = $("<span class='teal-text text-lighten-2'>")
@@ -48,7 +54,7 @@ function getFromDb() {
             // sqftDiv.append(sqftStyle).text("sqft: " + addressArr[i].sqFt)
             //  adds formatting for buttons
             var buttonDiv = $('<div class="container-fluid">')
-            var buttonStyle = $('<div class="col pull-s4 s12 m12 l12"></div>')
+            var buttonStyle = $('<div class="col offset-s4 s12 m12 l12"></div>')
 
             // builds out wrench icon
             var workIconDiv = $("<div class='col s3'>");
@@ -97,12 +103,12 @@ function getFromDb() {
             deleteLink.append(deleteIcon)
             deleteIconDiv.append(deleteLink)
 
-            
+
             var editIconDiv = $("<div class='col s3' id='edit' data-id=" + id + "> ");
             var editLink = $("<a class='waves-effect waves-light btn-large modal-trigger' href='#editProperties'>");
 
             var editIcon = $("<i class='material-icons center' >");
-            editIcon.text("close")
+            editIcon.text("edit")
             editLink.append(editIcon)
             editIconDiv.append(editLink)
 
@@ -128,6 +134,7 @@ function getFromDb() {
             propertyDiv.append(propertyDivStyle);
             propertyDiv.append(rentDiv);
             propertyDiv.append(mortgageDiv);
+            propertyDiv.append(ZestimateDiv)
 
             // propertyDiv.append(sqftDiv)
             propertyDiv.append(buttonDiv)
@@ -150,22 +157,23 @@ $(document).on("click", "#delete", function () {
     var txt;
     if (confirm("Press OK to DELETE or press CANCEL to go back!")) {
         txt = "You pressed OK to DELETE"
-        
-    var results = [];
-    // location of the address div
-    var id = this.dataset.id;
-    // .parent().parent().siblings().find("#address")[0]
-} else { 
-    txt = "You pressed CANCEL to go back";
 
-    $.ajax({
-        method: "DELETE",
-        url: "/api/" + id
-    }).then(() => {
-        location.reload()
-    }) 
-    document.getElementById("demo").innerHTML = txt;
-}
+
+        // location of the address div
+        var id = this.dataset.id;
+        // .parent().parent().siblings().find("#address")[0]
+
+
+        $.ajax({
+            method: "DELETE",
+            url: "/api/" + id
+        }).then(() => {
+            location.reload()
+        })
+        document.getElementById("demo").innerHTML = txt;
+    } else {
+        txt = "You pressed CANCEL to go back";
+    }
 
 })
 
@@ -176,8 +184,19 @@ $(document).on("click", "#edit", function (event) {
     event.preventDefault();
     var id = this.dataset.id
     // document.querySelector("#address")
+    $.get("/api/" + id, function (data) {
+        console.log(data.address)
+        $("#estreetAddress").val(data.address);
+        $("#ecity").val(data.city);
+        $("#estate").val(data.state);
+        $("#ezipCode").val(data.zip);
+        $("#emortgage").val(data.mortgage);
+        $("#ePurchase").val(data.purchasePrice);
+        $("#erent").val(data.rent);
 
-    console.log(id)
+    });
+
+
     var editTextH6 = $("<h6>")
     $("#editTitle").html(editTextH6)
     editTextH6.text($(this).parent().parent().siblings()[0].textContent)
@@ -190,7 +209,7 @@ $(document).on("click", "#edit", function (event) {
         var stateVal = $("#estate").val().trim()
         var zipVal = $("#ezipCode").val().trim()
         var purchaseVal = $("#ePurchase").val().trim()
-        var expensesVal = $("#eexpenses").val().trim()
+        var mortgageVal = $("#emortgage").val().trim()
         var rentVal = $("#erent").val().trim()
         // creates an object out of the form data from the add property modal
         var newProperty = {
@@ -199,7 +218,7 @@ $(document).on("click", "#edit", function (event) {
             state: stateVal,
             zip: zipVal,
             purchasePrice: purchaseVal,
-            mortgage: expensesVal,
+            mortgage: mortgageVal,
             rent: rentVal,
             id: id
         }

@@ -86,6 +86,18 @@ app.get("/api/", function (req, res) {
     res.json(data);
   })
 });
+app.get("/api/:id", function (req, res) {
+  var id = req.params.id
+  db.Property.findOne({
+    where: {
+      id: id
+
+    }
+  }).then((data) => {
+    res.json(data)
+  });
+});
+
 
 
 app.post("/api/newProperty", function (req, res) {

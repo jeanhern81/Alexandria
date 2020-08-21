@@ -24,7 +24,7 @@ $(document).ready(() => {
 
             console.log("adding property")
 
-            location.reload();
+
 
 
             location.reload();
