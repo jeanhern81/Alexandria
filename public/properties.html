@@ -17,7 +17,6 @@
 		rel="stylesheet" />
 	<!--Font Awesome-->
 	<script src="https://kit.fontawesome.com/8b8f26d0e1.js" crossorigin="anonymous"></script>
-
 	<!-- Jquery -->
 	<script src="https://code.jquery.com/jquery-3.5.1.js"
 		integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
@@ -26,6 +25,9 @@
 </head>
 
 <body>
+	<main>
+
+
 	<!-- Beginning of NavBar -->
 	<div class="container-fluid">
 		<nav class="navbar-fixed nav-wrapper teal lighten-2">
@@ -54,15 +56,14 @@
 			<!-- Beginning of Property listings. This Section will need to be dynamic with JS. -->
 			<!-- Propertery #1 - Just a place holder-->
 		</div>
-	</div>
-
-	<div class="property-body">
-	</div>
-<div class="container-fluid">
-<div class="col s3">
-
-</div>	
 </div>
+
+<div class="property-body">
+
+
+
+</div>
+<br /><br /> 
 
 
 
@@ -114,7 +115,6 @@
 					<label for="zipcode">zip code</label>
 					<input type="text" id="zipCode" maxlength="5" size="5" required />
 					<br />
-
 					<label for="expenses">Monthly Expenses</label>
 					<input type="text" id="expenses" />
 					<br />
@@ -138,10 +138,10 @@
 				<div class="col s12 main center">
 					<h1>Edit Property</h1>
 					<div class="col s12 main center" id="editTitle"></div>
-
 				</div>
 			</div>
 			<br />
+
 			<div class="container">
 				<form id="Property">
 					<label for="streetAddress">Street Address</label>
@@ -191,21 +191,31 @@
 	</div>
 
 	<!-- add property button on + modal -->
-	<div class="row2">
+	<div class="row-2">
 		<div class="col s12 center-align">
 			<a class="waves-effect waves-light btn-large modal-trigger" href="#addProperties"><i
 					class="material-icons right">add_locations</i></a>
 		</div>
-	</div>
 
+	</div>
+</main>
 
 	<!--Footer -->
-	<footer class="footer main page-footer teal lighten-2">
+	<div class="footer">
+		<footer class="footer page-footer teal lighten-2">
+			<!-- Need to center it and add some padding through html or css -->
+			© 2020 Alexandria. All rights reserved.
+			<br/><br/>
+			</footer>enter it and add some padding through html or css -->
 
-		<!-- Need to center it and add some padding through html or css -->
-		© 2020 Alexandria. All rights reserved.
 		<br /><br />
 	</footer>
+	</div>
+</body>
+
+</html>
+
+
 
 	<!-- ====================================SCRIPTS ======================================= -->
 	<!-- =================================================================================== -->
@@ -277,6 +287,3 @@
 
 	</script>
 
-</body>
-
-</html>
