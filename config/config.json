@@ -1,9 +1,9 @@
 {
   "development": {
-    "username": "svqshx365xi7t5pr",
-    "password": "jf6j0ps7ual36nh4",
-    "database": "klsb09otc6r530hy",
-    "host": "i2cpbxbi4neiupid.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+    "username": "root",
+    "password": "Mercury35!",
+    "database": "alexandria_db",
+    "host": "127.0.0.1",
     "port": 3306,
     "dialect": "mysql"
   },
