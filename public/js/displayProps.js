@@ -13,9 +13,9 @@ function getFromDb() {
             var id = data[i].id
 
             // taken from lacal storage code
-            var propertyDivContainer = $("<div class='container-fluid'>")
+            var propertyDivContainer = $("<div class='container'>")
             var propertyDiv = $("<div class='row'> ");
-            var propertyDivStyle = $("<div class='col'>");
+            var propertyDivStyle = $("<div >");
             var addressSpan = $("<span class='propAdd'>")
             var address = $("<h6 class='propAdd' id='address' data-id=" + id + ">").text(
                 addressData.toUpperCase())

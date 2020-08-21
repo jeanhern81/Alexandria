@@ -11,10 +11,9 @@ body {
     margin-left: 2%;
 }
 
-.col {
-
+.property-body {
+    margin: 0px 0px; 
 }
-
 
 
 .row .col.s3 {
