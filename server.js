@@ -163,7 +163,7 @@ app.get("/zillowCall/", async (req, res) => {
     "headers": {
       "content-type": "application/octet-stream",
       "x-rapidapi-host": "zillow-com.p.rapidapi.com",
-      "x-rapidapi-key": process.env.ZILL_KEY,
+      "x-rapidapi-key": process.env.Zill_KEY,
       "useQueryString": true
     }, "params": {
       "address": locationArray[0],
