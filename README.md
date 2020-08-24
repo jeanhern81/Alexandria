@@ -49,7 +49,7 @@ Application Deployed by using <a href="https://mysterious-river-09583.herokuapp.
 
 HTML, CSS, Materialize, JavaScript, JSON, jQuery, API, MySQL, Heroku, Node.js
 
-Axios, Dotevv, Express, JSON-Stingigy-Safe, MYSQL, MYSQL2, Path, Sequelize
+Axios, Dotevv, Express, JSON-Stingify-Safe, MYSQL, MYSQL2, Path, Sequelize
 
 ---
 
