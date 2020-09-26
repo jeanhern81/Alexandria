@@ -98,39 +98,39 @@
 			<div class="modal-content">
 				<div class="row">
 					<div class="col s12 main center">
-						<h1>Add Properties</h1>
+						<h3>Add Properties</h3>
 					</div>
 				</div>
 				<br />
 				<div class="container">
 					<form id="Property">
-						<label class="required" for="streetAddress">Street Address</label>
+						<label class="required" for="streetAddress">Street Address *</label>
 						<input type="text" id="streetAddress" />
 						<br />
-						<label class="required" for="city"> City </label>
+						<label class="required" for="city"> City *</label>
 						<input type="text" id="city" required />
 						<br />
-						<label class="required" for="state">State abbreviation</label>
+						<label class="required" for="state">State Abbreviation *</label>
 						<input type="text" id="state" maxlength="2" size="2" required />
 						<br />
-						<label class="required" for="zipcode">zip code</label>
+						<label class="required" for="zipcode">Zip Code *</label>
 						<input type="text" id="zipCode" maxlength="5" size="5" required />
 						<br />
-						<label for="expenses">Monthly Expenses</label>
+						<label for="expenses">Monthly Expenses *</label>
 						<input type="text" id="expenses" />
 						<br />
-						<label class="required" for="Purchase">Purchase Price</label>
+						<label class="required" for="Purchase">Purchase Price *</label>
 						<input type="text" id="Purchase" />
 						<br />
-						<label class="required" for="rent">Monthly Rent</label>
+						<label class="required" for="rent">Monthly Rent *</label>
 						<input type="text" id="rent" />
 						<br />
-						<span class="required">all fields denoted with </span><span>are required</span>
+						<span class="required"> </span><span>(*) required fields</span>
 						</br>
 						<div class="row">
 							</br>
-							<a href="#!"><button class="col offset-s4 btn waves-effect waves-light modal-close"
-									type="submit" id="addProperty">Add Property</button></a>
+								<a href="#!"><button class="btn waves-effect waves-light modal-close"
+									type="submit" id="addProperty">Save</button></a>
 						</div>
 					</form>
 				</div>
@@ -140,7 +140,7 @@
 			<div class="modal-content">
 				<div class="row">
 					<div class="col s12 main center">
-						<h1>Edit Property</h1>
+						<h3>Edit Property</h3>
 						<div class="col s12 main center" id="editTitle"></div>
 					</div>
 				</div>
@@ -148,33 +148,33 @@
 
 				<div class="container">
 					<form id="Property">
-						<label class="required" for="streetAddress">Street Address</label>
+						<label class="required" for="streetAddress">Street Address *</label>
 						<input type="text" id="estreetAddress" minlength="1" required>
 						<br />
-						<label class="required" for="city"> City </label>
+						<label class="required" for="city"> City *</label>
 						<input type="text" id="ecity" minlength="1" required>
 						<br />
-						<label class="required" for="state">State abbreviation</label>
+						<label class="required" for="state">State Abbreviation *</label>
 						<input type="text" id="estate" minlength="1" maxlength="2" size="2" required>
 						<br />
-						<label class="required" for="zipcode">zip code</label>
+						<label class="required" for="zipcode">Zip Code *</label>
 						<input type="text" id="ezipCode" minlength="1" maxlength="5" size="5" required>
 						<br />
-						<label class="required" for="mortgage">Monthly Mortgage</label>
+						<label class="required" for="mortgage">Monthly Mortgage *</label>
 						<input type="text" id="emortgage" />
 						<br />
-						<label class="required" for="Purchase">Purchase Price</label>
+						<label class="required" for="Purchase">Purchase Price *</label>
 						<input type="text" id="ePurchase" />
 						<br />
-						<label class="required" for="rent">Monthly Rent</label>
+						<label class="required" for="rent">Monthly Rent *</label>
 						<input type="text" id="erent" />
 						<br />
-						<span class="required">all fields denoted with </span><span>are required</span>
+						<span class="required"></span><span>(*) required fields</span>
 						</br>
 						<div class="row">
 							</br>
-							<a href="#!"><button class="col offset-s4 btn waves-effect waves-light modal-close"
-									type="submit" id="editProperty"> edit Property</button></a>
+							<a href="#!"><button class="btn waves-effect waves-light modal-close"
+									type="submit" id="editProperty">Save</button></a>
 						</div>
 					</form>
 				</div>
@@ -191,9 +191,12 @@
 					</div>
 				</div>
 				<br />
-				<div class="container">
+				<div class="container-fluid">
 					<div id="map"></div>
 				</div>
+				<div class="center-align">
+					<img  src="images/powered_by_google_on_white.png" alt="google logo" width="auto" >
+				  </div>
 			</div>
 		</div>
 
@@ -207,9 +210,12 @@
 		</div>
 	</main>
 
+
+	
 	<!--Footer -->
 <br />
-    <footer class="fixed-footer main page-footer teal lighten-2">
+
+<footer class="fixed-footer main page-footer teal lighten-2">
 		<div class="main center">
 		© 2020 Alexandria. All rights reserved.<br /><br />
 		</div>
