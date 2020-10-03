@@ -12,7 +12,7 @@ class Home extends React.Component {
           <nav class="navbar-fixed nav-wrapper teal lighten-2">
             <a href="#" class="main center brand-logo">
               <img
-                src="images/Alexandria-logo-BW.png"
+                src="assets/images/Alexandria-logo-BW.png"
                 id="alexandria-logo"
                 alt="Alexandria Company Logo"
                 width="250"
@@ -76,7 +76,7 @@ class Home extends React.Component {
                   <p>
                     <img
                       id="iphone-x"
-                      src="images/backgrounds/iPhone2X.png"
+                      src="assets/images/backgrounds/iPhone2X.png"
                       alt="image of iphone with housing information"
                     />
                   </p>
@@ -90,7 +90,7 @@ class Home extends React.Component {
           <div id="modal3" class="modal modal-fixed-footer">
             <div class="center-align">
               <img
-                src="images/Alexandria-logo-s.png"
+                src="assets/images/Alexandria-logo-s.png"
                 id="alexlogo"
                 alt="Alexandria logo"
               />
@@ -181,16 +181,6 @@ class Home extends React.Component {
           </div>
         </div>
         {/* <!-- End of Contact Us Modal Structure --> */}
-
-        {/* <!-- Beginning of Footer --> */}
-
-        <footer class="footer page-footer teal lighten-2">
-          {/* <!-- Need to center it and add some padding through html or css --> */}
-          © 2020 Alexandria. All rights reserved.
-          <br />
-          <br />
-        </footer>
-        {/* <!-- End of Footer --> */}
       </div>
     );
   }
