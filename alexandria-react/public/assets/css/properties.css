@@ -1,0 +1,138 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+element.style {
+    padding-right: -50%;
+}
+
+#property-header {
+    margin-left: 2%;
+}
+
+.property-body {
+    margin: 0px 0px; 
+}
+
+
+#editProperty {
+    float: right;
+    position: relative;
+    left: -50%;
+}
+
+#addProperty {
+    float: right;
+    position: relative;
+    left: -50%;
+}
+
+.row .col.s3 {
+    width: 25%;
+    margin-left: auto;
+    left: 0px;
+    right: 0px;
+    padding: 0px;
+    
+}
+
+
+/* handles the position of where the property populates*/
+.row .col {
+    float: left;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-left: -10rem;
+    padding-left: 5%;
+    min-height: 1px;
+    
+}
+
+/*padding between rows address and buttons */
+.row{
+    /*padding-bottom: 45px; */
+    border-bottom: rgba(211, 211, 211, 0.596) solid 1px;
+
+}
+
+/* bottom padding for add address button with now line break */
+.row- {
+    padding: 45px;
+}
+
+/* this handles the size of the font that renders the address */
+h6 {
+    font-size: 1.25rem;
+    line-height: 110%;
+    margin: 0.7666666667rem 0 0.46rem 0;
+}
+
+
+/* footer details */
+.footer {
+    display: flex;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
+}
+
+
+.property-details {
+    position: relative;
+}
+/* Set the size of the div element that contains the map */
+#map {
+    height: 400px;
+    /* The height is 400 pixels */
+    width: 100%;
+    /* The width is the width of the web page */
+}
+
+
+
+
+
+
+
+/**** MEDIA QUERIES****/
+
+@media only screen and (max-width: 1224px) {
+
+
+
+    }
+
+
+    @media only screen and (max-width: 768px) {
+
+ .cor.s3 {
+    width: 25%;
+    
+    left: 0px;
+    right: 0px;
+    padding: 0px;
+    clear: left;
+}
+
+    }
+
+    @media only screen and (max-width: 320px) {
+  {
+        
+    width: 25%;
+    left: 0px;
+    right: 0px;
+    padding: 0px;
+    clear: left;
+        }
+
+    }
