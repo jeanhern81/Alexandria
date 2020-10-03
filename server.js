@@ -39,6 +39,8 @@ app.use(cookieParser());
 
 // routes for auth
 require('./userModel/User.js');
+require('./userModel/property.js');
+const Property = mongoose.model('Property');
 require('./config/passport');
 app.use(require('./routes'));
 
@@ -58,7 +60,20 @@ app.post("/api/newProperty", function (req, res) {
   // this route takes in the post request coming from the add Property Modal
   var property = req.body;
   // sends the incoming data into the property model
-  db.Property.create({
+  // db.Property.create({
+  //   address: property.address,
+  //   city: property.city,
+  //   state: property.state,
+  //   zip: property.zip,
+  //   mortgage: property.mortgage,
+  //   purchasePrice: property.purchasePrice,
+  //   rent: property.rent
+
+
+
+
+  // })
+  var newProperty = new Property({
     address: property.address,
     city: property.city,
     state: property.state,
@@ -66,11 +81,11 @@ app.post("/api/newProperty", function (req, res) {
     mortgage: property.mortgage,
     purchasePrice: property.purchasePrice,
     rent: property.rent
-
-
-
-
   })
+  newProperty.save(function (err, doc) {
+    if (err) return console.error(err);
+    console.log("Document inserted succussfully!");
+  });
   res.status(204).end();
 
 })
