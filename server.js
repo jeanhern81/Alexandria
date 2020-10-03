@@ -4,22 +4,47 @@ var express = require("express");
 var path = require("path");
 var axios = require('axios')
 var stringify = require('json-stringify-safe');
+const bodyParser = require('body-parser');
+const session = require('express-session');
+const cors = require('cors');
+const mongoose = require('mongoose');
+const passport = require("passport")
+const cookieParser = require("cookie-parser");
 require('dotenv').config();
 // var db = require("./models");
 
-console.log(process.env);
+
 
 // Sets up the Express App
 // ==============================================
+//Configure mongoose's promise to global promise
+mongoose.promise = global.Promise;
 var app = express();
 var PORT = process.env.PORT || 8080;
 var db = require("./models");
 
+
 // Sets up the Express app to handle data parsing
+app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
+app.use(session({ secret: process.env.SECRET, resave: false, saveUninitialized: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(cors());
+app.use(cookieParser());
 
+
+// routes for auth
+require('./userModel/User.js');
+require('./config/passport');
+app.use(require('./routes'));
+
+// mongo connection
+mongoose.connect('mongodb://localhost/passport-tutorial');
+mongoose.set('debug', true);
 // Routes
 // ===============================================
 app.get("/", function (req, res) {
