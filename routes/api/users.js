@@ -3,6 +3,7 @@ const passport = require('passport');
 const router = require('express').Router();
 const auth = require('../auth');
 const Users = mongoose.model('Users');
+var path = require("path");
 
 
 
@@ -87,7 +88,7 @@ router.post('/login', auth.optional, (req, res, next) => {
                 // Forces to use https in production
                 secure: false
             });
-            return res.json({ user: user.toAuthJSON() })
+            return res.sendFile(path.join(__dirname, "../../public/properties.html"))
         }
         if (info) {
             console.log(info)
