@@ -4,6 +4,8 @@ var express = require("express");
 var path = require("path");
 var axios = require('axios')
 var stringify = require('json-stringify-safe');
+const xml2js = require('xml2js');
+
 require('dotenv').config();
 // var db = require("./models");
 
@@ -14,6 +16,7 @@ console.log(process.env);
 var app = express();
 var PORT = process.env.PORT || 8080;
 var db = require("./models");
+const { response } = require("express");
 
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
@@ -29,6 +32,7 @@ app.get("/", function (req, res) {
 app.get("/properties", function (req, res) {
   res.sendFile(path.join(__dirname, "public/properties.html"));
 });
+
 app.post("/api/newProperty", function (req, res) {
   // this route takes in the post request coming from the add Property Modal
   var property = req.body;
@@ -56,7 +60,6 @@ app.get("/api/", function (req, res) {
     res.json(data);
   })
 });
-
 
 app.post("/api/newProperty", function (req, res) {
   // this route takes in the post request coming from the add Property Modal
@@ -89,6 +92,7 @@ app.get("/api/", function (req, res) {
     res.json(data);
   })
 });
+
 app.get("/api/:id", function (req, res) {
   var id = req.params.id
   db.Property.findOne({
@@ -100,8 +104,6 @@ app.get("/api/:id", function (req, res) {
     res.json(data)
   });
 });
-
-
 
 app.post("/api/newProperty", function (req, res) {
   // this route takes in the post request coming from the add Property Modal
@@ -126,6 +128,7 @@ app.post("/api/newProperty", function (req, res) {
 
   })
 });
+
 app.delete("/api/:id", function (req, res) {
   // this route deletes the property based on the property Id
   db.Property.destroy({
@@ -136,6 +139,7 @@ app.delete("/api/:id", function (req, res) {
     console.log("successfully deleted")
   })
 })
+
 app.put("/api/properties", function (req, res) {
   var property = req.body
   console.log(property)
@@ -149,37 +153,47 @@ app.put("/api/properties", function (req, res) {
       res.json(property);
     });
 });
+
 // zillow route
+
 app.get("/zillowCall/", async (req, res) => {
-  console.log(req.query)
-  var locationArray = req.query.locationArray
-
-
-  // // console.log(locationArray)
+  console.log(req.query);
+  var locationArray = req.query.locationArray;
+  // let address = "3128 MULBERRY STREET";
+  // let citystate = "RIVERSIDE CA";
+  let address = locationArray[0];
+  let citystate = locationArray[1] + " " + locationArray[2];
 
   axios({
     "method": "GET",
-    "url": "https://zillow-com.p.rapidapi.com/search/address",
-    "headers": {
-      "content-type": "application/octet-stream",
-      "x-rapidapi-host": "zillow-com.p.rapidapi.com",
-      "x-rapidapi-key": process.env.Zill_KEY,
-      "useQueryString": true
-    }, "params": {
-      "address": locationArray[0],
-      "citystatezip": locationArray[1] + " " + locationArray[2],
-      // "address":"2114 Bigelow Ave",
-      // "citystatezip":"Seattle WA 98109"
-    }
+    "url": `http://www.zillow.com/webservice/GetSearchResults.htm?zws-id=${process.env.Zill_KEY}&address=${address}&citystatezip=${citystate}`,
+
+    // "headers": {
+    //   "content-type": "application/octet-stream",
+    //   // "x-rapidapi-host": "zillow-com.p.rapidapi.com",
+    //   "x-rapidapi-key": process.env.Zill_KEY,
+    //   "useQueryString": true
+    // },
+    //  params: {
+    //   rentzestimate: true
+    // }
   })
-    .then((data) => {
-      console.log(data)
-      res.send(stringify(data))
+    .then((api) => {
+
+      xml2js.parseString(api.data, (err, result) => {
+        if(err) {throw err};
+        const json = JSON.stringify(result["SearchResults:searchresults"].response[0].results[0], null, 4);
+        console.log("The Zillow JSON is: " + json); 
+        // res.json(stringify(result["SearchResults:searchresults"])) ;
+        res.send(json) ;
     })
+      // console.log(data)
+      // res.send(stringify(result.data))
+    }) .catch(function(error){
+      console.log(error);
+  });
 
 })
-
-
 
 
 // Starts the server to begin listening
