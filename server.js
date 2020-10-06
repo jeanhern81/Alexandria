@@ -45,11 +45,13 @@ app.use(cookieParser());
 
 // routes for auth
 require('./userModel/User.js');
+require('./userModel/property.js');
+const Property = mongoose.model('Property');
 require('./config/passport');
 app.use(require('./routes'));
 
 // mongo connection
-mongoose.connect('mongodb://localhost/passport-tutorial');
+mongoose.connect('mongodb://localhost/alexandria');
 mongoose.set('debug', true);
 // Routes
 // ===============================================
@@ -65,18 +67,22 @@ app.post("/api/newProperty", function (req, res) {
   // this route takes in the post request coming from the add Property Modal
   var property = req.body;
   // sends the incoming data into the property model
-  db.Property.create({
-    address: property.address,
-    city: property.city,
-    state: property.state,
-    zip: property.zip,
-    mortgage: property.mortgage,
-    purchasePrice: property.purchasePrice,
-    rent: property.rent
+  // db.Property.create({
+  //   address: property.address,
+  //   city: property.city,
+  //   state: property.state,
+  //   zip: property.zip,
+  //   mortgage: property.mortgage,
+  //   purchasePrice: property.purchasePrice,
+  //   rent: property.rent
 
 
 
 
+<<<<<<< HEAD
+  // })
+  var newProperty = new Property({
+=======
   })
   res.status(204).end();
 
@@ -94,6 +100,7 @@ app.post("/api/newProperty", function (req, res) {
   var property = req.body;
   // sends the incoming data into the property model
   db.Property.create({
+>>>>>>> 818491a1a103482974baec51569664d8f2475d0e
     address: property.address,
     city: property.city,
     state: property.state,
@@ -101,21 +108,26 @@ app.post("/api/newProperty", function (req, res) {
     mortgage: property.mortgage,
     purchasePrice: property.purchasePrice,
     rent: property.rent
-
-
-
-
   })
+  newProperty.save(function (err, doc) {
+    if (err) return console.error(err);
+    console.log("Document inserted succussfully!");
+  });
   res.status(204).end();
 
 })
+
+
+
+
+
 
 app.get("/properties-details", function (req, res) {
   res.sendFile(path.join(__dirname, "public/properties-details.html"));
 });
 
 app.get("/api/", function (req, res) {
-  db.Property.findAll({}).then(function (data) {
+  Property.find({}).then(function (data) {
     console.log(data);
     res.json(data);
   })
@@ -123,16 +135,21 @@ app.get("/api/", function (req, res) {
 
 app.get("/api/:id", function (req, res) {
   var id = req.params.id
-  db.Property.findOne({
-    where: {
-      id: id
+  Property.findOne({
 
-    }
+    _id: id
+
+
   }).then((data) => {
     res.json(data)
   });
 });
 
+<<<<<<< HEAD
+
+
+
+=======
 app.post("/api/newProperty", function (req, res) {
   // this route takes in the post request coming from the add Property Modal
   var property = req.body;
@@ -157,13 +174,14 @@ app.post("/api/newProperty", function (req, res) {
   })
 });
 
+>>>>>>> 818491a1a103482974baec51569664d8f2475d0e
 app.delete("/api/:id", function (req, res) {
   // this route deletes the property based on the property Id
-  db.Property.destroy({
-    where: {
-      id: req.params.id
+  Property.deleteOne(
+    {
+      _id: req.params.id
     }
-  }).then(() => {
+  ).then(() => {
     console.log("successfully deleted")
   })
 })
@@ -171,15 +189,24 @@ app.delete("/api/:id", function (req, res) {
 app.put("/api/properties", function (req, res) {
   var property = req.body
   console.log(property)
-  db.Property.update(
-    property,
+  Property.findByIdAndUpdate(
+
     {
-      where: {
-        id: property.id
-      }
-    }).then(function (property) {
-      res.json(property);
-    });
+      _id: property.id
+    }
+    , {
+      address: property.address,
+      city: property.city,
+      state: property.state,
+      zip: property.zip,
+      mortgage: property.mortgage,
+      purchasePrice: property.purchasePrice,
+      rent: property.rent
+    }
+
+  ).then(function (property) {
+    res.json(property);
+  });
 });
 
 // zillow route
