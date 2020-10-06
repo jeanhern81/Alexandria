@@ -4,17 +4,14 @@ var express = require("express");
 var path = require("path");
 var axios = require('axios')
 var stringify = require('json-stringify-safe');
-<<<<<<< HEAD
 const bodyParser = require('body-parser');
 const session = require('express-session');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const passport = require("passport")
 const cookieParser = require("cookie-parser");
-=======
 const xml2js = require('xml2js');
 
->>>>>>> ZillowApi
 require('dotenv').config();
 // var db = require("./models");
 
@@ -79,28 +76,9 @@ app.post("/api/newProperty", function (req, res) {
 
 
 
-<<<<<<< HEAD
+
   // })
   var newProperty = new Property({
-=======
-  })
-  res.status(204).end();
-
-})
-
-app.get("/api/", function (req, res) {
-  db.Property.findAll({}).then(function (data) {
-    console.log(data);
-    res.json(data);
-  })
-});
-
-app.post("/api/newProperty", function (req, res) {
-  // this route takes in the post request coming from the add Property Modal
-  var property = req.body;
-  // sends the incoming data into the property model
-  db.Property.create({
->>>>>>> 818491a1a103482974baec51569664d8f2475d0e
     address: property.address,
     city: property.city,
     state: property.state,
@@ -145,36 +123,9 @@ app.get("/api/:id", function (req, res) {
   });
 });
 
-<<<<<<< HEAD
 
 
 
-=======
-app.post("/api/newProperty", function (req, res) {
-  // this route takes in the post request coming from the add Property Modal
-  var property = req.body;
-  // sends the incoming data into the property model
-  db.Property.create({
-    address: property.address,
-    city: property.city,
-    state: property.state,
-    zip: property.zip,
-    mortgage: property.mortgage,
-    purchasePrice: property.purchasePrice,
-    rent: property.rent
-
-
-
-
-  }).catch(function (err) {
-    // Whenever a validation or flag fails, an error is thrown
-    // We can "catch" the error to prevent it from being "thrown", which could crash our node app
-    res.json(err);
-
-  })
-});
-
->>>>>>> 818491a1a103482974baec51569664d8f2475d0e
 app.delete("/api/:id", function (req, res) {
   // this route deletes the property based on the property Id
   Property.deleteOne(
@@ -236,17 +187,17 @@ app.get("/zillowCall/", async (req, res) => {
     .then((api) => {
 
       xml2js.parseString(api.data, (err, result) => {
-        if(err) {throw err};
+        if (err) { throw err };
         const json = JSON.stringify(result["SearchResults:searchresults"].response[0].results[0], null, 4);
-        console.log("The Zillow JSON is: " + json); 
+        console.log("The Zillow JSON is: " + json);
         // res.json(stringify(result["SearchResults:searchresults"])) ;
-        res.send(json) ;
-    })
+        res.send(json);
+      })
       // console.log(data)
       // res.send(stringify(result.data))
-    }) .catch(function(error){
+    }).catch(function (error) {
       console.log(error);
-  });
+    });
 
 })
 
