@@ -172,7 +172,7 @@ app.get("/zillowCall/", async (req, res) => {
 
   axios({
     "method": "GET",
-    "url": `http://www.zillow.com/webservice/GetSearchResults.htm?zws-id=${process.env.Zill_KEY}&address=${address}&citystatezip=${citystate}`,
+    "url": `http://www.zillow.com/webservice/GetSearchResults.htm?zws-id=${process.env.Zill_KEY}&address=${address}&citystatezip=${citystate}&rentzestimate=true`,
 
     // "headers": {
     //   "content-type": "application/octet-stream",
@@ -185,7 +185,7 @@ app.get("/zillowCall/", async (req, res) => {
     // }
   })
     .then((api) => {
-
+      console.log(api.data)
       xml2js.parseString(api.data, (err, result) => {
         if (err) { throw err };
         const json = JSON.stringify(result["SearchResults:searchresults"].response[0].results[0], null, 4);
