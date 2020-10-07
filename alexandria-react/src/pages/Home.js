@@ -8,6 +8,8 @@ class Home extends React.Component {
       <div>
         <NavBarHome />
 
+
+
         <Footer />
       </div>
     );
