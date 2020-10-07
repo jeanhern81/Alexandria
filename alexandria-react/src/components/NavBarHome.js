@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import LoginModal from './LoginModal';
 import ContactModal from './ContactModal';
 
-import { Navbar, Nav, Image } from 'react-bootstrap';
+import { Navbar, Nav, Image, Container } from 'react-bootstrap';
 
 import './NavFooter.css';
 
@@ -19,6 +19,7 @@ class NavBarHome extends Component {
         
         return (
     <div clssName='NavB'>
+
 
 <Navbar className='color-nav' expand="lg">
   <Navbar.Brand href="#home"><Image src={require('../images/Alexandria-logo-BW.png') } style={{width: '50%', float:'center' }} id='loginAlexLogo' alt='Alexandria Logo'/> </Navbar.Brand>
@@ -37,7 +38,7 @@ class NavBarHome extends Component {
 
     </Navbar.Collapse>
 </Navbar>
-
+>
     </div>
     );
 }

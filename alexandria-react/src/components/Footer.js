@@ -10,9 +10,9 @@ function FooterFx () {
     <Navbar.Brand href="#home" >
 
         <h6 className='justify-content-center py-0'>(C) Alexandria 2020</h6></Navbar.Brand>
-  
 
-  </Navbar>
+
+    </Navbar>
     </Container>
 
 
