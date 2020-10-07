@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import{ Modal, Button, Form, Image } from 'react-bootstrap';
 
+import { BrowserRouter as Router, Link } from 'react-router-dom';
+
+
+
 export class LoginModal extends Component {
     constructor(props){
         super(props);
@@ -8,6 +12,7 @@ export class LoginModal extends Component {
     };
     
 render(){
+    
             return(
             <Modal
         {...this.props}
@@ -45,7 +50,17 @@ render(){
     <Button variant="primary" type="submit">
     Login
     </Button>
-            <p clasName='newCustomer'> New Customer? <a href="signUp.home.html">Create account</a></p>
+        <Router>
+                <p>New Customer? <Link clasName='newCustomer' to="../pages/SignUp"> Create account</Link></p>
+        </Router>
+                    
+        
+                    
+
+
+
+        
+            
 
 </Form>
 
