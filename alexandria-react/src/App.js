@@ -10,8 +10,6 @@ import SignUp from './components/SignUpModal';
 function App() {
 
 
-
-
     return (
 
     <Router>
