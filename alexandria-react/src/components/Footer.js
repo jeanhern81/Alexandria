@@ -1,20 +1,18 @@
-import React, { Component } from "react";
+import React from "react";
+import { Navbar, Container } from "react-bootstrap";
 
-class Footer extends React.Component {
-  render() {
-    return (
-      <div>
-        {/* <!-- Beginning of Footer --> */}
-
-        <footer class="footer page-footer teal lighten-2">
-          {/* <!-- Need to center it and add some padding through html or css --> */}
-          © 2020 Alexandria. All rights reserved.
-          <br />
-          <br />
-        </footer>
-        {/* <!-- End of Footer --> */}
-      </div>
-    );
-  }
+function FooterFx() {
+  return (
+    <div>
+      <Container fluid={true}>
+        <Navbar className="color-footer" fixed="bottom">
+          <Navbar.Brand href="#home">
+            <h6 className="justify-content-center py-0">(C) Alexandria 2020</h6>
+          </Navbar.Brand>
+        </Navbar>
+      </Container>
+    </div>
+  );
 }
-export default Footer;
+
+export default FooterFx;

@@ -10,7 +10,7 @@ function getFromDb() {
             var zipData = data[i].zip;
             var rentData = data[i].rent;
             var mortgageData = data[i].mortgage;
-            var id = data[i].id
+            var id = data[i]._id
 
             // taken from lacal storage code
             var propertyDivContainer = $("<div class='container'>")

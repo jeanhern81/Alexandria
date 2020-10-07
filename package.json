@@ -19,8 +19,10 @@
     "mysql2": "^2.1.0",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
+    "nodemon": "^2.0.4",
     "path": "^0.12.7",
-    "sequelize": "^6.3.4"
+    "sequelize": "^6.3.4",
+    "xml2js": "^0.4.23"
   },
   "devDependencies": {},
   "scripts": {
