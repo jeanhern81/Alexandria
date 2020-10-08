@@ -1,5 +1,5 @@
 import React from 'react'
-import { Col, Row, Image, Card } from 'react-bootstrap';
+import { Col, Row, Image, Card, Container } from 'react-bootstrap';
 
 import './HomeBody.css';
 
@@ -7,30 +7,27 @@ function HomeBody() {
     return (
         <div>
             
-        <div className='containerHome'>
+        <div className='containerHome d-flex justify-content-center'>
+<Container fluid={false} >
 
 
-
-<Col xs={12} md={4} ><Image src={require('../images/backgrounds/iPhone2X.png' ) } style={{width: '65%', float:'left' }} id='iPhoneX' alt='iPhone X'  /></Col>
-
-
-<Row>
-<Col >    
-<Card.Body  className='smartest' x={12} md={6} style={{float: 'left', width: '45rem' }}>
-<Card.Title ><h1 style={{color: 'white'}}> The Smartest Way to Manage Rental Properties</h1></Card.Title>
-
-  <Card.Text style={{color: 'white'}}>          
+<Col xs={6} md={4} ><Image src={require('../images/backgrounds/iPhone2X.png' ) } style={{width: 360, float:'left' }} id='iPhoneX' alt='iPhone X'  /></Col>
+<Row className="d-flex justify-content-center py-5">
+<Col className='smartest' style={{float: 'right', width: '45rem' }}>    
+<h1 style={{color: 'white'}}> The Smartest Way to Manage Rental Properties</h1>
     <p>
-    <h3>Take your investment to the next level. Use digital information to
+    <h3 style={{color: 'white'}}>Take your investment to the next level. Use digital information to
     enhance your real estate decision making and start visualizing your
     profits.</h3>
     </p>
-
-  </Card.Text>
-</Card.Body>
-
 </Col>
 </Row>
+
+<Col>
+  
+</Col>
+</Container>
+
 </div>
         </div>
     )
