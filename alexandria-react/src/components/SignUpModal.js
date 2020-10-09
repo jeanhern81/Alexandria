@@ -23,11 +23,13 @@ export default function SignUpModal(props) {
   function handleSubmit(e) {
     e.preventDefault();
     console.log({ email }, { password });
-    $.ajax({ url: "/api/users/register", method: "POST", data: { email: email, password: password, passwordConf: confPassword } })
-      .then(res => {
-        console.log(res)
+    if (validateForm())
+      $.ajax({ url: "/api/users/register", method: "POST", data: { email: email.toLowerCase(), password: password, passwordConf: confPassword } })
+        .then(res => {
+          console.log(res)
+          return localStorage.setItem("user", JSON.stringify(res._id))
 
-      })
+        })
   }
 
   return (

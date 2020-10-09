@@ -17,16 +17,17 @@ export default function Login(props) {
     function handleSubmit(e) {
         e.preventDefault();
         console.log({ email }, { password });
-        $.ajax({ url: "/api/users/login", method: "POST", data: { email: email, password: password } })
-            .then(res => {
+        if (validateForm())
+            $.ajax({ url: "/api/users/login", method: "POST", data: { email: email.toLowerCase(), password: password } })
+                .then(res => {
 
 
-                return localStorage.setItem("user", JSON.stringify(res._id))
+                    return localStorage.setItem("user", JSON.stringify(res._id))
 
 
 
 
-            })
+                })
 
     }
     return (
