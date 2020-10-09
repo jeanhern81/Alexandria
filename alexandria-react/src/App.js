@@ -1,10 +1,10 @@
 import React from "react";
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import { Nav } from 'react-bootstrap';
+import { BrowserRouter, BrowserRouter as Router, Route,  } from 'react-router-dom';
+
 
 import "./App.css";
 import Home from "./pages/Home";
-import SignUp from './components/SignUpModal';
+import {Properties} from './pages/Properties';
 
 
 function App() {
@@ -12,21 +12,24 @@ function App() {
 
     return (
 
-    <Router>
-    <Home />
-
-      <div class='App'>
-
-        <Nav />
-
+  <div className="App">   
+  <BrowserRouter>
+        <Router>
+        
+          <Route exact path='/' component={Home} />
           <Route exact path='/home' component={Home} />
-
+          <Route exact path='/properties' component={Properties} />
+          
+          
+  
         
+      </Router>
+  </BrowserRouter>
+
+  
         
-
-      </div>
-    </Router>
-
+      
+  </div>
 
 
 
