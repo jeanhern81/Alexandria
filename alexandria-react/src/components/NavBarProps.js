@@ -9,40 +9,40 @@ import './NavFooter.css';
 
 
 class NavBarProps extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
-        this.state ={depts:[LoginModal, ContactModal], addModalShow: false}
-    }    
-    render(){
-        
-        let addContactModalClose =() => this.setState({addContactModalShow:false});
-        
+        this.state = { depts: [LoginModal, ContactModal], addModalShow: false }
+    }
+    render() {
+
+        let addContactModalClose = () => this.setState({ addContactModalShow: false });
+
         return (
-    <div clssName='NavB'>
+            <div clssName='NavB'>
 
 
-<Navbar className='color-nav' expand="lg">
-<Navbar.Brand href="#home"><Image src={require('../images/Alexandria-logo-BW.png') } style={{width: '50%', float:'center' }} id='loginAlexLogo' alt='Alexandria Logo'/> </Navbar.Brand>
+                <Navbar className='color-nav' expand="lg">
+                    <Navbar.Brand href="#home"><Image src={require('../images/Alexandria-logo-BW.png')} style={{ width: '50%', float: 'center' }} id='loginAlexLogo' alt='Alexandria Logo' /> </Navbar.Brand>
 
-<Navbar.Toggle aria-controls="basic-navbar-nav" />
+                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
-<Navbar.Collapse id="basic-navbar-nav">
-    <Nav className="ml-auto " >
+                    <Navbar.Collapse id="basic-navbar-nav">
+                        <Nav className="ml-auto " >
 
-    <Nav.Link href="#home" ><h6 style={{color: 'white'}}>Home</h6></Nav.Link>
+                            <Nav.Link href="#home" ><h6 style={{ color: 'white' }}>Home</h6></Nav.Link>
 
 
-    <Nav.Link href="#contact"  onClick={() => this.setState({addContactModalShow: true})}><h6 style={{color: 'white'}}>Contact Us</h6></Nav.Link> 
-    <ContactModal show={this.state.addContactModalShow} onHide={addContactModalClose} /> 
+                            <Nav.Link href="#contact" onClick={() => this.setState({ addContactModalShow: true })}><h6 style={{ color: 'white' }}>Contact Us</h6></Nav.Link>
+                            <ContactModal show={this.state.addContactModalShow} onHide={addContactModalClose} />
 
-    </Nav>
+                        </Nav>
 
-    </Navbar.Collapse>
-</Navbar>
+                    </Navbar.Collapse>
+                </Navbar>
 
-    </div>
-    );
-}
+            </div>
+        );
+    }
 
 }
 
