@@ -19,15 +19,15 @@ export default function Login(props) {
         console.log({ email }, { password });
         $.ajax({ url: "/api/users/login", method: "POST", data: { email: email, password: password } })
             .then(res => {
-                const response = res;
-                const id = response._id;
-                const user = response.email;
-                console.log(id)
-                setUserId(id);
+
+
+                return localStorage.setItem("user", JSON.stringify(res._id))
 
 
 
-            }).then()
+
+            })
+
     }
     return (
         <Modal
