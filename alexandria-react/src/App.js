@@ -4,25 +4,28 @@ import { Nav } from 'react-bootstrap';
 
 import "./App.css";
 import Home from "./pages/Home";
+import Properties from "./pages/Properties"
 import SignUp from './components/SignUpModal';
 
 
 function App() {
 
 
-    return (
+  return (
 
     <Router>
-    <Home />
+      <Home />
+      <Properties />
 
       <div class='App'>
 
         <Nav />
 
-          <Route exact path='/home' component={Home} />
+        <Route exact path='/home' component={Home} />
+        <Route exact path='/Properties' component={Properties} />
 
-        
-        
+
+
 
       </div>
     </Router>
@@ -31,14 +34,14 @@ function App() {
 
 
 
-    )
+  )
 
-  
-    
 
-  }
 
-  
+
+}
+
+
 
 
 

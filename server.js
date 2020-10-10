@@ -79,6 +79,7 @@ app.post("/api/newProperty", function (req, res) {
 
   // })
   var newProperty = new Property({
+    userId: "5f7fd8b513094953706265b7",
     address: property.address,
     city: property.city,
     state: property.state,
@@ -104,8 +105,12 @@ app.get("/properties-details", function (req, res) {
   res.sendFile(path.join(__dirname, "public/properties-details.html"));
 });
 
-app.get("/api/", function (req, res) {
-  Property.find({}).then(function (data) {
+app.post("/api/", function (req, res) {
+  var userId = JSON.parse(req.body.user_Id)
+  console.log(req.body.user_Id)
+  Property.find({
+    user_id: userId
+  }).then((data) => {
     console.log(data);
     res.json(data);
   })
@@ -113,6 +118,7 @@ app.get("/api/", function (req, res) {
 
 app.get("/api/:id", function (req, res) {
   var id = req.params.id
+  console.log(req)
   Property.findOne({
 
     _id: id
