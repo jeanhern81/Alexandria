@@ -1,9 +1,7 @@
 import React, { Component, useState } from 'react';
+//Boostrap
 import { Form, Button, Modal, Image } from 'react-bootstrap';
-
-
-
-
+//Styling
 import '../index.css';
 
 import $ from "jquery";

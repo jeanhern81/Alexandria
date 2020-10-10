@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Image } from 'react-bootstrap';
+
 //Pages
 import NavBarHome from "../components/NavBarHome";
 import Footer from '../components/Footer';
