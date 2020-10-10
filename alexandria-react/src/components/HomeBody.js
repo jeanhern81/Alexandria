@@ -1,12 +1,11 @@
 import React from 'react'
+//Bootstrap
 import { Col, Row, Image, Container,  } from 'react-bootstrap';
-
+//Styling
 import './HomeBody.css';
 
 function HomeBody() {
-
-    
-    return (
+return (
         <div className='HomeBody'>
     
         <div className='containerHome d-flex justify-content-center'>

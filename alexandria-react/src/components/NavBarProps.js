@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-
+//Bootstrap
+import { Navbar, Nav, Image, Container } from 'react-bootstrap';
+//Components
 import LoginModal from './LoginModal';
 import ContactModal from './ContactModal';
-
-import { Navbar, Nav, Image, Container } from 'react-bootstrap';
-
+//Styling
 import './NavFooter.css';
 
 
@@ -20,17 +20,14 @@ class NavBarProps extends Component {
         return (
             <div clssName='NavB'>
 
-
                 <Navbar className='color-nav' expand="lg">
                     <Navbar.Brand href="/"><Image src={require('../images/Alexandria-logo-BW.png')} style={{ width: '50%', float: 'left' }} id='loginAlexLogo' alt='Alexandria Logo' /> </Navbar.Brand>
 
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
-
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="ml-auto " >
 
                             <Nav.Link href="/" ><h6 style={{ color: 'white' }}>Home</h6></Nav.Link>
-
 
                             <Nav.Link href="#contact" onClick={() => this.setState({ addContactModalShow: true })}><h6 style={{ color: 'white' }}>Contact Us</h6></Nav.Link>
                             <ContactModal show={this.state.addContactModalShow} onHide={addContactModalClose} />

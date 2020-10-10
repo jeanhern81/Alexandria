@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
+//Boostrap
 import{ Modal, Button, Form, Col, Image } from 'react-bootstrap';
-
+//Email Component
 import * as emailjs from "emailjs-com";
 
 export class ContactModal extends React.Component {
-
-
-    constructor(props) {
+  constructor(props) {
       super(props);
       this.state = {
           name: '',
