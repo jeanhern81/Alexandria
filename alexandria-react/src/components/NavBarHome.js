@@ -1,46 +1,66 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { Navbar, Nav, Image } from 'react-bootstrap';
 
 import LoginModal from './LoginModal';
 import ContactModal from './ContactModal';
+import SignUpModal from './SignUpModal';
 
-import { Navbar, Nav, Image } from 'react-bootstrap';
+
 
 import './NavFooter.css';
 
 
+
 class NavBarHome extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
-        this.state ={depts:[LoginModal, ContactModal], addModalShow: false}
-    }    
-    render(){
-        let addLoginModalClose =() => this.setState({addLoginModalShow:false});
-        let addContactModalClose =() => this.setState({addContactModalShow:false});
-        
+        this.state = { depts: [LoginModal, ContactModal], addModalShow: false }
+    }
+    render() {
+        let addLoginModalClose = () => this.setState({ addLoginModalShow: false });
+        let addContactModalClose = () => this.setState({ addContactModalShow: false });
+        let addSignUpModalClose = () => this.setState({ addSignUpModalShow: false });
+
         return (
-    <div clssName='NavB'>
+            <div clssName='NavB'>
 
-<Navbar className='color-nav' expand="lg">
-  <Navbar.Brand href="#home"><Image src={require('../images/Alexandria-logo-BW.png') } style={{width: '50%', float:'center' }} id='loginAlexLogo' alt='Alexandria Logo'/> </Navbar.Brand>
-  
-  <Navbar.Toggle aria-controls="basic-navbar-nav" />
-  <Navbar.Collapse id="basic-navbar-nav">
-    <Nav className="ml-auto " >
-      
-      <Nav.Link href="#login" onClick={() => this.setState({addLoginModalShow: true})}><h6 style={{color: 'white'}}>Login</h6></Nav.Link>
-      <LoginModal show={this.state.addLoginModalShow} onHide={addLoginModalClose}  /> 
+                <Router>
 
-      <Nav.Link href="#contact"  onClick={() => this.setState({addContactModalShow: true})}><h6 style={{color: 'white'}}>Contact Us</h6></Nav.Link> 
-      <ContactModal show={this.state.addContactModalShow} onHide={addContactModalClose} /> 
 
-    </Nav>
+                    <Navbar className='color-nav' expand="lg">
+                        <Navbar.Brand href="/"><Image src={require('../images/Alexandria-logo-BW.png')} style={{ width: '50%', float: 'left' }} id='loginAlexLogo' alt='Alexandria Logo' /> </Navbar.Brand>
 
-    </Navbar.Collapse>
-</Navbar>
+                        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                        <Navbar.Collapse id="basic-navbar-nav">
+                            <Nav className="ml-auto " >
 
-    </div>
-    );
-}
+                                <Link className='nav-link' href="#" onClick={() => this.setState({ addLoginModalShow: true })}><h6 style={{ color: 'white' }}>Login</h6></Link>
+                                <LoginModal show={this.state.addLoginModalShow} onHide={addLoginModalClose} />
+
+                                <Link className='nav-link' href="#" onClick={() => this.setState({ addSignUpModalShow: true })}><h6 style={{ color: 'white' }}>Sign Up</h6></Link>
+                                <SignUpModal show={this.state.addSignUpModalShow} onHide={addSignUpModalClose} />
+
+
+                                <Link className='nav-link' href="#" onClick={() => this.setState({ addContactModalShow: true })}><h6 style={{ color: 'white' }}>Contact Us</h6></Link>
+                                <ContactModal show={this.state.addContactModalShow} onHide={addContactModalClose} />
+
+                                <Link className='nav-link' to='/properties' ><h6 style={{ color: 'white' }}>Properties</h6></Link>
+
+                            </Nav>
+
+                        </Navbar.Collapse>
+                    </Navbar>
+
+
+
+
+
+
+                </Router>
+            </div>
+        );
+    }
 
 }
 

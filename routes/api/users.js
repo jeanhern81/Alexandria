@@ -47,7 +47,7 @@ router.post('/register', auth.optional, (req, res, next) => {
 //POST login route (optional, everyone has access)
 router.post('/login', auth.optional, (req, res, next) => {
 
-    console.log(req)
+    console.log(req.body)
     const user = req.body
     const email = user.email;
     const password = user.password;
@@ -88,7 +88,7 @@ router.post('/login', auth.optional, (req, res, next) => {
                 // Forces to use https in production
                 secure: false
             });
-            return res.sendFile(path.join(__dirname, "../../public/properties.html"))
+            return res.json(user)
         }
         if (info) {
             console.log(info)

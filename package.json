@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "--- Title: Alexandria - Propery Management App",
   "main": "server.js",
+  "proxy": "http://localhost:8080",
   "dependencies": {
     "axios": "^0.19.2",
     "cookie-parser": "^1.4.5",
