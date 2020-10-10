@@ -1,4 +1,5 @@
 import React from 'react';
+//Bootstrap
 import { Navbar, Container } from 'react-bootstrap';
 
 function FooterFx () {

@@ -1,48 +1,28 @@
 import React from "react";
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import { Nav } from 'react-bootstrap';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
 
 import "./App.css";
 import Home from "./pages/Home";
-import Properties from "./pages/Properties"
-import SignUp from './components/SignUpModal';
+import { Properties } from './pages/Properties';
+
 
 
 function App() {
-
-
   return (
-
     <Router>
-      <Home />
-      <Properties />
+      <div className="App">
+        <Switch>
 
-      <div class='App'>
+          <Route exact path='/' component={Home} />
+          <Route exact path='/home' component={Home} />
+          <Route exact path='/properties' component={Properties} />
 
-        <Nav />
-
-        <Route exact path='/home' component={Home} />
-        <Route exact path='/Properties' component={Properties} />
-
-
-
-
+        </Switch>
       </div>
     </Router>
 
-
-
-
-
-  )
-
-
-
-
+  );
 }
-
-
-
-
 
 export default App;

@@ -1,13 +1,15 @@
 import React from 'react'
-import { Col, Row, Image, Card, Container } from 'react-bootstrap';
-
+//Bootstrap
+import { Col, Row, Image, Container,  } from 'react-bootstrap';
+//Styling
 import './HomeBody.css';
 
 function HomeBody() {
-    return (
-        <div>
-            
+return (
+        <div className='HomeBody'>
+    
         <div className='containerHome d-flex justify-content-center'>
+        
 <Container fluid={false} >
 
 
