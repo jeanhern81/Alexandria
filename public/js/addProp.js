@@ -11,6 +11,7 @@ $(document).ready(() => {
         var rentVal = $("#rent").val().trim().toUpperCase()
         // creates an object out of the form data from the add property modal
         var newProperty = {
+            user_id: "5f7fd8b513094953706265b7",
             address: addressVal,
             city: cityVal,
             state: stateVal,
