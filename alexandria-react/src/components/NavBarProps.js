@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 //Bootstrap
-import { Navbar, Nav, Image, Container } from 'react-bootstrap';
+import { Navbar, Nav, Image,  } from 'react-bootstrap';
 //Components
 import LoginModal from './LoginModal';
 import ContactModal from './ContactModal';

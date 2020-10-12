@@ -25,8 +25,7 @@ render() {
     </Modal.Title>
     </Modal.Header>
     <Modal.Body>
-            <p><h3></h3> </p>
-    <p><h5 className="text-center">Home Details</h5></p>
+        <p><h5 className="text-center">Home Details</h5></p>
     <Form>
     <div>
             <Table striped bordered hover size="sm">

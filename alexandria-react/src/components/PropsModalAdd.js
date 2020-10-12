@@ -24,7 +24,7 @@ render(){
         </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-                <p><h3></h3> </p>
+                
         <p><h5 className="text-center">Add Properties</h5></p>
         <Form>
     <Form.Group controlId="formAddress">
@@ -36,8 +36,12 @@ render(){
     <Form.Control type="city" placeholder="City" />
     </Form.Group>
     <Form.Group controlId="formBasicState">
+        
     <Form.Label>State Abbreviation *</Form.Label>
     <Form.Control type="state" placeholder="State" />
+    <Form.Text className="text-muted">Ex. CA, NV, TX, FL
+    </Form.Text>
+
     </Form.Group>
     <Form.Group controlId="formBasicZipCode">
     <Form.Label>Zip Code *</Form.Label>
