@@ -6,7 +6,7 @@ import NavBarProps from "../components/NavBarProps";
 import Footer from '../components/Footer';
 
 import PropsModalAdd from '../components/PropsModalAdd';
-import PropertyDetails from '../components/PropertyDetails';
+//import PropertyDetails from '../components/PropertyDetails';
 
 
 import '../index.css';
@@ -32,12 +32,12 @@ render() {
                     <h4 className='PropsHeading' style={{ float: 'left',  }}> Properties </h4>
                     
                 </div>
-                <div className='lineProps'> <hr></hr></div>
+                <div className='lineProps py-3'><hr></hr></div>
 
 
                 {/*  Add Properties Button  */}
-                <div>
-                <Button variant="info" to='/ProsModalAdd' onClick={() => this.setState({ addPropsModalAddShow: true })}>Add Property </Button>
+                <div className='justify-content-center' >
+                <Button className='addPropertyButton ' variant="info" to='/ProsModalAdd' onClick={() => this.setState({ addPropsModalAddShow: true })}>Add Property </Button>
                 <PropsModalAdd show={this.state.addPropsModalAddShow} onHide={addPropsModalAddClose} />
                 </div>
                 
