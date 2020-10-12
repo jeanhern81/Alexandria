@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import{ Modal, Button, Form, Image } from 'react-bootstrap';
 
-export class Login extends Component {
+export class PropsModalAdd extends Component {
     constructor(props){
         super(props);
         
@@ -24,28 +24,43 @@ render(){
         </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-                <p><h3>Login</h3> </p>
-        <p><h5 className="text-center">Welcome Back!</h5></p>
+                <p><h3></h3> </p>
+        <p><h5 className="text-center">Add Properties</h5></p>
         <Form>
-    <Form.Group controlId="formBasicEmail">
-    <Form.Label>Email address</Form.Label>
-    <Form.Control type="email" placeholder="Enter email" />
-    <Form.Text className="text-muted">
-        We'll never share your email with anyone else.
-    </Form.Text>
+    <Form.Group controlId="formAddress">
+    <Form.Label>Street Address *</Form.Label>
+    <Form.Control type="address" placeholder="Address" />
+    </Form.Group>
+    <Form.Group controlId="formBasicCity">
+    <Form.Label>City *</Form.Label>
+    <Form.Control type="city" placeholder="City" />
+    </Form.Group>
+    <Form.Group controlId="formBasicState">
+    <Form.Label>State Abbreviation *</Form.Label>
+    <Form.Control type="state" placeholder="State" />
+    </Form.Group>
+    <Form.Group controlId="formBasicZipCode">
+    <Form.Label>Zip Code *</Form.Label>
+    <Form.Control type="zipcode" placeholder="Zip Code" />
+    </Form.Group>
+    <Form.Group controlId="formBasicState">
+    <Form.Label>Montly Expenses *</Form.Label>
+    <Form.Control type="montlyExpenses" placeholder="Monthly Expenses" />
+    </Form.Group>
+    <Form.Group controlId="formBasicState">
+    <Form.Label>Purchase Price *</Form.Label>
+    <Form.Control type="purchasePrice" placeholder="Purchase Price" />
+    </Form.Group>
+    <Form.Group controlId="formBasicState">
+    <Form.Label>Montly Rent *</Form.Label>
+    <Form.Control type="montlyRent" placeholder="Monthly Rent" />
     </Form.Group>
 
-    <Form.Group controlId="formBasicPassword">
-    <Form.Label>Password</Form.Label>
-    <Form.Control type="password" placeholder="Password" />
-    </Form.Group>
-    <Form.Group controlId="formBasicCheckbox">
-    <Form.Check type="checkbox" label="Check me out" />
-    </Form.Group>
     <Button variant="primary" type="submit">
-    Login
+    Save
     </Button>
-            <p clasName='newCustomer'> New Customer? <a href="signUp.home.html">Create account</a></p>
+    
+            <p className='requiredFields py-2' > (*) Required Fields</p>
 
 </Form>
 
@@ -63,4 +78,4 @@ render(){
     };
 
 
-export default Login;
+export default PropsModalAdd;
