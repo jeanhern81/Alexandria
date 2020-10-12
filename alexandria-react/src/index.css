@@ -13,12 +13,13 @@ code {
 }
 
 /* Properties.js Page Styling */
-.lineProps{
-margin-top: 2%;
 
+.addPropertyButton {
+  flex-wrap: nowrap;
 
 }
 
-.Propsheading {
-  padding-left: ;
+.PropsHeading {
+  padding-left: 5%;
+
 }
