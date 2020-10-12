@@ -22,7 +22,7 @@ class Properties extends Component {
     }
 render() {
     let addPropsModalAddClose = () => this.setState({ addPropsModalAddShow: false });
-    let addPropertyDetailsModalClose = () => this.setState({ addPropertyDetailsModalShow: false });
+    //let addPropertyDetailsModalClose = () => this.setState({ addPropertyDetailsModalShow: false });
 
             return (
             <div>
