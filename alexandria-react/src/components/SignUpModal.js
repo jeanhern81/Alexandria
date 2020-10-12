@@ -49,13 +49,18 @@ export default function SignUpModal(props) {
         <p><h3>Create an Account</h3> </p>
         <p><h5 className="text-center">Manage your properties from the palm of your hand.</h5></p>
         <Form onSubmit={handleSubmit}>
+            <Form.Group controlId="formBasicUser">
+            <Form.Label>User Name</Form.Label>
+            <Form.Control type='userName' placeholder="userName"
+              onChange={e => setPassword(e.target.value)} />
+          </Form.Group>
           <Form.Group controlId="formBasicEmail">
             <Form.Label>Email address</Form.Label>
             <Form.Control type="email" placeholder="Enter email"
               onChange={e => setEmail(e.target.value)} />
             <Form.Text className="text-muted">
               We'll never share your email with anyone else.
-  </Form.Text>
+            </Form.Text>
           </Form.Group>
 
           <Form.Group controlId="formBasicPassword">
@@ -71,7 +76,7 @@ export default function SignUpModal(props) {
 
 
           <Button variant="primary" type="submit">
-            Login
+            Sign Up
   </Button>
 
 

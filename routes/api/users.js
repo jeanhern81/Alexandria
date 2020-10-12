@@ -3,6 +3,7 @@ const passport = require('passport');
 const router = require('express').Router();
 const auth = require('../auth');
 const Users = mongoose.model('Users');
+const Property = mongoose.model('Property');
 var path = require("path");
 
 
@@ -116,6 +117,16 @@ router.get('/current', auth.required, (req, res, next) => {
             return res.json({ user: user.toAuthJSON() });
 
         });
+});
+router.get("/api/:userId", function (req, res) {
+    var userId = req.params.userId
+    console.log(req)
+    Property.find({
+        user_id: userId
+    }).then((data) => {
+        console.log(data);
+        res.json(data);
+    })
 });
 
 
