@@ -6,20 +6,24 @@ import NavBarProps from "../components/NavBarProps";
 import Footer from '../components/Footer';
 
 import PropsModalAdd from '../components/PropsModalAdd';
+import PropertyDetails from '../components/PropertyDetails';
 
 
 import '../index.css';
 import "./Properties.css";
+import PropertyDetailsModal from '../components/PropertyDetails';
 
 
 
 class Properties extends Component {
     constructor(props) {
         super(props);
-        this.state = { depts: [PropsModalAdd], addModalShow: false }
+        this.state = { depts: [PropsModalAdd, PropertyDetailsModal], addModalShow: false }
     }
 render() {
     let addPropsModalAddClose = () => this.setState({ addPropsModalAddShow: false });
+    let addPropertyDetailsModalClose = () => this.setState({ addPropertyDetailsModalShow: false });
+
             return (
             <div>
                 <NavBarProps />
@@ -37,6 +41,14 @@ render() {
                 <PropsModalAdd show={this.state.addPropsModalAddShow} onHide={addPropsModalAddClose} />
                 </div>
                 
+
+                {/* Property Details */}
+                {/*
+                <div>
+                <Button variant="info" to='/PropertyDetails' onClick={() => this.setState({ addPropertyDetailsModalShow: true })}>Property Details </Button>
+                <PropertyDetails show={this.state.addPropertyDetailsModalShow} onHide={addPropertyDetailsModalClose} />
+                </div>
+                */}
 
                 <Footer />
             </div>

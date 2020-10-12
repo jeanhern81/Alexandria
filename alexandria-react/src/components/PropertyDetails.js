@@ -1,39 +1,126 @@
-import React from 'react'
+import React, { Component } from 'react'
 //ReactBootstrap
+import { Table, Modal, Form, Button, Image } from 'react-bootstrap';
 
-function PropertyDetails() {
-    return (
-        <div>
+export class PropertyDetailsModal extends Component {
+    constructor(props){
+        super(props);
+        
+    };
+
+render() {
+    return(
+        <Modal
+    {...this.props}
+    size="lg"
+    aria-labelledby="contained-modal-title-vcenter"
+    centered
+>
+    <Modal.Header closeButton>
+        <Image src={require('../images/Alexandria-logo-s.png') } style={{float:' left ' }} id='loginAlexLogo' alt='Alexandria Logo'/>
+    
+    <Modal.Title id="contained-modal-title-vcenter">
+
+        
+    </Modal.Title>
+    </Modal.Header>
+    <Modal.Body>
+            <p><h3></h3> </p>
+    <p><h5 className="text-center">Home Details</h5></p>
+    <Form>
+    <div>
             <Table striped bordered hover size="sm">
     <thead>
     <tr>
-        <th>#</th>
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th>Username</th>
+        <th>Residential Code</th>
+        <th>Bedrooms</th>
+        <th>Bathrooms</th>
+        <th>Building Size (Sqft) </th>
+        <th>Lot Size (Sqft) </th>
+        <th>Year Built</th>
     </tr>
     </thead>
     <tbody>
     <tr>
-        <td>1</td>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
+        <td>No Data</td>
+        <td>No Data</td>
+        <td>No Data</td>
+        <td>No Data</td>
+        <td>No Data</td>
+        <td>No Data</td>
     </tr>
-    <tr>
-        <td>2</td>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-    </tr>
-    <tr>
-        <td>3</td>
-        <td colSpan="2">Larry the Bird</td>
-        <td>@twitter</td>
-    </tr>
+
     </tbody>
+
+    
 </Table>
-        </div>
+</div>
+
+<p><h5 className="text-center">Market Valuation</h5></p>
+<div>
+            <Table striped bordered hover size="sm">
+    <thead>
+    <tr>
+        <th>Zestimate (USD)</th>
+        <th>High Value Limit (USD)</th>
+        <th>Low Value Limit (USD)</th>
+        
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>No Data</td>
+        <td>No Data</td>
+        <td>No Data</td>
+        
+    </tr>
+
+    </tbody>
+
+    
+</Table>
+</div>
+
+<p><h5 className="text-center">Rent Estimate</h5></p>
+<div>
+            <Table striped bordered hover size="sm">
+    <thead>
+    <tr>
+        <th>Rent Zestimate (USD)</th>
+        <th>High Value Limit (USD)</th>
+        <th>Low Value Limit (USD)</th>
+        
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>No Data</td>
+        <td>No Data</td>
+        <td>No Data</td>
+        
+    </tr>
+
+    </tbody>
+
+    
+</Table>
+</div>
+
+
+
+        <p className='requiredFields py-2' > </p>
+
+</Form>
+
+    </Modal.Body>
+    <Modal.Footer>
+    <Button onClick={this.props.onHide}>Close</Button>
+    </Modal.Footer>
+</Modal>
     );
 }
-export default PropertyDetails;
+
+}
+
+
+export default PropertyDetailsModal;
