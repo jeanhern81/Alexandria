@@ -7,6 +7,7 @@ import Footer from "../components/Footer";
 import { Container, Row } from "react-bootstrap";
 
 import PropsModalAdd from "../components/PropsModalAdd";
+import MapsModal from "../components/MapsModal";
 
 import "../index.css";
 import "./Properties.css";
@@ -22,6 +23,7 @@ class Properties extends Component {
   render() {
     let addPropsModalAddClose = () =>
       this.setState({ addPropsModalAddShow: false });
+    let addMapsModalClose = () => this.setState({ addMapsModalShow: false });
     return (
       <div>
         <NavBarProps />
@@ -49,6 +51,19 @@ class Properties extends Component {
           <PropsModalAdd
             show={this.state.addPropsModalAddShow}
             onHide={addPropsModalAddClose}
+          />
+        </div>
+        <div>
+          <Button
+            variant="info"
+            to="/MapsModal"
+            onClick={() => this.setState({ addMapsModalShow: true })}
+          >
+            View Map <GrAddCircle />
+          </Button>
+          <MapsModal
+            show={this.state.addMapsModalShow}
+            onHide={addMapsModalClose}
           />
         </div>
 
