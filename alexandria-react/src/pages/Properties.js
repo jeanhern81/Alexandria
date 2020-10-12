@@ -11,6 +11,7 @@ import MapsModal from "../components/MapsModal";
 
 import "../index.css";
 import "./Properties.css";
+import PropertyDetailsModal from "../components/PropertyDetails";
 
 //Icons
 import { GrAddCircle } from "react-icons/gr";
