@@ -12,3 +12,14 @@ code {
     monospace;
 }
 
+/* Properties.js Page Styling */
+
+.addPropertyButton {
+  flex-wrap: nowrap;
+
+}
+
+.PropsHeading {
+  padding-left: 5%;
+
+}
