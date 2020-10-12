@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
 const PropertySchema = new Schema({
-    user_id: String,
+    userId: String,
     address: String,
     city: String,
     state: { type: String, min: 2, max: 2 },

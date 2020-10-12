@@ -4,7 +4,9 @@ import { Button } from 'react-bootstrap';
 //Pages
 import NavBarProps from "../components/NavBarProps";
 import Footer from '../components/Footer';
+
 import PropsModalAdd from '../components/PropsModalAdd';
+
 
 import '../index.css';
 import "./Properties.css";
@@ -21,6 +23,7 @@ render() {
             return (
             <div>
                 <NavBarProps />
+
                 <div>
                     <h4 className='PropsHeading' style={{ float: 'left',  }}> Properties </h4>
                     
@@ -34,6 +37,7 @@ render() {
                 <PropsModalAdd show={this.state.addPropsModalAddShow} onHide={addPropsModalAddClose} />
                 </div>
                 
+
                 <Footer />
             </div>
         );
