@@ -23,7 +23,7 @@ class Properties extends Component {
   render() {
     let addPropsModalAddClose = () =>
       this.setState({ addPropsModalAddShow: false });
-    let addMapsModalClose = () => this.setState({ addMapsModalShow: false });
+    /* let addMapsModalClose = () => this.setState({ addMapsModalShow: false }); */
     return (
       <div>
         <NavBarProps />
@@ -53,7 +53,7 @@ class Properties extends Component {
             onHide={addPropsModalAddClose}
           />
         </div>
-        <div>
+        {/* <div>
           <Button
             variant="info"
             to="/MapsModal"
@@ -65,7 +65,7 @@ class Properties extends Component {
             show={this.state.addMapsModalShow}
             onHide={addMapsModalClose}
           />
-        </div>
+        </div> */}
 
         <Footer />
       </div>
