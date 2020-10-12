@@ -11,8 +11,6 @@ import PropsModalAdd from '../components/PropsModalAdd';
 import '../index.css';
 import "./Properties.css";
 
-//Icons
-import { GrAddCircle } from 'react-icons/gr';
 
 
 class Properties extends Component {
@@ -35,7 +33,7 @@ render() {
 
                 {/*  Add Properties Button  */}
                 <div>
-                <Button variant="info" to='/ProsModalAdd' onClick={() => this.setState({ addPropsModalAddShow: true })}>Add Property <GrAddCircle /></Button>
+                <Button variant="info" to='/ProsModalAdd' onClick={() => this.setState({ addPropsModalAddShow: true })}>Add Property </Button>
                 <PropsModalAdd show={this.state.addPropsModalAddShow} onHide={addPropsModalAddClose} />
                 </div>
                 
