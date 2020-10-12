@@ -7,11 +7,11 @@ import Footer from "../components/Footer";
 import { Container, Row } from "react-bootstrap";
 
 import PropsModalAdd from "../components/PropsModalAdd";
-import MapsModal from "../components/MapsModal";
+// import MapsModal from "../components/MapsModal";
 
 import "../index.css";
 import "./Properties.css";
-import PropertyDetailsModal from "../components/PropertyDetails";
+// import PropertyDetailsModal from "../components/PropertyDetails";
 
 //Icons
 import { GrAddCircle } from "react-icons/gr";
@@ -54,6 +54,17 @@ class Properties extends Component {
             onHide={addPropsModalAddClose}
           />
         </div>
+
+        {/* Property Details Button */}
+        {/* Property Details */}
+        {/*
+                <div>
+                <Button variant="info" to='/PropertyDetails' onClick={() => this.setState({ addPropertyDetailsModalShow: true })}>Property Details </Button>
+                <PropertyDetails show={this.state.addPropertyDetailsModalShow} onHide={addPropertyDetailsModalClose} />
+                </div>
+                */}
+
+        {/* Maps Button */}
         {/* <div>
           <Button
             variant="info"
