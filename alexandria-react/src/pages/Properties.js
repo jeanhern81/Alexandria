@@ -54,6 +54,17 @@ class Properties extends Component {
             onHide={addPropsModalAddClose}
           />
         </div>
+
+        {/* Property Details Button */}
+        {/* Property Details */}
+        {/*
+                <div>
+                <Button variant="info" to='/PropertyDetails' onClick={() => this.setState({ addPropertyDetailsModalShow: true })}>Property Details </Button>
+                <PropertyDetails show={this.state.addPropertyDetailsModalShow} onHide={addPropertyDetailsModalClose} />
+                </div>
+                */}
+
+        {/* Maps Button */}
         {/* <div>
           <Button
             variant="info"
