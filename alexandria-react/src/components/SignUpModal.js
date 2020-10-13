@@ -8,7 +8,7 @@ import $ from "jquery";
 
 
 export default function SignUpModal(props) {
-
+  const [userName, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confPassword, setConfPassword] = useState("");
@@ -22,7 +22,7 @@ export default function SignUpModal(props) {
     e.preventDefault();
     console.log({ email }, { password });
     if (validateForm())
-      $.ajax({ url: "/api/users/register", method: "POST", data: { email: email.toLowerCase(), password: password, passwordConf: confPassword } })
+      $.ajax({ url: "/api/users/register", method: "POST", data: { userName: userName, email: email.toLowerCase(), password: password, passwordConf: confPassword } })
         .then(res => {
           console.log(res)
           return localStorage.setItem("user", JSON.stringify(res._id))
@@ -49,10 +49,10 @@ export default function SignUpModal(props) {
         <p><h3>Create an Account</h3> </p>
         <p><h5 className="text-center">Manage your properties from the palm of your hand.</h5></p>
         <Form onSubmit={handleSubmit}>
-            <Form.Group controlId="formBasicUser">
+          <Form.Group controlId="formBasicUser">
             <Form.Label>User Name</Form.Label>
             <Form.Control type='userName' placeholder="userName"
-              onChange={e => setPassword(e.target.value)} />
+              onChange={e => setUserName(e.target.value)} />
           </Form.Group>
           <Form.Group controlId="formBasicEmail">
             <Form.Label>Email address</Form.Label>
