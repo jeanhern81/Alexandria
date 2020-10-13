@@ -23,7 +23,7 @@ require('dotenv').config();
 mongoose.promise = global.Promise;
 var app = express();
 var PORT = process.env.PORT || 8080;
-var db = require("./models");
+
 const { response } = require("express");
 
 
@@ -63,28 +63,14 @@ app.get("/properties", function (req, res) {
 app.post("/api/newProperty", function (req, res) {
   // this route takes in the post request coming from the add Property Modal
   var property = req.body;
-  // sends the incoming data into the property model
-  // db.Property.create({
-  //   address: property.address,
-  //   city: property.city,
-  //   state: property.state,
-  //   zip: property.zip,
-  //   mortgage: property.mortgage,
-  //   purchasePrice: property.purchasePrice,
-  //   rent: property.rent
 
-
-
-
-
-  // })
   var newProperty = new Property({
-    userId: "5f7fd8b513094953706265b7",
+    user_id: property.user_id,
     address: property.address,
     city: property.city,
     state: property.state,
     zip: property.zip,
-    mortgage: property.mortgage,
+    expenses: property.expenses,
     purchasePrice: property.purchasePrice,
     rent: property.rent
   })
@@ -148,9 +134,9 @@ app.put("/api/properties", function (req, res) {
   console.log(property)
   Property.findByIdAndUpdate(
 
-    {
-      _id: property.id
-    }
+
+    { _id: property.id }
+
     , {
       address: property.address,
       city: property.city,
@@ -211,8 +197,8 @@ app.get("/zillowCall/", async (req, res) => {
 // Starts the server to begin listening
 // ===============================================
 
-db.sequelize.sync({ force: true }).then(function () {
-  app.listen(PORT, function () {
-    console.log("App listening on PORT " + PORT);
-  });
+
+app.listen(PORT, function () {
+  console.log("App listening on PORT " + PORT);
 });
+
