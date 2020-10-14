@@ -15,7 +15,7 @@ export class ContactModal extends React.Component {
           emailSent: null,
       }
   }
-  
+  //change
   handleChange = (event) => {
       const target = event.target;
       const value = target.type === 'checkbox' ? target.checked : target.value;
@@ -27,7 +27,7 @@ export class ContactModal extends React.Component {
   }
 
   
-
+//submit
   handleSubmit = (event) => {
       event.preventDefault();
 
@@ -64,7 +64,7 @@ export class ContactModal extends React.Component {
 
 
     render () {
-
+//email form 
         return (
         <Modal
             {...this.props}
@@ -118,6 +118,8 @@ export class ContactModal extends React.Component {
 
 
             </Modal.Body>
+
+            
             <Modal.Footer>
             <Button onClick={this.props.onHide}>Close</Button>
             </Modal.Footer>
