@@ -4,7 +4,7 @@ import { Button } from "react-bootstrap";
 //Pages
 import NavBarProps from "../components/NavBarProps";
 import Footer from "../components/Footer";
-import { Container, Row } from "react-bootstrap";
+//import { Container, Row } from "react-bootstrap";
 import PropertiesContainer from "../components/PropertiesContainer"
 
 import PropsModalAdd from "../components/PropsModalAdd";
@@ -15,7 +15,7 @@ import "./Properties.css";
 // import PropertyDetailsModal from "../components/PropertyDetails";
 
 //Icons
-import { GrAddCircle } from "react-icons/gr";
+//import { GrAddCircle } from "react-icons/gr";
 
 class Properties extends Component {
     constructor(props) {
@@ -31,12 +31,12 @@ class Properties extends Component {
                 <NavBarProps />
 
                 <div>
-                    <h4 className="PropsHeading" style={{ float: "left" }}>
+                    <h4 className="PropsHeading " style={{ float: "left" }}>
                         {" "}
             Properties{" "}
                     </h4>
                 </div>
-                <div className="lineProps">
+                <div className="lineProps py-3">
                     {" "}
                     <hr></hr>
                 </div>
@@ -49,7 +49,7 @@ class Properties extends Component {
                         to="/ProsModalAdd"
                         onClick={() => this.setState({ addPropsModalAddShow: true })}
                     >
-                        Add Property <GrAddCircle />
+                        Add Property 
                     </Button>
                     <PropsModalAdd
                         show={this.state.addPropsModalAddShow}
@@ -73,7 +73,7 @@ class Properties extends Component {
             to="/MapsModal"
             onClick={() => this.setState({ addMapsModalShow: true })}
           >
-            View Map <GrAddCircle />
+            View Map 
           </Button>
           <MapsModal
             show={this.state.addMapsModalShow}
