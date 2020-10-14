@@ -12,7 +12,7 @@ import PropsModalAdd from "../components/PropsModalAdd";
 
 import "../index.css";
 import "./Properties.css";
-//import PropertyDetails from "../components/PropertyDetails";
+import PropertyDetails from "../components/PropertyDetails";
 
 //Icons
 //import { GrAddCircle } from "react-icons/gr";
@@ -26,8 +26,8 @@ class Properties extends Component {
         let addPropsModalAddClose = () =>
             this.setState({ addPropsModalAddShow: false });
         /*let addMapsModalClose = () => this.setState({ addMapsModalShow: false }); */
-        //let addPropertyDetailsModalClose = () =>
-            //this.setState({ addPropertyDetailsModalShow: false });
+        let addPropertyDetailsModalClose = () =>
+            this.setState({ addPropertyDetailsModalShow: false });
 
         return (
             <div>
@@ -61,13 +61,12 @@ class Properties extends Component {
                 </div>
 
                 {/* Property Details Button */}
-                {/* Property Details */}
-                {/*
+            <br></br>
                 <div>
                 <Button variant="info" to='/PropertyDetails' onClick={() => this.setState({ addPropertyDetailsModalShow: true })}>Property Details </Button>
                 <PropertyDetails show={this.state.addPropertyDetailsModalShow} onHide={addPropertyDetailsModalClose} />
                 </div>
-                */}
+                
 
                 {/* Maps Button */}
                 {/* <div>
