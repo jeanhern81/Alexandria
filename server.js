@@ -142,7 +142,7 @@ app.put("/api/properties", function (req, res) {
       city: property.city,
       state: property.state,
       zip: property.zip,
-      mortgage: property.mortgage,
+      expenses: property.expenses,
       purchasePrice: property.purchasePrice,
       rent: property.rent
     }

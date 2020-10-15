@@ -9,7 +9,7 @@ const PropertySchema = new Schema({
     city: String,
     state: { type: String, min: 2, max: 2 },
     zip: Number,
-    mortgage: Number,
+    expenses: Number,
     purchasePrice: Number,
     rent: Number
 });
