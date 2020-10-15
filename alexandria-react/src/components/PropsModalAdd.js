@@ -1,6 +1,9 @@
 import React, { Component, useState } from 'react';
 import { Modal, Button, Form, Image } from 'react-bootstrap';
+
 import $ from "jquery";
+
+
 
 export default function PropsModalAdd(props) {
     // user_id is retrieved from local storage and user_id's state is set initially 
@@ -13,10 +16,10 @@ export default function PropsModalAdd(props) {
     const [expenses, setExpenses] = useState("");
     const [rent, setRent] = useState("");
 
-
+    
     // this function makes the ajax call and submits data to the database
-    async function handleSubmit(e) {
-
+    async function handleSubmit(e) {        
+    
 
 
         await $.ajax({ url: "/api/newProperty", method: "POST", data: { user_id: user_id, address: address, city: city, state: state, zip: zip, purchasePrice: purchasePrice, expenses: expenses, rent: rent } })
@@ -25,6 +28,10 @@ export default function PropsModalAdd(props) {
 
 
             })
+
+        
+
+
     }
 
 
@@ -52,6 +59,7 @@ export default function PropsModalAdd(props) {
                     <Form.Group controlId="formAddress">
                         <Form.Label>Street Address *</Form.Label>
                         <Form.Control type="address" placeholder="Address" onChange={e => setAddress(e.target.value)} />
+                        
                     </Form.Group>
                     <Form.Group controlId="formBasicCity">
                         <Form.Label>City *</Form.Label>
