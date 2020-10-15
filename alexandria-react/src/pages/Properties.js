@@ -12,7 +12,7 @@ import PropsModalAdd from "../components/PropsModalAdd";
 
 import "../index.css";
 import "./Properties.css";
-// import PropertyDetailsModal from "../components/PropertyDetails";
+import PropertyDetails from "../components/PropertyDetails";
 
 //Icons
 //import { GrAddCircle } from "react-icons/gr";
@@ -25,7 +25,10 @@ class Properties extends Component {
     render() {
         let addPropsModalAddClose = () =>
             this.setState({ addPropsModalAddShow: false });
-        /* let addMapsModalClose = () => this.setState({ addMapsModalShow: false }); */
+        /*let addMapsModalClose = () => this.setState({ addMapsModalShow: false }); */
+        let addPropertyDetailsModalClose = () =>
+            this.setState({ addPropertyDetailsModalShow: false });
+
         return (
             <div>
                 <NavBarProps />
@@ -58,27 +61,26 @@ class Properties extends Component {
                 </div>
 
                 {/* Property Details Button */}
-                {/* Property Details */}
-                {/*
+            <br></br>
                 <div>
                 <Button variant="info" to='/PropertyDetails' onClick={() => this.setState({ addPropertyDetailsModalShow: true })}>Property Details </Button>
                 <PropertyDetails show={this.state.addPropertyDetailsModalShow} onHide={addPropertyDetailsModalClose} />
                 </div>
-                */}
+                
 
                 {/* Maps Button */}
                 {/* <div>
-          <Button
+        <Button
             variant="info"
             to="/MapsModal"
             onClick={() => this.setState({ addMapsModalShow: true })}
-          >
+        >
             View Map 
-          </Button>
-          <MapsModal
+        </Button>
+        <MapsModal
             show={this.state.addMapsModalShow}
             onHide={addMapsModalClose}
-          />
+        />
         </div> */}
 
                 <Footer />

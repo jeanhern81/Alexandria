@@ -113,6 +113,8 @@ render() {
 
     </Modal.Body>
     <Modal.Footer>
+            <Image src={require('../images/Zillowlogo_200x50.png') } style={{float:' ' }} id='zillowLogo' alt='Zillow Logo'/>
+
     <Button onClick={this.props.onHide}>Close</Button>
     </Modal.Footer>
 </Modal>

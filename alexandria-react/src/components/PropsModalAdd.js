@@ -1,5 +1,6 @@
 import React, { Component, useState } from "react";
 import { Modal, Button, Form, Image } from "react-bootstrap";
+
 import $ from "jquery";
 
 export default function PropsModalAdd(props) {
