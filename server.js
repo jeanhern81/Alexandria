@@ -11,6 +11,7 @@ const mongoose = require('mongoose');
 const passport = require("passport")
 const cookieParser = require("cookie-parser");
 const xml2js = require('xml2js');
+const auth = require('./routes/auth');
 
 require('dotenv').config();
 // var db = require("./models");
@@ -56,11 +57,11 @@ app.get("/", function (req, res) {
   res.sendFile(path.join(__dirname, "public/index.html"));
 });
 
-app.get("/properties", function (req, res) {
+app.get("/properties", auth.required, function (req, res) {
   res.sendFile(path.join(__dirname, "public/properties.html"));
 });
 
-app.post("/api/newProperty", function (req, res) {
+app.post("/api/newProperty", auth.required, function (req, res) {
   // this route takes in the post request coming from the add Property Modal
   var property = req.body;
 
@@ -142,7 +143,7 @@ app.put("/api/properties", function (req, res) {
       city: property.city,
       state: property.state,
       zip: property.zip,
-      mortgage: property.mortgage,
+      expenses: property.expenses,
       purchasePrice: property.purchasePrice,
       rent: property.rent
     }

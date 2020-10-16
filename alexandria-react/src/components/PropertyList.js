@@ -1,40 +1,67 @@
 import React, { Component, useState } from "react";
 import { Form, Button, Modal, Image } from 'react-bootstrap';
 import EditProp from "../components/EditProp"
+import MapsModal from "../components/MapsModal"
 import $ from "jquery";
+
 
 import '../index.css';
 
-function PropertyList(props) {
-    const [EditPropState, setEditPropState] = useState({ addEditPropShow: false });
-    const [address, setAddress] = useState("");
-    const [city, setCity] = useState("");
-    const [state, setState] = useState("");
-    const [zip, setZip] = useState("");
-    const [mortgage, setMortgage] = useState("");
-    const [purchasePrice, setPurchasePrice] = useState("");
-    const [rent, setRent] = useState("");
-    const [_id, set_id] = useState("")
 
-    console.log(props.state)
-    console.log(EditPropState)
-    let getEditData = (id) => {
+function PropertyList(props) {
+    const [MapModalState, setMapModalState] = useState({ addMapsModalShow: false })
+    const [EditPropState, setEditPropState] = useState({ addEditPropShow: false });
+    const [property, setProperty] = useState({ address: "", city: "", state: "", zip: "", mortgage: "", purchasePrice: "", rent: "", _id: "" });
+    // const [city, setCity] = useState("");
+    // const [state, setState] = useState("");
+    // const [zip, setZip] = useState("");
+    // const [mortgage, setMortgage] = useState("");
+    // const [purchasePrice, setPurchasePrice] = useState("");
+    // const [rent, setRent] = useState("");
+    // const [_id, set_id] = useState("")
+
+
+
+
+    let getEditData = async (id) => {
+        var id = id
+        // document.querySelector("#address")
+        await $.get("/api/" + id, function (data) {
+            console.log(data)
+            setProperty(data)
+            // set_id(data._id)
+            // setAddress(data.address);
+            // setCity(data.city);
+            // setState(data.state);
+            // setZip(data.zip);
+            // setMortgage(data.expenses);
+            // setPurchasePrice(data.purchasePrice);
+            // setRent(data.rent);
+
+
+        })
+        await setEditPropState({ addEditPropShow: true });
+    }
+    let getMapData = (id) => {
         var id = id
         // document.querySelector("#address")
         $.get("/api/" + id, function (data) {
-            console.log(data.address)
-            set_id(data._id)
-            setAddress(data.address);
-            setCity(data.city);
-            setState(data.state);
-            setZip(data.zip);
-            setMortgage(data.mortgage);
-            setPurchasePrice(data.purchasePrice);
-            setRent(data.rent);
+            console.log(data)
+            setProperty(data)
+            // setAddress(data.address);
+            // setCity(data.city);
+            // setState(data.state);
+            // setZip(data.zip);
+            // setMortgage(data.expenses);
+            // setPurchasePrice(data.purchasePrice);
+            // setRent(data.rent);
 
-        }).then(setEditPropState({ addEditPropShow: true }));
+
+        }).then(
+            setMapModalState({ addMapsModalShow: true }));
     }
     let addEditPropClose = () => setEditPropState({ addEditPropShow: false });
+    let addMapsModalClose = () => setMapModalState({ addMapsModalShow: false });
     // let EditPropModalOpen = () =>
     //     setEditPropState({ EditPropShow: true });
 
@@ -44,27 +71,47 @@ function PropertyList(props) {
         <ul className="list-group">
 
             {props.state.properties.map(result => (
-                <li className="list-group-item " key={result._id}>
-                    <h5 id="address">{result.address}</h5>
-                    <h5 id="city">{result.city}</h5>
-                    <h5 id="state">{result.state}</h5>
-                    <h5 id="zip">{result.zip}</h5>
-                    <h5 id="expenses">Expenses: {result.mortgage}</h5>
-                    <h5 id="purchasePrice">Purchase Price: {result.purchasePrice}</h5>
-                    <h5 id="rent">Rent: {result.rent}</h5>
-                    <EditProp _id={_id}
-                        address={address} city={city} state={state} zip={zip}
-                        mortgage={mortgage} purchasePrice={purchasePrice} rent={rent}
+
+                <li className="list-group-item" key={result._id}  >
+                    <h1 id="address">Street Address:{"  " + result.address}</h1>
+                    <h1 id="city">City:  {"  " + result.city}</h1>
+                    <h1 id="state">State:  {"  " + result.state}</h1>
+                    <h1 id="zip">Zip code:  {"  " + result.zip}</h1>
+                    <h1 id="expenses">Expenses:  {"  " + result.expenses}</h1>
+                    <h1 id="purchasePrice">Purchase Price:  {"  " + result.purchasePrice}</h1>
+                    <h1 id="rent">Rent:  {"  " + result.rent}</h1>
+                    <EditProp _id={property._id}
+                        address={property.address} city={property.city} state={property.state} zip={property.zip}
+                        mortgage={property.expenses} purchasePrice={property.purchasePrice} rent={property.rent}
                         show={EditPropState.addEditPropShow}
                         onHide={addEditPropClose}
                     />
-                    <Button variant="info" onClick={() => getEditData(result._id)}> Edit</Button>
+                    <Button variant="primary" onClick={() => getEditData(result._id)}> edit</Button>
+                    <div>
+                        <Button
+                            key={result._id}
+                            variant="info"
+                            to="/MapsModal"
+                            onClick={() => getMapData(result._id)}
+                        >
+                            View Map <GrAddCircle />
+                        </Button>
+                        <MapsModal
+
+
+                            address={result.address + result.city + result.state}
+                            show={MapModalState.addMapsModalShow}
+                            onHide={addMapsModalClose}
+                        />
+                    </div>
+
 
                 </li>
-            ))}
+            ))
+            }
 
 
-        </ul>
+        </ul >
 
     );
 }

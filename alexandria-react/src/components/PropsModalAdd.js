@@ -78,8 +78,8 @@ export default function PropsModalAdd(props) {
                         <Form.Control type="zipcode" placeholder="Zip Code" onChange={e => setZip(e.target.value)} />
                     </Form.Group>
                     <Form.Group controlId="formBasicState">
-                        <Form.Label>Montly Expenses *</Form.Label>
-                        <Form.Control type="montlyExpenses" placeholder="Monthly Expenses" onChange={e => setExpenses(e.target.value)} />
+                        <Form.Label>Monthly Expenses *</Form.Label>
+                        <Form.Control type="monthlyExpenses" placeholder="Monthly Expenses" onChange={e => setExpenses(e.target.value)} />
                     </Form.Group>
                     <Form.Group controlId="formBasicState">
                         <Form.Label>Purchase Price *</Form.Label>
