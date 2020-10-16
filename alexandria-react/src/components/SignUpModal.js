@@ -1,8 +1,10 @@
 import React, { Component, useState } from 'react';
+import { Link } from 'react-router-dom';
 //Boostrap
 import { Form, Button, Modal, Image } from 'react-bootstrap';
 //Styling
 import '../index.css';
+import Welcome from '../components/Welcome'
 
 import $ from "jquery";
 
@@ -12,7 +14,6 @@ export default function SignUpModal(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confPassword, setConfPassword] = useState("");
-
 
   function validateForm() {
     return email.length > 0 && password.length > 0;
@@ -24,8 +25,12 @@ export default function SignUpModal(props) {
     if (validateForm())
       $.ajax({ url: "/api/users/register", method: "POST", data: { userName: userName, email: email.toLowerCase(), password: password, passwordConf: confPassword } })
         .then(res => {
-          console.log(res)
-          return localStorage.setItem("user", JSON.stringify(res._id))
+
+          localStorage.setItem("user", JSON.stringify(res.user._id))
+
+
+
+
 
         })
   }
@@ -75,9 +80,10 @@ export default function SignUpModal(props) {
           </Form.Group>
 
 
-          <Button variant="primary" type="submit">
+          <Button variant="primary" type="submit" onClick={props.onHide} >
             Sign Up
-  </Button>
+          </Button>
+
 
 
 
