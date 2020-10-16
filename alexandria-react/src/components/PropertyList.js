@@ -120,7 +120,9 @@ function PropertyList(props) {
                 Rent: {"  " + result.rent}
               </h5>
             </Col>
-
+          <div>
+            
+          {/* Edit Button */}
             <EditProp
               _id={property._id}
               address={property.address}
@@ -141,9 +143,9 @@ function PropertyList(props) {
               {" "}
               Edit
             </Button>
-            <br></br>
-
-            <div>
+          <br></br>
+          {/* Maps Modal*/}
+            
               <Button
                 key={result._id}
                 variant="info" size="sm"
@@ -166,9 +168,14 @@ function PropertyList(props) {
                 onHide={addMapsModalClose}
               />
 
-              <br></br>
-              {/* Delete button */}
-              <Button className="deleteProp"
+
+          
+          
+
+        {/* Delete button */}
+        
+        <Button className="deleteProp"
+
                 key={result._id}
                 variant="danger" size="sm"
                 to="/DeleteProp"
@@ -182,7 +189,9 @@ function PropertyList(props) {
                 onHide={addDeletePropClose}
               />
 
-            </div>
+        </div>
+        
+
           </li>
         ))}
       </ul>
