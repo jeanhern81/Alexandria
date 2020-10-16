@@ -3,7 +3,9 @@ import { Form, Button, Modal, Image } from 'react-bootstrap';
 import EditProp from "../components/EditProp"
 import MapsModal from "../components/MapsModal"
 import $ from "jquery";
-import { GrAddCircle } from "react-icons/gr";
+
+
+import '../index.css';
 
 
 function PropertyList(props) {
@@ -69,6 +71,7 @@ function PropertyList(props) {
         <ul className="list-group">
 
             {props.state.properties.map(result => (
+
                 <li className="list-group-item" key={result._id}  >
                     <h1 id="address">Street Address:{"  " + result.address}</h1>
                     <h1 id="city">City:  {"  " + result.city}</h1>
@@ -101,6 +104,7 @@ function PropertyList(props) {
                             onHide={addMapsModalClose}
                         />
                     </div>
+
 
                 </li>
             ))

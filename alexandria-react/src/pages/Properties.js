@@ -41,7 +41,7 @@ class Properties extends Component {
                 </div>
                 <div className="lineProps py-3">
                     {" "}
-                    <hr></hr>
+                    <hr / >
                 </div>
                 <PropertiesContainer />
 
