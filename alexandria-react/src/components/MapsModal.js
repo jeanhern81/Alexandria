@@ -12,20 +12,9 @@ export class MapsModal extends React.Component {
   constructor(props) {
     super(props);
     console.log(this.props)
-    Geocode.setApiKey("AIzaSyDHRCqL8yZbKNEZl7PFCmbA_XlaIBluHZ8");
-    this.state = { a: "" }
-    Geocode.fromAddress(this.props.address).then(
-      response => {
-        this.setState({ a: response.results[0].geometry.location });
-        // console.log(lat, lng);
-      },
-      error => {
-        console.error(error);
-      }
-
-    );
 
   }
+
 
   render() {
     return (
@@ -46,11 +35,11 @@ export class MapsModal extends React.Component {
           zoom={17}
           style={mapStyles}
 
-          initialCenter={this.state.a}
+          initialCenter={this.props.latLng}
         ><Marker
-            title={this.props.address}
+            title={this.props.latLng}
             name={'SOMA'}
-            position={this.state.a} /></Map>
+            position={this.props.latLng} /></Map>
         {/* </Modal.Body> */}
         <Modal.Footer>
           <Button onClick={this.props.onHide}>Close</Button>
