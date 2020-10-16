@@ -4,7 +4,7 @@ import { Button } from "react-bootstrap";
 //Pages
 import NavBarProps from "../components/NavBarProps";
 import Footer from "../components/Footer";
-import { Container, Row } from "react-bootstrap";
+//import { Container, Row } from "react-bootstrap";
 import PropertiesContainer from "../components/PropertiesContainer"
 
 import PropsModalAdd from "../components/PropsModalAdd";
@@ -12,10 +12,10 @@ import PropsModalAdd from "../components/PropsModalAdd";
 
 import "../index.css";
 import "./Properties.css";
-// import PropertyDetailsModal from "../components/PropertyDetails";
+import PropertyDetails from "../components/PropertyDetails";
 
 //Icons
-import { GrAddCircle } from "react-icons/gr";
+//import { GrAddCircle } from "react-icons/gr";
 
 class Properties extends Component {
     constructor(props) {
@@ -25,31 +25,34 @@ class Properties extends Component {
     render() {
         let addPropsModalAddClose = () =>
             this.setState({ addPropsModalAddShow: false });
-        /* let addMapsModalClose = () => this.setState({ addMapsModalShow: false }); */
+        /*let addMapsModalClose = () => this.setState({ addMapsModalShow: false }); */
+        let addPropertyDetailsModalClose = () =>
+            this.setState({ addPropertyDetailsModalShow: false });
+
         return (
             <div>
                 <NavBarProps />
 
                 <div>
-                    <h4 className="PropsHeading" style={{ float: "left" }}>
+                    <h4 className="PropsHeading " style={{ float: "left" }}>
                         {" "}
             Properties{" "}
                     </h4>
                 </div>
-                <div className="lineProps">
+                <div className="lineProps py-3">
                     {" "}
-                    <hr></hr>
+                    <hr / >
                 </div>
                 <PropertiesContainer />
 
                 {/*  Add Properties Button  */}
                 <div>
-                    <Button
+                    <Button className='addProperties'
                         variant="info"
                         to="/ProsModalAdd"
                         onClick={() => this.setState({ addPropsModalAddShow: true })}
                     >
-                        Add Property <GrAddCircle />
+                        Add Property 
                     </Button>
                     <PropsModalAdd
                         show={this.state.addPropsModalAddShow}
@@ -58,32 +61,31 @@ class Properties extends Component {
                 </div>
 
                 {/* Property Details Button */}
-                {/* Property Details */}
-                {/*
+            <br></br>
                 <div>
-                <Button variant="info" to='/PropertyDetails' onClick={() => this.setState({ addPropertyDetailsModalShow: true })}>Property Details </Button>
+                <Button className='propertyDetails' variant="info" to='/PropertyDetails' onClick={() => this.setState({ addPropertyDetailsModalShow: true })}>Property Details </Button>
                 <PropertyDetails show={this.state.addPropertyDetailsModalShow} onHide={addPropertyDetailsModalClose} />
                 </div>
-                */}
+                
 
                 {/* Maps Button */}
                 {/* <div>
-          <Button
+        <Button
             variant="info"
             to="/MapsModal"
             onClick={() => this.setState({ addMapsModalShow: true })}
-          >
-            View Map <GrAddCircle />
-          </Button>
-          <MapsModal
+        >
+            View Map 
+        </Button>
+        <MapsModal
             show={this.state.addMapsModalShow}
             onHide={addMapsModalClose}
-          />
+        />
         </div> */}
 
                 <Footer />
             </div>
-        );
+        )
     }
 }
 
