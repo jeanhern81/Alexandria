@@ -57,6 +57,8 @@ hr {
   margin-bottom: 5%;
 }
 
+.deleteProp,
 .warning {
   color: red;
+  margin-top: 1%;
 }
