@@ -34,6 +34,9 @@ function PropertyList(props) {
     rent: "",
     _id: "",
   });
+  const [DeletePropState, setDeletePropState] = useState({
+    addDeletePropShow: false,
+  });
   // maps modal code
   let getlatlng = async (address) => {
     Geocode.setApiKey("AIzaSyDHRCqL8yZbKNEZl7PFCmbA_XlaIBluHZ8");
@@ -82,9 +85,20 @@ function PropertyList(props) {
     })
 
   }
+
+  let getDeleteData = async (id) => {
+    var id = id;
+    $.get("/api/" + id, function (data) {
+      console.log(data);
+      setProperty(data);
+    });
+    await setDeletePropState({ addDeletePropShow: true });
+  };
+
+
   let addEditPropClose = () => setEditPropState({ addEditPropShow: false });
   let addMapsModalClose = () => setMapModalState({ addMapsModalShow: false });
-  //let addDeletePropClose = () => setDeletePropState({ addDeletePropShow: false });
+  let addDeletePropClose = () => setDeletePropState({ addDeletePropShow: false });
 
   // let EditPropModalOpen = () =>
   //     setEditPropState({ EditPropShow: true });
@@ -158,19 +172,21 @@ function PropertyList(props) {
                 show={MapModalState.addMapsModalShow}
                 onHide={addMapsModalClose}
               />
-        {/* Delete button */}
+              
+              
+              {/* Delete button */}
         
         <Button className="deleteProp"
                 key={result._id}
                 variant="danger" size="sm"
                 to="/DeleteProp"
-                //onClick={() => getDeleteData(result._id)}
+                onClick={() => getDeleteData(result._id)}
               > {" "}
                 Delete Property
               </Button>
               <DeleteProp address={result.address + result.city + result.state}
-                //show={DeletePropState.addDeletePropShow}
-               // onHide={addDeletePropClose}
+                show={DeletePropState.addDeletePropShow}
+               onHide={addDeletePropClose}
               />
 
           
