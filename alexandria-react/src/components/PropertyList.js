@@ -13,8 +13,6 @@ import EditProp from "../components/EditProp";
 import MapsModal from "../components/MapsModal";
 import DeleteProp from '../components/DeleteProp';
 import $ from "jquery";
-
-
 //Styling sheet
 import "../index.css";
 
@@ -86,7 +84,8 @@ function PropertyList(props) {
   }
   let addEditPropClose = () => setEditPropState({ addEditPropShow: false });
   let addMapsModalClose = () => setMapModalState({ addMapsModalShow: false });
-  let addDeletePropClose = () => setDeletePropState({ addDeletePropShow: false });
+  //let addDeletePropClose = () => setDeletePropState({ addDeletePropShow: false });
+
   // let EditPropModalOpen = () =>
   //     setEditPropState({ EditPropShow: true });
 
@@ -144,50 +143,41 @@ function PropertyList(props) {
               Edit
             </Button>
           <br></br>
+
           {/* Maps Modal*/}
-            
-              <Button
+            <Button
                 key={result._id}
                 variant="info" size="sm"
                 to="/MapsModal"
                 onClick={() => getlatlng(result.address + result.city + result.state)}
-              >
+              > 
                 View Map
               </Button>
-              <Button
-                key={result._id}
-
-                onClick={() => deleteButton(result._id)}
-              >
-                Delete
-              </Button>
-
               <MapsModal
                 latLng={latLng}
                 show={MapModalState.addMapsModalShow}
                 onHide={addMapsModalClose}
               />
-
-
-          
-          
-
         {/* Delete button */}
         
         <Button className="deleteProp"
-
                 key={result._id}
                 variant="danger" size="sm"
                 to="/DeleteProp"
-                onClick={() => getDeleteData(result._id)}
-              >
+                //onClick={() => getDeleteData(result._id)}
+              > {" "}
                 Delete Property
               </Button>
-
               <DeleteProp address={result.address + result.city + result.state}
-                show={DeletePropState.addDeletePropShow}
-                onHide={addDeletePropClose}
+                //show={DeletePropState.addDeletePropShow}
+               // onHide={addDeletePropClose}
               />
+
+          
+          
+          
+
+
 
         </div>
         
