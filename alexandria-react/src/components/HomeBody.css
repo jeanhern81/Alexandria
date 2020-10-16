@@ -9,14 +9,12 @@ body {
 .HomeBody {
   background-image: url("../images/backgrounds/houses.jpg");
   display: flex;
-  min-height: 90vh;
+  min-height: 91vh;
   flex-direction: column;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-<<<<<<< HEAD
 .containerHome {
-=======
-.containerHome{
->>>>>>> master
   margin-top: 2%;
 }
 
