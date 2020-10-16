@@ -1,10 +1,10 @@
 import React, { Component, useState } from "react";
-import { Form, Button, Modal, Image } from 'react-bootstrap';
+import { Form, Button, Modal, Image, Container, Row, Col } from 'react-bootstrap';
 import EditProp from "../components/EditProp"
 import MapsModal from "../components/MapsModal"
 import $ from "jquery";
 
-
+//Styling sheet
 import '../index.css';
 
 
@@ -67,26 +67,35 @@ function PropertyList(props) {
 
 
     return (
-
+<Container fluid={true}>
         <ul className="list-group">
 
             {props.state.properties.map(result => (
+                
 
+                
                 <li className="list-group-item" key={result._id}  >
-                    <h1 id="address">Street Address:{"  " + result.address}</h1>
-                    <h1 id="city">City:  {"  " + result.city}</h1>
-                    <h1 id="state">State:  {"  " + result.state}</h1>
-                    <h1 id="zip">Zip code:  {"  " + result.zip}</h1>
-                    <h1 id="expenses">Expenses:  {"  " + result.expenses}</h1>
-                    <h1 id="purchasePrice">Purchase Price:  {"  " + result.purchasePrice}</h1>
-                    <h1 id="rent">Rent:  {"  " + result.rent}</h1>
+                <Col sm={6} md={4} style={{float: 'left', }}>
+                    <h5 className='address' id="address">Street Address:{"  " + result.address}</h5>
+                    <h5 className='address' id="city">City:  {"  " + result.city}</h5>
+                    <h5 className='address'id="state">State:  {"  " + result.state}</h5>
+                    <h5 className='address' id="zip">Zip code:  {"  " + result.zip}</h5>
+                </Col>    
+                <Col sm={6} md={4} style={{float: 'right', }}>                   
+                    <h5 className='info' id="expenses">Expenses:  {"  " + result.expenses}</h5>
+                    <h5 className='info' id="purchasePrice">Purchase Price:  {"  " + result.purchasePrice}</h5>
+                    <h5 className='info' id="rent">Rent:  {"  " + result.rent}</h5>
+                </Col>    
+                
                     <EditProp _id={property._id}
                         address={property.address} city={property.city} state={property.state} zip={property.zip}
                         mortgage={property.expenses} purchasePrice={property.purchasePrice} rent={property.rent}
                         show={EditPropState.addEditPropShow}
                         onHide={addEditPropClose}
                     />
-                    <Button variant="primary" onClick={() => getEditData(result._id)}> edit</Button>
+                    <Button className='editButton' variant="info" onClick={() => getEditData(result._id)}> Edit</Button>
+                    <br></br>
+
                     <div>
                         <Button
                             key={result._id}
@@ -94,11 +103,10 @@ function PropertyList(props) {
                             to="/MapsModal"
                             onClick={() => getMapData(result._id)}
                         >
-                            View Map <GrAddCircle />
+                            View Map 
                         </Button>
+                        
                         <MapsModal
-
-
                             address={result.address + result.city + result.state}
                             show={MapModalState.addMapsModalShow}
                             onHide={addMapsModalClose}
@@ -107,12 +115,13 @@ function PropertyList(props) {
 
 
                 </li>
+                
             ))
             }
 
 
         </ul >
-
+</Container>
     );
 }
 

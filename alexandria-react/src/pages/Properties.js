@@ -47,7 +47,7 @@ class Properties extends Component {
 
                 {/*  Add Properties Button  */}
                 <div>
-                    <Button
+                    <Button className='addProperties'
                         variant="info"
                         to="/ProsModalAdd"
                         onClick={() => this.setState({ addPropsModalAddShow: true })}
@@ -63,7 +63,7 @@ class Properties extends Component {
                 {/* Property Details Button */}
             <br></br>
                 <div>
-                <Button variant="info" to='/PropertyDetails' onClick={() => this.setState({ addPropertyDetailsModalShow: true })}>Property Details </Button>
+                <Button className='propertyDetails' variant="info" to='/PropertyDetails' onClick={() => this.setState({ addPropertyDetailsModalShow: true })}>Property Details </Button>
                 <PropertyDetails show={this.state.addPropertyDetailsModalShow} onHide={addPropertyDetailsModalClose} />
                 </div>
                 
@@ -85,7 +85,7 @@ class Properties extends Component {
 
                 <Footer />
             </div>
-        );
+        )
     }
 }
 
