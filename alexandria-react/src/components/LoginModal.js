@@ -1,4 +1,5 @@
 import React, { Component, useState } from 'react';
+import { Link } from 'react-router-dom';
 //Bootstrap
 import { Modal, Button, Form, Image } from 'react-bootstrap';
 
@@ -23,8 +24,10 @@ export default function Login(props) {
             $.ajax({ url: "/api/users/login", method: "POST", data: { email: email.toLowerCase(), password: password } })
                 .then(res => {
 
-
-                    return localStorage.setItem("user", JSON.stringify(res._id))
+                    if (res._id) {
+                        localStorage.setItem("user", JSON.stringify(res._id))
+                        return <Link to="/properties" />
+                    }
 
 
 
@@ -68,7 +71,7 @@ export default function Login(props) {
                     <Form.Group controlId="formBasicCheckbox">
                         <Form.Check type="checkbox" label="Check me out" />
                     </Form.Group>
-                    <Button variant="primary" type="submit">
+                    <Button variant="primary" type="submit" onClick={props.onHide}>
                         Login
     </Button>
                     <p clasName='newCustomer'> New Customer? <a href="signUp.home.html">Create account</a></p>
@@ -77,7 +80,7 @@ export default function Login(props) {
 
             </Modal.Body>
             <Modal.Footer>
-                <Button onClick={props.onHide}>Close</Button>
+                <Button onClick={props.onHide} >Close</Button>
             </Modal.Footer>
         </Modal>
     );

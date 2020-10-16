@@ -4,27 +4,20 @@ import $ from "jquery";
 
 export function EditProp(props) {
 
-  console.log(props.address)
-  const [_id, set_id] = useState(props._id)
-  const [address, setAddress] = useState(props.address);
-  const [city, setCity] = useState(props.city);
-  const [state, setState] = useState(props.state);
-  const [zip, setZip] = useState(props.zip);
-  const [mortgage, setMortgage] = useState(props.mortgage);
-  const [purchasePrice, setPurchasePrice] = useState(props.purchasePrice);
-  const [rent, setRent] = useState(props.rent);
+  console.log(props)
+  const [property, setProperty] = useState({ address: props.address, city: props.city, state: props.state, zip: props.zip, mortgage: props.mortgage, purchasePrice: props.purchasePrice, rent: props.rent, _id: props._id });
 
   function handleSubmit(e) {
-
+    console.log(property)
 
     var newProperty = {
-      address: address,
-      city: city,
-      state: state,
-      zip: zip,
-      purchasePrice: purchasePrice,
-      mortgage: mortgage,
-      rent: rent,
+      address: property.address,
+      city: property.city,
+      state: property.state,
+      zip: property.zip,
+      purchasePrice: property.purchasePrice,
+      mortgage: property.mortgage,
+      rent: property.rent,
       id: props._id
     }
     console.log(newProperty)
@@ -60,7 +53,7 @@ export function EditProp(props) {
         <Form onSubmit={handleSubmit}>
           <Form.Group controlId="formBasicEmail">
             <Form.Label>Street Address</Form.Label>
-            <Form.Control type="text" onChange={e => setAddress(e.target.value)} defaultValue={props.address} />
+            <Form.Control type="text" onChange={e => setProperty({ ...property, address: e.target.value })} defaultValue={props.address} />
           </Form.Group>
           {/* <Form.Group controlId="formBasicEmail">
             <Form.Label>Street Address #2</Form.Label>
@@ -71,28 +64,28 @@ export function EditProp(props) {
           </Form.Group> */}
           <Form.Group controlId="formBasicEmail">
             <Form.Label>City</Form.Label>
-            <Form.Control type="text" Value={props.city} onChange={e => setCity(e.target.value)} />
+            <Form.Control type="text" defaultValue={props.city} onChange={e => setProperty({ ...property, city: e.target.value })} />
           </Form.Group>
           <Form.Group controlId="formBasicEmail">
             <Form.Label>State</Form.Label>
-            <Form.Control type="text" Value={props.state} onChange={e => setState(e.target.value)} />
+            <Form.Control type="text" defaultValue={props.state} onChange={e => setProperty({ ...property, state: e.target.value })} />
             <Form.Text className="text-muted">Ex. CA, NY, TX, FL</Form.Text>
           </Form.Group>
           <Form.Group controlId="formBasicEmail">
             <Form.Label>Zip Code</Form.Label>
-            <Form.Control type="number" defaultValue={props.zip} onChange={e => setZip(e.target.value)} />
+            <Form.Control type="number" defaultValue={props.zip} onChange={e => setProperty({ ...property, zip: e.target.value })} />
           </Form.Group>
           <Form.Group controlId="formBasicEmail">
             <Form.Label>Monthly Expenses</Form.Label>
-            <Form.Control type="number" initialValue={props.mortgage} onChange={e => setMortgage(e.target.value)} />
+            <Form.Control type="number" defaultValue={props.mortgage} onChange={e => setProperty({ ...property, mortgage: e.target.value })} />
           </Form.Group>
           <Form.Group controlId="formBasicEmail">
             <Form.Label>Purchase Price</Form.Label>
-            <Form.Control type="number" Value={props.purchasePrice} onChange={e => setPurchasePrice(e.target.value)} />
+            <Form.Control type="number" defaultValue={props.purchasePrice} onChange={e => setProperty({ ...property, purchasePrice: e.target.value })} />
           </Form.Group>
           <Form.Group controlId="formBasicEmail">
             <Form.Label>Monthly Rent</Form.Label>
-            <Form.Control type="number" Value={props.rent} onChange={e => setRent(e.target.value)} />
+            <Form.Control type="number" defaultValue={props.rent} onChange={e => setProperty({ ...property, rent: e.target.value })} />
           </Form.Group>
           <Button variant="primary" type="submit">
             Save Changes
