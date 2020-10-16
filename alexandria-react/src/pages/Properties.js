@@ -5,10 +5,11 @@ import { Button } from "react-bootstrap";
 import NavBarProps from "../components/NavBarProps";
 import Footer from "../components/Footer";
 //import { Container, Row } from "react-bootstrap";
-import PropertiesContainer from "../components/PropertiesContainer"
+import PropertiesContainer from "../components/PropertiesContainer";
 
 import PropsModalAdd from "../components/PropsModalAdd";
 // import MapsModal from "../components/MapsModal";
+import DeleteProp from "../components/DeleteProp";
 
 import "../index.css";
 import "./Properties.css";
@@ -18,58 +19,85 @@ import PropertyDetails from "../components/PropertyDetails";
 //import { GrAddCircle } from "react-icons/gr";
 
 class Properties extends Component {
-    constructor(props) {
-        super(props);
-        this.state = { depts: [PropsModalAdd], addModalShow: false };
-    }
-    render() {
-        let addPropsModalAddClose = () =>
-            this.setState({ addPropsModalAddShow: false });
-        /*let addMapsModalClose = () => this.setState({ addMapsModalShow: false }); */
-        let addPropertyDetailsModalClose = () =>
-            this.setState({ addPropertyDetailsModalShow: false });
+  constructor(props) {
+    super(props);
+    this.state = { depts: [PropsModalAdd], addModalShow: false };
+  }
+  render() {
+    let addPropsModalAddClose = () =>
+      this.setState({ addPropsModalAddShow: false });
+    /*let addMapsModalClose = () => this.setState({ addMapsModalShow: false }); */
+    let addPropertyDetailsModalClose = () =>
+      this.setState({ addPropertyDetailsModalShow: false });
+    let addDeletePropClose = () => this.setState({ addDeletePropShow: false });
 
-        return (
-            <div>
-                <NavBarProps />
+    return (
+      <div>
+        <NavBarProps />
 
-                <div>
-                    <h4 className="PropsHeading " style={{ float: "left" }}>
-                        {" "}
+        <div>
+          <h4 className="PropsHeading " style={{ float: "left" }}>
+            {" "}
             Properties{" "}
-                    </h4>
-                </div>
-                <div className="lineProps py-3">
-                    {" "}
-                    <hr / >
-                </div>
-                <PropertiesContainer />
+          </h4>
+        </div>
+        <div className="lineProps py-3">
+          {" "}
+          <hr />
+        </div>
+        <PropertiesContainer />
 
-                {/*  Add Properties Button  */}
-                <div>
-                    <Button className='addProperties'
-                        variant="info"
-                        to="/ProsModalAdd"
-                        onClick={() => this.setState({ addPropsModalAddShow: true })}
-                    >
-                        Add Property 
-                    </Button>
-                    <PropsModalAdd
-                        show={this.state.addPropsModalAddShow}
-                        onHide={addPropsModalAddClose}
-                    />
-                </div>
+        {/*  Add Properties Button  */}
+        <div>
+          <Button
+            className="addProperties"
+            variant="info"
+            to="/ProsModalAdd"
+            onClick={() => this.setState({ addPropsModalAddShow: true })}
+          >
+            Add Property
+          </Button>
+          <PropsModalAdd
+            show={this.state.addPropsModalAddShow}
+            onHide={addPropsModalAddClose}
+          />
+        </div>
 
-                {/* Property Details Button */}
-            <br></br>
-                <div>
-                <Button className='propertyDetails' variant="info" to='/PropertyDetails' onClick={() => this.setState({ addPropertyDetailsModalShow: true })}>Property Details </Button>
-                <PropertyDetails show={this.state.addPropertyDetailsModalShow} onHide={addPropertyDetailsModalClose} />
-                </div>
-                
+        {/* Property Details Button */}
+        <br></br>
+        <div>
+          <Button
+            className="propertyDetails"
+            variant="info"
+            to="/PropertyDetails"
+            onClick={() => this.setState({ addPropertyDetailsModalShow: true })}
+          >
+            Property Details{" "}
+          </Button>
+          <PropertyDetails
+            show={this.state.addPropertyDetailsModalShow}
+            onHide={addPropertyDetailsModalClose}
+          />
+        </div>
 
-                {/* Maps Button */}
-                {/* <div>
+        {/* Delete button */}
+        <div>
+          <Button
+            className="deleteProp"
+            variant="info"
+            to="/DeleteProp"
+            onClick={() => this.setState({ addDeletePropShow: true })}
+          >
+            Delete Property{" "}
+          </Button>
+          <DeleteProp
+            show={this.state.addDeletePropShow}
+            onHide={addDeletePropClose}
+          />
+        </div>
+
+        {/* Maps Button */}
+        {/* <div>
         <Button
             variant="info"
             to="/MapsModal"
@@ -83,10 +111,10 @@ class Properties extends Component {
         />
         </div> */}
 
-                <Footer />
-            </div>
-        )
-    }
+        <Footer />
+      </div>
+    );
+  }
 }
 
 export { Properties };
