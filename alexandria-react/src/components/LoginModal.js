@@ -1,9 +1,9 @@
 import React, { Component, useState } from 'react';
+
 //Bootstrap
 import { Modal, Button, Form, Image } from 'react-bootstrap';
 
 import $ from "jquery";
-
 
 export default function Login(props) {
 
@@ -82,7 +82,4 @@ export default function Login(props) {
         </Modal>
     );
 }
-
-
-
 

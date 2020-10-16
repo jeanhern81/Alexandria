@@ -13,6 +13,9 @@ code {
 }
 
 /* Properties.js Page Styling */
+hr {
+  opacity: 1%;
+}
 
 .addPropertyButton {
   flex-wrap: nowrap;
@@ -20,6 +23,12 @@ code {
 }
 
 .PropsHeading {
+  padding-top: 0.5%;
   padding-left: 5%;
 
+} 
+
+/* Address from PropertyList.js */
+.list-group {
+  margin-left: auto;
 }
