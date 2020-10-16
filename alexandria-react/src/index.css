@@ -1,14 +1,14 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
@@ -19,14 +19,12 @@ hr {
 
 .addPropertyButton {
   flex-wrap: nowrap;
-
 }
 
 .PropsHeading {
   padding-top: 0.5%;
   padding-left: 5%;
-
-} 
+}
 
 /* Address from PropertyList.js */
 .list-group {
@@ -48,15 +46,17 @@ hr {
 
 .info {
   float: initial;
-  
 }
 /*
 #expenses {
   margin-top: -7%;
 }*/
 
-
 /*temporty fix bc this button will render dynamicall*/
 .propertyDetails {
   margin-bottom: 5%;
+}
+
+.warning {
+  color: red;
 }
