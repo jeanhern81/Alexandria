@@ -122,7 +122,7 @@ function PropertyList(props) {
             />
             <Button
               className="editButton"
-              variant="info"
+              variant="info" size="sm"
               onClick={() => getEditData(result._id)}
             >
               {" "}
@@ -133,7 +133,7 @@ function PropertyList(props) {
             <div>
               <Button
                 key={result._id}
-                variant="info"
+                variant="info" size="sm"
                 to="/MapsModal"
                 onClick={() => getMapData(result._id)}
               >
