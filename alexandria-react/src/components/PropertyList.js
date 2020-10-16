@@ -1,4 +1,5 @@
 import React, { Component, useState } from "react";
+import Geocode from "react-geocode";
 import {
   Form,
   Button,
@@ -22,6 +23,7 @@ function PropertyList(props) {
   const [EditPropState, setEditPropState] = useState({
     addEditPropShow: false,
   });
+  const [latLng, setLatLng] = useState("")
   const [property, setProperty] = useState({
     address: "",
     city: "",
@@ -32,13 +34,23 @@ function PropertyList(props) {
     rent: "",
     _id: "",
   });
-  // const [city, setCity] = useState("");
-  // const [state, setState] = useState("");
-  // const [zip, setZip] = useState("");
-  // const [mortgage, setMortgage] = useState("");
-  // const [purchasePrice, setPurchasePrice] = useState("");
-  // const [rent, setRent] = useState("");
-  // const [_id, set_id] = useState("")
+  // maps modal code
+  let getlatlng = async (address) => {
+    Geocode.setApiKey("AIzaSyDHRCqL8yZbKNEZl7PFCmbA_XlaIBluHZ8");
+
+    await Geocode.fromAddress(address).then(
+      response => {
+        setLatLng(response.results[0].geometry.location);
+        // console.log(lat, lng);
+      },
+      error => {
+        console.error(error);
+      }
+
+    )
+    await (setMapModalState({ addMapsModalShow: true }));
+  };
+
 
   let getEditData = async (id) => {
     var id = id;
@@ -46,32 +58,30 @@ function PropertyList(props) {
     await $.get("/api/" + id, function (data) {
       console.log(data);
       setProperty(data);
-      // set_id(data._id)
-      // setAddress(data.address);
-      // setCity(data.city);
-      // setState(data.state);
-      // setZip(data.zip);
-      // setMortgage(data.expenses);
-      // setPurchasePrice(data.purchasePrice);
-      // setRent(data.rent);
+
     });
     await setEditPropState({ addEditPropShow: true });
   };
-  let getMapData = (id) => {
+  let getMapData = async (id) => {
     var id = id;
-    // document.querySelector("#address")
-    $.get("/api/" + id, function (data) {
+
+    await $.get("/api/" + id, function (data) {
       console.log(data);
       setProperty(data);
-      // setAddress(data.address);
-      // setCity(data.city);
-      // setState(data.state);
-      // setZip(data.zip);
-      // setMortgage(data.expenses);
-      // setPurchasePrice(data.purchasePrice);
-      // setRent(data.rent);
-    }).then(setMapModalState({ addMapsModalShow: true }));
+
+    })
+    await (setMapModalState({ addMapsModalShow: true }));
   };
+  function deleteButton(id) {
+    $.ajax({
+      method: "DELETE",
+      url: "/api/" + id
+    }).then(() => {
+
+      console.log("property deleted")
+    })
+
+  }
   let addEditPropClose = () => setEditPropState({ addEditPropShow: false });
   let addMapsModalClose = () => setMapModalState({ addMapsModalShow: false });
   // let EditPropModalOpen = () =>
@@ -135,13 +145,20 @@ function PropertyList(props) {
                 key={result._id}
                 variant="info" size="sm"
                 to="/MapsModal"
-                onClick={() => getMapData(result._id)}
+                onClick={() => getlatlng(result.address + result.city + result.state)}
               >
                 View Map
               </Button>
+              <Button
+                key={result._id}
+
+                onClick={() => deleteButton(result._id)}
+              >
+                Delete
+              </Button>
 
               <MapsModal
-                address={result.address + result.city + result.state}
+                latLng={latLng}
                 show={MapModalState.addMapsModalShow}
                 onHide={addMapsModalClose}
               />
