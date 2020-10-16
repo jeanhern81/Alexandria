@@ -79,7 +79,6 @@ class Properties extends Component {
             onHide={addPropertyDetailsModalClose}
           />
         </div>
-
         {/* Delete button */}
         <div>
           <Button
