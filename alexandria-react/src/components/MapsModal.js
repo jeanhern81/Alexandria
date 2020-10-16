@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Modal, Button, Image } from "react-bootstrap";
-import { Map, GoogleApiWrapper } from "google-maps-react";
+import { Map, GoogleApiWrapper, Marker } from "google-maps-react";
+import Geocode from "react-geocode";
 
 const mapStyles = {
   height: "400%",
@@ -10,6 +11,20 @@ const mapStyles = {
 export class MapsModal extends React.Component {
   constructor(props) {
     super(props);
+    console.log(this.props)
+    Geocode.setApiKey("AIzaSyDHRCqL8yZbKNEZl7PFCmbA_XlaIBluHZ8");
+    this.state = { a: "" }
+    Geocode.fromAddress(this.props.address).then(
+      response => {
+        this.setState({ a: response.results[0].geometry.location });
+        // console.log(lat, lng);
+      },
+      error => {
+        console.error(error);
+      }
+
+    );
+
   }
 
   render() {
@@ -28,10 +43,14 @@ export class MapsModal extends React.Component {
         {/* <Modal.Body> */}
         <Map
           google={this.props.google}
-          zoom={8}
+          zoom={17}
           style={mapStyles}
-          initialCenter={{ lat: 47.444, lng: -122.176 }}
-        />
+
+          initialCenter={this.state.a}
+        ><Marker
+            title={this.props.address}
+            name={'SOMA'}
+            position={this.state.a} /></Map>
         {/* </Modal.Body> */}
         <Modal.Footer>
           <Button onClick={this.props.onHide}>Close</Button>
