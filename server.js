@@ -119,7 +119,7 @@ app.get("/api/:id", function (req, res) {
 
 
 
-app.delete("/api/:id", function (req, res) {
+app.delete("/api/:id", auth.required, function (req, res) {
   // this route deletes the property based on the property Id
   Property.deleteOne(
     {
