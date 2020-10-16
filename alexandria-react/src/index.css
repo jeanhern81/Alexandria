@@ -32,3 +32,31 @@ hr {
 .list-group {
   margin-left: auto;
 }
+
+.editButton {
+  margin-bottom: 1%;
+}
+
+.addProperties {
+  margin-top: 3%;
+}
+
+/* classes for address and addl info that renders when you add an address */
+/*.address {
+  margin-left: -70%;
+}*/
+
+.info {
+  float: initial;
+  
+}
+/*
+#expenses {
+  margin-top: -7%;
+}*/
+
+
+/*temporty fix bc this button will render dynamicall*/
+.propertyDetails {
+  margin-bottom: 5%;
+}

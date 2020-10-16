@@ -12,7 +12,11 @@ body {
   min-height: 90vh;
   flex-direction: column;
 }
+<<<<<<< HEAD
 .containerHome {
+=======
+.containerHome{
+>>>>>>> master
   margin-top: 2%;
 }
 
