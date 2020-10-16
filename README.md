@@ -24,10 +24,9 @@
 
 Alexandria is user-friendly website that easily gives rental property owners a way to manage their properties without the hasstle of having to deal with a property management agency. 
 
-By loging on to your account, you'll get an overview of your properties, rental fees, and expenses. It also features a map icon that when you click, a modal featuring your location. Adding an address is easy, simply click on the plus icon and enter your address. You can now also edit the address to reflect any market changes. 
-Deleting is just as easy. Click on the minus on the property line and the property will be deleted. 
+By loging on to your account, you'll get an overview of your properties, rental fees, and expenses. It also features a map view of your location along with property detials that pulls data from Zip Realty to give you the latest market value information on your property. Adding an address is easy, enter your update and press save. You can now also edit the address to reflect any market changes. Deleting is just as easy. Click on the minus on the property line and the property will be deleted. 
 
-The property Details link will now pull data from Zip Realty and give you the latest market value information on your property.
+The contact us modal was upsated to feature a working form that will submit any inquiry you may have. 
 
 The site is mobile responsive; the design is clean taking into account the users experience. 
 
@@ -35,21 +34,21 @@ The site is mobile responsive; the design is clean taking into account the users
 
 ## Demo 
 
-![Screenshot](./public/images/demoImages/LandingPage.JPG)
-![Properties](./public/images/demoImages/Properties.JPG)
-![PropertyDetails](./public/images/demoImages/ProDetails.JPG)
+![Screenshot](./public/images/3Demo/landingPage.JPG)
+![Properties](./public/images/3Demo/signUpModal.JPG)
 
 
 
-Application Deployed by using <a href="https://mysterious-river-09583.herokuapp.com/"> Heroku </a>.
+
+Application Deployed by using <a href=""> Heroku </a>.
 
 
 ---
 ## Technologies & Dependencies Used:
 
-HTML, CSS, Materialize, JavaScript, JSON, jQuery, API, MySQL, Heroku, Node.js
+HTML, CSS, React, React-Boostrap, JavaScript, JSON, jQuery, API, Mongo, Heroku, Node.js
 
-Axios, Dotevv, Express, JSON-Stingify-Safe, MYSQL, MYSQL2, Path, Sequelize
+Axios, Dotevv, Express, JSON-Stingify-Safe, Path, Email.js, React-Geocode, Google-Maps-React
 
 ---
 
