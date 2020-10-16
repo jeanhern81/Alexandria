@@ -146,6 +146,7 @@ function PropertyList(props) {
               >
                 View Map
               </Button>
+              <br />
               <Button key={result._id} onClick={() => deleteButton(result._id)}>
                 Delete
               </Button>
@@ -158,7 +159,7 @@ function PropertyList(props) {
 
               {/* Delete button */}
 
-              <Button
+              {/* <Button
                 className="deleteProp"
                 key={result._id}
                 variant="danger"
@@ -173,7 +174,7 @@ function PropertyList(props) {
                 address={result.address + result.city + result.state}
                 show={DeletePropState.addDeletePropShow}
                 onHide={addDeletePropClose}
-              />
+              /> */}
             </div>
           </li>
         ))}
