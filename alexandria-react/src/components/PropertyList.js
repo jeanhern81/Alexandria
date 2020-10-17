@@ -75,31 +75,22 @@ function PropertyList(props) {
     })
     await (setMapModalState({ addMapsModalShow: true }));
   };
-  function deleteButton(id) {
-    $.ajax({
-      method: "DELETE",
-      url: "/api/" + id
-    }).then(() => {
 
-      console.log("property deleted")
-    })
 
-  }
-
-  let getDeleteData = async (id) => {
-    var id = id;
-    $.get("/api/" + id, function (data) {
-      console.log(data);
-      setProperty(data);
-    });
-    await setDeletePropState({ addDeletePropShow: true });
-  };
+  // let getDeleteData = async (id) => {
+  //   var id = id;
+  //   $.get("/api/" + id, function (data) {
+  //     console.log(data);
+  //     setProperty(data);
+  //   });
+  //   await setDeletePropState({ addDeletePropShow: true });
+  // };
 
 
   let addEditPropClose = () => setEditPropState({ addEditPropShow: false });
   let addMapsModalClose = () => setMapModalState({ addMapsModalShow: false });
   let addDeletePropClose = () => setDeletePropState({ addDeletePropShow: false });
-
+  let addDeletePropOpen = () => setDeletePropState({ addDeletePropShow: true });
   // let EditPropModalOpen = () =>
   //     setEditPropState({ EditPropShow: true });
 
@@ -133,38 +124,38 @@ function PropertyList(props) {
                 Rent: {"  " + result.rent}
               </h5>
             </Col>
-          <div>
-            
-          {/* Edit Button */}
-            <EditProp
-              _id={property._id}
-              address={property.address}
-              city={property.city}
-              state={property.state}
-              zip={property.zip}
-              mortgage={property.expenses}
-              purchasePrice={property.purchasePrice}
-              rent={property.rent}
-              show={EditPropState.addEditPropShow}
-              onHide={addEditPropClose}
-            />
-            <Button
-              className="editButton"
-              variant="info" size="sm"
-              onClick={() => getEditData(result._id)}
-            >
-              {" "}
+            <div>
+
+              {/* Edit Button */}
+              <EditProp
+                _id={property._id}
+                address={property.address}
+                city={property.city}
+                state={property.state}
+                zip={property.zip}
+                mortgage={property.expenses}
+                purchasePrice={property.purchasePrice}
+                rent={property.rent}
+                show={EditPropState.addEditPropShow}
+                onHide={addEditPropClose}
+              />
+              <Button
+                className="editButton"
+                variant="info" size="sm"
+                onClick={() => getEditData(result._id)}
+              >
+                {" "}
               Edit
             </Button>
-          <br></br>
+              <br></br>
 
-          {/* Maps Modal*/}
-            <Button
+              {/* Maps Modal*/}
+              <Button
                 key={result._id}
                 variant="info" size="sm"
                 to="/MapsModal"
                 onClick={() => getlatlng(result.address + result.city + result.state)}
-              > 
+              >
                 View Map
               </Button>
               <MapsModal
@@ -172,31 +163,31 @@ function PropertyList(props) {
                 show={MapModalState.addMapsModalShow}
                 onHide={addMapsModalClose}
               />
-              
-              
+
+
               {/* Delete button */}
-        
-        <Button className="deleteProp"
+
+              <Button className="deleteProp"
                 key={result._id}
                 variant="danger" size="sm"
                 to="/DeleteProp"
-                onClick={() => getDeleteData(result._id)}
-              > {" "}
+                onClick={addDeletePropOpen}
+              >
                 Delete Property
               </Button>
-              <DeleteProp address={result.address + result.city + result.state}
+              <DeleteProp _id={result._id}
                 show={DeletePropState.addDeletePropShow}
-               onHide={addDeletePropClose}
+                onHide={addDeletePropClose}
               />
 
-          
-          
-          
 
 
 
-        </div>
-        
+
+
+
+            </div>
+
 
           </li>
         ))}
