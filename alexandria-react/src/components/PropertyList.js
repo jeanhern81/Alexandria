@@ -199,7 +199,7 @@ function PropertyList(props) {
               </h5>
             </Col>
             <div>
-
+            
               {/* Edit Button */}
               <EditProp
                 _id={property._id}
@@ -237,14 +237,14 @@ function PropertyList(props) {
                 show={MapModalState.addMapsModalShow}
                 onHide={addMapsModalClose}
               />
-            
+            <p>
               {/* property details button */}
               <Button className='propertyDetails' variant="info" size='sm' to='/PropertyDetails' onClick={addPropertyDetailsOpen}> Property Details </Button>  
               <PropertyDetails _id={result._id}
                 show={PropertyDetailsState.addPropertyDetailsShow}
                 onHide={addPropertyDetailsClose}
               />              
-<br></br>
+              </p>
               {/* Delete button */}
               <Button className="deleteProp"
                 key={result._id}
@@ -258,16 +258,7 @@ function PropertyList(props) {
                 show={DeletePropState.addDeletePropShow}
                 onHide={addDeletePropClose}
               />
-
-
-
-
-
-
-
             </div>
-
-
           </li>
         ))}
       </ul>
