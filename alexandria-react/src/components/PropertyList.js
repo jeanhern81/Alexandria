@@ -25,8 +25,12 @@ function PropertyList(props) {
   const [EditPropState, setEditPropState] = useState({
     addEditPropShow: false,
   });
+  
   const [DetailsPropState, setDetailsPropState] = useState({
     addDetailsPropShow: false,
+  });
+  const [PropertyDetailsState, setPropertyDetailsState] = useState({
+    addPropertyDetailsShow: false,
   });
   // state for map coordinates //
   const [latLng, setLatLng] = useState("")
@@ -41,11 +45,14 @@ function PropertyList(props) {
     rent: "",
     _id: "",
   });
+  //Delete Button Modal //
   const [DeletePropState, setDeletePropState] = useState({
     addDeletePropShow: false,
   });
-  // maps modal Function 
 
+
+  
+  // maps modal Function 
   let getlatlng = async (address) => {
     Geocode.setApiKey("AIzaSyDHRCqL8yZbKNEZl7PFCmbA_XlaIBluHZ8");
 
@@ -132,7 +139,7 @@ function PropertyList(props) {
   // };
 
 
-  // let getDeleteData = async (id) => {
+  //let getDeleteData = async (id) => {
   //   var id = id;
   //   $.get("/api/" + id, function (data) {
   //     console.log(data);
@@ -141,6 +148,16 @@ function PropertyList(props) {
   //   await setDeletePropState({ addDeletePropShow: true });
   // };
 
+
+  let getDetailsData = async (id) => {
+  var id = id;
+  $.get("/api/" + id, function (data) {
+  console.log(data);
+  setProperty(data);
+  });
+  await setPropertyDetailsState({ addPropertyDetailsShow: true });
+  };
+
   // functions for setting modal open/closed states
   let addEditPropClose = () => setEditPropState({ addEditPropShow: false });
   let addDetailsPropClose = () => setDetailsPropState({ addDetailsPropShow: false });
@@ -148,7 +165,8 @@ function PropertyList(props) {
   let addMapsModalClose = () => setMapModalState({ addMapsModalShow: false });
   let addDeletePropClose = () => setDeletePropState({ addDeletePropShow: false });
   let addDeletePropOpen = () => setDeletePropState({ addDeletePropShow: true });
-
+  let addPropertyDetailsOpen = () => setPropertyDetailsState ({ addPropertyDetailsShow: true });
+  let addPropertyDetailsClose = () => setPropertyDetailsState ({ addPropertyDetailsShow: false });
 
   return (
     <Container fluid={true}>
@@ -221,19 +239,11 @@ function PropertyList(props) {
               />
             
               {/* property details button */}
-              <Button
-                className="propertyDetails"
-                variant="info" size="sm"
-                to="/PropertyDetails"
-                onClick={getZillowData(result.address + " " + result.city + " " + result.state + " " + result.zip)}
-              >
-                Property Details{" "}
-              </Button>
-              <PropertyDetails
-                show={DetailsPropState.addDetailsPropShow}
-                onHide={addDetailsPropClose}
-
-              />
+              <Button className='propertyDetails' variant="info" size='sm' to='/PropertyDetails' onClick={addPropertyDetailsOpen}> Property Details </Button>  
+              <PropertyDetails _id={result._id}
+                show={PropertyDetailsState.addPropertyDetailsShow}
+                onHide={addPropertyDetailsClose}
+              />              
 <br></br>
               {/* Delete button */}
               <Button className="deleteProp"
