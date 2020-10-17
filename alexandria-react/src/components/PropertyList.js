@@ -12,18 +12,25 @@ import {
 import EditProp from "../components/EditProp";
 import MapsModal from "../components/MapsModal";
 import DeleteProp from '../components/DeleteProp';
+import PropertyDetails from "../components/PropertyDetails";
 import $ from "jquery";
 //Styling sheet
 import "../index.css";
 
 function PropertyList(props) {
+  // state for modals //
   const [MapModalState, setMapModalState] = useState({
     addMapsModalShow: false,
   });
   const [EditPropState, setEditPropState] = useState({
     addEditPropShow: false,
   });
+  const [DetailsPropState, setDetailsPropState] = useState({
+    addDetailsPropShow: false,
+  });
+  // state for map coordinates //
   const [latLng, setLatLng] = useState("")
+  //state for edit property modal //
   const [property, setProperty] = useState({
     address: "",
     city: "",
@@ -37,19 +44,18 @@ function PropertyList(props) {
   const [DeletePropState, setDeletePropState] = useState({
     addDeletePropShow: false,
   });
-  // maps modal code
+  // maps modal Function 
+
   let getlatlng = async (address) => {
     Geocode.setApiKey("AIzaSyDHRCqL8yZbKNEZl7PFCmbA_XlaIBluHZ8");
 
     await Geocode.fromAddress(address).then(
       response => {
         setLatLng(response.results[0].geometry.location);
-        // console.log(lat, lng);
       },
       error => {
         console.error(error);
       }
-
     )
     await (setMapModalState({ addMapsModalShow: true }));
   };
@@ -57,24 +63,73 @@ function PropertyList(props) {
 
   let getEditData = async (id) => {
     var id = id;
-    // document.querySelector("#address")
     await $.get("/api/" + id, function (data) {
-      console.log(data);
       setProperty(data);
 
     });
     await setEditPropState({ addEditPropShow: true });
   };
-  let getMapData = async (id) => {
-    var id = id;
 
-    await $.get("/api/" + id, function (data) {
-      console.log(data);
-      setProperty(data);
+  // property details function api call
+
+  let getZillowData = async (locationData) => {
+    console.log(locationData)
+    // await (setDetailsPropState({ addDetailsPropShow: true }))
+
+  }
+  function addressFormat(locationData) {
+    var splitAddress = locationData.split("% ");
+    return splitAddress;
+  }
+  function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
+  function zillowAPI(locationArray) {
+
+    // console.log("Zestimate document works");
+    $.ajax({
+      url: "/zillowCall/",
+      method: "GET",
+      data: { locationArray }
+    }).then(function (response) {
+
+      var res = JSON.parse(response)
+      console.log(res.result[0]);
+
+      console.log(res.result[0].zestimate[0].valuationRange[0].high[0]._);
+
+      //Builds HOME DETAILS data table
+      // $("#code").text(response.data[0].useCode);
+      // $("#bedrooms").text(response.data[0].bedrooms);
+      // $("#bathrooms").text(response.data[0].bathrooms);
+      // $("#buildingSize").text(numberWithCommas(response.data[0].finishedSqFt));
+      // $("#lotSize").text(numberWithCommas(response.data[0].lotSizeSqFt));
+      // $("#yearBuilt").text(numberWithCommas(response.data[0].yearBuilt));
+
+      //Builds MARKET VALUATION table
+
+      $("#zestimate").text(numberWithCommas(res.result[0].zestimate[0].amount[0]._));
+      $("#highValue").text(numberWithCommas(res.result[0].zestimate[0].valuationRange[0].high[0]._));
+      $("#lowValue").text(numberWithCommas(res.result[0].zestimate[0].valuationRange[0].low[0]._));
+
 
     })
-    await (setMapModalState({ addMapsModalShow: true }));
-  };
+
+      .catch(function (error) {
+        console.log(error);
+      });
+
+  }
+  // let getMapData = async (id) => {
+  //   var id = id;
+
+  //   await $.get("/api/" + id, function (data) {
+  //     console.log(data);
+  //     setProperty(data);
+
+  //   })
+  //   await (setMapModalState({ addMapsModalShow: true }));
+  // };
 
 
   // let getDeleteData = async (id) => {
@@ -86,13 +141,14 @@ function PropertyList(props) {
   //   await setDeletePropState({ addDeletePropShow: true });
   // };
 
-
+  // functions for setting modal open/closed states
   let addEditPropClose = () => setEditPropState({ addEditPropShow: false });
+  let addDetailsPropClose = () => setDetailsPropState({ addDetailsPropShow: false });
+  let addDetailsPropOpen = () => setDetailsPropState({ addDetailsPropShow: true });
   let addMapsModalClose = () => setMapModalState({ addMapsModalShow: false });
   let addDeletePropClose = () => setDeletePropState({ addDeletePropShow: false });
   let addDeletePropOpen = () => setDeletePropState({ addDeletePropShow: true });
-  // let EditPropModalOpen = () =>
-  //     setEditPropState({ EditPropShow: true });
+
 
   return (
     <Container fluid={true}>
@@ -164,7 +220,20 @@ function PropertyList(props) {
                 onHide={addMapsModalClose}
               />
 
+              {/* property details button */}
+              <Button
+                className="propertyDetails"
+                variant="info" size="sm"
+                to="/PropertyDetails"
+                onClick={getZillowData(result.address + " " + result.city + " " + result.state + " " + result.zip)}
+              >
+                Property Details{" "}
+              </Button>
+              <PropertyDetails
+                show={DetailsPropState.addDetailsPropShow}
+                onHide={addDetailsPropClose}
 
+              />
               {/* Delete button */}
 
               <Button className="deleteProp"
