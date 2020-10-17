@@ -26,37 +26,33 @@ hr {
   padding-left: 5%;
 }
 
+
+/* PropertyList.js*/
 /* Address from PropertyList.js */
+.address{
+  margin-top: %;
+}
+
 .list-group {
   margin-left: auto;
 }
 
+/* Edit Button in PropertyList.js*/
 .editButton {
   margin-bottom: 1%;
 }
 
+/* Add Properties Button in PropertyList.js*/
 .addProperties {
   margin-top: 3%;
 }
 
-/* classes for address and addl info that renders when you add an address */
-/*.address {
-  margin-left: -70%;
-}*/
-
-.info {
-  float: initial;
-}
-/*
-#expenses {
-  margin-top: -7%;
-}*/
-
-/*temporty fix bc this button will render dynamicall*/
+/* Property Details Button in PropertyList.js*/
 .propertyDetails {
   margin-top: 1%;
 }
 
+/*Delete Button PropertyList.js*/
 .deleteProp,
 .warning {
   color: red;
