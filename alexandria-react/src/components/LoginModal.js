@@ -78,15 +78,12 @@ export default function Login(props) {
             />
           </Form.Group>
           <Form.Group controlId="formBasicCheckbox">
-            <Form.Check type="checkbox" label="Check me out" />
+            <Form.Check type="checkbox" label="Remember me" />
           </Form.Group>
-          <Button variant="primary" type="submit" onClick={props.onHide}>
+          <Button variant="primary" type="submit" href='/properties' onClick={props.onHide}>
             Login
           </Button>
-          <p clasName="newCustomer">
-            {" "}
-            New Customer? <a href="signUp.home.html">Create account</a>
-          </p>
+
         </Form>
       </Modal.Body>
       <Modal.Footer>

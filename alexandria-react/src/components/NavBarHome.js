@@ -41,7 +41,7 @@ class NavBarHome extends Component {
                                 <Link className='nav-link' to="#" onClick={() => this.setState({ addContactModalShow: true })}><h6 style={{ color: 'white' }}>Contact Us</h6></Link>
                                 <ContactModal show={this.state.addContactModalShow} onHide={addContactModalClose} />
 
-                                <Nav.Link href='/properties' ><h6 style={{ color: 'white' }}>Properties</h6></Nav.Link>
+                                {/*<Nav.Link href='/properties' ><h6 style={{ color: 'white' }}>Properties</h6></Nav.Link>*/}
                                 
 
                             </Nav>
