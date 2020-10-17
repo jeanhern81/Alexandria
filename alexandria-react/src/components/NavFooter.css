@@ -1,9 +1,17 @@
+/* Navbar*/ 
 .color-nav {
     margin-top: 0px;
     background-color: rgb(5, 140, 164);
     
 }
 
+/* Footer */
 .color-footer {
     background-color: rgb(5, 140, 164);
 }
+
+.a-footer {
+    align-content: center;
+}
+
+/* */
