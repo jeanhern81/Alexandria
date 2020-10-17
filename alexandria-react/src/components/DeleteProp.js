@@ -42,7 +42,7 @@ export function DeleteProp(props) {
           <p>
             Click "Delete" to delete this property or press "Cancel" to go back.
         </p>
-          <Button variant="primary" type="submit">
+          <Button variant="primary" type="submit" >
             Delete
         </Button>
         &nbsp;&nbsp;&nbsp;
