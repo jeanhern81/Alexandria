@@ -35,8 +35,8 @@ The site is mobile responsive; the design is clean taking into account the users
 ## Demo 
 
 ![Screenshot](./public/images/3Demo/landingPage.JPG)
-![Properties](./public/images/3Demo/signUpModal.JPG)
-
+![SignUp](./public/images/3Demo/signUpModal.JPG)
+![Properties](./public/images/3Demo/propertiesPage.JPG)
 
 
 
