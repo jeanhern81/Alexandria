@@ -132,20 +132,14 @@ app.delete("/api/:id", auth.required, function (req, res) {
 
 app.put("/api/properties", function (req, res) {
   var property = req.body
-  console.log(property)
+  console.log(property._id)
   Property.findByIdAndUpdate(
 
 
-    { _id: property.id }
+    { _id: property._id }
 
     , {
-      address: property.address,
-      city: property.city,
-      state: property.state,
-      zip: property.zip,
-      expenses: property.expenses,
-      purchasePrice: property.purchasePrice,
-      rent: property.rent
+      $set: { ...property }
     }
 
   ).then(function (property) {

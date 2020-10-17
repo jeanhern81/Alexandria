@@ -1,42 +1,19 @@
 import React, { Component, useState } from "react";
-import { Modal, Button, Image } from "react-bootstrap";
+import { Form, Modal, Button, Image } from "react-bootstrap";
 import $ from "jquery";
 import "../index.css";
 
 export function DeleteProp(props) {
   console.log(props);
-  const [property, setProperty] = useState({
-    address: props.address,
-    city: props.city,
-    state: props.state,
-    zip: props.zip,
-    mortgage: props.mortgage,
-    purchasePrice: props.purchasePrice,
-    rent: props.rent,
-    _id: props._id,
-  });
+  let deleteProperty = (id) =>
+    $.ajax({
+      method: "DELETE",
+      url: "/api/" + id
+    }).then(() => {
 
-  function handleSubmit(e) {
-    console.log(property);
+      console.log("property deleted")
+    })
 
-    var newProperty = {
-      address: property.address,
-      city: property.city,
-      state: property.state,
-      zip: property.zip,
-      purchasePrice: property.purchasePrice,
-      mortgage: property.mortgage,
-      rent: property.rent,
-      id: props._id,
-    };
-    console.log(newProperty);
-
-    $.ajax({ url: "/api/properties", method: "PUT", data: newProperty }).then(
-      (res) => {
-        console.log(res);
-      }
-    );
-  }
   return (
     <Modal
       {...props}
@@ -57,19 +34,21 @@ export function DeleteProp(props) {
           key={props._id}
         ></Modal.Title>
       </Modal.Header>
-      <Modal.Body>
-        <p>
-          <h3 className="warning">Warning!</h3>{" "}
+      <Form onSubmit={props.onHide}>
+        <Modal.Body >
+          <p>
+            <h3 className="warning">Warning!</h3>{" "}
+          </p>
+          <p>
+            Click "Delete" to delete this property or press "Cancel" to go back.
         </p>
-        <p>
-          Click "Delete" to delete this property or press "Cancel" to go back.
-        </p>
-        <Button variant="primary" type="submit">
-          Delete
+          <Button variant="primary" type="submit">
+            Delete
         </Button>
         &nbsp;&nbsp;&nbsp;
         <Button onClick={props.onHide}>Cancel</Button>
-      </Modal.Body>
+        </Modal.Body>
+      </Form>
     </Modal>
   );
 }
