@@ -5,20 +5,16 @@ import $ from "jquery";
 export function EditProp(props) {
 
   console.log(props)
-  const [property, setProperty] = useState({ address: props.address, city: props.city, state: props.state, zip: props.zip, mortgage: props.mortgage, purchasePrice: props.purchasePrice, rent: props.rent, _id: props._id });
 
+  const [property, setProperty] = useState({ ...props });
+
+  console.log(property)
   function handleSubmit(e) {
+
     console.log(property)
 
     var newProperty = {
-      address: property.address,
-      city: property.city,
-      state: property.state,
-      zip: property.zip,
-      purchasePrice: property.purchasePrice,
-      mortgage: property.mortgage,
-      rent: property.rent,
-      id: props._id
+      ...property
     }
     console.log(newProperty)
 
@@ -53,7 +49,7 @@ export function EditProp(props) {
         <Form onSubmit={handleSubmit}>
           <Form.Group controlId="formBasicEmail">
             <Form.Label>Street Address</Form.Label>
-            <Form.Control type="text" onChange={e => setProperty({ ...property, address: e.target.value })} defaultValue={props.address} />
+            <Form.Control type="text" onChange={e => setProperty({ address: e.target.value, _id: props._id })} defaultValue={props.address} />
           </Form.Group>
           {/* <Form.Group controlId="formBasicEmail">
             <Form.Label>Street Address #2</Form.Label>
@@ -64,16 +60,16 @@ export function EditProp(props) {
           </Form.Group> */}
           <Form.Group controlId="formBasicEmail">
             <Form.Label>City</Form.Label>
-            <Form.Control type="text" defaultValue={props.city} onChange={e => setProperty({ ...property, city: e.target.value })} />
+            <Form.Control type="text" defaultValue={props.city} onChange={e => setProperty({ city: e.target.value, _id: props._id })} />
           </Form.Group>
           <Form.Group controlId="formBasicEmail">
             <Form.Label>State</Form.Label>
-            <Form.Control type="text" defaultValue={props.state} onChange={e => setProperty({ ...property, state: e.target.value })} />
+            <Form.Control type="text" defaultValue={props.state} onChange={e => setProperty({ ...property, state: e.target.value, _id: props._id })} />
             <Form.Text className="text-muted">Ex. CA, NY, TX, FL</Form.Text>
           </Form.Group>
           <Form.Group controlId="formBasicEmail">
             <Form.Label>Zip Code</Form.Label>
-            <Form.Control type="number" defaultValue={props.zip} onChange={e => setProperty({ ...property, zip: e.target.value })} />
+            <Form.Control type="number" defaultValue={props.zip} onChange={e => setProperty({ ...property, zip: e.target.value, _id: props._id })} />
           </Form.Group>
           <Form.Group controlId="formBasicEmail">
             <Form.Label>Monthly Expenses</Form.Label>

@@ -168,7 +168,7 @@ $(document).on("click", "#delete", function () {
             method: "DELETE",
             url: "/api/" + id
         }).then(() => {
-            location.reload()
+
         })
         document.getElementById("demo").innerHTML = txt;
     } else {

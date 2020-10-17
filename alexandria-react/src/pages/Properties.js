@@ -68,7 +68,7 @@ class Properties extends Component {
         <div>
           <Button
             className="propertyDetails"
-            variant="info"
+            variant="info" size="sm"
             to="/PropertyDetails"
             onClick={() => this.setState({ addPropertyDetailsModalShow: true })}
           >
@@ -79,36 +79,9 @@ class Properties extends Component {
             onHide={addPropertyDetailsModalClose}
           />
         </div>
-        {/* Delete button */}
-        <div>
-          <Button
-            className="deleteProp"
-            variant="info"
-            to="/DeleteProp"
-            onClick={() => this.setState({ addDeletePropShow: true })}
-          >
-            Delete Property{" "}
-          </Button>
-          <DeleteProp
-            show={this.state.addDeletePropShow}
-            onHide={addDeletePropClose}
-          />
-        </div>
 
-        {/* Maps Button */}
-        {/* <div>
-        <Button
-            variant="info"
-            to="/MapsModal"
-            onClick={() => this.setState({ addMapsModalShow: true })}
-        >
-            View Map 
-        </Button>
-        <MapsModal
-            show={this.state.addMapsModalShow}
-            onHide={addMapsModalClose}
-        />
-        </div> */}
+
+
 
         <Footer />
       </div>
