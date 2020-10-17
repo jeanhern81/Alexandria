@@ -203,8 +203,8 @@ function PropertyList(props) {
                 {" "}
               Edit
             </Button>
-              <br></br>
-
+              
+            <br></br>
               {/* Maps Modal*/}
               <Button
                 key={result._id}
@@ -219,7 +219,7 @@ function PropertyList(props) {
                 show={MapModalState.addMapsModalShow}
                 onHide={addMapsModalClose}
               />
-
+            
               {/* property details button */}
               <Button
                 className="propertyDetails"
@@ -234,8 +234,8 @@ function PropertyList(props) {
                 onHide={addDetailsPropClose}
 
               />
+<br></br>
               {/* Delete button */}
-
               <Button className="deleteProp"
                 key={result._id}
                 variant="danger" size="sm"
