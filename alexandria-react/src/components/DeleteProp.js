@@ -5,8 +5,9 @@ import "../index.css";
 
 export function DeleteProp(props) {
   console.log(props);
-  let deleteProperty = (id) =>
-    $.ajax({
+  const [id, setId] = useState(props._id)
+  let deleteProperty = async (id) =>
+    await $.ajax({
       method: "DELETE",
       url: "/api/" + id
     }).then(() => {
@@ -42,11 +43,11 @@ export function DeleteProp(props) {
           <p>
             Click "Delete" to delete this property or press "Cancel" to go back.
         </p>
-          <Button variant="primary" type="submit">
+          <Button variant="primary" type="submit" onClick={() => { deleteProperty(id) }}>
             Delete
         </Button>
-        &nbsp;&nbsp;&nbsp;
-        <Button onClick={props.onHide}>Cancel</Button>
+          {/* &nbsp;&nbsp;&nbsp; */}
+          <Button onClick={props.onHide}>Cancel</Button>
         </Modal.Body>
       </Form>
     </Modal>

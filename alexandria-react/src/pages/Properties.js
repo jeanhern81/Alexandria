@@ -9,7 +9,7 @@ import PropertiesContainer from "../components/PropertiesContainer";
 
 import PropsModalAdd from "../components/PropsModalAdd";
 // import MapsModal from "../components/MapsModal";
-import DeleteProp from "../components/DeleteProp";
+import { DeleteProp } from "../components/DeleteProp";
 
 import "../index.css";
 import "./Properties.css";
