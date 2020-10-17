@@ -159,7 +159,7 @@ function PropertyList(props) {
       <ul className="list-group">
         {props.state.properties.map((result) => (
           <li className="list-group-item " key={result._id}>
-            <Col sm={6} md={4} style={{ float: "left"}}>
+            <Col sm={6} md={4} style={{ float: "left" }}>
               <h5 className="address" id="address">
                 Street Address:{"  " + result.address}
               </h5>
@@ -205,17 +205,10 @@ function PropertyList(props) {
                 onClick={() => getEditData(result._id)}
               >
                 {" "}
-<<<<<<< HEAD
                 Edit
               </Button>
-              <br></br>
 
-=======
-              Edit
-            </Button>
-              
-            <br></br>
->>>>>>> master
+              <br></br>
               {/* Maps Modal*/}
               <Button
                 className="editButton"
@@ -230,7 +223,7 @@ function PropertyList(props) {
                 show={MapModalState.addMapsModalShow}
                 onHide={addMapsModalClose}
               />
-            
+
               {/* property details button */}
               <Button
                 className="propertyDetails"
@@ -253,15 +246,10 @@ function PropertyList(props) {
                 show={DetailsPropState.addDetailsPropShow}
                 onHide={addDetailsPropClose}
               />
-<br></br>
+              <br></br>
               {/* Delete button */}
-<<<<<<< HEAD
-
               <Button
                 className="deleteProp"
-=======
-              <Button className="deleteProp"
->>>>>>> master
                 key={result._id}
                 variant="danger"
                 size="sm"
