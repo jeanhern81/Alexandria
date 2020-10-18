@@ -29,7 +29,7 @@ class NavBarProps extends Component {
 
                             <Nav.Link href="/" ><h6 style={{ color: 'white' }}>Home</h6></Nav.Link>
 
-                            <Nav.Link href="#contact" onClick={() => this.setState({ addContactModalShow: true })}><h6 style={{ color: 'white' }}>Contact Us</h6></Nav.Link>
+                            <Nav.Link href="#" onClick={() => this.setState({ addContactModalShow: true })}><h6 style={{ color: 'white' }}>Contact Us</h6></Nav.Link>
                             <ContactModal show={this.state.addContactModalShow} onHide={addContactModalClose} />
 
                         </Nav>
