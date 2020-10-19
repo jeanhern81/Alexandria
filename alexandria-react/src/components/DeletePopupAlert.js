@@ -5,7 +5,7 @@ import '../index.css';
 
 
 function AlertDismissible() {
-    const [show, setShow] = useState(true);
+    const [show, setShow] = useState(false);
 
     return (
     <>
