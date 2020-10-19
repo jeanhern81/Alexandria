@@ -1,6 +1,6 @@
 import React, { Component, useState } from "react";
 
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 //Bootstrap
 import { Modal, Button, Form, Image } from "react-bootstrap";
@@ -12,6 +12,7 @@ export default function Login(props) {
   const [password, setPassword] = useState("");
   const [user, setUser] = useState("");
   const [userId, setUserId] = useState("");
+  let history = useHistory();
 
   function validateForm() {
     return email.length > 0 && password.length > 0;
@@ -28,9 +29,9 @@ export default function Login(props) {
       }).then((res) => {
         if (res._id) {
           localStorage.setItem("user", JSON.stringify(res._id));
-          return <Link to="/properties" />;
+
         }
-      });
+      }).then(history.push("/properties"));
   }
   return (
     <Modal
@@ -80,7 +81,7 @@ export default function Login(props) {
           <Form.Group controlId="formBasicCheckbox">
             <Form.Check type="checkbox" label="Remember me" />
           </Form.Group>
-          <Button variant="primary" type="submit" href='/properties' onClick={props.onHide}>
+          <Button variant="primary" type="submit" onClick={props.onHide}>
             Login
           </Button>
 
