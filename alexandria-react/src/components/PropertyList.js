@@ -278,9 +278,7 @@ function PropertyList(props) {
               <div>
                 <p></p>
 
-                { /*  Temporary  Bootstrap Alert Button */}
 
-                <DeletePopupAlert />
 
 
               </div>
