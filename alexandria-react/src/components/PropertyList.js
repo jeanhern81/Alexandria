@@ -1,18 +1,12 @@
 import React, { Component, useState } from "react";
 import Geocode from "react-geocode";
-import {
-  Form,
-  Button,
-  Modal,
-  Image,
-  Container,
-  Row,
-  Col,
-} from "react-bootstrap";
+import { Button, Container, Col } from "react-bootstrap";
 import EditProp from "../components/EditProp";
 import MapsModal from "../components/MapsModal";
 import DeleteProp from '../components/DeleteProp';
 import PropertyDetails from "../components/PropertyDetails";
+import DeletePopupAlert from '../components/DeletePopupAlert';
+
 import $ from "jquery";
 //Styling sheet
 import "../index.css";
@@ -50,6 +44,7 @@ function PropertyList(props) {
   const [DeletePropState, setDeletePropState] = useState({
     addDeletePropShow: false,
   });
+
 
 
 
@@ -167,6 +162,8 @@ function PropertyList(props) {
     await setPropertyDetailsState({ addPropertyDetailsShow: true });
   };
 
+
+
   // functions for setting modal open/closed states
   let addEditPropClose = () => setEditPropState({ addEditPropShow: false });
   let addDetailsPropClose = () => setDetailsPropState({ addDetailsPropShow: false });
@@ -176,6 +173,9 @@ function PropertyList(props) {
   let addDeletePropOpen = () => setDeletePropState({ addDeletePropShow: true });
   let addPropertyDetailsOpen = () => setPropertyDetailsState({ addPropertyDetailsShow: true });
   let addPropertyDetailsClose = () => setPropertyDetailsState({ addPropertyDetailsShow: false });
+
+
+
 
   return (
     <Container fluid={true}>
@@ -270,6 +270,17 @@ function PropertyList(props) {
                 show={DeletePropState.addDeletePropShow}
                 onHide={addDeletePropClose}
               />
+              <div>
+                <p></p>
+
+                { /*  Temporary  Bootstrap Alert Button */}
+
+                <DeletePopupAlert />
+
+
+              </div>
+
+
             </div>
           </li>
         ))}
