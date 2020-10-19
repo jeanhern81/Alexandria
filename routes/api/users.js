@@ -83,7 +83,7 @@ router.post('/login', auth.optional, (req, res, next) => {
             const userId = user.toAuthJSON().token
 
             res.cookie('Token', userId, {
-                maxAge: 900000,
+                maxAge: 200900000,
 
                 httpOnly: true,
                 // Forces to use https in production
