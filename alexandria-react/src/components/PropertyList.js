@@ -75,54 +75,9 @@ function PropertyList(props) {
 
   // property details function api call
 
-  let getZillowData = async (locationData) => {
-    console.log(locationData)
-    // await (setDetailsPropState({ addDetailsPropShow: true }))
-
-  }
-  function addressFormat(locationData) {
-    var splitAddress = locationData.split("% ");
-    return splitAddress;
-  }
-  function numberWithCommas(x) {
-    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-  }
-  function zillowAPI(locationArray) {
-
-    // console.log("Zestimate document works");
-    $.ajax({
-      url: "/zillowCall/",
-      method: "GET",
-      data: { locationArray }
-    }).then(function (response) {
-
-      var res = JSON.parse(response)
-      console.log(res.result[0]);
-
-      console.log(res.result[0].zestimate[0].valuationRange[0].high[0]._);
-
-      //Builds HOME DETAILS data table
-      // $("#code").text(response.data[0].useCode);
-      // $("#bedrooms").text(response.data[0].bedrooms);
-      // $("#bathrooms").text(response.data[0].bathrooms);
-      // $("#buildingSize").text(numberWithCommas(response.data[0].finishedSqFt));
-      // $("#lotSize").text(numberWithCommas(response.data[0].lotSizeSqFt));
-      // $("#yearBuilt").text(numberWithCommas(response.data[0].yearBuilt));
-
-      //Builds MARKET VALUATION table
-
-      $("#zestimate").text(numberWithCommas(res.result[0].zestimate[0].amount[0]._));
-      $("#highValue").text(numberWithCommas(res.result[0].zestimate[0].valuationRange[0].high[0]._));
-      $("#lowValue").text(numberWithCommas(res.result[0].zestimate[0].valuationRange[0].low[0]._));
 
 
-    })
 
-      .catch(function (error) {
-        console.log(error);
-      });
-
-  }
   // let getMapData = async (id) => {
   //   var id = id;
 
@@ -134,7 +89,7 @@ function PropertyList(props) {
   //   await (setMapModalState({ addMapsModalShow: true }));
   // };
 
-
+  // makes api call to ensure proper Id gets passed to delete confirmation modal
   let getDeleteData = async (id) => {
     var id = id;
     $.get("/api/" + id, function (data) {
@@ -148,24 +103,50 @@ function PropertyList(props) {
     }).then(
       setDeletePropState({ addDeletePropShow: true }));
   };
-  let deleteProperty = (id) =>
-    $.ajax({
-      method: "DELETE",
-      url: "/api/" + id
-    }).then((res) => {
-
-      console.log(res)
-    })
-
 
   let getDetailsData = async (id) => {
     var id = id;
     $.get("/api/" + id, function (data) {
       console.log(data);
-      setProperty(data);
-    });
-    await setPropertyDetailsState({ addPropertyDetailsShow: true });
+      try {
+        setProperty(data)
+        $.ajax({
+          url: "/zillowCall/",
+          method: "GET",
+
+          Data: { address: data.address, citystate: data.city + " " + data.state },
+
+        }).then((response) =>
+          console.log(response))
+
+
+      } catch (error) {
+
+      }
+    })
+
+
+
+
   };
+  // let deleteProperty = (id) =>
+  //   $.ajax({
+  //     method: "DELETE",
+  //     url: "/api/" + id
+  //   }).then((res) => {
+
+  //     console.log(res)
+  //   })
+
+
+  // let getDetailsData = async (id) => {
+  //   var id = id;
+  //   $.get("/api/" + id, function (data) {
+  //     console.log(data);
+  //     setProperty(data);
+  //   });
+  //   await setPropertyDetailsState({ addPropertyDetailsShow: true });
+  // };
 
 
 
@@ -253,8 +234,10 @@ function PropertyList(props) {
               />
               <p>
                 {/* property details button */}
-                <Button className='propertyDetails' variant="info" size='sm' to='/PropertyDetails' onClick={addPropertyDetailsOpen}> Property Details </Button>
-                <PropertyDetails _id={result._id}
+                <Button className='propertyDetails' variant="info" size='sm' to='/PropertyDetails' onClick={() => { getDetailsData(result._id) }}> Property Details </Button>
+                <PropertyDetails _id={property._id}
+                  address-={property.address}
+                  citystate={property.city + " " + property.state}
                   show={PropertyDetailsState.addPropertyDetailsShow}
                   onHide={addPropertyDetailsClose}
                 />

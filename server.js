@@ -150,12 +150,14 @@ app.put("/api/properties", function (req, res) {
 // zillow route
 
 app.get("/zillowCall/", async (req, res) => {
-  console.log(req.query);
-  var locationArray = req.query.locationArray;
+  console.log(req);
+  // 
+  let address = req.query.address
+  let citystate = req.query.citystate
   // let address = "3128 MULBERRY STREET";
   // let citystate = "RIVERSIDE CA";
-  let address = locationArray[0];
-  let citystate = locationArray[1] + " " + locationArray[2];
+  // let address = locationArray[0];
+  // let citystate = locationArray[1] + " " + locationArray[2];
 
   axios({
     "method": "GET",

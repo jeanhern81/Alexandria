@@ -1,13 +1,37 @@
 import React, { Component } from "react";
 //ReactBootstrap
 import { Table, Modal, Form, Button, Image } from "react-bootstrap";
+import $ from "jquery";
 
 export class PropertyDetailsModal extends Component {
   constructor(props) {
     super(props);
+    this.propertyDetails = this.propertyDetails.bind(this)
+
   }
 
+  propertyDetails = async () => {
+
+    await $.ajax("/zillowCall/", {
+      method: "POST",
+
+      Data: { address: this.props.address, citystate: this.props.citystate },
+      headers: {
+        'content-type': 'application/json'
+      }
+    }).then((response) =>
+      console.log(response))
+  }
+
+
+
+
+
+
+
+
   render() {
+    this.propertyDetails()
     return (
       <Modal
         {...this.props}
@@ -69,7 +93,7 @@ export class PropertyDetailsModal extends Component {
                 </thead>
                 <tbody>
                   <tr>
-                    <td>No Data</td>
+                    <td>{this.state}</td>
                     <td>No Data</td>
                     <td>No Data</td>
                   </tr>
