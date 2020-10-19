@@ -1,18 +1,12 @@
 import React, { Component, useState } from "react";
 import Geocode from "react-geocode";
-import {
-  Form,
-  Button,
-  Modal,
-  Image,
-  Container,
-  Row,
-  Col,
-} from "react-bootstrap";
+import { Button, Container, Col } from "react-bootstrap";
 import EditProp from "../components/EditProp";
 import MapsModal from "../components/MapsModal";
 import DeleteProp from '../components/DeleteProp';
 import PropertyDetails from "../components/PropertyDetails";
+import DeletePopupAlert from '../components/DeletePopupAlert';
+
 import $ from "jquery";
 //Styling sheet
 import "../index.css";
@@ -25,8 +19,12 @@ function PropertyList(props) {
   const [EditPropState, setEditPropState] = useState({
     addEditPropShow: false,
   });
+
   const [DetailsPropState, setDetailsPropState] = useState({
     addDetailsPropShow: false,
+  });
+  const [PropertyDetailsState, setPropertyDetailsState] = useState({
+    addPropertyDetailsShow: false,
   });
   // state for map coordinates //
   const [latLng, setLatLng] = useState("")
@@ -41,11 +39,16 @@ function PropertyList(props) {
     rent: "",
     _id: "",
   });
+
+  //Delete Button Modal //
   const [DeletePropState, setDeletePropState] = useState({
     addDeletePropShow: false,
   });
-  // maps modal Function 
 
+
+
+
+  // maps modal Function 
   let getlatlng = async (address) => {
     Geocode.setApiKey("AIzaSyDHRCqL8yZbKNEZl7PFCmbA_XlaIBluHZ8");
 
@@ -132,14 +135,39 @@ function PropertyList(props) {
   // };
 
 
-  // let getDeleteData = async (id) => {
-  //   var id = id;
-  //   $.get("/api/" + id, function (data) {
-  //     console.log(data);
-  //     setProperty(data);
-  //   });
-  //   await setDeletePropState({ addDeletePropShow: true });
-  // };
+  let getDeleteData = async (id) => {
+    var id = id;
+    $.get("/api/" + id, function (data) {
+      console.log(data);
+      try {
+        setProperty(data)
+
+      } catch (error) {
+
+      }
+    }).then(
+      setDeletePropState({ addDeletePropShow: true }));
+  };
+  let deleteProperty = (id) =>
+    $.ajax({
+      method: "DELETE",
+      url: "/api/" + id
+    }).then((res) => {
+
+      console.log(res)
+    })
+
+
+  let getDetailsData = async (id) => {
+    var id = id;
+    $.get("/api/" + id, function (data) {
+      console.log(data);
+      setProperty(data);
+    });
+    await setPropertyDetailsState({ addPropertyDetailsShow: true });
+  };
+
+
 
   // functions for setting modal open/closed states
   let addEditPropClose = () => setEditPropState({ addEditPropShow: false });
@@ -148,13 +176,17 @@ function PropertyList(props) {
   let addMapsModalClose = () => setMapModalState({ addMapsModalShow: false });
   let addDeletePropClose = () => setDeletePropState({ addDeletePropShow: false });
   let addDeletePropOpen = () => setDeletePropState({ addDeletePropShow: true });
+  let addPropertyDetailsOpen = () => setPropertyDetailsState({ addPropertyDetailsShow: true });
+  let addPropertyDetailsClose = () => setPropertyDetailsState({ addPropertyDetailsShow: false });
+
+
 
 
   return (
     <Container fluid={true}>
       <ul className="list-group">
-        {props.state.properties.map((result) => (
-          <li className="list-group-item" key={result._id}>
+        {props.addresses.properties.map((result) => (
+          <li className="list-group-item " key={result._id}>
             <Col sm={6} md={4} style={{ float: "left" }}>
               <h5 className="address" id="address">
                 Street Address:{"  " + result.address}
@@ -171,13 +203,13 @@ function PropertyList(props) {
             </Col>
             <Col sm={6} md={4} style={{ float: "right" }}>
               <h5 className="info" id="expenses">
-                Expenses: {"  " + result.expenses}
+                Expenses: {" $" + result.expenses}
               </h5>
               <h5 className="info" id="purchasePrice">
-                Purchase Price: {"  " + result.purchasePrice}
+                Purchase Price: {" $" + result.purchasePrice}
               </h5>
               <h5 className="info" id="rent">
-                Rent: {"  " + result.rent}
+                Rent: {" $" + result.rent}
               </h5>
             </Col>
             <div>
@@ -203,8 +235,8 @@ function PropertyList(props) {
                 {" "}
               Edit
             </Button>
-              <br></br>
 
+              <br></br>
               {/* Maps Modal*/}
               <Button
                 key={result._id}
@@ -219,45 +251,40 @@ function PropertyList(props) {
                 show={MapModalState.addMapsModalShow}
                 onHide={addMapsModalClose}
               />
-
-              {/* property details button */}
-              <Button
-                className="propertyDetails"
-                variant="info" size="sm"
-                to="/PropertyDetails"
-                onClick={getZillowData(result.address + " " + result.city + " " + result.state + " " + result.zip)}
-              >
-                Property Details{" "}
-              </Button>
-              <PropertyDetails
-                show={DetailsPropState.addDetailsPropShow}
-                onHide={addDetailsPropClose}
-
-              />
+              <p>
+                {/* property details button */}
+                <Button className='propertyDetails' variant="info" size='sm' to='/PropertyDetails' onClick={addPropertyDetailsOpen}> Property Details </Button>
+                <PropertyDetails _id={result._id}
+                  show={PropertyDetailsState.addPropertyDetailsShow}
+                  onHide={addPropertyDetailsClose}
+                />
+              </p>
               {/* Delete button */}
-
               <Button className="deleteProp"
                 key={result._id}
                 variant="danger" size="sm"
                 to="/DeleteProp"
-                onClick={addDeletePropOpen}
+                onClick={() => { getDeleteData(result._id) }}
               >
                 Delete Property
               </Button>
-              <DeleteProp _id={result._id}
+              <DeleteProp
+                key={result._id}
+                address={property.address}
+                _id={property._id}
                 show={DeletePropState.addDeletePropShow}
                 onHide={addDeletePropClose}
               />
+              <div>
+                <p></p>
 
 
 
 
-
+              </div>
 
 
             </div>
-
-
           </li>
         ))}
       </ul>
