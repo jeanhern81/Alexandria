@@ -4,14 +4,15 @@ import $ from "jquery";
 import "../index.css";
 
 export function DeleteProp(props) {
-  console.log(props);
+
+
   let deleteProperty = (id) =>
     $.ajax({
       method: "DELETE",
       url: "/api/" + id
-    }).then(() => {
+    }).then((res) => {
 
-      console.log("property deleted")
+      console.log(res)
     })
 
   return (
@@ -42,7 +43,7 @@ export function DeleteProp(props) {
           <p>
             Click "Delete" to delete this property or press "Cancel" to go back.
         </p>
-          <Button variant="primary" type="submit" >
+          <Button variant="primary" type="submit" onClick={() => { console.log("current address: " + props.address) }}>
             Delete
         </Button>
         &nbsp;&nbsp;&nbsp;

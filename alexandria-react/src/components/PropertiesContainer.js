@@ -42,7 +42,7 @@ class PropertiesContainer extends Component {
     render() {
         return (
             <div>
-                <PropertyList state={this.state} />
+                <PropertyList addresses={this.state} />
 
             </div>
         );

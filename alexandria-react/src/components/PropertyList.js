@@ -25,7 +25,7 @@ function PropertyList(props) {
   const [EditPropState, setEditPropState] = useState({
     addEditPropShow: false,
   });
-  
+
   const [DetailsPropState, setDetailsPropState] = useState({
     addDetailsPropShow: false,
   });
@@ -45,13 +45,14 @@ function PropertyList(props) {
     rent: "",
     _id: "",
   });
+
   //Delete Button Modal //
   const [DeletePropState, setDeletePropState] = useState({
     addDeletePropShow: false,
   });
 
 
-  
+
   // maps modal Function 
   let getlatlng = async (address) => {
     Geocode.setApiKey("AIzaSyDHRCqL8yZbKNEZl7PFCmbA_XlaIBluHZ8");
@@ -147,15 +148,23 @@ function PropertyList(props) {
   //   });
   //   await setDeletePropState({ addDeletePropShow: true });
   // };
+  let deleteProperty = (id) =>
+    $.ajax({
+      method: "DELETE",
+      url: "/api/" + id
+    }).then((res) => {
+
+      console.log(res)
+    })
 
 
   let getDetailsData = async (id) => {
-  var id = id;
-  $.get("/api/" + id, function (data) {
-  console.log(data);
-  setProperty(data);
-  });
-  await setPropertyDetailsState({ addPropertyDetailsShow: true });
+    var id = id;
+    $.get("/api/" + id, function (data) {
+      console.log(data);
+      setProperty(data);
+    });
+    await setPropertyDetailsState({ addPropertyDetailsShow: true });
   };
 
   // functions for setting modal open/closed states
@@ -165,15 +174,15 @@ function PropertyList(props) {
   let addMapsModalClose = () => setMapModalState({ addMapsModalShow: false });
   let addDeletePropClose = () => setDeletePropState({ addDeletePropShow: false });
   let addDeletePropOpen = () => setDeletePropState({ addDeletePropShow: true });
-  let addPropertyDetailsOpen = () => setPropertyDetailsState ({ addPropertyDetailsShow: true });
-  let addPropertyDetailsClose = () => setPropertyDetailsState ({ addPropertyDetailsShow: false });
+  let addPropertyDetailsOpen = () => setPropertyDetailsState({ addPropertyDetailsShow: true });
+  let addPropertyDetailsClose = () => setPropertyDetailsState({ addPropertyDetailsShow: false });
 
   return (
     <Container fluid={true}>
       <ul className="list-group">
-        {props.state.properties.map((result) => (
+        {props.addresses.properties.map((result) => (
           <li className="list-group-item " key={result._id}>
-            <Col sm={6} md={4} style={{ float: "left"}}>
+            <Col sm={6} md={4} style={{ float: "left" }}>
               <h5 className="address" id="address">
                 Street Address:{"  " + result.address}
               </h5>
@@ -199,7 +208,7 @@ function PropertyList(props) {
               </h5>
             </Col>
             <div>
-            
+
               {/* Edit Button */}
               <EditProp
                 _id={property._id}
@@ -221,8 +230,8 @@ function PropertyList(props) {
                 {" "}
               Edit
             </Button>
-              
-            <br></br>
+
+              <br></br>
               {/* Maps Modal*/}
               <Button
                 key={result._id}
@@ -237,24 +246,27 @@ function PropertyList(props) {
                 show={MapModalState.addMapsModalShow}
                 onHide={addMapsModalClose}
               />
-            <p>
-              {/* property details button */}
-              <Button className='propertyDetails' variant="info" size='sm' to='/PropertyDetails' onClick={addPropertyDetailsOpen}> Property Details </Button>  
-              <PropertyDetails _id={result._id}
-                show={PropertyDetailsState.addPropertyDetailsShow}
-                onHide={addPropertyDetailsClose}
-              />              
+              <p>
+                {/* property details button */}
+                <Button className='propertyDetails' variant="info" size='sm' to='/PropertyDetails' onClick={addPropertyDetailsOpen}> Property Details </Button>
+                <PropertyDetails _id={result._id}
+                  show={PropertyDetailsState.addPropertyDetailsShow}
+                  onHide={addPropertyDetailsClose}
+                />
               </p>
               {/* Delete button */}
               <Button className="deleteProp"
                 key={result._id}
                 variant="danger" size="sm"
                 to="/DeleteProp"
-                onClick={addDeletePropOpen}
+                onClick={() => { deleteProperty(result._id) }}
               >
                 Delete Property
               </Button>
-              <DeleteProp _id={result._id}
+              <DeleteProp
+                key={result._id}
+                address={result.address}
+                _id={result._id}
                 show={DeletePropState.addDeletePropShow}
                 onHide={addDeletePropClose}
               />
