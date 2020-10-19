@@ -135,14 +135,19 @@ function PropertyList(props) {
   // };
 
 
-  //let getDeleteData = async (id) => {
-  //   var id = id;
-  //   $.get("/api/" + id, function (data) {
-  //     console.log(data);
-  //     setProperty(data);
-  //   });
-  //   await setDeletePropState({ addDeletePropShow: true });
-  // };
+  let getDeleteData = async (id) => {
+    var id = id;
+    $.get("/api/" + id, function (data) {
+      console.log(data);
+      try {
+        setProperty(data)
+
+      } catch (error) {
+
+      }
+    }).then(
+      setDeletePropState({ addDeletePropShow: true }));
+  };
   let deleteProperty = (id) =>
     $.ajax({
       method: "DELETE",
@@ -259,14 +264,14 @@ function PropertyList(props) {
                 key={result._id}
                 variant="danger" size="sm"
                 to="/DeleteProp"
-                onClick={() => { deleteProperty(result._id) }}
+                onClick={() => { getDeleteData(result._id) }}
               >
                 Delete Property
               </Button>
               <DeleteProp
                 key={result._id}
-                address={result.address}
-                _id={result._id}
+                address={property.address}
+                _id={property._id}
                 show={DeletePropState.addDeletePropShow}
                 onHide={addDeletePropClose}
               />
