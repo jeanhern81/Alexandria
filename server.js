@@ -49,8 +49,21 @@ require('./config/passport');
 app.use(require('./routes'));
 
 // mongo connection
-mongoose.connect('mongodb://localhost/alexandria');
+//mongoose.connect('mongodb://localhost/alexandria');
+
+
+mongoose.connect(
+  process.env.MONGODB_URI || 'mongodb://localhost/alexandria',
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false
+    
+  }
+);
 mongoose.set('debug', true);
+
 // Routes
 // ===============================================
 app.get("/", function (req, res) {
