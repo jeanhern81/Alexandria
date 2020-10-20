@@ -66,13 +66,17 @@ mongoose.set('debug', true);
 
 // Routes
 // ===============================================
+//app.get("/", function (req, res) {
+  //res.sendFile(path.join(__dirname, "public/index.html"));
+//});
+
 app.get("/", function (req, res) {
-  res.sendFile(path.join(__dirname, "public/index.html"));
+  res.sendFile(path.join(__dirname, "alexandria-react/index.js"));
 });
 
-app.get("/properties", auth.required, function (req, res) {
-  res.sendFile(path.join(__dirname, "public/properties.html"));
-});
+// app.get("/properties", auth.required, function (req, res) {
+//   res.sendFile(path.join(__dirname, "public/properties.html"));
+// });
 
 app.post("/api/newProperty", auth.required, function (req, res) {
   // this route takes in the post request coming from the add Property Modal
