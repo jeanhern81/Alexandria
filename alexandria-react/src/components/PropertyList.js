@@ -106,47 +106,23 @@ function PropertyList(props) {
 
   let getDetailsData = async (id) => {
     var id = id;
-    $.get("/api/" + id, function (data) {
-      console.log(data);
-      try {
-        setProperty(data)
-        $.ajax({
-          url: "/zillowCall/",
-          method: "GET",
+    localStorage.getItem()
 
-          Data: { address: data.address, citystate: data.city + " " + data.state },
+    $.ajax({
+      url: "/zillowCall/",
+      method: "GET",
 
-        }).then((response) =>
-          console.log(response))
+      Data: { address: "30765 Sterling rd", citystate: "Cathedral City" + " " + "CA" },
 
+    }).then((response) =>
+      console.log(response))
 
-      } catch (error) {
-
-      }
-    })
 
 
 
 
   };
-  // let deleteProperty = (id) =>
-  //   $.ajax({
-  //     method: "DELETE",
-  //     url: "/api/" + id
-  //   }).then((res) => {
 
-  //     console.log(res)
-  //   })
-
-
-  // let getDetailsData = async (id) => {
-  //   var id = id;
-  //   $.get("/api/" + id, function (data) {
-  //     console.log(data);
-  //     setProperty(data);
-  //   });
-  //   await setPropertyDetailsState({ addPropertyDetailsShow: true });
-  // };
 
 
 
@@ -234,7 +210,7 @@ function PropertyList(props) {
               />
               <p>
                 {/* property details button */}
-                <Button className='propertyDetails' variant="info" size='sm' to='/PropertyDetails' onClick={() => { getDetailsData(result._id) }}> Property Details </Button>
+                <Button value={`${property.address} ${property.city} % ${property.state}`} className='propertyDetails' variant="info" size='sm' to='/PropertyDetails' onClick={() => { }}> Property Details </Button>
                 <PropertyDetails _id={property._id}
                   address-={property.address}
                   citystate={property.city + " " + property.state}

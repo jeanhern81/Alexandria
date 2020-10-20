@@ -30,7 +30,13 @@ class PropertiesContainer extends Component {
             data: { user_Id: userId }
 
         })
-            .then((res) => this.setState({ properties: res }))
+            .then((res) => this.setState({ properties: res })).then((res) => {
+                for (let i = 0; i < this.state.properties.length; i++) {
+                    localStorage.setItem([i], JSON.stringify(this.state.properties[i]))
+                }
+            }
+
+            )
             .catch(err => console.log(err));
     };
     checkState = () => {
